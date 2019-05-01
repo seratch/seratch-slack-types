@@ -49,11 +49,12 @@ app.post('/events', function (req: Request, res: Response) {
 });
 ```
 
-## How is it generated
+## How are the types generated
 
-These types are generated from jSlack library's type definitions in Java and actual JSON response data from Slack Platform. If you're interested in the details, take a look at the GitHub repository.
+These types are generated from jSlack library's type definitions in Java + actual JSON responses fetched by running jSlack's unit tests. If you're interested in the details, take a look at [jSlack](https://github.com/seratch/jslack).
 
-https://github.com/seratch/jslack
+The coverage may not be 100% yet. A portion of the properties may be incorrect. If you find missing properties or something wrong, let us know here: https://github.com/seratch/seratch-slack-types/issues
 
-The coverage may not be 100% and a portion of the properties may be incorrect. Let @seratch know if you find rooms to improve in this package.
+## License
 
+The MIT License
