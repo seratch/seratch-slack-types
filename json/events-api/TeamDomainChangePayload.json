@@ -1,0 +1,16 @@
+{
+  "token": "",
+  "team_id": "",
+  "api_app_id": "",
+  "event": {
+    "type": "team_domain_change",
+    "url": "",
+    "domain": ""
+  },
+  "type": "",
+  "authed_users": [
+    ""
+  ],
+  "event_id": "",
+  "event_time": 123
+}
