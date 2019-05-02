@@ -1,0 +1,1 @@
+export { SlashCommandPayload } from './SlashCommandPayload';
