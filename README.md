@@ -13,6 +13,7 @@ Currently, the package support the following APIs.
   * Dialogs (dialog_submission, cancellation, suggestion)
   * Interactive Messages (interactive_message, block_action)
   * Message Actions (message_action)
+  * Slash Commands
 
 ## How to use
 
