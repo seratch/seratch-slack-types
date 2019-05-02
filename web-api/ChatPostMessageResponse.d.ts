@@ -134,7 +134,10 @@ export interface Element {
 }
 
 export interface Confirm {
-    text?: TextElement;
+    title?:   TextElement;
+    text?:    TextElement;
+    confirm?: TextElement;
+    deny?:    TextElement;
 }
 
 export interface TextElement {

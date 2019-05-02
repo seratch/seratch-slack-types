@@ -4,4 +4,6 @@ export interface TokensRevokedEvent {
 }
 
 export interface Tokens {
+    oauth?: string[];
+    bot?:   string[];
 }

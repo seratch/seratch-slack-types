@@ -4,4 +4,10 @@ export interface TeamProfileReorderEvent {
 }
 
 export interface Profile {
+    fields?: Field[];
+}
+
+export interface Field {
+    id?:       string;
+    ordering?: number;
 }

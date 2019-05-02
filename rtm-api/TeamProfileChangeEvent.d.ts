@@ -4,4 +4,9 @@ export interface TeamProfileChangeEvent {
 }
 
 export interface Profile {
+    fields?: Field[];
+}
+
+export interface Field {
+    id?: string;
 }

@@ -355,7 +355,32 @@ export interface LocalesEnabled {
 
 export interface Subteams {
     self?: string[];
-    all?:  string[];
+    all?:  All[];
+}
+
+export interface All {
+    id?:                    string;
+    team_id?:               string;
+    is_usergroup?:          boolean;
+    is_subteam?:            boolean;
+    name?:                  string;
+    description?:           string;
+    handle?:                string;
+    is_external?:           boolean;
+    date_create?:           number;
+    date_update?:           number;
+    date_delete?:           number;
+    auto_provision?:        boolean;
+    enterprise_subteam_id?: string;
+    created_by?:            string;
+    updated_by?:            string;
+    prefs?:                 AllPrefs;
+    user_count?:            number;
+}
+
+export interface AllPrefs {
+    channels?: string[];
+    groups?:   string[];
 }
 
 export interface Team {

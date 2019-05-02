@@ -4,4 +4,9 @@ export interface TeamProfileDeleteEvent {
 }
 
 export interface Profile {
+    fields?: Field[];
+}
+
+export interface Field {
+    id?: string;
 }

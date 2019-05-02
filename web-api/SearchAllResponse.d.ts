@@ -252,7 +252,10 @@ export interface Element {
 }
 
 export interface Confirm {
-    text?: Text;
+    title?:   Text;
+    text?:    Text;
+    confirm?: Text;
+    deny?:    Text;
 }
 
 export interface Text {

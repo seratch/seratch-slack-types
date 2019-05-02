@@ -23,4 +23,6 @@ export interface Subteam {
 }
 
 export interface Prefs {
+    channels?: string[];
+    groups?:   string[];
 }
