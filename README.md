@@ -9,6 +9,10 @@ Currently, the package support the following APIs.
 * API Methods (web-api)
 * Events API (events-api)
 * Real Time Messaging API (rtm-api)
+* Incoming payloads from Slack Platform (app-backend)
+  * Dialogs (dialog_submission, cancellation, suggestion)
+  * Interactive Messages (interactive_message, block_action)
+  * Message Actions (message_action)
 
 ## How to use
 
