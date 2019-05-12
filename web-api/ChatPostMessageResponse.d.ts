@@ -20,6 +20,7 @@ export interface Message {
     root?:        Root;
     attachments?: Attachment[];
     user?:        string;
+    icons?:       Icons;
 }
 
 export interface Attachment {
@@ -150,6 +151,11 @@ export interface TextElement {
 export interface InitialOption {
     text?:  TextElement;
     value?: string;
+}
+
+export interface Icons {
+    emoji?:    string;
+    image_64?: string;
 }
 
 export interface Root {

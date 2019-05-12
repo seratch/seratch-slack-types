@@ -15,6 +15,9 @@ export interface MessageEvent {
     is_starred?:   boolean;
     pinned_to?:    string[];
     reactions?:    Reaction[];
+    bot_id?:       string;
+    username?:     string;
+    icons?:        Icons;
 }
 
 export interface Attachment {
@@ -153,6 +156,14 @@ export interface InitialOption {
 export interface Edited {
     user?: string;
     ts?:   string;
+}
+
+export interface Icons {
+    emoji?:    string;
+    image_36?: string;
+    image_48?: string;
+    image_64?: string;
+    image_72?: string;
 }
 
 export interface Reaction {

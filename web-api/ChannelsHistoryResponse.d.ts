@@ -34,6 +34,7 @@ export interface Message {
     reactions?:         Reaction[];
     icons?:             Icons;
     client_msg_id?:     string;
+    parent_user_id?:    string;
 }
 
 export interface Attachment {

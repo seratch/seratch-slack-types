@@ -18,6 +18,7 @@ export { DndUpdatedEvent } from './DndUpdatedEvent';
 export { DndUpdatedUserEvent } from './DndUpdatedUserEvent';
 export { EmailDomainChangedEvent } from './EmailDomainChangedEvent';
 export { EmojiChangedEvent } from './EmojiChangedEvent';
+export { ErrorEvent } from './ErrorEvent';
 export { FileChangeEvent } from './FileChangeEvent';
 export { FileCommentAddedEvent } from './FileCommentAddedEvent';
 export { FileCommentDeletedEvent } from './FileCommentDeletedEvent';

@@ -107,13 +107,14 @@ export interface Channel {
 }
 
 export interface Previous {
-    type?:      string;
-    user?:      string;
-    username?:  string;
-    ts?:        string;
-    text?:      string;
-    iid?:       string;
-    permalink?: string;
+    type?:        string;
+    user?:        string;
+    username?:    string;
+    ts?:          string;
+    text?:        string;
+    iid?:         string;
+    permalink?:   string;
+    attachments?: Attachment[];
 }
 
 export interface Pagination {

@@ -45,11 +45,15 @@ export interface Latest {
     root?:           Root;
     attachments?:    Attachment[];
     username?:       string;
+    icons?:          Icons;
 }
 
 export interface Attachment {
-    msg_subtype?:           string;
+    text?:                  string;
+    footer?:                string;
+    id?:                    number;
     fallback?:              string;
+    msg_subtype?:           string;
     callback_id?:           string;
     color?:                 string;
     pretext?:               string;
@@ -64,7 +68,6 @@ export interface Attachment {
     author_subname?:        string;
     channel_id?:            string;
     channel_name?:          string;
-    id?:                    number;
     bot_id?:                string;
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
@@ -73,7 +76,6 @@ export interface Attachment {
     is_app_unfurl?:         boolean;
     title?:                 string;
     title_link?:            string;
-    text?:                  string;
     fields?:                Field[];
     image_url?:             string;
     image_width?:           number;
@@ -82,7 +84,6 @@ export interface Attachment {
     thumb_url?:             string;
     thumb_width?:           number;
     thumb_height?:          number;
-    footer?:                string;
     footer_icon?:           string;
     ts?:                    string;
     mrkdwn_in?:             string[];
@@ -138,6 +139,11 @@ export interface File {
     preview_is_truncated?: boolean;
     is_starred?:           boolean;
     has_rich_preview?:     boolean;
+}
+
+export interface Icons {
+    emoji?:    string;
+    image_64?: string;
 }
 
 export interface Root {
