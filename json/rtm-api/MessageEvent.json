@@ -1,4 +1,5 @@
 {
+  "client_msg_id": "",
   "type": "message",
   "channel": "",
   "user": "",
@@ -401,6 +402,9 @@
       "thumb_url": "",
       "thumb_width": 123,
       "thumb_height": 123,
+      "video_html": "",
+      "video_html_width": 123,
+      "video_html_height": 123,
       "footer": "",
       "footer_icon": "",
       "ts": "",
@@ -419,10 +423,16 @@
           "min_query_length": 123,
           "url": ""
         }
-      ]
+      ],
+      "filename": "",
+      "size": 123,
+      "mimetype": "",
+      "url": "",
+      "metadata": ""
     }
   ],
   "ts": "",
+  "thread_ts": "",
   "event_ts": "",
   "channel_type": "",
   "edited": {
