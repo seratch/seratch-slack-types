@@ -10,25 +10,27 @@ export interface MessagePayload {
 }
 
 export interface Event {
-    type?:         string;
-    channel?:      string;
-    user?:         string;
-    text?:         string;
-    blocks?:       Block[];
-    attachments?:  Attachment[];
-    ts?:           string;
-    event_ts?:     string;
-    channel_type?: string;
-    edited?:       Edited;
-    subtype?:      string;
-    hidden?:       boolean;
-    deleted_ts?:   string;
-    is_starred?:   boolean;
-    pinned_to?:    string[];
-    reactions?:    Reaction[];
-    bot_id?:       string;
-    username?:     string;
-    icons?:        Icons;
+    client_msg_id?: string;
+    type?:          string;
+    channel?:       string;
+    user?:          string;
+    text?:          string;
+    blocks?:        Block[];
+    attachments?:   Attachment[];
+    ts?:            string;
+    thread_ts?:     string;
+    event_ts?:      string;
+    channel_type?:  string;
+    edited?:        Edited;
+    subtype?:       string;
+    hidden?:        boolean;
+    deleted_ts?:    string;
+    is_starred?:    boolean;
+    pinned_to?:     string[];
+    reactions?:     Reaction[];
+    bot_id?:        string;
+    username?:      string;
+    icons?:         Icons;
 }
 
 export interface Attachment {
@@ -66,11 +68,19 @@ export interface Attachment {
     thumb_url?:             string;
     thumb_width?:           number;
     thumb_height?:          number;
+    video_html?:            string;
+    video_html_width?:      number;
+    video_html_height?:     number;
     footer?:                string;
     footer_icon?:           string;
     ts?:                    string;
     mrkdwn_in?:             string[];
     actions?:               Action[];
+    filename?:              string;
+    size?:                  number;
+    mimetype?:              string;
+    url?:                   string;
+    metadata?:              string;
 }
 
 export interface Action {

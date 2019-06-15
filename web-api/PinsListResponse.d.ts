@@ -1,6 +1,6 @@
-export interface UsergroupsUsersListResponse {
+export interface PinsListResponse {
     ok?:       boolean;
-    users?:    string[];
+    items?:    string[];
     error?:    string;
     needed?:   string;
     provided?: string;

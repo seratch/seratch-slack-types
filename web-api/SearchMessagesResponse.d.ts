@@ -25,9 +25,9 @@ export interface Match {
     ts?:          string;
     text?:        string;
     permalink?:   string;
+    attachments?: Attachment[];
     previous_2?:  Previous;
     previous?:    Previous;
-    attachments?: Attachment[];
 }
 
 export interface Attachment {
@@ -65,11 +65,19 @@ export interface Attachment {
     thumb_url?:             string;
     thumb_width?:           number;
     thumb_height?:          number;
+    video_html?:            string;
+    video_html_width?:      number;
+    video_html_height?:     number;
     footer?:                string;
     footer_icon?:           string;
     ts?:                    string;
     mrkdwn_in?:             string[];
     actions?:               Action[];
+    filename?:              string;
+    size?:                  number;
+    mimetype?:              string;
+    url?:                   string;
+    metadata?:              string;
 }
 
 export interface Action {
@@ -107,14 +115,13 @@ export interface Channel {
 }
 
 export interface Previous {
-    type?:        string;
-    user?:        string;
-    username?:    string;
-    ts?:          string;
-    text?:        string;
-    iid?:         string;
-    permalink?:   string;
-    attachments?: Attachment[];
+    type?:      string;
+    user?:      string;
+    username?:  string;
+    ts?:        string;
+    text?:      string;
+    iid?:       string;
+    permalink?: string;
 }
 
 export interface Pagination {

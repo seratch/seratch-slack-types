@@ -40,19 +40,20 @@ export interface Latest {
     display_as_bot?: boolean;
     ts?:             string;
     subtype?:        string;
+    username?:       string;
     bot_id?:         string;
+    attachments?:    Attachment[];
     thread_ts?:      string;
     root?:           Root;
-    attachments?:    Attachment[];
-    username?:       string;
-    icons?:          Icons;
 }
 
 export interface Attachment {
-    text?:                  string;
-    footer?:                string;
     id?:                    number;
+    blocks?:                Block[];
     fallback?:              string;
+    bot_id?:                string;
+    app_unfurl_url?:        string;
+    is_app_unfurl?:         boolean;
     msg_subtype?:           string;
     callback_id?:           string;
     color?:                 string;
@@ -68,14 +69,12 @@ export interface Attachment {
     author_subname?:        string;
     channel_id?:            string;
     channel_name?:          string;
-    bot_id?:                string;
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;
-    app_unfurl_url?:        string;
-    is_app_unfurl?:         boolean;
     title?:                 string;
     title_link?:            string;
+    text?:                  string;
     fields?:                Field[];
     image_url?:             string;
     image_width?:           number;
@@ -84,10 +83,19 @@ export interface Attachment {
     thumb_url?:             string;
     thumb_width?:           number;
     thumb_height?:          number;
+    video_html?:            string;
+    video_html_width?:      number;
+    video_html_height?:     number;
+    footer?:                string;
     footer_icon?:           string;
     ts?:                    string;
     mrkdwn_in?:             string[];
     actions?:               Action[];
+    filename?:              string;
+    size?:                  number;
+    mimetype?:              string;
+    url?:                   string;
+    metadata?:              string;
 }
 
 export interface Action {
@@ -100,6 +108,74 @@ export interface Action {
     data_source?:      string;
     min_query_length?: number;
     url?:              string;
+}
+
+export interface Block {
+    type?:         string;
+    elements?:     Element[];
+    block_id?:     string;
+    fallback?:     string;
+    image_url?:    string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+    alt_text?:     string;
+    title?:        Text;
+    text?:         Text;
+    fields?:       Text[];
+    accessory?:    Accessory;
+}
+
+export interface Accessory {
+    type?:         string;
+    fallback?:     string;
+    image_url?:    string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+    alt_text?:     string;
+}
+
+export interface Element {
+    type?:                 string;
+    fallback?:             string;
+    text?:                 Text;
+    action_id?:            string;
+    url?:                  string;
+    value?:                string;
+    style?:                string;
+    confirm?:              Confirm;
+    placeholder?:          Text;
+    initial_channel?:      string;
+    initial_conversation?: string;
+    initial_date?:         string;
+    initial_option?:       InitialOption;
+    min_query_length?:     number;
+    image_url?:            string;
+    image_width?:          number;
+    image_height?:         number;
+    image_bytes?:          number;
+    alt_text?:             string;
+    initial_user?:         string;
+}
+
+export interface Confirm {
+    title?:   Text;
+    text?:    Text;
+    confirm?: Text;
+    deny?:    Text;
+}
+
+export interface Text {
+    type?:     string;
+    text?:     string;
+    emoji?:    boolean;
+    verbatim?: boolean;
+}
+
+export interface InitialOption {
+    text?:  Text;
+    value?: string;
 }
 
 export interface Field {
@@ -139,11 +215,6 @@ export interface File {
     preview_is_truncated?: boolean;
     is_starred?:           boolean;
     has_rich_preview?:     boolean;
-}
-
-export interface Icons {
-    emoji?:    string;
-    image_64?: string;
 }
 
 export interface Root {

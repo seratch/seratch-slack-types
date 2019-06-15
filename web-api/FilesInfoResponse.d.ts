@@ -5,20 +5,11 @@ export interface FilesInfoResponse {
     is_truncated?:           boolean;
     content_highlight_html?: string;
     content_highlight_css?:  string;
-    comments?:               Comment[];
+    comments?:               string[];
     paging?:                 Paging;
     error?:                  string;
     needed?:                 string;
     provided?:               string;
-}
-
-export interface Comment {
-    id?:        string;
-    created?:   number;
-    timestamp?: number;
-    user?:      string;
-    is_intro?:  boolean;
-    comment?:   string;
 }
 
 export interface File {

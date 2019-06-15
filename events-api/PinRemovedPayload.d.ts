@@ -33,6 +33,7 @@ export interface File {
     timestamp?:            number;
     name?:                 string;
     title?:                string;
+    subject?:              string;
     mimetype?:             string;
     filetype?:             string;
     pretty_type?:          string;
@@ -94,6 +95,11 @@ export interface File {
     preview_is_truncated?: boolean;
     preview?:              string;
     preview_highlight?:    string;
+    plain_text?:           string;
+    preview_plain_text?:   string;
+    has_more?:             boolean;
+    sent_to_self?:         boolean;
+    bot_id?:               string;
     lines?:                number;
     lines_more?:           number;
     is_public?:            boolean;
@@ -155,11 +161,19 @@ export interface Attachment {
     thumb_url?:             string;
     thumb_width?:           number;
     thumb_height?:          number;
+    video_html?:            string;
+    video_html_width?:      number;
+    video_html_height?:     number;
     footer?:                string;
     footer_icon?:           string;
     ts?:                    string;
     mrkdwn_in?:             string[];
     actions?:               Action[];
+    filename?:              string;
+    size?:                  number;
+    mimetype?:              string;
+    url?:                   string;
+    metadata?:              string;
 }
 
 export interface Action {

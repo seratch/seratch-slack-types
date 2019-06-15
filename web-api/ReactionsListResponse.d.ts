@@ -1,35 +1,45 @@
-export interface ChatPostMessageResponse {
-    ok?:                boolean;
-    channel?:           string;
-    ts?:                string;
-    message?:           Message;
-    error?:             string;
-    response_metadata?: ResponseMetadata;
-    needed?:            string;
-    provided?:          string;
+export interface ReactionsListResponse {
+    ok?:       boolean;
+    items?:    Item[];
+    paging?:   Paging;
+    error?:    string;
+    needed?:   string;
+    provided?: string;
+}
+
+export interface Item {
+    type?:    string;
+    channel?: string;
+    message?: Message;
 }
 
 export interface Message {
-    type?:        string;
-    subtype?:     string;
-    text?:        string;
-    ts?:          string;
-    username?:    string;
-    bot_id?:      string;
-    thread_ts?:   string;
-    blocks?:      Block[];
-    root?:        Root;
-    icons?:       Icons;
-    attachments?: Attachment[];
-    user?:        string;
+    bot_id?:            string;
+    type?:              string;
+    text?:              string;
+    user?:              string;
+    ts?:                string;
+    blocks?:            Block[];
+    permalink?:         string;
+    reactions?:         Reaction[];
+    subtype?:           string;
+    username?:          string;
+    thread_ts?:         string;
+    reply_count?:       number;
+    reply_users_count?: number;
+    latest_reply?:      string;
+    reply_users?:       string[];
+    replies?:           Reply[];
+    subscribed?:        boolean;
+    client_msg_id?:     string;
+    icons?:             Icons;
+    attachments?:       Attachment[];
+    last_read?:         string;
 }
 
 export interface Attachment {
-    text?:                  string;
-    footer?:                string;
-    id?:                    number;
-    fallback?:              string;
     msg_subtype?:           string;
+    fallback?:              string;
     callback_id?:           string;
     color?:                 string;
     pretext?:               string;
@@ -44,6 +54,7 @@ export interface Attachment {
     author_subname?:        string;
     channel_id?:            string;
     channel_name?:          string;
+    id?:                    number;
     bot_id?:                string;
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
@@ -52,6 +63,7 @@ export interface Attachment {
     is_app_unfurl?:         boolean;
     title?:                 string;
     title_link?:            string;
+    text?:                  string;
     fields?:                Field[];
     image_url?:             string;
     image_width?:           number;
@@ -63,6 +75,7 @@ export interface Attachment {
     video_html?:            string;
     video_html_width?:      number;
     video_html_height?:     number;
+    footer?:                string;
     footer_icon?:           string;
     ts?:                    string;
     mrkdwn_in?:             string[];
@@ -95,8 +108,6 @@ export interface Field {
 export interface Block {
     type?:         string;
     block_id?:     string;
-    text?:         TextElement;
-    accessory?:    Accessory;
     elements?:     Element[];
     fallback?:     string;
     image_url?:    string;
@@ -104,32 +115,32 @@ export interface Block {
     image_height?: number;
     image_bytes?:  number;
     alt_text?:     string;
-    title?:        TextElement;
-    fields?:       TextElement[];
+    title?:        Text;
+    text?:         Text;
+    fields?:       Text[];
+    accessory?:    Accessory;
 }
 
 export interface Accessory {
+    type?:         string;
     fallback?:     string;
     image_url?:    string;
     image_width?:  number;
     image_height?: number;
     image_bytes?:  number;
-    type?:         string;
     alt_text?:     string;
 }
 
 export interface Element {
     type?:                 string;
-    action_id?:            string;
-    text?:                 TextElement | string;
-    value?:                string;
-    emoji?:                boolean;
-    verbatim?:             boolean;
     fallback?:             string;
+    text?:                 Text;
+    action_id?:            string;
     url?:                  string;
+    value?:                string;
     style?:                string;
     confirm?:              Confirm;
-    placeholder?:          TextElement;
+    placeholder?:          Text;
     initial_channel?:      string;
     initial_conversation?: string;
     initial_date?:         string;
@@ -144,13 +155,13 @@ export interface Element {
 }
 
 export interface Confirm {
-    title?:   TextElement;
-    text?:    TextElement;
-    confirm?: TextElement;
-    deny?:    TextElement;
+    title?:   Text;
+    text?:    Text;
+    confirm?: Text;
+    deny?:    Text;
 }
 
-export interface TextElement {
+export interface Text {
     type?:     string;
     text?:     string;
     emoji?:    boolean;
@@ -158,30 +169,20 @@ export interface TextElement {
 }
 
 export interface InitialOption {
-    text?:  TextElement;
+    text?:  Text;
     value?: string;
 }
 
 export interface Icons {
-    emoji?:    string;
-    image_64?: string;
+    image_48?: string;
+    image_36?: string;
+    image_72?: string;
 }
 
-export interface Root {
-    type?:              string;
-    subtype?:           string;
-    text?:              string;
-    ts?:                string;
-    username?:          string;
-    bot_id?:            string;
-    thread_ts?:         string;
-    reply_count?:       number;
-    reply_users_count?: number;
-    latest_reply?:      string;
-    reply_users?:       string[];
-    replies?:           Reply[];
-    subscribed?:        boolean;
-    last_read?:         string;
+export interface Reaction {
+    name?:  string;
+    users?: string[];
+    count?: number;
 }
 
 export interface Reply {
@@ -189,6 +190,9 @@ export interface Reply {
     ts?:   string;
 }
 
-export interface ResponseMetadata {
-    messages?: string[];
+export interface Paging {
+    count?: number;
+    total?: number;
+    page?:  number;
+    pages?: number;
 }

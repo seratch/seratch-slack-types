@@ -1,6 +1,5 @@
-export interface UsergroupsUsersListResponse {
+export interface StarsAddResponse {
     ok?:       boolean;
-    users?:    string[];
     error?:    string;
     needed?:   string;
     provided?: string;

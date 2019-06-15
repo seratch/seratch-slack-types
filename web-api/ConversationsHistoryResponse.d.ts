@@ -20,6 +20,7 @@ export interface Message {
     thread_ts?:         string;
     root?:              Root;
     username?:          string;
+    icons?:             Icons;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
@@ -33,10 +34,8 @@ export interface Message {
     display_as_bot?:    boolean;
     attachments?:       Attachment[];
     reactions?:         Reaction[];
-    icons?:             Icons;
     topic?:             string;
     purpose?:           string;
-    client_msg_id?:     string;
 }
 
 export interface Attachment {
@@ -74,11 +73,19 @@ export interface Attachment {
     thumb_url?:             string;
     thumb_width?:           number;
     thumb_height?:          number;
+    video_html?:            string;
+    video_html_width?:      number;
+    video_html_height?:     number;
     footer?:                string;
     footer_icon?:           string;
     ts?:                    string;
     mrkdwn_in?:             string[];
     actions?:               Action[];
+    filename?:              string;
+    size?:                  number;
+    mimetype?:              string;
+    url?:                   string;
+    metadata?:              string;
 }
 
 export interface Action {
@@ -203,6 +210,15 @@ export interface File {
     preview_is_truncated?: boolean;
     is_starred?:           boolean;
     has_rich_preview?:     boolean;
+    thumb_64?:             string;
+    thumb_80?:             string;
+    thumb_360?:            string;
+    thumb_360_w?:          number;
+    thumb_360_h?:          number;
+    thumb_160?:            string;
+    image_exif_rotation?:  number;
+    original_w?:           number;
+    original_h?:           number;
 }
 
 export interface Icons {

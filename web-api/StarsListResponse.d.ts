@@ -1,20 +1,33 @@
-export interface SearchFilesResponse {
+export interface StarsListResponse {
     ok?:       boolean;
-    query?:    string;
-    files?:    Files;
+    items?:    Item[];
+    paging?:   Paging;
     error?:    string;
     needed?:   string;
     provided?: string;
 }
 
-export interface Files {
-    total?:      number;
-    pagination?: Pagination;
-    paging?:     Paging;
-    matches?:    Match[];
+export interface Item {
+    type?:        string;
+    channel?:     string;
+    message?:     Message;
+    date_create?: number;
+    file?:        File;
+    comment?:     Comment;
 }
 
-export interface Match {
+export interface Comment {
+    id?:         string;
+    created?:    number;
+    timestamp?:  number;
+    user?:       string;
+    is_intro?:   boolean;
+    comment?:    string;
+    num_stars?:  number;
+    is_starred?: boolean;
+}
+
+export interface File {
     id?:                   string;
     created?:              number;
     timestamp?:            number;
@@ -37,33 +50,45 @@ export interface Match {
     url_private_download?: string;
     permalink?:            string;
     permalink_public?:     string;
-    subject?:              string;
-    to?:                   Cc[];
-    from?:                 Cc[];
-    cc?:                   Cc[];
-    attachments?:          Attachment[];
-    plain_text?:           string;
+    edit_link?:            string;
     preview?:              string;
-    preview_plain_text?:   string;
-    has_more?:             boolean;
-    sent_to_self?:         boolean;
-    bot_id?:               string;
+    preview_highlight?:    string;
+    lines?:                number;
+    lines_more?:           number;
+    preview_is_truncated?: boolean;
+    comments_count?:       number;
+    initial_comment?:      Comment;
     is_starred?:           boolean;
     shares?:               Shares;
     channels?:             string[];
     groups?:               string[];
     ims?:                  string[];
     has_rich_preview?:     boolean;
-    score?:                string;
-    thumb_64?:             string;
-    thumb_80?:             string;
-    thumb_360?:            string;
-    thumb_360_w?:          number;
-    thumb_360_h?:          number;
-    thumb_160?:            string;
-    image_exif_rotation?:  number;
-    original_w?:           number;
-    original_h?:           number;
+}
+
+export interface Shares {
+}
+
+export interface Message {
+    type?:              string;
+    subtype?:           string;
+    text?:              string;
+    ts?:                string;
+    bot_id?:            string;
+    attachments?:       Attachment[];
+    permalink?:         string;
+    is_starred?:        boolean;
+    client_msg_id?:     string;
+    user?:              string;
+    thread_ts?:         string;
+    reply_count?:       number;
+    reply_users_count?: number;
+    latest_reply?:      string;
+    reply_users?:       string[];
+    replies?:           Reply[];
+    subscribed?:        boolean;
+    last_read?:         string;
+    reactions?:         Reaction[];
 }
 
 export interface Attachment {
@@ -134,37 +159,21 @@ export interface Field {
     short?: boolean;
 }
 
-export interface Cc {
-    address?:  string;
-    name?:     string;
-    original?: string;
+export interface Reaction {
+    name?:  string;
+    users?: string[];
+    count?: number;
 }
 
-export interface Shares {
-    public?: { [key: string]: Public[] };
-}
-
-export interface Public {
-    reply_users?:       string[];
-    reply_users_count?: number;
-    reply_count?:       number;
-    ts?:                string;
-    channel_name?:      string;
-    team_id?:           string;
-}
-
-export interface Pagination {
-    total_count?: number;
-    page?:        number;
-    per_page?:    number;
-    page_count?:  number;
-    first?:       number;
-    last?:        number;
+export interface Reply {
+    user?: string;
+    ts?:   string;
 }
 
 export interface Paging {
-    count?: number;
-    total?: number;
-    page?:  number;
-    pages?: number;
+    per_page?: number;
+    spill?:    number;
+    page?:     number;
+    total?:    number;
+    pages?:    number;
 }

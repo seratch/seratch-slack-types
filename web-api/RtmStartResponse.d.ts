@@ -268,6 +268,7 @@ export interface SelfPrefs {
     has_recently_shared_a_channel?:                 boolean;
     seen_channel_browser_admin_coachmark?:          boolean;
     seen_administration_menu?:                      boolean;
+    seen_drafts_section_coachmark?:                 boolean;
     seen_emoji_update_overlay_coachmark?:           boolean;
     allow_calls_to_set_current_status?:             boolean;
     in_interactive_mas_migration_flow?:             boolean;
@@ -291,6 +292,7 @@ export interface SelfPrefs {
     tractor_experiment_group?:                      string;
     opened_slackbot_dm?:                            boolean;
     newxp_suggested_channels?:                      string;
+    onboarding_complete?:                           boolean;
     whocanseethis_dm_mpdm_badge?:                   boolean;
     highlight_words?:                               string;
     threads_everything?:                            boolean;
@@ -336,10 +338,15 @@ export interface SelfPrefs {
     deprecation_modal_last_seen?:                   number;
     failover_proxy_check_completed?:                number;
     edge_upload_proxy_check_completed?:             number;
+    app_subdomain_check_completed?:                 number;
     channel_sidebar_hide_invite?:                   boolean;
     in_prod_surveys_enabled?:                       boolean;
     tz?:                                            string;
     locales_enabled?:                               LocalesEnabled;
+    search_only_show_online?:                       boolean;
+    search_hide_deactivated_users?:                 boolean;
+    sunset_interactive_message_views?:              number;
+    workflow_builder_coachmarks?:                   string;
 }
 
 export interface LocalesEnabled {
@@ -384,17 +391,20 @@ export interface AllPrefs {
 }
 
 export interface Team {
-    id?:                   string;
-    name?:                 string;
-    email_domain?:         string;
-    domain?:               string;
-    msg_edit_window_mins?: number;
-    prefs?:                TeamPrefs;
-    icon?:                 Icon;
-    over_storage_limit?:   boolean;
-    messages_count?:       number;
-    plan?:                 string;
-    avatar_base_url?:      string;
+    id?:                    string;
+    name?:                  string;
+    email_domain?:          string;
+    domain?:                string;
+    msg_edit_window_mins?:  number;
+    prefs?:                 TeamPrefs;
+    icon?:                  Icon;
+    over_storage_limit?:    boolean;
+    messages_count?:        number;
+    plan?:                  string;
+    avatar_base_url?:       string;
+    date_create?:           number;
+    limit_ts?:              number;
+    onboarding_channel_id?: string;
 }
 
 export interface Icon {
@@ -414,6 +424,8 @@ export interface TeamPrefs {
     display_email_addresses?:                boolean;
     gdrive_enabled_team?:                    boolean;
     all_users_can_purchase?:                 boolean;
+    enable_shared_channels?:                 number;
+    can_receive_shared_channels_invites?:    boolean;
     slackbot_responses_disabled?:            boolean;
     hide_referers?:                          boolean;
     msg_edit_window_mins?:                   number;
@@ -465,15 +477,15 @@ export interface TeamPrefs {
     allow_shared_channel_perms_override?:    boolean;
     who_can_manage_ext_shared_channels?:     WhoCan;
     onedrive_enabled_team?:                  boolean;
-    can_receive_shared_channels_invites?:    boolean;
     enterprise_default_channels?:            string[];
     enterprise_mandatory_channels?:          string[];
     enterprise_mdm_disable_file_download?:   boolean;
     mobile_passcode_timeout_in_seconds?:     number;
     has_hipaa_compliance?:                   boolean;
+    self_serve_select?:                      boolean;
     loud_channel_mentions_limit?:            number;
     show_join_leave?:                        boolean;
-    enable_shared_channels?:                 number;
+    enterprise_mobile_device_check?:         boolean;
     dnd_enabled?:                            boolean;
     dnd_start_hour?:                         string;
     dnd_end_hour?:                           string;
@@ -504,6 +516,10 @@ export interface TeamPrefs {
     who_can_manage_integrations?:            WhoCan;
     app_whitelist_enabled?:                  boolean;
     invites_limit?:                          boolean;
+    dropbox_legacy_picker?:                  boolean;
+    disable_sidebar_connect_prompts?:        string[];
+    disable_sidebar_install_prompts?:        string[];
+    block_file_download?:                    boolean;
 }
 
 export interface WhoCan {
