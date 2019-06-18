@@ -39,27 +39,38 @@ export interface Icons {
 }
 
 export interface Channel {
-    id?:              string;
-    name?:            string;
-    is_channel?:      boolean;
-    created?:         number;
-    is_archived?:     boolean;
-    is_general?:      boolean;
-    unlinked?:        number;
-    creator?:         string;
-    name_normalized?: string;
-    is_shared?:       boolean;
-    is_org_shared?:   boolean;
-    has_pins?:        boolean;
-    is_member?:       boolean;
-    is_private?:      boolean;
-    is_mpim?:         boolean;
-    last_read?:       string;
-    members?:         string[];
-    topic?:           Purpose;
-    purpose?:         Purpose;
-    previous_names?:  string[];
-    priority?:        number;
+    id?:                            string;
+    name?:                          string;
+    is_channel?:                    boolean;
+    created?:                       number;
+    is_archived?:                   boolean;
+    is_general?:                    boolean;
+    unlinked?:                      number;
+    creator?:                       string;
+    name_normalized?:               string;
+    is_shared?:                     boolean;
+    is_org_shared?:                 boolean;
+    has_pins?:                      boolean;
+    is_member?:                     boolean;
+    is_private?:                    boolean;
+    is_mpim?:                       boolean;
+    last_read?:                     string;
+    members?:                       string[];
+    topic?:                         Purpose;
+    purpose?:                       Purpose;
+    previous_names?:                string[];
+    priority?:                      number;
+    is_group?:                      boolean;
+    is_im?:                         boolean;
+    is_ext_shared?:                 boolean;
+    shared_team_ids?:               string[];
+    internal_team_ids?:             string[];
+    connected_team_ids?:            string[];
+    previously_connected_team_ids?: string[];
+    pending_shared?:                string[];
+    pending_connected_team_ids?:    string[];
+    is_pending_ext_shared?:         boolean;
+    conversation_host_id?:          string;
 }
 
 export interface Purpose {

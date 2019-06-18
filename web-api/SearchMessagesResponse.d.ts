@@ -70,7 +70,7 @@ export interface Attachment {
     video_html_height?:     number;
     footer?:                string;
     footer_icon?:           string;
-    ts?:                    string;
+    ts?:                    number | string;
     mrkdwn_in?:             string[];
     actions?:               Action[];
     filename?:              string;

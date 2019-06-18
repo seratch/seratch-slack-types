@@ -1,4 +1,5 @@
 export { AccountChangedEvent } from './AccountChangedEvent';
+export { AppHomeOpenedEvent } from './AppHomeOpenedEvent';
 export { AppMentionEvent } from './AppMentionEvent';
 export { AppRateLimitedEvent } from './AppRateLimitedEvent';
 export { AppUninstalledEvent } from './AppUninstalledEvent';
