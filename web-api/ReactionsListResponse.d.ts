@@ -35,6 +35,7 @@ export interface Message {
     icons?:             Icons;
     attachments?:       Attachment[];
     last_read?:         string;
+    team?:              string;
 }
 
 export interface Attachment {

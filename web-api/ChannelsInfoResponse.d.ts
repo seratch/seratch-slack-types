@@ -45,6 +45,8 @@ export interface Latest {
     attachments?:    Attachment[];
     thread_ts?:      string;
     root?:           Root;
+    team?:           string;
+    blocks?:         Block[];
 }
 
 export interface Attachment {

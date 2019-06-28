@@ -33,6 +33,9 @@ export interface Message {
     upload?:            boolean;
     display_as_bot?:    boolean;
     reactions?:         Reaction[];
+    client_msg_id?:     string;
+    team?:              string;
+    inviter?:           string;
 }
 
 export interface Attachment {

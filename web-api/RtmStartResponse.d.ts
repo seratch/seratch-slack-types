@@ -358,6 +358,8 @@ export interface SelfPrefs {
     search_hide_deactivated_users?:                 boolean;
     sunset_interactive_message_views?:              number;
     workflow_builder_coachmarks?:                   string;
+    add_apps_prompt_dismissed?:                     boolean;
+    dismissed_installed_app_dm_suggestions?:        string;
 }
 
 export interface LocalesEnabled {

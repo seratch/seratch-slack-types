@@ -59,6 +59,8 @@ export interface File {
     image_exif_rotation?:  number;
     original_w?:           number;
     original_h?:           number;
+    app_id?:               string;
+    app_name?:             string;
 }
 
 export interface Attachment {

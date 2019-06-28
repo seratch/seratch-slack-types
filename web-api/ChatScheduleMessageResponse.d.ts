@@ -16,6 +16,7 @@ export interface Message {
     user?:        string;
     attachments?: Attachment[];
     blocks?:      Block[];
+    team?:        string;
 }
 
 export interface Attachment {

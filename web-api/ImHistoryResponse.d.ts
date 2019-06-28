@@ -25,6 +25,8 @@ export interface Message {
     upload?:            boolean;
     user?:              string;
     display_as_bot?:    boolean;
+    client_msg_id?:     string;
+    team?:              string;
 }
 
 export interface File {
@@ -63,6 +65,8 @@ export interface File {
     bot_id?:               string;
     is_starred?:           boolean;
     has_rich_preview?:     boolean;
+    app_id?:               string;
+    app_name?:             string;
 }
 
 export interface Attachment {

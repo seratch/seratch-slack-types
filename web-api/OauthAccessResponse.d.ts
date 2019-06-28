@@ -4,6 +4,7 @@ export interface OauthAccessResponse {
     error?:            string;
     needed?:           string;
     provided?:         string;
+    token_type?:       string;
     access_token?:     string;
     scope?:            string;
     team_name?:        string;

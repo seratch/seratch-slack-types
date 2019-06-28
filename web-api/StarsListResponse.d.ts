@@ -89,6 +89,7 @@ export interface Message {
     subscribed?:        boolean;
     last_read?:         string;
     reactions?:         Reaction[];
+    team?:              string;
 }
 
 export interface Attachment {

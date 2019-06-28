@@ -28,13 +28,16 @@ export interface Channel {
 }
 
 export interface OriginalMessage {
-    text?:        string;
-    username?:    string;
-    bot_id?:      string;
-    attachments?: Attachment[];
-    type?:        string;
-    subtype?:     string;
-    ts?:          string;
+    bot_id?:         string;
+    type?:           string;
+    text?:           string;
+    user?:           string;
+    username?:       string;
+    ts?:             string;
+    attachments?:    Attachment[];
+    subtype?:        string;
+    thread_ts?:      string;
+    parent_user_id?: string;
 }
 
 export interface Attachment {

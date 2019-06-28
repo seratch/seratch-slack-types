@@ -22,6 +22,7 @@ export interface Message {
     icons?:       Icons;
     attachments?: Attachment[];
     user?:        string;
+    team?:        string;
 }
 
 export interface Attachment {

@@ -36,6 +36,7 @@ export interface Message {
     reactions?:         Reaction[];
     topic?:             string;
     purpose?:           string;
+    team?:              string;
 }
 
 export interface Attachment {
