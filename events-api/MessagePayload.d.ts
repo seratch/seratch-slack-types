@@ -191,4 +191,5 @@ export interface Reaction {
     name?:  string;
     count?: number;
     users?: string[];
+    url?:   string;
 }

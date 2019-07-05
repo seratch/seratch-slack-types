@@ -116,9 +116,9 @@ export interface Block {
     image_height?: number;
     image_bytes?:  number;
     alt_text?:     string;
-    title?:        Text;
-    text?:         Text;
-    fields?:       Text[];
+    title?:        TextElement;
+    text?:         TextElement;
+    fields?:       TextElement[];
     accessory?:    Accessory;
 }
 
@@ -135,13 +135,13 @@ export interface Accessory {
 export interface Element {
     type?:                 string;
     fallback?:             string;
-    text?:                 Text;
+    text?:                 TextElement | string;
     action_id?:            string;
     url?:                  string;
     value?:                string;
     style?:                string;
     confirm?:              Confirm;
-    placeholder?:          Text;
+    placeholder?:          TextElement;
     initial_channel?:      string;
     initial_conversation?: string;
     initial_date?:         string;
@@ -153,16 +153,17 @@ export interface Element {
     image_bytes?:          number;
     alt_text?:             string;
     initial_user?:         string;
+    verbatim?:             boolean;
 }
 
 export interface Confirm {
-    title?:   Text;
-    text?:    Text;
-    confirm?: Text;
-    deny?:    Text;
+    title?:   TextElement;
+    text?:    TextElement;
+    confirm?: TextElement;
+    deny?:    TextElement;
 }
 
-export interface Text {
+export interface TextElement {
     type?:     string;
     text?:     string;
     emoji?:    boolean;
@@ -170,7 +171,7 @@ export interface Text {
 }
 
 export interface InitialOption {
-    text?:  Text;
+    text?:  TextElement;
     value?: string;
 }
 
@@ -184,6 +185,7 @@ export interface Reaction {
     name?:  string;
     users?: string[];
     count?: number;
+    url?:   string;
 }
 
 export interface Reply {

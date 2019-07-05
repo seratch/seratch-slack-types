@@ -133,6 +133,17 @@ export interface Action {
     data_source?:      string;
     min_query_length?: number;
     url?:              string;
+    option_groups?:    OptionGroup[];
+}
+
+export interface OptionGroup {
+    text?:    string;
+    options?: Option[];
+}
+
+export interface Option {
+    text?:  string;
+    value?: string;
 }
 
 export interface Field {

@@ -360,6 +360,9 @@ export interface SelfPrefs {
     workflow_builder_coachmarks?:                   string;
     add_apps_prompt_dismissed?:                     boolean;
     dismissed_installed_app_dm_suggestions?:        string;
+    welcome_place_state?:                           string;
+    set_tz_automatically?:                          boolean;
+    app_action_picker?:                             string;
 }
 
 export interface LocalesEnabled {
@@ -591,6 +594,8 @@ export interface Profile {
     bot_id?:                  string;
     api_app_id?:              string;
     always_active?:           boolean;
+    guest_channels?:          string;
+    guest_invited_by?:        string;
 }
 
 export interface Fields {

@@ -2,6 +2,7 @@ export interface ConversationsInviteResponse {
     ok?:       boolean;
     channel?:  Channel;
     error?:    string;
+    errors?:   Error[];
     needed?:   string;
     provided?: string;
 }
@@ -38,4 +39,9 @@ export interface Purpose {
     value?:    string;
     creator?:  string;
     last_set?: number;
+}
+
+export interface Error {
+    ok?:    boolean;
+    error?: string;
 }

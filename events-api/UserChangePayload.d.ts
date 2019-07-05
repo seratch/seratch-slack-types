@@ -42,6 +42,8 @@ export interface User {
 }
 
 export interface Profile {
+    guest_channels?:          string;
+    guest_invited_by?:        string;
     avatar_hash?:             string;
     status_text?:             string;
     status_text_canonical?:   string;

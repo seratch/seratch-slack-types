@@ -47,6 +47,7 @@ export interface Latest {
     root?:           Root;
     team?:           string;
     blocks?:         Block[];
+    client_msg_id?:  string;
 }
 
 export interface Attachment {
@@ -56,10 +57,14 @@ export interface Attachment {
     bot_id?:                string;
     app_unfurl_url?:        string;
     is_app_unfurl?:         boolean;
+    pretext?:               string;
+    thumb_height?:          number;
+    thumb_width?:           number;
+    thumb_url?:             string;
+    color?:                 string;
+    fields?:                Field[];
     msg_subtype?:           string;
     callback_id?:           string;
-    color?:                 string;
-    pretext?:               string;
     service_url?:           string;
     service_name?:          string;
     service_icon?:          string;
@@ -77,14 +82,10 @@ export interface Attachment {
     title?:                 string;
     title_link?:            string;
     text?:                  string;
-    fields?:                Field[];
     image_url?:             string;
     image_width?:           number;
     image_height?:          number;
     image_bytes?:           number;
-    thumb_url?:             string;
-    thumb_width?:           number;
-    thumb_height?:          number;
     video_html?:            string;
     video_html_width?:      number;
     video_html_height?:     number;

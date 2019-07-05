@@ -61,6 +61,8 @@ export interface Profile {
     bot_id?:                  string;
     api_app_id?:              string;
     always_active?:           boolean;
+    guest_channels?:          string;
+    guest_invited_by?:        string;
 }
 
 export interface ResponseMetadata {

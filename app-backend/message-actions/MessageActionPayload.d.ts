@@ -20,6 +20,7 @@ export interface Channel {
 export interface Message {
     type?:                string;
     subtype?:             string;
+    team?:                string;
     channel?:             string;
     user?:                string;
     username?:            string;
@@ -261,6 +262,8 @@ export interface File {
     size?:                 number;
     url_private?:          string;
     url_private_download?: string;
+    app_id?:               string;
+    app_name?:             string;
     thumb_64?:             string;
     thumb_64_gif?:         string;
     thumb_64_w?:           string;
@@ -353,6 +356,7 @@ export interface Icons {
 export interface Reaction {
     name?:  string;
     count?: number;
+    url?:   string;
 }
 
 export interface Root {

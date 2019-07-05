@@ -45,6 +45,8 @@ export interface File {
     size?:                 number;
     url_private?:          string;
     url_private_download?: string;
+    app_id?:               string;
+    app_name?:             string;
     thumb_64?:             string;
     thumb_64_gif?:         string;
     thumb_64_w?:           string;

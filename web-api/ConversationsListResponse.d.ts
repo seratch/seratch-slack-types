@@ -37,6 +37,7 @@ export interface Channel {
     priority?:                   number;
     parent_conversation?:        string;
     pending_connected_team_ids?: string[];
+    conversation_host_id?:       string;
 }
 
 export interface Purpose {
