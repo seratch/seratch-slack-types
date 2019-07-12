@@ -48,6 +48,7 @@ export interface Latest {
     team?:           string;
     blocks?:         Block[];
     client_msg_id?:  string;
+    icons?:          Icons;
 }
 
 export interface Attachment {
@@ -76,6 +77,7 @@ export interface Attachment {
     author_subname?:        string;
     channel_id?:            string;
     channel_name?:          string;
+    indent?:                boolean;
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;
@@ -218,6 +220,11 @@ export interface File {
     preview_is_truncated?: boolean;
     is_starred?:           boolean;
     has_rich_preview?:     boolean;
+}
+
+export interface Icons {
+    emoji?:    string;
+    image_64?: string;
 }
 
 export interface Root {

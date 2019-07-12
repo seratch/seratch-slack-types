@@ -57,6 +57,7 @@ export interface Attachment {
     channel_name?:          string;
     id?:                    number;
     bot_id?:                string;
+    indent?:                boolean;
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;
@@ -78,7 +79,7 @@ export interface Attachment {
     video_html_height?:     number;
     footer?:                string;
     footer_icon?:           string;
-    ts?:                    string;
+    ts?:                    number | string;
     mrkdwn_in?:             string[];
     actions?:               Action[];
     filename?:              string;

@@ -72,6 +72,9 @@ export interface File {
     thumb_1024_w?:         string;
     thumb_1024_h?:         string;
     thumb_video?:          string;
+    thumb_pdf?:            string;
+    thumb_pdf_w?:          string;
+    thumb_pdf_h?:          string;
     image_exif_rotation?:  number;
     original_w?:           string;
     original_h?:           string;
@@ -134,6 +137,7 @@ export interface Attachment {
     channel_name?:          string;
     id?:                    number;
     bot_id?:                string;
+    indent?:                boolean;
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;

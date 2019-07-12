@@ -4,7 +4,7 @@ export interface RtmStartResponse {
     team?:                       Team;
     latest_event_ts?:            string;
     channels?:                   Channel[];
-    groups?:                     string[];
+    groups?:                     Group[];
     ims?:                        Im[];
     cache_ts?:                   number;
     read_only_channels?:         string[];
@@ -18,6 +18,7 @@ export interface RtmStartResponse {
     cache_ts_version?:           string;
     bots?:                       Bot[];
     url?:                        string;
+    must_accept_tos?:            boolean;
     error?:                      string;
     needed?:                     string;
     provided?:                   string;
@@ -84,6 +85,24 @@ export interface Dnd {
     next_dnd_start_ts?: number;
     next_dnd_end_ts?:   number;
     snooze_enabled?:    boolean;
+}
+
+export interface Group {
+    id?:              string;
+    name?:            string;
+    is_group?:        boolean;
+    created?:         number;
+    creator?:         string;
+    is_archived?:     boolean;
+    name_normalized?: string;
+    is_mpim?:         boolean;
+    has_pins?:        boolean;
+    is_open?:         boolean;
+    last_read?:       string;
+    members?:         string[];
+    topic?:           Purpose;
+    purpose?:         Purpose;
+    priority?:        number;
 }
 
 export interface Im {
@@ -363,6 +382,8 @@ export interface SelfPrefs {
     welcome_place_state?:                           string;
     set_tz_automatically?:                          boolean;
     app_action_picker?:                             string;
+    seen_sonic_deluxe_toast?:                       number;
+    add_channel_prompt_dismissed?:                  boolean;
 }
 
 export interface LocalesEnabled {

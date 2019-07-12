@@ -46,6 +46,7 @@ export interface Attachment {
     channel_id?:            string;
     channel_name?:          string;
     bot_id?:                string;
+    indent?:                boolean;
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;

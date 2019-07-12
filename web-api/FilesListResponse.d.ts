@@ -61,6 +61,9 @@ export interface File {
     original_h?:           number;
     app_id?:               string;
     app_name?:             string;
+    thumb_pdf?:            string;
+    thumb_pdf_w?:          number;
+    thumb_pdf_h?:          number;
 }
 
 export interface Attachment {
@@ -82,6 +85,7 @@ export interface Attachment {
     channel_name?:          string;
     id?:                    number;
     bot_id?:                string;
+    indent?:                boolean;
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;
