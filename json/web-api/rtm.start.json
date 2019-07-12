@@ -268,7 +268,9 @@
       "dismissed_installed_app_dm_suggestions": "",
       "welcome_place_state": "",
       "set_tz_automatically": false,
-      "app_action_picker": ""
+      "app_action_picker": "",
+      "seen_sonic_deluxe_toast": 12345,
+      "add_channel_prompt_dismissed": false
     },
     "created": 12345,
     "manual_presence": ""
@@ -498,7 +500,33 @@
     }
   ],
   "groups": [
-    ""
+    {
+      "id": "G00000000",
+      "name": "",
+      "is_group": false,
+      "created": 12345,
+      "creator": "U00000000",
+      "is_archived": false,
+      "name_normalized": "",
+      "is_mpim": false,
+      "has_pins": false,
+      "is_open": false,
+      "last_read": "0000000000.000000",
+      "members": [
+        "U00000000"
+      ],
+      "topic": {
+        "value": "",
+        "creator": "",
+        "last_set": 12345
+      },
+      "purpose": {
+        "value": "",
+        "creator": "",
+        "last_set": 12345
+      },
+      "priority": 12345
+    }
   ],
   "ims": [
     {
@@ -641,6 +669,7 @@
     }
   ],
   "url": "",
+  "must_accept_tos": false,
   "error": "",
   "needed": "",
   "provided": ""
