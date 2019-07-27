@@ -8,6 +8,7 @@
     "type": "",
     "text": "",
     "user": "U00000000",
+    "team": "T00000000",
     "attachments": [
       {
         "msg_subtype": "",
@@ -32,8 +33,8 @@
         "is_msg_unfurl": false,
         "is_reply_unfurl": false,
         "is_thread_root_unfurl": false,
-        "app_unfurl_url": "",
         "is_app_unfurl": false,
+        "app_unfurl_url": "",
         "title": "",
         "title_link": "",
         "text": "",
@@ -187,8 +188,7 @@
           "alt_text": ""
         }
       }
-    ],
-    "team": "T00000000"
+    ]
   },
   "error": "",
   "needed": "",

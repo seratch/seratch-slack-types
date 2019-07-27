@@ -1,10 +1,10 @@
 {
   "ok": false,
-  "no_op": false,
-  "already_open": false,
   "channel": {
     "id": "D00000000"
   },
+  "no_op": false,
+  "already_open": false,
   "error": "",
   "needed": "",
   "provided": ""
