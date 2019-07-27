@@ -19,11 +19,14 @@ export interface Message {
     text?:              string;
     user?:              string;
     ts?:                string;
+    team?:              string;
     blocks?:            Block[];
     permalink?:         string;
     reactions?:         Reaction[];
+    client_msg_id?:     string;
     subtype?:           string;
     username?:          string;
+    icons?:             Icons;
     thread_ts?:         string;
     reply_count?:       number;
     reply_users_count?: number;
@@ -31,11 +34,8 @@ export interface Message {
     reply_users?:       string[];
     replies?:           Reply[];
     subscribed?:        boolean;
-    client_msg_id?:     string;
-    icons?:             Icons;
-    attachments?:       Attachment[];
     last_read?:         string;
-    team?:              string;
+    attachments?:       Attachment[];
     inviter?:           string;
 }
 
@@ -62,8 +62,8 @@ export interface Attachment {
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;
-    app_unfurl_url?:        string;
     is_app_unfurl?:         boolean;
+    app_unfurl_url?:        string;
     title?:                 string;
     title_link?:            string;
     text?:                  string;
@@ -178,8 +178,8 @@ export interface InitialOption {
 }
 
 export interface Icons {
-    image_48?: string;
     image_36?: string;
+    image_48?: string;
     image_72?: string;
 }
 

@@ -71,6 +71,8 @@ export interface FilesMatch {
     lines?:                number;
     lines_more?:           number;
     preview_is_truncated?: boolean;
+    thumb_360_gif?:        string;
+    deanimate_gif?:        string;
 }
 
 export interface PreviousAttachment {
@@ -96,8 +98,8 @@ export interface PreviousAttachment {
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;
-    app_unfurl_url?:        string;
     is_app_unfurl?:         boolean;
+    app_unfurl_url?:        string;
     title?:                 string;
     title_link?:            string;
     text?:                  string;
@@ -134,17 +136,6 @@ export interface Action {
     data_source?:      string;
     min_query_length?: number;
     url?:              string;
-    option_groups?:    OptionGroup[];
-}
-
-export interface OptionGroup {
-    text?:    string;
-    options?: Option[];
-}
-
-export interface Option {
-    text?:  string;
-    value?: string;
 }
 
 export interface Field {
@@ -189,11 +180,10 @@ export interface Paging {
 }
 
 export interface Messages {
-    total?:       number;
-    pagination?:  Pagination;
-    paging?:      Paging;
-    matches?:     MessagesMatch[];
-    refinements?: string[];
+    total?:      number;
+    pagination?: Pagination;
+    paging?:     Paging;
+    matches?:    MessagesMatch[];
 }
 
 export interface MessagesMatch {
@@ -234,8 +224,8 @@ export interface PurpleAttachment {
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;
-    app_unfurl_url?:        string;
     is_app_unfurl?:         boolean;
+    app_unfurl_url?:        string;
     title?:                 string;
     title_link?:            string;
     text?:                  string;

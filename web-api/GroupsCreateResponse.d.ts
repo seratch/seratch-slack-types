@@ -23,6 +23,8 @@ export interface Group {
     topic?:                Purpose;
     purpose?:              Purpose;
     priority?:             number;
+    is_read_only?:         boolean;
+    is_thread_only?:       boolean;
 }
 
 export interface Purpose {

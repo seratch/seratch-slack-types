@@ -1,10 +1,10 @@
 export interface ChatPostMessageResponse {
     ok?:                boolean;
+    error?:             string;
+    response_metadata?: ResponseMetadata;
     channel?:           string;
     ts?:                string;
     message?:           Message;
-    error?:             string;
-    response_metadata?: ResponseMetadata;
     needed?:            string;
     provided?:          string;
 }
@@ -50,8 +50,8 @@ export interface Attachment {
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;
-    app_unfurl_url?:        string;
     is_app_unfurl?:         boolean;
+    app_unfurl_url?:        string;
     title?:                 string;
     title_link?:            string;
     fields?:                Field[];
@@ -122,10 +122,10 @@ export interface Accessory {
 
 export interface Element {
     type?:                 string;
-    action_id?:            string;
     text?:                 TextElement | string;
-    value?:                string;
     emoji?:                boolean;
+    action_id?:            string;
+    value?:                string;
     verbatim?:             boolean;
     fallback?:             string;
     url?:                  string;

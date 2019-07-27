@@ -1,8 +1,8 @@
 export interface ImOpenResponse {
     ok?:           boolean;
+    channel?:      Channel;
     no_op?:        boolean;
     already_open?: boolean;
-    channel?:      Channel;
     error?:        string;
     needed?:       string;
     provided?:     string;

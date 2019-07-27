@@ -18,7 +18,6 @@ export interface Message {
     bot_id?:            string;
     thread_ts?:         string;
     root?:              Root;
-    attachments?:       Attachment[];
     username?:          string;
     icons?:             Icons;
     reply_count?:       number;
@@ -27,15 +26,15 @@ export interface Message {
     reply_users?:       string[];
     replies?:           Array<ReplyClass | string>;
     subscribed?:        boolean;
-    last_read?:         string;
+    attachments?:       Attachment[];
     blocks?:            Block[];
+    team?:              string;
+    reactions?:         Reaction[];
     files?:             File[];
     upload?:            boolean;
     display_as_bot?:    boolean;
-    reactions?:         Reaction[];
+    last_read?:         string;
     client_msg_id?:     string;
-    team?:              string;
-    inviter?:           string;
 }
 
 export interface Attachment {
@@ -61,8 +60,8 @@ export interface Attachment {
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;
-    app_unfurl_url?:        string;
     is_app_unfurl?:         boolean;
+    app_unfurl_url?:        string;
     title?:                 string;
     title_link?:            string;
     text?:                  string;
@@ -79,7 +78,7 @@ export interface Attachment {
     video_html_height?:     number;
     footer?:                string;
     footer_icon?:           string;
-    ts?:                    number | string;
+    ts?:                    string;
     mrkdwn_in?:             string[];
     actions?:               Action[];
     filename?:              string;
@@ -117,9 +116,9 @@ export interface Block {
     image_height?: number;
     image_bytes?:  number;
     alt_text?:     string;
-    title?:        TextElement;
-    text?:         TextElement;
-    fields?:       TextElement[];
+    title?:        Text;
+    text?:         Text;
+    fields?:       Text[];
     accessory?:    Accessory;
 }
 
@@ -136,13 +135,13 @@ export interface Accessory {
 export interface Element {
     type?:                 string;
     fallback?:             string;
-    text?:                 TextElement | string;
+    text?:                 Text;
     action_id?:            string;
     url?:                  string;
     value?:                string;
     style?:                string;
     confirm?:              Confirm;
-    placeholder?:          TextElement;
+    placeholder?:          Text;
     initial_channel?:      string;
     initial_conversation?: string;
     initial_date?:         string;
@@ -154,17 +153,16 @@ export interface Element {
     image_bytes?:          number;
     alt_text?:             string;
     initial_user?:         string;
-    verbatim?:             boolean;
 }
 
 export interface Confirm {
-    title?:   TextElement;
-    text?:    TextElement;
-    confirm?: TextElement;
-    deny?:    TextElement;
+    title?:   Text;
+    text?:    Text;
+    confirm?: Text;
+    deny?:    Text;
 }
 
-export interface TextElement {
+export interface Text {
     type?:     string;
     text?:     string;
     emoji?:    boolean;
@@ -172,7 +170,7 @@ export interface TextElement {
 }
 
 export interface InitialOption {
-    text?:  TextElement;
+    text?:  Text;
     value?: string;
 }
 
@@ -213,9 +211,28 @@ export interface File {
     thumb_360_w?:          number;
     thumb_360_h?:          number;
     thumb_160?:            string;
+    thumb_360_gif?:        string;
     image_exif_rotation?:  number;
     original_w?:           number;
     original_h?:           number;
+    deanimate_gif?:        string;
+    thumb_480?:            string;
+    thumb_480_w?:          number;
+    thumb_480_h?:          number;
+    thumb_720?:            string;
+    thumb_720_w?:          number;
+    thumb_720_h?:          number;
+    thumb_800?:            string;
+    thumb_800_w?:          number;
+    thumb_800_h?:          number;
+    thumb_960?:            string;
+    thumb_960_w?:          number;
+    thumb_960_h?:          number;
+    thumb_1024?:           string;
+    thumb_1024_w?:         number;
+    thumb_1024_h?:         number;
+    external_id?:          string;
+    external_url?:         string;
 }
 
 export interface Icons {

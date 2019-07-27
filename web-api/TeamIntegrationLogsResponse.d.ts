@@ -12,17 +12,17 @@ export interface Log {
     user_name?:            string;
     date?:                 string;
     change_type?:          string;
-    service_id?:           string;
-    service_type?:         string;
+    app_type?:             string;
+    app_id?:               string;
     scope?:                string;
+    reason?:               string;
     rss_feed?:             boolean;
     rss_feed_change_type?: string;
     rss_feed_title?:       string;
     rss_feed_url?:         string;
+    service_id?:           string;
+    service_type?:         string;
     channel?:              string;
-    app_type?:             string;
-    app_id?:               string;
-    reason?:               string;
 }
 
 export interface Paging {

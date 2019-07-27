@@ -10,6 +10,7 @@ export interface ImListResponse {
 export interface Im {
     id?:              string;
     created?:         number;
+    is_archived?:     boolean;
     is_im?:           boolean;
     is_org_shared?:   boolean;
     user?:            string;

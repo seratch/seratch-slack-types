@@ -18,7 +18,6 @@ export interface RtmStartResponse {
     cache_ts_version?:           string;
     bots?:                       Bot[];
     url?:                        string;
-    must_accept_tos?:            boolean;
     error?:                      string;
     needed?:                     string;
     provided?:                   string;
@@ -40,38 +39,37 @@ export interface Icons {
 }
 
 export interface Channel {
-    id?:                            string;
-    name?:                          string;
-    is_channel?:                    boolean;
-    created?:                       number;
-    is_archived?:                   boolean;
-    is_general?:                    boolean;
-    unlinked?:                      number;
-    creator?:                       string;
-    name_normalized?:               string;
-    is_shared?:                     boolean;
-    is_org_shared?:                 boolean;
-    has_pins?:                      boolean;
-    is_member?:                     boolean;
-    is_private?:                    boolean;
-    is_mpim?:                       boolean;
-    last_read?:                     string;
-    members?:                       string[];
-    topic?:                         Purpose;
-    purpose?:                       Purpose;
-    previous_names?:                string[];
-    priority?:                      number;
-    is_group?:                      boolean;
-    is_im?:                         boolean;
-    is_ext_shared?:                 boolean;
-    shared_team_ids?:               string[];
-    internal_team_ids?:             string[];
-    connected_team_ids?:            string[];
-    previously_connected_team_ids?: string[];
-    pending_shared?:                string[];
-    pending_connected_team_ids?:    string[];
-    is_pending_ext_shared?:         boolean;
-    conversation_host_id?:          string;
+    id?:                         string;
+    name?:                       string;
+    is_channel?:                 boolean;
+    created?:                    number;
+    is_archived?:                boolean;
+    is_general?:                 boolean;
+    unlinked?:                   number;
+    creator?:                    string;
+    name_normalized?:            string;
+    is_shared?:                  boolean;
+    is_org_shared?:              boolean;
+    has_pins?:                   boolean;
+    is_member?:                  boolean;
+    is_private?:                 boolean;
+    is_mpim?:                    boolean;
+    last_read?:                  string;
+    members?:                    string[];
+    topic?:                      Purpose;
+    purpose?:                    Purpose;
+    previous_names?:             string[];
+    priority?:                   number;
+    is_group?:                   boolean;
+    is_im?:                      boolean;
+    is_ext_shared?:              boolean;
+    shared_team_ids?:            string[];
+    internal_team_ids?:          string[];
+    connected_team_ids?:         string[];
+    pending_shared?:             string[];
+    pending_connected_team_ids?: string[];
+    is_pending_ext_shared?:      boolean;
+    conversation_host_id?:       string;
 }
 
 export interface Purpose {
@@ -103,11 +101,14 @@ export interface Group {
     topic?:           Purpose;
     purpose?:         Purpose;
     priority?:        number;
+    is_read_only?:    boolean;
+    is_thread_only?:  boolean;
 }
 
 export interface Im {
     id?:            string;
     created?:       number;
+    is_archived?:   boolean;
     is_im?:         boolean;
     is_org_shared?: boolean;
     user?:          string;
@@ -150,6 +151,8 @@ export interface SelfPrefs {
     search_only_my_channels?:                       boolean;
     search_only_current_team?:                      boolean;
     search_hide_my_channels?:                       boolean;
+    search_only_show_online?:                       boolean;
+    search_hide_deactivated_users?:                 boolean;
     emoji_mode?:                                    string;
     emoji_use?:                                     string;
     has_invited?:                                   boolean;
@@ -197,6 +200,7 @@ export interface SelfPrefs {
     seen_onboarding_private_groups?:                boolean;
     seen_onboarding_banner?:                        boolean;
     onboarding_slackbot_conversation_step?:         number;
+    set_tz_automatically?:                          boolean;
     dnd_enabled?:                                   boolean;
     dnd_start_hour?:                                string;
     dnd_end_hour?:                                  string;
@@ -300,12 +304,15 @@ export interface SelfPrefs {
     seen_administration_menu?:                      boolean;
     seen_drafts_section_coachmark?:                 boolean;
     seen_emoji_update_overlay_coachmark?:           boolean;
+    seen_sonic_deluxe_toast?:                       number;
     allow_calls_to_set_current_status?:             boolean;
     in_interactive_mas_migration_flow?:             boolean;
+    sunset_interactive_message_views?:              number;
     shdep_promo_code_submitted?:                    boolean;
     seen_shdep_slackbot_message?:                   boolean;
     seen_calls_interactive_coachmark?:              boolean;
     allow_cmd_tab_iss?:                             boolean;
+    workflow_builder_coachmarks?:                   string;
     seen_gdrive_coachmark?:                         boolean;
     overloaded_message_enabled?:                    boolean;
     seen_highlights_coachmark?:                     boolean;
@@ -323,6 +330,7 @@ export interface SelfPrefs {
     opened_slackbot_dm?:                            boolean;
     newxp_suggested_channels?:                      string;
     onboarding_complete?:                           boolean;
+    welcome_place_state?:                           string;
     whocanseethis_dm_mpdm_badge?:                   boolean;
     highlight_words?:                               string;
     threads_everything?:                            boolean;
@@ -359,6 +367,7 @@ export interface SelfPrefs {
     seen_app_space_coachmark?:                      boolean;
     seen_app_space_tutorial?:                       boolean;
     purchaser?:                                     boolean;
+    app_action_picker?:                             string;
     show_ent_onboarding?:                           boolean;
     folders_enabled?:                               boolean;
     folder_data?:                                   string;
@@ -369,21 +378,13 @@ export interface SelfPrefs {
     failover_proxy_check_completed?:                number;
     edge_upload_proxy_check_completed?:             number;
     app_subdomain_check_completed?:                 number;
+    add_apps_prompt_dismissed?:                     boolean;
+    add_channel_prompt_dismissed?:                  boolean;
     channel_sidebar_hide_invite?:                   boolean;
     in_prod_surveys_enabled?:                       boolean;
+    dismissed_installed_app_dm_suggestions?:        string;
     tz?:                                            string;
     locales_enabled?:                               LocalesEnabled;
-    search_only_show_online?:                       boolean;
-    search_hide_deactivated_users?:                 boolean;
-    sunset_interactive_message_views?:              number;
-    workflow_builder_coachmarks?:                   string;
-    add_apps_prompt_dismissed?:                     boolean;
-    dismissed_installed_app_dm_suggestions?:        string;
-    welcome_place_state?:                           string;
-    set_tz_automatically?:                          boolean;
-    app_action_picker?:                             string;
-    seen_sonic_deluxe_toast?:                       number;
-    add_channel_prompt_dismissed?:                  boolean;
 }
 
 export interface LocalesEnabled {
@@ -438,10 +439,10 @@ export interface Team {
     over_storage_limit?:    boolean;
     messages_count?:        number;
     plan?:                  string;
-    avatar_base_url?:       string;
+    onboarding_channel_id?: string;
     date_create?:           number;
     limit_ts?:              number;
-    onboarding_channel_id?: string;
+    avatar_base_url?:       string;
 }
 
 export interface Icon {
@@ -513,6 +514,7 @@ export interface TeamPrefs {
     who_can_post_in_shared_channels?:        WhoCan;
     allow_shared_channel_perms_override?:    boolean;
     who_can_manage_ext_shared_channels?:     WhoCan;
+    dropbox_legacy_picker?:                  boolean;
     onedrive_enabled_team?:                  boolean;
     enterprise_default_channels?:            string[];
     enterprise_mandatory_channels?:          string[];
@@ -523,6 +525,9 @@ export interface TeamPrefs {
     loud_channel_mentions_limit?:            number;
     show_join_leave?:                        boolean;
     enterprise_mobile_device_check?:         boolean;
+    disable_sidebar_connect_prompts?:        string[];
+    disable_sidebar_install_prompts?:        string[];
+    block_file_download?:                    boolean;
     dnd_enabled?:                            boolean;
     dnd_start_hour?:                         string;
     dnd_end_hour?:                           string;
@@ -553,10 +558,6 @@ export interface TeamPrefs {
     who_can_manage_integrations?:            WhoCan;
     app_whitelist_enabled?:                  boolean;
     invites_limit?:                          boolean;
-    dropbox_legacy_picker?:                  boolean;
-    disable_sidebar_connect_prompts?:        string[];
-    disable_sidebar_install_prompts?:        string[];
-    block_file_download?:                    boolean;
 }
 
 export interface WhoCan {

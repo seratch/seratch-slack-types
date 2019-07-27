@@ -33,22 +33,18 @@ export interface Channel {
 
 export interface Latest {
     type?:           string;
-    text?:           string;
-    files?:          File[];
-    upload?:         boolean;
-    user?:           string;
-    display_as_bot?: boolean;
-    ts?:             string;
     subtype?:        string;
+    text?:           string;
+    ts?:             string;
     username?:       string;
     bot_id?:         string;
     attachments?:    Attachment[];
-    thread_ts?:      string;
-    root?:           Root;
-    team?:           string;
-    blocks?:         Block[];
+    user?:           string;
+    files?:          File[];
+    upload?:         boolean;
+    display_as_bot?: boolean;
     client_msg_id?:  string;
-    icons?:          Icons;
+    team?:           string;
 }
 
 export interface Attachment {
@@ -58,14 +54,10 @@ export interface Attachment {
     bot_id?:                string;
     app_unfurl_url?:        string;
     is_app_unfurl?:         boolean;
-    pretext?:               string;
-    thumb_height?:          number;
-    thumb_width?:           number;
-    thumb_url?:             string;
-    color?:                 string;
-    fields?:                Field[];
     msg_subtype?:           string;
     callback_id?:           string;
+    color?:                 string;
+    pretext?:               string;
     service_url?:           string;
     service_name?:          string;
     service_icon?:          string;
@@ -84,10 +76,14 @@ export interface Attachment {
     title?:                 string;
     title_link?:            string;
     text?:                  string;
+    fields?:                Field[];
     image_url?:             string;
     image_width?:           number;
     image_height?:          number;
     image_bytes?:           number;
+    thumb_url?:             string;
+    thumb_width?:           number;
+    thumb_height?:          number;
     video_html?:            string;
     video_html_width?:      number;
     video_html_height?:     number;
@@ -210,43 +206,44 @@ export interface File {
     username?:             string;
     url_private?:          string;
     url_private_download?: string;
+    thumb_64?:             string;
+    thumb_80?:             string;
+    thumb_360?:            string;
+    thumb_360_w?:          number;
+    thumb_360_h?:          number;
+    thumb_160?:            string;
+    thumb_360_gif?:        string;
+    image_exif_rotation?:  number;
+    original_w?:           number;
+    original_h?:           number;
+    deanimate_gif?:        string;
     permalink?:            string;
     permalink_public?:     string;
+    is_starred?:           boolean;
+    has_rich_preview?:     boolean;
     edit_link?:            string;
     preview?:              string;
     preview_highlight?:    string;
     lines?:                number;
     lines_more?:           number;
     preview_is_truncated?: boolean;
-    is_starred?:           boolean;
-    has_rich_preview?:     boolean;
-}
-
-export interface Icons {
-    emoji?:    string;
-    image_64?: string;
-}
-
-export interface Root {
-    type?:              string;
-    subtype?:           string;
-    text?:              string;
-    ts?:                string;
-    username?:          string;
-    bot_id?:            string;
-    thread_ts?:         string;
-    reply_count?:       number;
-    reply_users_count?: number;
-    latest_reply?:      string;
-    reply_users?:       string[];
-    replies?:           Reply[];
-    subscribed?:        boolean;
-    last_read?:         string;
-}
-
-export interface Reply {
-    user?: string;
-    ts?:   string;
+    thumb_480?:            string;
+    thumb_480_w?:          number;
+    thumb_480_h?:          number;
+    thumb_720?:            string;
+    thumb_720_w?:          number;
+    thumb_720_h?:          number;
+    thumb_800?:            string;
+    thumb_800_w?:          number;
+    thumb_800_h?:          number;
+    thumb_960?:            string;
+    thumb_960_w?:          number;
+    thumb_960_h?:          number;
+    thumb_1024?:           string;
+    thumb_1024_w?:         number;
+    thumb_1024_h?:         number;
+    external_id?:          string;
+    external_url?:         string;
 }
 
 export interface Purpose {

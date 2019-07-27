@@ -85,8 +85,8 @@ export interface Attachment {
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;
-    app_unfurl_url?:        string;
     is_app_unfurl?:         boolean;
+    app_unfurl_url?:        string;
     title?:                 string;
     title_link?:            string;
     text?:                  string;
@@ -259,6 +259,8 @@ export interface File {
     editable?:             boolean;
     is_external?:          boolean;
     external_type?:        string;
+    external_id?:          string;
+    external_url?:         string;
     username?:             string;
     size?:                 number;
     url_private?:          string;
@@ -302,6 +304,9 @@ export interface File {
     thumb_1024_w?:         string;
     thumb_1024_h?:         string;
     thumb_video?:          string;
+    thumb_pdf?:            string;
+    thumb_pdf_w?:          string;
+    thumb_pdf_h?:          string;
     image_exif_rotation?:  number;
     original_w?:           string;
     original_h?:           string;

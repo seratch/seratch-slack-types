@@ -18,6 +18,8 @@ export interface Channel {
     members?:         string[];
     topic?:           Purpose;
     purpose?:         Purpose;
+    is_read_only?:    boolean;
+    is_thread_only?:  boolean;
 }
 
 export interface Purpose {

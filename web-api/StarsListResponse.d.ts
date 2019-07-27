@@ -74,12 +74,15 @@ export interface Message {
     subtype?:           string;
     text?:              string;
     ts?:                string;
+    username?:          string;
     bot_id?:            string;
-    attachments?:       Attachment[];
+    blocks?:            Block[];
     permalink?:         string;
     is_starred?:        boolean;
+    attachments?:       Attachment[];
     client_msg_id?:     string;
     user?:              string;
+    team?:              string;
     thread_ts?:         string;
     reply_count?:       number;
     reply_users_count?: number;
@@ -89,9 +92,6 @@ export interface Message {
     subscribed?:        boolean;
     last_read?:         string;
     reactions?:         Reaction[];
-    team?:              string;
-    username?:          string;
-    blocks?:            Block[];
 }
 
 export interface Attachment {
@@ -117,8 +117,8 @@ export interface Attachment {
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;
-    app_unfurl_url?:        string;
     is_app_unfurl?:         boolean;
+    app_unfurl_url?:        string;
     title?:                 string;
     title_link?:            string;
     text?:                  string;

@@ -1,10 +1,10 @@
-export interface FilesListResponse {
-    ok?:       boolean;
-    files?:    File[];
-    paging?:   Paging;
-    error?:    string;
-    needed?:   string;
-    provided?: string;
+export interface FilesRemoteListResponse {
+    ok?:                boolean;
+    error?:             string;
+    needed?:            string;
+    provided?:          string;
+    files?:             File[];
+    response_metadata?: ResponseMetadata;
 }
 
 export interface File {
@@ -28,39 +28,38 @@ export interface File {
     username?:             string;
     url_private?:          string;
     url_private_download?: string;
-    thumb_64?:             string;
-    thumb_80?:             string;
-    thumb_360?:            string;
-    thumb_360_w?:          number;
-    thumb_360_h?:          number;
-    thumb_480?:            string;
-    thumb_480_w?:          number;
-    thumb_480_h?:          number;
-    thumb_160?:            string;
-    thumb_360_gif?:        string;
-    thumb_480_gif?:        string;
-    image_exif_rotation?:  number;
-    original_w?:           number;
-    original_h?:           number;
-    deanimate_gif?:        string;
     permalink?:            string;
-    permalink_public?:     string;
-    channels?:             string[];
-    groups?:               string[];
-    ims?:                  string[];
-    comments_count?:       number;
     edit_link?:            string;
     preview?:              string;
     preview_highlight?:    string;
     lines?:                number;
     lines_more?:           number;
     preview_is_truncated?: boolean;
+    channels?:             string[];
+    groups?:               string[];
+    ims?:                  string[];
+    comments_count?:       number;
+    thumb_64?:             string;
+    thumb_80?:             string;
+    thumb_360?:            string;
+    thumb_360_w?:          number;
+    thumb_360_h?:          number;
+    thumb_160?:            string;
+    thumb_360_gif?:        string;
+    image_exif_rotation?:  number;
+    original_w?:           number;
+    original_h?:           number;
+    deanimate_gif?:        string;
+    thumb_480?:            string;
+    thumb_480_w?:          number;
+    thumb_480_h?:          number;
     thumb_720?:            string;
     thumb_720_w?:          number;
     thumb_720_h?:          number;
     thumb_800?:            string;
     thumb_800_w?:          number;
     thumb_800_h?:          number;
+    thumb_480_gif?:        string;
     thumb_960?:            string;
     thumb_960_w?:          number;
     thumb_960_h?:          number;
@@ -69,9 +68,6 @@ export interface File {
     thumb_1024_h?:         number;
 }
 
-export interface Paging {
-    count?: number;
-    total?: number;
-    page?:  number;
-    pages?: number;
+export interface ResponseMetadata {
+    next_cursor?: string;
 }

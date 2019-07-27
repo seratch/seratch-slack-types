@@ -29,6 +29,8 @@ export interface File {
     editable?:             boolean;
     is_external?:          boolean;
     external_type?:        string;
+    external_id?:          string;
+    external_url?:         string;
     username?:             string;
     size?:                 number;
     url_private?:          string;
@@ -141,8 +143,8 @@ export interface Attachment {
     is_msg_unfurl?:         boolean;
     is_reply_unfurl?:       boolean;
     is_thread_root_unfurl?: boolean;
-    app_unfurl_url?:        string;
     is_app_unfurl?:         boolean;
+    app_unfurl_url?:        string;
     title?:                 string;
     title_link?:            string;
     text?:                  string;
