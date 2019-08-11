@@ -1,10 +1,10 @@
 export interface ChatPostMessageResponse {
     ok?:                boolean;
-    error?:             string;
-    response_metadata?: ResponseMetadata;
     channel?:           string;
     ts?:                string;
     message?:           Message;
+    error?:             string;
+    response_metadata?: ResponseMetadata;
     needed?:            string;
     provided?:          string;
 }
@@ -16,12 +16,12 @@ export interface Message {
     ts?:          string;
     username?:    string;
     bot_id?:      string;
-    thread_ts?:   string;
     blocks?:      Block[];
+    thread_ts?:   string;
     root?:        Root;
-    icons?:       Icons;
     attachments?: Attachment[];
     user?:        string;
+    icons?:       Icons;
     team?:        string;
 }
 

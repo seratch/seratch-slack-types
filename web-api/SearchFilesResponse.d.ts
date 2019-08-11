@@ -35,26 +35,6 @@ export interface Match {
     username?:             string;
     url_private?:          string;
     url_private_download?: string;
-    permalink?:            string;
-    permalink_public?:     string;
-    subject?:              string;
-    to?:                   Cc[];
-    from?:                 Cc[];
-    cc?:                   Cc[];
-    attachments?:          Attachment[];
-    plain_text?:           string;
-    preview?:              string;
-    preview_plain_text?:   string;
-    has_more?:             boolean;
-    sent_to_self?:         boolean;
-    bot_id?:               string;
-    is_starred?:           boolean;
-    shares?:               Shares;
-    channels?:             string[];
-    groups?:               string[];
-    ims?:                  string[];
-    has_rich_preview?:     boolean;
-    score?:                string;
     thumb_64?:             string;
     thumb_80?:             string;
     thumb_360?:            string;
@@ -64,6 +44,49 @@ export interface Match {
     image_exif_rotation?:  number;
     original_w?:           number;
     original_h?:           number;
+    permalink?:            string;
+    permalink_public?:     string;
+    is_starred?:           boolean;
+    shares?:               Shares;
+    channels?:             string[];
+    groups?:               string[];
+    ims?:                  string[];
+    has_rich_preview?:     boolean;
+    score?:                string;
+    top_file?:             boolean;
+    thumb_480?:            string;
+    thumb_480_w?:          number;
+    thumb_480_h?:          number;
+    thumb_720?:            string;
+    thumb_720_w?:          number;
+    thumb_720_h?:          number;
+    thumb_800?:            string;
+    thumb_800_w?:          number;
+    thumb_800_h?:          number;
+    thumb_960?:            string;
+    thumb_960_w?:          number;
+    thumb_960_h?:          number;
+    thumb_1024?:           string;
+    thumb_1024_w?:         number;
+    thumb_1024_h?:         number;
+    external_id?:          string;
+    external_url?:         string;
+    edit_link?:            string;
+    preview?:              string;
+    preview_highlight?:    string;
+    lines?:                number;
+    lines_more?:           number;
+    preview_is_truncated?: boolean;
+    subject?:              string;
+    to?:                   Cc[];
+    from?:                 Cc[];
+    cc?:                   Cc[];
+    attachments?:          Attachment[];
+    plain_text?:           string;
+    preview_plain_text?:   string;
+    has_more?:             boolean;
+    sent_to_self?:         boolean;
+    bot_id?:               string;
 }
 
 export interface Attachment {
@@ -142,7 +165,15 @@ export interface Cc {
 }
 
 export interface Shares {
-    public?: { [key: string]: Public[] };
+    public?:  { [key: string]: Public[] };
+    private?: { [key: string]: Private[] };
+}
+
+export interface Private {
+    reply_users?:       string[];
+    reply_users_count?: number;
+    reply_count?:       number;
+    ts?:                string;
 }
 
 export interface Public {

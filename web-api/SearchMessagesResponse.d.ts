@@ -8,10 +8,11 @@ export interface SearchMessagesResponse {
 }
 
 export interface Messages {
-    total?:      number;
-    pagination?: Pagination;
-    paging?:     Paging;
-    matches?:    Match[];
+    total?:       number;
+    pagination?:  Pagination;
+    paging?:      Paging;
+    matches?:     Match[];
+    refinements?: string[];
 }
 
 export interface Match {
@@ -24,9 +25,9 @@ export interface Match {
     ts?:          string;
     text?:        string;
     permalink?:   string;
-    attachments?: Attachment[];
-    previous?:    Previous;
     previous_2?:  Previous;
+    previous?:    Previous;
+    attachments?: Attachment[];
 }
 
 export interface Attachment {
@@ -70,7 +71,7 @@ export interface Attachment {
     video_html_height?:     number;
     footer?:                string;
     footer_icon?:           string;
-    ts?:                    number | string;
+    ts?:                    string;
     mrkdwn_in?:             string[];
     actions?:               Action[];
     filename?:              string;
@@ -111,16 +112,18 @@ export interface Channel {
     is_mpim?:               boolean;
     pending_shared?:        string[];
     is_pending_ext_shared?: boolean;
+    user?:                  string;
 }
 
 export interface Previous {
-    type?:      string;
-    user?:      string;
-    username?:  string;
-    ts?:        string;
-    text?:      string;
-    iid?:       string;
-    permalink?: string;
+    type?:        string;
+    user?:        string;
+    username?:    string;
+    ts?:          string;
+    text?:        string;
+    iid?:         string;
+    permalink?:   string;
+    attachments?: Attachment[];
 }
 
 export interface Pagination {

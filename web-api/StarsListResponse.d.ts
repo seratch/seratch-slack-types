@@ -64,9 +64,45 @@ export interface File {
     groups?:               string[];
     ims?:                  string[];
     has_rich_preview?:     boolean;
+    thumb_64?:             string;
+    thumb_80?:             string;
+    thumb_360?:            string;
+    thumb_360_w?:          number;
+    thumb_360_h?:          number;
+    thumb_480?:            string;
+    thumb_480_w?:          number;
+    thumb_480_h?:          number;
+    thumb_160?:            string;
+    thumb_720?:            string;
+    thumb_720_w?:          number;
+    thumb_720_h?:          number;
+    thumb_800?:            string;
+    thumb_800_w?:          number;
+    thumb_800_h?:          number;
+    thumb_960?:            string;
+    thumb_960_w?:          number;
+    thumb_960_h?:          number;
+    thumb_1024?:           string;
+    thumb_1024_w?:         number;
+    thumb_1024_h?:         number;
+    image_exif_rotation?:  number;
+    original_w?:           number;
+    original_h?:           number;
+    external_id?:          string;
+    external_url?:         string;
 }
 
 export interface Shares {
+    public?: { [key: string]: Public[] };
+}
+
+export interface Public {
+    reply_users?:       string[];
+    reply_users_count?: number;
+    reply_count?:       number;
+    ts?:                string;
+    channel_name?:      string;
+    team_id?:           string;
 }
 
 export interface Message {
@@ -74,15 +110,12 @@ export interface Message {
     subtype?:           string;
     text?:              string;
     ts?:                string;
-    username?:          string;
     bot_id?:            string;
-    blocks?:            Block[];
+    attachments?:       Attachment[];
     permalink?:         string;
     is_starred?:        boolean;
-    attachments?:       Attachment[];
     client_msg_id?:     string;
     user?:              string;
-    team?:              string;
     thread_ts?:         string;
     reply_count?:       number;
     reply_users_count?: number;
@@ -92,6 +125,9 @@ export interface Message {
     subscribed?:        boolean;
     last_read?:         string;
     reactions?:         Reaction[];
+    username?:          string;
+    blocks?:            Block[];
+    team?:              string;
 }
 
 export interface Attachment {

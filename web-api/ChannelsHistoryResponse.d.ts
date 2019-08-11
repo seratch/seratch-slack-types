@@ -19,22 +19,25 @@ export interface Message {
     thread_ts?:         string;
     root?:              Root;
     username?:          string;
-    icons?:             Icons;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
     reply_users?:       string[];
-    replies?:           Array<ReplyClass | string>;
+    replies?:           Array<Edited | string>;
     subscribed?:        boolean;
-    attachments?:       Attachment[];
+    last_read?:         string;
     blocks?:            Block[];
-    team?:              string;
-    reactions?:         Reaction[];
     files?:             File[];
     upload?:            boolean;
     display_as_bot?:    boolean;
-    last_read?:         string;
+    attachments?:       Attachment[];
+    reactions?:         Reaction[];
+    icons?:             Icons;
     client_msg_id?:     string;
+    parent_user_id?:    string;
+    x_files?:           string[];
+    team?:              string;
+    edited?:            Edited;
 }
 
 export interface Attachment {
@@ -174,6 +177,11 @@ export interface InitialOption {
     value?: string;
 }
 
+export interface Edited {
+    user?: string;
+    ts?:   string;
+}
+
 export interface File {
     id?:                   string;
     created?:              number;
@@ -246,11 +254,6 @@ export interface Reaction {
     count?: number;
 }
 
-export interface ReplyClass {
-    user?: string;
-    ts?:   string;
-}
-
 export interface Root {
     type?:              string;
     subtype?:           string;
@@ -263,7 +266,7 @@ export interface Root {
     reply_users_count?: number;
     latest_reply?:      string;
     reply_users?:       string[];
-    replies?:           ReplyClass[];
+    replies?:           Edited[];
     subscribed?:        boolean;
     last_read?:         string;
 }

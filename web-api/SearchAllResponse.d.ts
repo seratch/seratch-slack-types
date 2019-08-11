@@ -37,26 +37,6 @@ export interface FilesMatch {
     username?:             string;
     url_private?:          string;
     url_private_download?: string;
-    permalink?:            string;
-    permalink_public?:     string;
-    subject?:              string;
-    to?:                   Cc[];
-    from?:                 Cc[];
-    cc?:                   Cc[];
-    attachments?:          PreviousAttachment[];
-    plain_text?:           string;
-    preview?:              string;
-    preview_plain_text?:   string;
-    has_more?:             boolean;
-    sent_to_self?:         boolean;
-    bot_id?:               string;
-    is_starred?:           boolean;
-    shares?:               Shares;
-    channels?:             string[];
-    groups?:               string[];
-    ims?:                  string[];
-    has_rich_preview?:     boolean;
-    score?:                string;
     thumb_64?:             string;
     thumb_80?:             string;
     thumb_360?:            string;
@@ -66,16 +46,55 @@ export interface FilesMatch {
     image_exif_rotation?:  number;
     original_w?:           number;
     original_h?:           number;
+    permalink?:            string;
+    permalink_public?:     string;
+    is_starred?:           boolean;
+    shares?:               Shares;
+    channels?:             string[];
+    groups?:               string[];
+    ims?:                  string[];
+    has_rich_preview?:     boolean;
+    score?:                string;
+    top_file?:             boolean;
+    thumb_480?:            string;
+    thumb_480_w?:          number;
+    thumb_480_h?:          number;
+    thumb_720?:            string;
+    thumb_720_w?:          number;
+    thumb_720_h?:          number;
+    thumb_800?:            string;
+    thumb_800_w?:          number;
+    thumb_800_h?:          number;
+    thumb_960?:            string;
+    thumb_960_w?:          number;
+    thumb_960_h?:          number;
+    thumb_1024?:           string;
+    thumb_1024_w?:         number;
+    thumb_1024_h?:         number;
+    external_id?:          string;
+    external_url?:         string;
     edit_link?:            string;
+    preview?:              string;
     preview_highlight?:    string;
     lines?:                number;
     lines_more?:           number;
     preview_is_truncated?: boolean;
-    thumb_360_gif?:        string;
-    deanimate_gif?:        string;
+    subject?:              string;
+    to?:                   Cc[];
+    from?:                 Cc[];
+    cc?:                   Cc[];
+    attachments?:          Attachment[];
+    plain_text?:           string;
+    preview_plain_text?:   string;
+    has_more?:             boolean;
+    sent_to_self?:         boolean;
+    bot_id?:               string;
+    thumb_pdf?:            string;
+    thumb_pdf_w?:          number;
+    thumb_pdf_h?:          number;
 }
 
-export interface PreviousAttachment {
+export interface Attachment {
     msg_subtype?:           string;
     fallback?:              string;
     callback_id?:           string;
@@ -151,7 +170,15 @@ export interface Cc {
 }
 
 export interface Shares {
-    public?: { [key: string]: Public[] };
+    public?:  { [key: string]: Public[] };
+    private?: { [key: string]: Private[] };
+}
+
+export interface Private {
+    reply_users?:       string[];
+    reply_users_count?: number;
+    reply_count?:       number;
+    ts?:                string;
 }
 
 export interface Public {
@@ -180,10 +207,11 @@ export interface Paging {
 }
 
 export interface Messages {
-    total?:      number;
-    pagination?: Pagination;
-    paging?:     Paging;
-    matches?:    MessagesMatch[];
+    total?:       number;
+    pagination?:  Pagination;
+    paging?:      Paging;
+    matches?:     MessagesMatch[];
+    refinements?: string[];
 }
 
 export interface MessagesMatch {
@@ -196,94 +224,16 @@ export interface MessagesMatch {
     ts?:          string;
     text?:        string;
     permalink?:   string;
-    attachments?: PurpleAttachment[];
+    attachments?: Attachment[];
     previous?:    Previous;
     previous_2?:  Previous;
-}
-
-export interface PurpleAttachment {
-    msg_subtype?:           string;
-    fallback?:              string;
-    callback_id?:           string;
-    color?:                 string;
-    pretext?:               string;
-    service_url?:           string;
-    service_name?:          string;
-    service_icon?:          string;
-    author_name?:           string;
-    author_link?:           string;
-    author_icon?:           string;
-    from_url?:              string;
-    original_url?:          string;
-    author_subname?:        string;
-    channel_id?:            string;
-    channel_name?:          string;
-    id?:                    number;
-    bot_id?:                string;
-    indent?:                boolean;
-    is_msg_unfurl?:         boolean;
-    is_reply_unfurl?:       boolean;
-    is_thread_root_unfurl?: boolean;
-    is_app_unfurl?:         boolean;
-    app_unfurl_url?:        string;
-    title?:                 string;
-    title_link?:            string;
-    text?:                  string;
-    fields?:                Field[];
-    image_url?:             string;
-    image_width?:           number;
-    image_height?:          number;
-    image_bytes?:           number;
-    thumb_url?:             string;
-    thumb_width?:           number;
-    thumb_height?:          number;
-    video_html?:            string;
-    video_html_width?:      number;
-    video_html_height?:     number;
-    footer?:                string;
-    footer_icon?:           string;
-    ts?:                    number | string;
-    mrkdwn_in?:             string[];
-    actions?:               Action[];
-    filename?:              string;
-    size?:                  number;
-    mimetype?:              string;
-    url?:                   string;
-    metadata?:              string;
-}
-
-export interface Channel {
-    id?:                    string;
-    is_channel?:            boolean;
-    is_group?:              boolean;
-    is_im?:                 boolean;
-    name?:                  string;
-    is_shared?:             boolean;
-    is_org_shared?:         boolean;
-    is_ext_shared?:         boolean;
-    is_private?:            boolean;
-    is_mpim?:               boolean;
-    pending_shared?:        string[];
-    is_pending_ext_shared?: boolean;
-    user?:                  string;
-}
-
-export interface Previous {
-    type?:        string;
-    user?:        string;
-    username?:    string;
-    ts?:          string;
-    text?:        string;
-    iid?:         string;
-    permalink?:   string;
     blocks?:      Block[];
-    attachments?: PreviousAttachment[];
 }
 
 export interface Block {
     type?:         string;
-    block_id?:     string;
     elements?:     Element[];
+    block_id?:     string;
     fallback?:     string;
     image_url?:    string;
     image_width?:  number;
@@ -346,6 +296,34 @@ export interface Text {
 export interface InitialOption {
     text?:  Text;
     value?: string;
+}
+
+export interface Channel {
+    id?:                    string;
+    is_channel?:            boolean;
+    is_group?:              boolean;
+    is_im?:                 boolean;
+    name?:                  string;
+    is_shared?:             boolean;
+    is_org_shared?:         boolean;
+    is_ext_shared?:         boolean;
+    is_private?:            boolean;
+    is_mpim?:               boolean;
+    pending_shared?:        string[];
+    is_pending_ext_shared?: boolean;
+    user?:                  string;
+}
+
+export interface Previous {
+    type?:        string;
+    user?:        string;
+    username?:    string;
+    ts?:          string;
+    text?:        string;
+    iid?:         string;
+    permalink?:   string;
+    blocks?:      Block[];
+    attachments?: Attachment[];
 }
 
 export interface Posts {

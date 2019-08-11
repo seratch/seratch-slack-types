@@ -26,7 +26,6 @@ export interface User {
     is_app_user?:         boolean;
     updated?:             number;
     has_2fa?:             boolean;
-    is_stranger?:         boolean;
 }
 
 export interface Profile {
@@ -57,7 +56,4 @@ export interface Profile {
     status_text_canonical?:   string;
     team?:                    string;
     is_custom_image?:         boolean;
-    guest_channels?:          string;
-    guest_invited_by?:        string;
-    email?:                   string;
 }

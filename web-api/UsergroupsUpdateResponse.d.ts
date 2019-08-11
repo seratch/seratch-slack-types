@@ -1,7 +1,7 @@
 export interface UsergroupsUpdateResponse {
     ok?:        boolean;
-    usergroup?: Usergroup;
     error?:     string;
+    usergroup?: Usergroup;
     needed?:    string;
     provided?:  string;
 }

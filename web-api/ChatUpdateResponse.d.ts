@@ -25,6 +25,7 @@ export interface Message {
     replies?:           Reply[];
     subscribed?:        boolean;
     last_read?:         string;
+    team?:              string;
 }
 
 export interface Block {

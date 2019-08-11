@@ -339,6 +339,7 @@ export interface File {
     thumb_pdf?:            string;
     thumb_pdf_w?:          string;
     thumb_pdf_h?:          string;
+    converted_pdf?:        string;
     image_exif_rotation?:  number;
     original_w?:           string;
     original_h?:           string;

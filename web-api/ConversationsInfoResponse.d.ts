@@ -19,13 +19,11 @@ export interface Channel {
     name_normalized?:            string;
     is_shared?:                  boolean;
     creator?:                    string;
-    is_read_only?:               boolean;
     is_ext_shared?:              boolean;
     is_org_shared?:              boolean;
+    shared_team_ids?:            string[];
     pending_shared?:             string[];
-    pending_connected_team_ids?: string[];
     is_pending_ext_shared?:      boolean;
-    conversation_host_id?:       string;
     is_member?:                  boolean;
     is_private?:                 boolean;
     is_mpim?:                    boolean;
@@ -33,10 +31,8 @@ export interface Channel {
     topic?:                      Purpose;
     purpose?:                    Purpose;
     previous_names?:             string[];
-    shared_team_ids?:            string[];
     locale?:                     string;
-    is_thread_only?:             boolean;
-    is_non_threadable?:          boolean;
+    pending_connected_team_ids?: string[];
 }
 
 export interface Purpose {

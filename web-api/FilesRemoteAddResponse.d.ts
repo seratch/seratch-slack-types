@@ -1,7 +1,7 @@
 export interface FilesRemoteAddResponse {
     ok?:       boolean;
-    error?:    string;
     file?:     File;
+    error?:    string;
     needed?:   string;
     provided?: string;
 }

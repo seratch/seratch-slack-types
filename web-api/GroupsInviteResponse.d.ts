@@ -1,7 +1,7 @@
 export interface GroupsInviteResponse {
     ok?:       boolean;
-    group?:    Group;
     error?:    string;
+    group?:    Group;
     needed?:   string;
     provided?: string;
 }

@@ -20,7 +20,6 @@ export interface Message {
     thread_ts?:         string;
     root?:              Root;
     username?:          string;
-    icons?:             Icons;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
@@ -28,16 +27,18 @@ export interface Message {
     replies?:           Array<Edited | string>;
     subscribed?:        boolean;
     last_read?:         string;
-    attachments?:       Attachment[];
     blocks?:            Block[];
-    team?:              string;
-    reactions?:         Reaction[];
     files?:             File[];
     upload?:            boolean;
     display_as_bot?:    boolean;
+    attachments?:       Attachment[];
+    reactions?:         Reaction[];
+    icons?:             Icons;
     topic?:             string;
     purpose?:           string;
     client_msg_id?:     string;
+    x_files?:           string[];
+    team?:              string;
 }
 
 export interface Attachment {

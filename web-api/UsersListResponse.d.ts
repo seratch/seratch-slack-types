@@ -2,8 +2,8 @@ export interface UsersListResponse {
     ok?:                boolean;
     members?:           Member[];
     cache_ts?:          number;
-    response_metadata?: ResponseMetadata;
     offset?:            string;
+    response_metadata?: ResponseMetadata;
     error?:             string;
     needed?:            string;
     provided?:          string;
