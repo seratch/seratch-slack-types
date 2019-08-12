@@ -1,3 +1,4 @@
+export { AppHomeOpenedPayload } from './AppHomeOpenedPayload';
 export { AppMentionPayload } from './AppMentionPayload';
 export { AppRateLimitedPayload } from './AppRateLimitedPayload';
 export { AppUninstalledPayload } from './AppUninstalledPayload';

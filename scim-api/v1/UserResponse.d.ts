@@ -15,16 +15,23 @@ export interface UserResponse {
     photos?:                                      Photo[];
     groups?:                                      string[];
     addresses?:                                   Address[];
-    phoneNumbers?:                                PhoneNumber[];
-    roles?:                                       Role[];
+    phoneNumbers?:                                Email[];
+    roles?:                                       Email[];
     "urn:scim:schemas:extension:enterprise:1.0"?: UrnScimSchemasExtensionEnterprise10;
 }
 
 export interface Address {
+    streetAddress?: string;
+    locality?:      string;
+    region?:        string;
+    postalCode?:    string;
+    country?:       string;
+    primary?:       boolean;
 }
 
 export interface Email {
     value?:   string;
+    type?:    string;
     primary?: boolean;
 }
 
@@ -38,20 +45,14 @@ export interface Name {
     familyName?: string;
 }
 
-export interface PhoneNumber {
-    type?:    string;
-    primary?: boolean;
-}
-
 export interface Photo {
     value?: string;
     type?:  string;
 }
 
-export interface Role {
-    primary?: boolean;
+export interface UrnScimSchemasExtensionEnterprise10 {
+    manager?: Manager;
 }
 
-export interface UrnScimSchemasExtensionEnterprise10 {
-    manager?: Address;
+export interface Manager {
 }
