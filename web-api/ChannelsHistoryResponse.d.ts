@@ -19,25 +19,23 @@ export interface Message {
     thread_ts?:         string;
     root?:              Root;
     username?:          string;
+    icons?:             Icons;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
     reply_users?:       string[];
     replies?:           Array<Edited | string>;
     subscribed?:        boolean;
-    last_read?:         string;
+    attachments?:       Attachment[];
     blocks?:            Block[];
     files?:             File[];
     upload?:            boolean;
     display_as_bot?:    boolean;
-    attachments?:       Attachment[];
-    reactions?:         Reaction[];
-    icons?:             Icons;
-    client_msg_id?:     string;
-    parent_user_id?:    string;
     x_files?:           string[];
-    team?:              string;
     edited?:            Edited;
+    team?:              string;
+    reactions?:         Reaction[];
+    last_read?:         string;
 }
 
 export interface Attachment {
@@ -81,7 +79,7 @@ export interface Attachment {
     video_html_height?:     number;
     footer?:                string;
     footer_icon?:           string;
-    ts?:                    number | string;
+    ts?:                    string;
     mrkdwn_in?:             string[];
     actions?:               Action[];
     filename?:              string;
@@ -218,15 +216,10 @@ export interface File {
     thumb_360?:            string;
     thumb_360_w?:          number;
     thumb_360_h?:          number;
-    thumb_160?:            string;
-    thumb_360_gif?:        string;
-    image_exif_rotation?:  number;
-    original_w?:           number;
-    original_h?:           number;
-    deanimate_gif?:        string;
     thumb_480?:            string;
     thumb_480_w?:          number;
     thumb_480_h?:          number;
+    thumb_160?:            string;
     thumb_720?:            string;
     thumb_720_w?:          number;
     thumb_720_h?:          number;
@@ -239,6 +232,9 @@ export interface File {
     thumb_1024?:           string;
     thumb_1024_w?:         number;
     thumb_1024_h?:         number;
+    image_exif_rotation?:  number;
+    original_w?:           number;
+    original_h?:           number;
     external_id?:          string;
     external_url?:         string;
 }

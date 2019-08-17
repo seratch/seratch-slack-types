@@ -10,9 +10,9 @@ export interface StarsListResponse {
 export interface Item {
     type?:        string;
     channel?:     string;
-    message?:     Message;
     date_create?: number;
     file?:        File;
+    message?:     Message;
     comment?:     Comment;
 }
 
@@ -47,23 +47,6 @@ export interface File {
     display_as_bot?:       boolean;
     username?:             string;
     url_private?:          string;
-    url_private_download?: string;
-    permalink?:            string;
-    permalink_public?:     string;
-    edit_link?:            string;
-    preview?:              string;
-    preview_highlight?:    string;
-    lines?:                number;
-    lines_more?:           number;
-    preview_is_truncated?: boolean;
-    comments_count?:       number;
-    initial_comment?:      Comment;
-    is_starred?:           boolean;
-    shares?:               Shares;
-    channels?:             string[];
-    groups?:               string[];
-    ims?:                  string[];
-    has_rich_preview?:     boolean;
     thumb_64?:             string;
     thumb_80?:             string;
     thumb_360?:            string;
@@ -88,8 +71,25 @@ export interface File {
     image_exif_rotation?:  number;
     original_w?:           number;
     original_h?:           number;
+    permalink?:            string;
+    comments_count?:       number;
+    is_starred?:           boolean;
+    shares?:               Shares;
+    channels?:             string[];
+    groups?:               string[];
+    ims?:                  string[];
     external_id?:          string;
     external_url?:         string;
+    has_rich_preview?:     boolean;
+    url_private_download?: string;
+    permalink_public?:     string;
+    edit_link?:            string;
+    preview?:              string;
+    preview_highlight?:    string;
+    lines?:                number;
+    lines_more?:           number;
+    preview_is_truncated?: boolean;
+    initial_comment?:      Comment;
 }
 
 export interface Shares {
@@ -110,12 +110,15 @@ export interface Message {
     subtype?:           string;
     text?:              string;
     ts?:                string;
+    username?:          string;
     bot_id?:            string;
-    attachments?:       Attachment[];
+    blocks?:            Block[];
     permalink?:         string;
     is_starred?:        boolean;
+    attachments?:       Attachment[];
     client_msg_id?:     string;
     user?:              string;
+    team?:              string;
     thread_ts?:         string;
     reply_count?:       number;
     reply_users_count?: number;
@@ -125,9 +128,6 @@ export interface Message {
     subscribed?:        boolean;
     last_read?:         string;
     reactions?:         Reaction[];
-    username?:          string;
-    blocks?:            Block[];
-    team?:              string;
 }
 
 export interface Attachment {

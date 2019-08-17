@@ -1,7 +1,7 @@
 export interface GroupsInviteResponse {
     ok?:       boolean;
-    error?:    string;
     group?:    Group;
+    error?:    string;
     needed?:   string;
     provided?: string;
 }
@@ -14,6 +14,8 @@ export interface Group {
     creator?:              string;
     is_archived?:          boolean;
     name_normalized?:      string;
+    is_read_only?:         boolean;
+    is_thread_only?:       boolean;
     is_mpim?:              boolean;
     is_open?:              boolean;
     last_read?:            string;
@@ -24,8 +26,6 @@ export interface Group {
     topic?:                Purpose;
     purpose?:              Purpose;
     priority?:             number;
-    is_read_only?:         boolean;
-    is_thread_only?:       boolean;
 }
 
 export interface Latest {

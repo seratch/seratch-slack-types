@@ -38,84 +38,80 @@ export interface Latest {
     upload?:         boolean;
     user?:           string;
     display_as_bot?: boolean;
-    ts?:             string;
-    subtype?:        string;
-    bot_id?:         string;
-    thread_ts?:      string;
-    root?:           Root;
-    attachments?:    Attachment[];
-    username?:       string;
-    icons?:          Icons;
     x_files?:        string[];
+    ts?:             string;
+    bot_id?:         string;
+    subtype?:        string;
+    username?:       string;
+    blocks?:         Block[];
 }
 
-export interface Attachment {
-    text?:                  string;
-    footer?:                string;
-    id?:                    number;
-    fallback?:              string;
-    msg_subtype?:           string;
-    callback_id?:           string;
-    color?:                 string;
-    pretext?:               string;
-    service_url?:           string;
-    service_name?:          string;
-    service_icon?:          string;
-    author_name?:           string;
-    author_link?:           string;
-    author_icon?:           string;
-    from_url?:              string;
-    original_url?:          string;
-    author_subname?:        string;
-    channel_id?:            string;
-    channel_name?:          string;
-    bot_id?:                string;
-    indent?:                boolean;
-    is_msg_unfurl?:         boolean;
-    is_reply_unfurl?:       boolean;
-    is_thread_root_unfurl?: boolean;
-    is_app_unfurl?:         boolean;
-    app_unfurl_url?:        string;
-    title?:                 string;
-    title_link?:            string;
-    fields?:                Field[];
-    image_url?:             string;
-    image_width?:           number;
-    image_height?:          number;
-    image_bytes?:           number;
-    thumb_url?:             string;
-    thumb_width?:           number;
-    thumb_height?:          number;
-    video_html?:            string;
-    video_html_width?:      number;
-    video_html_height?:     number;
-    footer_icon?:           string;
-    ts?:                    string;
-    mrkdwn_in?:             string[];
-    actions?:               Action[];
-    filename?:              string;
-    size?:                  number;
-    mimetype?:              string;
-    url?:                   string;
-    metadata?:              string;
+export interface Block {
+    type?:         string;
+    block_id?:     string;
+    text?:         Text;
+    accessory?:    Accessory;
+    elements?:     Element[];
+    fallback?:     string;
+    image_url?:    string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+    alt_text?:     string;
+    title?:        Text;
+    fields?:       Text[];
 }
 
-export interface Action {
-    id?:               string;
-    name?:             string;
-    text?:             string;
-    style?:            string;
-    type?:             string;
-    value?:            string;
-    data_source?:      string;
-    min_query_length?: number;
-    url?:              string;
+export interface Accessory {
+    fallback?:     string;
+    image_url?:    string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+    type?:         string;
+    alt_text?:     string;
 }
 
-export interface Field {
-    title?: string;
+export interface Element {
+    type?:                 string;
+    fallback?:             string;
+    text?:                 Text;
+    action_id?:            string;
+    url?:                  string;
+    value?:                string;
+    style?:                string;
+    confirm?:              Confirm;
+    placeholder?:          Text;
+    initial_channel?:      string;
+    initial_conversation?: string;
+    initial_date?:         string;
+    initial_option?:       InitialOption;
+    min_query_length?:     number;
+    image_url?:            string;
+    image_width?:          number;
+    image_height?:         number;
+    image_bytes?:          number;
+    alt_text?:             string;
+    initial_user?:         string;
+}
+
+export interface Confirm {
+    title?:   Text;
+    text?:    Text;
+    confirm?: Text;
+    deny?:    Text;
+}
+
+export interface Text {
+    type?:     string;
+    text?:     string;
+    emoji?:    boolean;
+    verbatim?: boolean;
+}
+
+export interface InitialOption {
+    text?:  Text;
     value?: string;
-    short?: boolean;
 }
 
 export interface File {
@@ -149,33 +145,6 @@ export interface File {
     preview_is_truncated?: boolean;
     is_starred?:           boolean;
     has_rich_preview?:     boolean;
-}
-
-export interface Icons {
-    emoji?:    string;
-    image_64?: string;
-}
-
-export interface Root {
-    type?:              string;
-    subtype?:           string;
-    text?:              string;
-    ts?:                string;
-    username?:          string;
-    bot_id?:            string;
-    thread_ts?:         string;
-    reply_count?:       number;
-    reply_users_count?: number;
-    latest_reply?:      string;
-    reply_users?:       string[];
-    replies?:           Reply[];
-    subscribed?:        boolean;
-    last_read?:         string;
-}
-
-export interface Reply {
-    user?: string;
-    ts?:   string;
 }
 
 export interface Purpose {

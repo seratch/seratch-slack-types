@@ -23,6 +23,7 @@ export interface Channel {
     is_org_shared?:              boolean;
     shared_team_ids?:            string[];
     pending_shared?:             string[];
+    pending_connected_team_ids?: string[];
     is_pending_ext_shared?:      boolean;
     is_member?:                  boolean;
     is_private?:                 boolean;
@@ -32,7 +33,6 @@ export interface Channel {
     purpose?:                    Purpose;
     previous_names?:             string[];
     priority?:                   number;
-    pending_connected_team_ids?: string[];
 }
 
 export interface Purpose {

@@ -16,13 +16,13 @@ export interface Message {
     ts?:          string;
     username?:    string;
     bot_id?:      string;
-    blocks?:      Block[];
     thread_ts?:   string;
-    root?:        Root;
-    attachments?: Attachment[];
     user?:        string;
-    icons?:       Icons;
     team?:        string;
+    blocks?:      Block[];
+    root?:        Root;
+    icons?:       Icons;
+    attachments?: Attachment[];
 }
 
 export interface Attachment {
@@ -183,7 +183,6 @@ export interface Root {
     reply_users?:       string[];
     replies?:           Reply[];
     subscribed?:        boolean;
-    last_read?:         string;
 }
 
 export interface Reply {

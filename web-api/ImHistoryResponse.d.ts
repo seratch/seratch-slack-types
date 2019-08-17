@@ -21,6 +21,9 @@ export interface Message {
     reply_users?:       string[];
     replies?:           Reply[];
     subscribed?:        boolean;
+    client_msg_id?:     string;
+    user?:              string;
+    team?:              string;
 }
 
 export interface Reply {

@@ -1,4 +1,5 @@
 export interface UsersResponse {
+    Errors?:       Errors;
     totalResults?: number;
     itemsPerPage?: number;
     startIndex?:   number;
@@ -18,6 +19,11 @@ export interface UsersResponse {
     emails?:       UsersResponseEmail[];
     photos?:       Photo[];
     groups?:       string[];
+}
+
+export interface Errors {
+    description?: string;
+    code?:        number;
 }
 
 export interface Resource {

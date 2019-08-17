@@ -10,13 +10,14 @@ export interface ChatUpdateResponse {
 }
 
 export interface Message {
-    type?:              string;
-    subtype?:           string;
-    text?:              string;
-    username?:          string;
     bot_id?:            string;
-    blocks?:            Block[];
+    type?:              string;
+    text?:              string;
     user?:              string;
+    team?:              string;
+    subtype?:           string;
+    username?:          string;
+    blocks?:            Block[];
     thread_ts?:         string;
     reply_count?:       number;
     reply_users_count?: number;
@@ -25,12 +26,13 @@ export interface Message {
     replies?:           Reply[];
     subscribed?:        boolean;
     last_read?:         string;
-    team?:              string;
 }
 
 export interface Block {
     type?:         string;
     block_id?:     string;
+    text?:         Text;
+    accessory?:    Accessory;
     elements?:     Element[];
     fallback?:     string;
     image_url?:    string;
@@ -39,28 +41,26 @@ export interface Block {
     image_bytes?:  number;
     alt_text?:     string;
     title?:        Text;
-    text?:         Text;
     fields?:       Text[];
-    accessory?:    Accessory;
 }
 
 export interface Accessory {
-    type?:         string;
     fallback?:     string;
     image_url?:    string;
     image_width?:  number;
     image_height?: number;
     image_bytes?:  number;
+    type?:         string;
     alt_text?:     string;
 }
 
 export interface Element {
     type?:                 string;
-    fallback?:             string;
-    text?:                 Text;
     action_id?:            string;
-    url?:                  string;
+    text?:                 Text;
     value?:                string;
+    fallback?:             string;
+    url?:                  string;
     style?:                string;
     confirm?:              Confirm;
     placeholder?:          Text;

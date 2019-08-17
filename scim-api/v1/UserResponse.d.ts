@@ -1,4 +1,5 @@
 export interface UserResponse {
+    Errors?:                                      Errors;
     schemas?:                                     string[];
     id?:                                          string;
     externalId?:                                  string;
@@ -18,6 +19,11 @@ export interface UserResponse {
     phoneNumbers?:                                Email[];
     roles?:                                       Email[];
     "urn:scim:schemas:extension:enterprise:1.0"?: UrnScimSchemasExtensionEnterprise10;
+}
+
+export interface Errors {
+    description?: string;
+    code?:        number;
 }
 
 export interface Address {

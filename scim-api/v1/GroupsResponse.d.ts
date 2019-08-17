@@ -4,6 +4,12 @@ export interface GroupsResponse {
     startIndex?:   number;
     schemas?:      string[];
     Resources?:    Resource[];
+    Errors?:       Errors;
+}
+
+export interface Errors {
+    description?: string;
+    code?:        number;
 }
 
 export interface Resource {

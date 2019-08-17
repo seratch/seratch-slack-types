@@ -1,7 +1,7 @@
 export interface UsergroupsUsersListResponse {
     ok?:       boolean;
-    error?:    string;
     users?:    string[];
+    error?:    string;
     needed?:   string;
     provided?: string;
 }
