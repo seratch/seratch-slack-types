@@ -36,9 +36,18 @@ export interface User {
     updated?:             number;
     has_2fa?:             boolean;
     presence?:            string;
+    enterprise_user?:     EnterpriseUser;
     two_factor_type?:     string;
     has_files?:           boolean;
     locale?:              string;
+}
+
+export interface EnterpriseUser {
+    id?:              string;
+    enterprise_id?:   string;
+    enterprise_name?: string;
+    is_admin?:        boolean;
+    is_owner?:        boolean;
 }
 
 export interface Profile {

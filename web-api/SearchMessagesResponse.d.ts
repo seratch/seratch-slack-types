@@ -25,6 +25,8 @@ export interface Match {
     text?:        string;
     permalink?:   string;
     attachments?: Attachment[];
+    previous?:    Previous;
+    previous_2?:  Previous;
 }
 
 export interface Attachment {
@@ -109,6 +111,17 @@ export interface Channel {
     is_mpim?:               boolean;
     pending_shared?:        string[];
     is_pending_ext_shared?: boolean;
+}
+
+export interface Previous {
+    type?:        string;
+    user?:        string;
+    username?:    string;
+    ts?:          string;
+    attachments?: Attachment[];
+    text?:        string;
+    iid?:         string;
+    permalink?:   string;
 }
 
 export interface Pagination {

@@ -30,6 +30,17 @@ export interface Member {
     updated?:             number;
     has_2fa?:             boolean;
     presence?:            string;
+    enterprise_user?:     EnterpriseUser;
+    two_factor_type?:     string;
+}
+
+export interface EnterpriseUser {
+    id?:              string;
+    enterprise_id?:   string;
+    enterprise_name?: string;
+    is_admin?:        boolean;
+    is_owner?:        boolean;
+    teams?:           string[];
 }
 
 export interface Profile {

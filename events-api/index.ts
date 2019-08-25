@@ -1,6 +1,7 @@
 export { AppHomeOpenedPayload } from './AppHomeOpenedPayload';
 export { AppMentionPayload } from './AppMentionPayload';
 export { AppRateLimitedPayload } from './AppRateLimitedPayload';
+export { AppRequestedPayload } from './AppRequestedPayload';
 export { AppUninstalledPayload } from './AppUninstalledPayload';
 export { ChannelArchivePayload } from './ChannelArchivePayload';
 export { ChannelCreatedPayload } from './ChannelCreatedPayload';

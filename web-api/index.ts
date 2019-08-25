@@ -1,3 +1,6 @@
+export { AdminAppsApproveResponse } from './AdminAppsApproveResponse';
+export { AdminAppsRequestsListResponse } from './AdminAppsRequestsListResponse';
+export { AdminAppsRestrictResponse } from './AdminAppsRestrictResponse';
 export { AdminUsersSessionResetResponse } from './AdminUsersSessionResetResponse';
 export { ApiTestResponse } from './ApiTestResponse';
 export { AppsPermissionsInfoResponse } from './AppsPermissionsInfoResponse';
