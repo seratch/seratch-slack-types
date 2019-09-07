@@ -183,6 +183,7 @@ export interface Root {
     reply_users?:       string[];
     replies?:           Reply[];
     subscribed?:        boolean;
+    last_read?:         string;
 }
 
 export interface Reply {

@@ -37,6 +37,8 @@ export interface Channel {
     previous_names?:             string[];
     shared_team_ids?:            string[];
     locale?:                     string;
+    internal_team_ids?:          string[];
+    connected_team_ids?:         string[];
 }
 
 export interface Purpose {

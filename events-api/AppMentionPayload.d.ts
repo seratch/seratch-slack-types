@@ -12,6 +12,7 @@ export interface AppMentionPayload {
 export interface Event {
     type?:      string;
     user?:      string;
+    subtype?:   string;
     text?:      string;
     ts?:        string;
     channel?:   string;
