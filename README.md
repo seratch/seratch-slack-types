@@ -42,13 +42,15 @@ app.post('/events', function (req: Request, res: Response) {
     slackApi.api.test({ text: payload.event.text })
       .then((response: WebApi.ApiTestResponse) => { // `response` is typesafe
         if (response.ok) {
-         // so something here
+         // do something here
+        } else {
+         // do something here
         }
       }).catch(reason => {
-        // so something here
+        // do something here
       });
   } else {
-    // so something here
+    // do something here
   }
   res.status(200).json({ message: 'thanks!' });
 });
