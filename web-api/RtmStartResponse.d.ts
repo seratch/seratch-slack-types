@@ -385,6 +385,9 @@ export interface SelfPrefs {
     dismissed_installed_app_dm_suggestions?:        string;
     tz?:                                            string;
     locales_enabled?:                               LocalesEnabled;
+    msg_input_sticky_composer?:                     boolean;
+    seen_workflow_builder_deluxe_toast?:            boolean;
+    workflow_builder_intro_modal_clicked_through?:  boolean;
 }
 
 export interface LocalesEnabled {
@@ -559,6 +562,9 @@ export interface TeamPrefs {
     who_can_manage_integrations?:            WhoCan;
     app_whitelist_enabled?:                  boolean;
     invites_limit?:                          boolean;
+    onedrive_app_installed?:                 boolean;
+    workflow_builder_enabled?:               boolean;
+    box_app_installed?:                      boolean;
 }
 
 export interface WhoCan {

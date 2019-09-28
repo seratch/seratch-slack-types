@@ -80,6 +80,8 @@ export interface FilesMatch {
     thumb_pdf?:            string;
     thumb_pdf_w?:          number;
     thumb_pdf_h?:          number;
+    thumb_360_gif?:        string;
+    deanimate_gif?:        string;
 }
 
 export interface Shares {

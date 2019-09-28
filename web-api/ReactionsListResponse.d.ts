@@ -37,6 +37,9 @@ export interface Message {
     subscribed?:        boolean;
     last_read?:         string;
     inviter?:           string;
+    user_team?:         string;
+    source_team?:       string;
+    user_profile?:      UserProfile;
 }
 
 export interface Attachment {
@@ -193,6 +196,18 @@ export interface Reaction {
 export interface Reply {
     user?: string;
     ts?:   string;
+}
+
+export interface UserProfile {
+    avatar_hash?:         string;
+    image_72?:            string;
+    first_name?:          string;
+    real_name?:           string;
+    display_name?:        string;
+    team?:                string;
+    name?:                string;
+    is_restricted?:       boolean;
+    is_ultra_restricted?: boolean;
 }
 
 export interface Paging {

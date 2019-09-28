@@ -150,3 +150,6 @@ export { UsersProfileSetResponse } from './UsersProfileSetResponse';
 export { UsersSetActiveResponse } from './UsersSetActiveResponse';
 export { UsersSetPhotoResponse } from './UsersSetPhotoResponse';
 export { UsersSetPresenceResponse } from './UsersSetPresenceResponse';
+export { ViewsOpenResponse } from './ViewsOpenResponse';
+export { ViewsPushResponse } from './ViewsPushResponse';
+export { ViewsUpdateResponse } from './ViewsUpdateResponse';
