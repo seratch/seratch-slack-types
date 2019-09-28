@@ -270,7 +270,10 @@
         "fr-FR": "",
         "pt-BR": "",
         "ja-JP": ""
-      }
+      },
+      "msg_input_sticky_composer": false,
+      "seen_workflow_builder_deluxe_toast": false,
+      "workflow_builder_intro_modal_clicked_through": false
     },
     "created": 12345,
     "manual_presence": ""
@@ -419,7 +422,10 @@
         ]
       },
       "app_whitelist_enabled": false,
-      "invites_limit": false
+      "invites_limit": false,
+      "onedrive_app_installed": false,
+      "workflow_builder_enabled": false,
+      "box_app_installed": false
     },
     "icon": {
       "image_34": "https://www.example.com/",
