@@ -134,6 +134,7 @@ export interface MessagesMatch {
     previous?:    Previous;
     previous_2?:  Previous;
     blocks?:      Block[];
+    is_mpim?:     boolean;
 }
 
 export interface MatchAttachment {
@@ -287,6 +288,7 @@ export interface Channel {
     pending_shared?:        string[];
     is_pending_ext_shared?: boolean;
     user?:                  string;
+    name_normalized?:       string;
 }
 
 export interface Previous {

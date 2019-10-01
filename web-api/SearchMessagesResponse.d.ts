@@ -111,6 +111,7 @@ export interface Channel {
     is_mpim?:               boolean;
     pending_shared?:        string[];
     is_pending_ext_shared?: boolean;
+    name_normalized?:       string;
 }
 
 export interface Previous {

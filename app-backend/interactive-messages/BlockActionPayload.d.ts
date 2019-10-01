@@ -9,18 +9,19 @@ export interface BlockActionPayload {
     channel?:      Channel;
     message?:      Message;
     response_url?: string;
+    view?:         View;
     actions?:      BlockActionPayloadAction[];
 }
 
 export interface BlockActionPayloadAction {
     action_id?:             string;
     block_id?:              string;
-    text?:                  Placeholder;
+    text?:                  Close;
     value?:                 string;
     type?:                  string;
     action_ts?:             string;
     url?:                   string;
-    placeholder?:           Placeholder;
+    placeholder?:           Close;
     selected_option?:       Option;
     selected_user?:         string;
     initial_user?:          string;
@@ -33,7 +34,7 @@ export interface BlockActionPayloadAction {
     initial_date?:          string;
 }
 
-export interface Placeholder {
+export interface Close {
     type?:     Type;
     text?:     string;
     emoji?:    boolean;
@@ -47,7 +48,7 @@ export enum Type {
 }
 
 export interface Option {
-    text?:  Placeholder;
+    text?:  Close;
     value?: string;
 }
 
@@ -190,9 +191,9 @@ export interface Block {
     image_height?: number;
     image_bytes?:  number;
     alt_text?:     string;
-    title?:        Placeholder;
-    text?:         Placeholder;
-    fields?:       Placeholder[];
+    title?:        Close;
+    text?:         Close;
+    fields?:       Close[];
     accessory?:    Accessory;
 }
 
@@ -209,13 +210,13 @@ export interface Accessory {
 export interface Element {
     type?:                 string;
     fallback?:             string;
-    text?:                 Placeholder;
+    text?:                 Close;
     action_id?:            string;
     url?:                  string;
     value?:                string;
     style?:                string;
     confirm?:              Confirm;
-    placeholder?:          Placeholder;
+    placeholder?:          Close;
     initial_channel?:      string;
     initial_conversation?: string;
     initial_date?:         string;
@@ -230,10 +231,10 @@ export interface Element {
 }
 
 export interface Confirm {
-    title?:   Placeholder;
-    text?:    Placeholder;
-    confirm?: Placeholder;
-    deny?:    Placeholder;
+    title?:   Close;
+    text?:    Close;
+    confirm?: Close;
+    deny?:    Close;
 }
 
 export interface Comment {
@@ -427,4 +428,27 @@ export interface User {
     username?: string;
     name?:     string;
     team_id?:  string;
+}
+
+export interface View {
+    id?:               string;
+    team_id?:          string;
+    type?:             string;
+    title?:            Close;
+    submit?:           Close;
+    close?:            Close;
+    private_metadata?: string;
+    callback_id?:      string;
+    external_id?:      string;
+    state?:            State;
+    hash?:             string;
+    clear_on_close?:   boolean;
+    notify_on_close?:  boolean;
+    root_view_id?:     string;
+    previous_view_id?: string;
+    app_id?:           string;
+    bot_id?:           string;
+}
+
+export interface State {
 }
