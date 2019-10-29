@@ -26,6 +26,7 @@ export interface Message {
     replies?:           Reply[];
     subscribed?:        boolean;
     last_read?:         string;
+    bot_profile?:       BotProfile;
 }
 
 export interface Block {
@@ -94,6 +95,22 @@ export interface Text {
 export interface InitialOption {
     text?:  Text;
     value?: string;
+}
+
+export interface BotProfile {
+    id?:      string;
+    deleted?: boolean;
+    name?:    string;
+    updated?: number;
+    app_id?:  string;
+    icons?:   Icons;
+    team_id?: string;
+}
+
+export interface Icons {
+    image_36?: string;
+    image_48?: string;
+    image_72?: string;
 }
 
 export interface Reply {

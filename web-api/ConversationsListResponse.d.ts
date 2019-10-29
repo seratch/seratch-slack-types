@@ -33,6 +33,13 @@ export interface Channel {
     purpose?:                    Purpose;
     previous_names?:             string[];
     num_members?:                number;
+    is_moved?:                   number;
+    internal_team_ids?:          string[];
+    is_global_shared?:           boolean;
+    is_org_default?:             boolean;
+    is_org_mandatory?:           boolean;
+    conversation_host_id?:       string;
+    enterprise_id?:              string;
 }
 
 export interface Purpose {

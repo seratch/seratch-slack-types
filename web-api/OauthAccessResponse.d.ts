@@ -7,6 +7,7 @@ export interface OauthAccessResponse {
     token_type?:       string;
     access_token?:     string;
     scope?:            string;
+    enterprise_id?:    string;
     team_name?:        string;
     team_id?:          string;
     user_id?:          string;

@@ -112,6 +112,7 @@ export interface Channel {
     pending_shared?:        string[];
     is_pending_ext_shared?: boolean;
     name_normalized?:       string;
+    user?:                  string;
 }
 
 export interface Previous {
@@ -123,6 +124,7 @@ export interface Previous {
     text?:        string;
     iid?:         string;
     permalink?:   string;
+    blocks?:      Block[];
 }
 
 export interface PreviousAttachment {
@@ -174,6 +176,74 @@ export interface PreviousAttachment {
     mimetype?:              string;
     url?:                   string;
     metadata?:              string;
+}
+
+export interface Block {
+    type?:         string;
+    elements?:     Element[];
+    block_id?:     string;
+    fallback?:     string;
+    image_url?:    string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+    alt_text?:     string;
+    title?:        Text;
+    text?:         Text;
+    fields?:       Text[];
+    accessory?:    Accessory;
+}
+
+export interface Accessory {
+    type?:         string;
+    fallback?:     string;
+    image_url?:    string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+    alt_text?:     string;
+}
+
+export interface Element {
+    type?:                 string;
+    fallback?:             string;
+    text?:                 Text;
+    action_id?:            string;
+    url?:                  string;
+    value?:                string;
+    style?:                string;
+    confirm?:              Confirm;
+    placeholder?:          Text;
+    initial_channel?:      string;
+    initial_conversation?: string;
+    initial_date?:         string;
+    initial_option?:       InitialOption;
+    min_query_length?:     number;
+    image_url?:            string;
+    image_width?:          number;
+    image_height?:         number;
+    image_bytes?:          number;
+    alt_text?:             string;
+    initial_user?:         string;
+}
+
+export interface Confirm {
+    title?:   Text;
+    text?:    Text;
+    confirm?: Text;
+    deny?:    Text;
+}
+
+export interface Text {
+    type?:     string;
+    text?:     string;
+    emoji?:    boolean;
+    verbatim?: boolean;
+}
+
+export interface InitialOption {
+    text?:  Text;
+    value?: string;
 }
 
 export interface Pagination {

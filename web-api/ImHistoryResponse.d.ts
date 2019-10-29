@@ -1,10 +1,11 @@
 export interface ImHistoryResponse {
-    ok?:       boolean;
-    messages?: Message[];
-    has_more?: boolean;
-    error?:    string;
-    needed?:   string;
-    provided?: string;
+    ok?:                    boolean;
+    messages?:              Message[];
+    has_more?:              boolean;
+    channel_actions_count?: number;
+    error?:                 string;
+    needed?:                string;
+    provided?:              string;
 }
 
 export interface Message {
@@ -24,6 +25,7 @@ export interface Message {
     client_msg_id?:     string;
     user?:              string;
     team?:              string;
+    bot_link?:          string;
 }
 
 export interface Reply {

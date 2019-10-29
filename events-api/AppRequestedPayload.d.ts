@@ -37,6 +37,20 @@ export interface App {
     is_app_directory_approved?: boolean;
     is_internal?:               boolean;
     additional_info?:           string;
+    icons?:                     Icons;
+}
+
+export interface Icons {
+    image_32?:   string;
+    image_36?:   string;
+    image_48?:   string;
+    image_64?:   string;
+    image_72?:   string;
+    image_96?:   string;
+    image_128?:  string;
+    image_192?:  string;
+    image_512?:  string;
+    image_1024?: string;
 }
 
 export interface PreviousResolution {

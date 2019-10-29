@@ -45,6 +45,9 @@ export interface Latest {
     username?:       string;
     blocks?:         Block[];
     attachments?:    Attachment[];
+    team?:           string;
+    bot_profile?:    BotProfile;
+    reactions?:      Reaction[];
 }
 
 export interface Attachment {
@@ -184,6 +187,22 @@ export interface InitialOption {
     value?: string;
 }
 
+export interface BotProfile {
+    id?:      string;
+    deleted?: boolean;
+    name?:    string;
+    updated?: number;
+    app_id?:  string;
+    icons?:   Icons;
+    team_id?: string;
+}
+
+export interface Icons {
+    image_36?: string;
+    image_48?: string;
+    image_72?: string;
+}
+
 export interface File {
     id?:                   string;
     created?:              number;
@@ -215,6 +234,22 @@ export interface File {
     preview_is_truncated?: boolean;
     is_starred?:           boolean;
     has_rich_preview?:     boolean;
+    thumb_64?:             string;
+    thumb_80?:             string;
+    thumb_360?:            string;
+    thumb_360_w?:          number;
+    thumb_360_h?:          number;
+    thumb_160?:            string;
+    image_exif_rotation?:  number;
+    original_w?:           number;
+    original_h?:           number;
+    thumb_tiny?:           string;
+}
+
+export interface Reaction {
+    name?:  string;
+    users?: string[];
+    count?: number;
 }
 
 export interface Purpose {

@@ -68,6 +68,7 @@ export interface Match {
     external_url?:        string;
     has_rich_preview?:    boolean;
     preview?:             string;
+    thumb_tiny?:          string;
 }
 
 export interface Shares {

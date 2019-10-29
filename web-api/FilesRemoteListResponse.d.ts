@@ -57,6 +57,7 @@ export interface File {
     original_w?:          number;
     original_h?:          number;
     num_stars?:           number;
+    thumb_tiny?:          string;
 }
 
 export interface ResponseMetadata {

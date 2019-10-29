@@ -51,6 +51,7 @@ export interface File {
     lines?:                number;
     lines_more?:           number;
     preview_is_truncated?: boolean;
+    thumb_tiny?:           string;
 }
 
 export interface Shares {

@@ -29,6 +29,7 @@ export interface User {
     two_factor_type?:     string;
     has_files?:           boolean;
     locale?:              string;
+    is_workflow_bot?:     boolean;
 }
 
 export interface EnterpriseUser {

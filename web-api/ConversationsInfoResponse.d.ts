@@ -39,6 +39,7 @@ export interface Channel {
     locale?:                     string;
     internal_team_ids?:          string[];
     connected_team_ids?:         string[];
+    num_members?:                number;
 }
 
 export interface Purpose {

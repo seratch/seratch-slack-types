@@ -82,6 +82,7 @@ export interface FilesMatch {
     thumb_pdf_h?:          number;
     thumb_360_gif?:        string;
     deanimate_gif?:        string;
+    thumb_tiny?:           string;
 }
 
 export interface Shares {

@@ -1,10 +1,12 @@
 export interface ChannelsHistoryResponse {
-    ok?:       boolean;
-    messages?: Message[];
-    has_more?: boolean;
-    error?:    string;
-    needed?:   string;
-    provided?: string;
+    ok?:                    boolean;
+    messages?:              Message[];
+    has_more?:              boolean;
+    channel_actions_count?: number;
+    channel_actions_ts?:    number;
+    error?:                 string;
+    needed?:                string;
+    provided?:              string;
 }
 
 export interface Message {
@@ -19,7 +21,7 @@ export interface Message {
     thread_ts?:         string;
     root?:              Root;
     username?:          string;
-    icons?:             Icons;
+    icons?:             MessageIcons;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
@@ -36,6 +38,8 @@ export interface Message {
     team?:              string;
     reactions?:         Reaction[];
     last_read?:         string;
+    client_msg_id?:     string;
+    bot_profile?:       BotProfile;
 }
 
 export interface Attachment {
@@ -175,6 +179,22 @@ export interface InitialOption {
     value?: string;
 }
 
+export interface BotProfile {
+    id?:      string;
+    deleted?: boolean;
+    name?:    string;
+    updated?: number;
+    app_id?:  string;
+    icons?:   BotProfileIcons;
+    team_id?: string;
+}
+
+export interface BotProfileIcons {
+    image_36?: string;
+    image_48?: string;
+    image_72?: string;
+}
+
 export interface Edited {
     user?: string;
     ts?:   string;
@@ -237,9 +257,10 @@ export interface File {
     original_h?:           number;
     external_id?:          string;
     external_url?:         string;
+    thumb_tiny?:           string;
 }
 
-export interface Icons {
+export interface MessageIcons {
     emoji?:    string;
     image_64?: string;
 }

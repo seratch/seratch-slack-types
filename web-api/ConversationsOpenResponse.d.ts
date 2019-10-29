@@ -1,9 +1,11 @@
 export interface ConversationsOpenResponse {
-    ok?:       boolean;
-    channel?:  Channel;
-    error?:    string;
-    needed?:   string;
-    provided?: string;
+    ok?:           boolean;
+    channel?:      Channel;
+    no_op?:        boolean;
+    already_open?: boolean;
+    error?:        string;
+    needed?:       string;
+    provided?:     string;
 }
 
 export interface Channel {

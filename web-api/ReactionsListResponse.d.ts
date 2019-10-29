@@ -40,6 +40,7 @@ export interface Message {
     user_team?:         string;
     source_team?:       string;
     user_profile?:      UserProfile;
+    bot_profile?:       BotProfile;
 }
 
 export interface Attachment {
@@ -178,6 +179,16 @@ export interface TextElement {
 export interface InitialOption {
     text?:  TextElement;
     value?: string;
+}
+
+export interface BotProfile {
+    id?:      string;
+    deleted?: boolean;
+    name?:    string;
+    updated?: number;
+    app_id?:  string;
+    icons?:   Icons;
+    team_id?: string;
 }
 
 export interface Icons {

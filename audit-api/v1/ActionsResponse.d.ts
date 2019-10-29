@@ -12,4 +12,5 @@ export interface Actions {
     file?:             string[];
     channel?:          string[];
     app?:              string[];
+    message?:          string[];
 }

@@ -14,6 +14,7 @@ export interface Schema {
     file?:       File;
     channel?:    Channel;
     app?:        App;
+    message?:    Message;
 }
 
 export interface App {
@@ -44,6 +45,12 @@ export interface File {
     name?:     string;
     filetype?: string;
     title?:    string;
+}
+
+export interface Message {
+    team?:      string;
+    channel?:   string;
+    timestamp?: string;
 }
 
 export interface User {

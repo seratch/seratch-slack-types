@@ -21,8 +21,9 @@ export interface Message {
     team?:        string;
     blocks?:      Block[];
     root?:        Root;
-    icons?:       Icons;
+    icons?:       MessageIcons;
     attachments?: Attachment[];
+    bot_profile?: BotProfile;
 }
 
 export interface Attachment {
@@ -164,7 +165,23 @@ export interface InitialOption {
     value?: string;
 }
 
-export interface Icons {
+export interface BotProfile {
+    id?:      string;
+    deleted?: boolean;
+    name?:    string;
+    updated?: number;
+    app_id?:  string;
+    icons?:   BotProfileIcons;
+    team_id?: string;
+}
+
+export interface BotProfileIcons {
+    image_36?: string;
+    image_48?: string;
+    image_72?: string;
+}
+
+export interface MessageIcons {
     emoji?:    string;
     image_64?: string;
 }

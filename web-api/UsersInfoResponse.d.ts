@@ -26,6 +26,7 @@ export interface User {
     is_app_user?:         boolean;
     updated?:             number;
     has_2fa?:             boolean;
+    locale?:              string;
 }
 
 export interface Profile {
@@ -56,4 +57,5 @@ export interface Profile {
     status_text_canonical?:   string;
     team?:                    string;
     is_custom_image?:         boolean;
+    email?:                   string;
 }

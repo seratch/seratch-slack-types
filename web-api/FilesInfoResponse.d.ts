@@ -57,6 +57,7 @@ export interface File {
     image_exif_rotation?:  number;
     original_w?:           number;
     original_h?:           number;
+    thumb_tiny?:           string;
 }
 
 export interface Shares {

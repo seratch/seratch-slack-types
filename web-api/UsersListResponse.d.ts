@@ -32,6 +32,8 @@ export interface Member {
     presence?:            string;
     enterprise_user?:     EnterpriseUser;
     two_factor_type?:     string;
+    locale?:              string;
+    is_workflow_bot?:     boolean;
 }
 
 export interface EnterpriseUser {
