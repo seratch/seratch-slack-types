@@ -24,10 +24,12 @@
       "subscribed": false,
       "client_msg_id": "",
       "user": "U00000000",
-      "team": "T00000000"
+      "team": "T00000000",
+      "bot_link": ""
     }
   ],
   "has_more": false,
+  "channel_actions_count": 12345,
   "error": "",
   "needed": "",
   "provided": ""
