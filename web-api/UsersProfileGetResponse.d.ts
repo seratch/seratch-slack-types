@@ -20,6 +20,7 @@ export interface Profile {
     status_expiration?:       number;
     avatar_hash?:             string;
     image_original?:          string;
+    is_custom_image?:         boolean;
     email?:                   string;
     first_name?:              string;
     last_name?:               string;
@@ -31,7 +32,6 @@ export interface Profile {
     image_512?:               string;
     image_1024?:              string;
     status_text_canonical?:   string;
-    is_custom_image?:         boolean;
 }
 
 export interface Fields {

@@ -23,6 +23,7 @@ export interface App {
     is_distributed?:        string;
     is_directory_approved?: string;
     scopes?:                string;
+    is_workflow_app?:       string;
 }
 
 export interface Channel {

@@ -21,6 +21,7 @@ export interface BlockActionPayloadAction {
     type?:                  string;
     action_ts?:             string;
     url?:                   string;
+    initial_option?:        Option;
     placeholder?:           Close;
     selected_option?:       Option;
     selected_user?:         string;
@@ -34,6 +35,11 @@ export interface BlockActionPayloadAction {
     initial_date?:          string;
 }
 
+export interface Option {
+    text?:  Close;
+    value?: string;
+}
+
 export interface Close {
     type?:     Type;
     text?:     string;
@@ -45,11 +51,6 @@ export enum Type {
     Empty = "",
     Mrkdwn = "mrkdwn",
     PlainText = "plain_text",
-}
-
-export interface Option {
-    text?:  Close;
-    value?: string;
 }
 
 export interface Channel {
@@ -161,7 +162,7 @@ export interface Attachment {
     size?:                  number;
     mimetype?:              string;
     url?:                   string;
-    metadata?:              string;
+    metadata?:              Metadata;
 }
 
 export interface AttachmentAction {
@@ -180,6 +181,20 @@ export interface Field {
     title?: string;
     value?: string;
     short?: boolean;
+}
+
+export interface Metadata {
+    thumb_64?:    boolean;
+    thumb_80?:    boolean;
+    thumb_160?:   boolean;
+    original_w?:  number;
+    original_h?:  number;
+    thumb_360_w?: number;
+    thumb_360_h?: number;
+    format?:      string;
+    extension?:   string;
+    rotation?:    number;
+    thumb_tiny?:  string;
 }
 
 export interface Block {

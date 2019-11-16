@@ -25,6 +25,17 @@ export interface Group {
     topic?:                Purpose;
     purpose?:              Purpose;
     priority?:             number;
+    latest?:               Latest;
+}
+
+export interface Latest {
+    type?:     string;
+    subtype?:  string;
+    text?:     string;
+    user?:     string;
+    bot_id?:   string;
+    bot_link?: string;
+    ts?:       string;
 }
 
 export interface Purpose {

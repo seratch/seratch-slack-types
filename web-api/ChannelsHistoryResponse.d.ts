@@ -90,7 +90,7 @@ export interface Attachment {
     size?:                  number;
     mimetype?:              string;
     url?:                   string;
-    metadata?:              string;
+    metadata?:              Metadata;
 }
 
 export interface Action {
@@ -109,6 +109,20 @@ export interface Field {
     title?: string;
     value?: string;
     short?: boolean;
+}
+
+export interface Metadata {
+    thumb_64?:    boolean;
+    thumb_80?:    boolean;
+    thumb_160?:   boolean;
+    original_w?:  number;
+    original_h?:  number;
+    thumb_360_w?: number;
+    thumb_360_h?: number;
+    format?:      string;
+    extension?:   string;
+    rotation?:    number;
+    thumb_tiny?:  string;
 }
 
 export interface Block {
