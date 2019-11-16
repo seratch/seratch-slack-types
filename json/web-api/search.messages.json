@@ -114,7 +114,19 @@
             "size": 12345,
             "mimetype": "",
             "url": "",
-            "metadata": ""
+            "metadata": {
+              "thumb_64": false,
+              "thumb_80": false,
+              "thumb_160": false,
+              "original_w": 12345,
+              "original_h": 12345,
+              "thumb_360_w": 12345,
+              "thumb_360_h": 12345,
+              "format": "",
+              "extension": "",
+              "rotation": 12345,
+              "thumb_tiny": ""
+            }
           },
           {
             "service_name": "",
@@ -184,7 +196,19 @@
             "size": 12345,
             "mimetype": "",
             "url": "",
-            "metadata": ""
+            "metadata": {
+              "thumb_64": false,
+              "thumb_80": false,
+              "thumb_160": false,
+              "original_w": 12345,
+              "original_h": 12345,
+              "thumb_360_w": 12345,
+              "thumb_360_h": 12345,
+              "format": "",
+              "extension": "",
+              "rotation": 12345,
+              "thumb_tiny": ""
+            }
           },
           {
             "service_name": "",
@@ -254,7 +278,19 @@
             "size": 12345,
             "mimetype": "",
             "url": "",
-            "metadata": ""
+            "metadata": {
+              "thumb_64": false,
+              "thumb_80": false,
+              "thumb_160": false,
+              "original_w": 12345,
+              "original_h": 12345,
+              "thumb_360_w": 12345,
+              "thumb_360_h": 12345,
+              "format": "",
+              "extension": "",
+              "rotation": 12345,
+              "thumb_tiny": ""
+            }
           },
           {
             "service_name": "",
@@ -324,7 +360,19 @@
             "size": 12345,
             "mimetype": "",
             "url": "",
-            "metadata": ""
+            "metadata": {
+              "thumb_64": false,
+              "thumb_80": false,
+              "thumb_160": false,
+              "original_w": 12345,
+              "original_h": 12345,
+              "thumb_360_w": 12345,
+              "thumb_360_h": 12345,
+              "format": "",
+              "extension": "",
+              "rotation": 12345,
+              "thumb_tiny": ""
+            }
           }
         ],
         "previous": {
@@ -401,12 +449,132 @@
               "size": 12345,
               "mimetype": "",
               "url": "",
-              "metadata": ""
+              "metadata": {
+                "thumb_64": false,
+                "thumb_80": false,
+                "thumb_160": false,
+                "original_w": 12345,
+                "original_h": 12345,
+                "thumb_360_w": 12345,
+                "thumb_360_h": 12345,
+                "format": "",
+                "extension": "",
+                "rotation": 12345,
+                "thumb_tiny": ""
+              }
             }
           ],
           "text": "",
           "iid": "",
-          "permalink": "https://www.example.com/"
+          "permalink": "https://www.example.com/",
+          "blocks": [
+            {
+              "type": "",
+              "elements": [
+                {
+                  "type": "",
+                  "fallback": "",
+                  "text": {
+                    "type": "",
+                    "text": "",
+                    "emoji": false
+                  },
+                  "action_id": "",
+                  "url": "",
+                  "value": "",
+                  "style": "",
+                  "confirm": {
+                    "title": {
+                      "type": "",
+                      "text": "",
+                      "emoji": false
+                    },
+                    "text": {
+                      "type": "",
+                      "text": "",
+                      "emoji": false
+                    },
+                    "confirm": {
+                      "type": "",
+                      "text": "",
+                      "emoji": false
+                    },
+                    "deny": {
+                      "type": "",
+                      "text": "",
+                      "emoji": false
+                    }
+                  },
+                  "placeholder": {
+                    "type": "",
+                    "text": "",
+                    "emoji": false
+                  },
+                  "initial_channel": "",
+                  "initial_conversation": "",
+                  "initial_date": "",
+                  "initial_option": {
+                    "text": {
+                      "type": "",
+                      "text": "",
+                      "emoji": false
+                    },
+                    "value": ""
+                  },
+                  "min_query_length": 12345,
+                  "image_url": "",
+                  "image_width": 12345,
+                  "image_height": 12345,
+                  "image_bytes": 12345,
+                  "alt_text": "",
+                  "initial_user": ""
+                },
+                {
+                  "type": "",
+                  "fallback": "",
+                  "image_url": "",
+                  "image_width": 12345,
+                  "image_height": 12345,
+                  "image_bytes": 12345,
+                  "alt_text": ""
+                }
+              ],
+              "block_id": "",
+              "fallback": "",
+              "image_url": "",
+              "image_width": 12345,
+              "image_height": 12345,
+              "image_bytes": 12345,
+              "alt_text": "",
+              "title": {
+                "type": "",
+                "text": "",
+                "emoji": false
+              },
+              "text": {
+                "type": "",
+                "text": "",
+                "emoji": false
+              },
+              "fields": [
+                {
+                  "type": "",
+                  "text": "",
+                  "emoji": false,
+                  "verbatim": false
+                }
+              ],
+              "accessory": {
+                "type": "",
+                "fallback": "",
+                "image_url": "",
+                "image_width": 12345,
+                "image_height": 12345,
+                "image_bytes": 12345,
+                "alt_text": ""
+              }
+            }
+          ]
         },
         "previous_2": {
           "type": "",
@@ -485,7 +653,19 @@
               "size": 12345,
               "mimetype": "",
               "url": "",
-              "metadata": ""
+              "metadata": {
+                "thumb_64": false,
+                "thumb_80": false,
+                "thumb_160": false,
+                "original_w": 12345,
+                "original_h": 12345,
+                "thumb_360_w": 12345,
+                "thumb_360_h": 12345,
+                "format": "",
+                "extension": "",
+                "rotation": 12345,
+                "thumb_tiny": ""
+              }
             }
           ],
           "blocks": [
