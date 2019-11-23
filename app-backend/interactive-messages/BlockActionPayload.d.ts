@@ -21,6 +21,7 @@ export interface BlockActionPayloadAction {
     type?:                  string;
     action_ts?:             string;
     url?:                   string;
+    confirm?:               Confirm;
     initial_option?:        Option;
     placeholder?:           Close;
     selected_option?:       Option;
@@ -35,9 +36,11 @@ export interface BlockActionPayloadAction {
     initial_date?:          string;
 }
 
-export interface Option {
-    text?:  Close;
-    value?: string;
+export interface Confirm {
+    title?:   Close;
+    text?:    Close;
+    confirm?: Close;
+    deny?:    Close;
 }
 
 export interface Close {
@@ -51,6 +54,11 @@ export enum Type {
     Empty = "",
     Mrkdwn = "mrkdwn",
     PlainText = "plain_text",
+}
+
+export interface Option {
+    text?:  Close;
+    value?: string;
 }
 
 export interface Channel {
@@ -244,13 +252,6 @@ export interface Element {
     image_bytes?:          number;
     alt_text?:             string;
     initial_user?:         string;
-}
-
-export interface Confirm {
-    title?:   Close;
-    text?:    Close;
-    confirm?: Close;
-    deny?:    Close;
 }
 
 export interface BotProfile {
