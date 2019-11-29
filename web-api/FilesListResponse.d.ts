@@ -139,9 +139,17 @@ export interface Action {
     style?:            string;
     type?:             string;
     value?:            string;
+    confirm?:          Confirm;
     data_source?:      string;
     min_query_length?: number;
     url?:              string;
+}
+
+export interface Confirm {
+    title?:        string;
+    text?:         string;
+    ok_text?:      string;
+    dismiss_text?: string;
 }
 
 export interface Field {

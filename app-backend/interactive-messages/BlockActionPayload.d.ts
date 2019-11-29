@@ -21,7 +21,7 @@ export interface BlockActionPayloadAction {
     type?:                  string;
     action_ts?:             string;
     url?:                   string;
-    confirm?:               Confirm;
+    confirm?:               ElementConfirm;
     initial_option?:        Option;
     placeholder?:           Close;
     selected_option?:       Option;
@@ -36,7 +36,7 @@ export interface BlockActionPayloadAction {
     initial_date?:          string;
 }
 
-export interface Confirm {
+export interface ElementConfirm {
     title?:   Close;
     text?:    Close;
     confirm?: Close;
@@ -180,9 +180,17 @@ export interface AttachmentAction {
     style?:            string;
     type?:             string;
     value?:            string;
+    confirm?:          PurpleConfirm;
     data_source?:      string;
     min_query_length?: number;
     url?:              string;
+}
+
+export interface PurpleConfirm {
+    title?:        string;
+    text?:         string;
+    ok_text?:      string;
+    dismiss_text?: string;
 }
 
 export interface Field {
@@ -239,7 +247,7 @@ export interface Element {
     url?:                  string;
     value?:                string;
     style?:                string;
-    confirm?:              Confirm;
+    confirm?:              ElementConfirm;
     placeholder?:          Close;
     initial_channel?:      string;
     initial_conversation?: string;
@@ -397,12 +405,23 @@ export interface File {
     is_public?:             boolean;
     public_url_shared?:     boolean;
     display_as_bot?:        boolean;
+    initial_comment?:       InitialComment;
     num_stars?:             number;
     is_starred?:            boolean;
     comments_count?:        number;
     channel_actions_ts?:    string;
     channel_actions_count?: number;
     shares?:                Shares;
+}
+
+export interface InitialComment {
+    id?:        string;
+    created?:   number;
+    timestamp?: number;
+    user?:      string;
+    comment?:   string;
+    channel?:   string;
+    is_intro?:  boolean;
 }
 
 export interface Shares {

@@ -27,6 +27,7 @@ export interface Match {
     attachments?: MatchAttachment[];
     previous?:    Previous;
     previous_2?:  Previous;
+    blocks?:      Block[];
 }
 
 export interface MatchAttachment {
@@ -87,9 +88,17 @@ export interface Action {
     style?:            string;
     type?:             string;
     value?:            string;
+    confirm?:          ActionConfirm;
     data_source?:      string;
     min_query_length?: number;
     url?:              string;
+}
+
+export interface ActionConfirm {
+    title?:        string;
+    text?:         string;
+    ok_text?:      string;
+    dismiss_text?: string;
 }
 
 export interface Field {
@@ -110,6 +119,74 @@ export interface Metadata {
     extension?:   string;
     rotation?:    number;
     thumb_tiny?:  string;
+}
+
+export interface Block {
+    type?:         string;
+    elements?:     Element[];
+    block_id?:     string;
+    fallback?:     string;
+    image_url?:    string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+    alt_text?:     string;
+    title?:        Text;
+    text?:         Text;
+    fields?:       Text[];
+    accessory?:    Accessory;
+}
+
+export interface Accessory {
+    type?:         string;
+    fallback?:     string;
+    image_url?:    string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+    alt_text?:     string;
+}
+
+export interface Element {
+    type?:                 string;
+    fallback?:             string;
+    text?:                 Text;
+    action_id?:            string;
+    url?:                  string;
+    value?:                string;
+    style?:                string;
+    confirm?:              ElementConfirm;
+    placeholder?:          Text;
+    initial_channel?:      string;
+    initial_conversation?: string;
+    initial_date?:         string;
+    initial_option?:       InitialOption;
+    min_query_length?:     number;
+    image_url?:            string;
+    image_width?:          number;
+    image_height?:         number;
+    image_bytes?:          number;
+    alt_text?:             string;
+    initial_user?:         string;
+}
+
+export interface ElementConfirm {
+    title?:   Text;
+    text?:    Text;
+    confirm?: Text;
+    deny?:    Text;
+}
+
+export interface Text {
+    type?:     string;
+    text?:     string;
+    emoji?:    boolean;
+    verbatim?: boolean;
+}
+
+export interface InitialOption {
+    text?:  Text;
+    value?: string;
 }
 
 export interface Channel {
@@ -190,74 +267,6 @@ export interface PreviousAttachment {
     mimetype?:              string;
     url?:                   string;
     metadata?:              Metadata;
-}
-
-export interface Block {
-    type?:         string;
-    elements?:     Element[];
-    block_id?:     string;
-    fallback?:     string;
-    image_url?:    string;
-    image_width?:  number;
-    image_height?: number;
-    image_bytes?:  number;
-    alt_text?:     string;
-    title?:        Text;
-    text?:         Text;
-    fields?:       Text[];
-    accessory?:    Accessory;
-}
-
-export interface Accessory {
-    type?:         string;
-    fallback?:     string;
-    image_url?:    string;
-    image_width?:  number;
-    image_height?: number;
-    image_bytes?:  number;
-    alt_text?:     string;
-}
-
-export interface Element {
-    type?:                 string;
-    fallback?:             string;
-    text?:                 Text;
-    action_id?:            string;
-    url?:                  string;
-    value?:                string;
-    style?:                string;
-    confirm?:              Confirm;
-    placeholder?:          Text;
-    initial_channel?:      string;
-    initial_conversation?: string;
-    initial_date?:         string;
-    initial_option?:       InitialOption;
-    min_query_length?:     number;
-    image_url?:            string;
-    image_width?:          number;
-    image_height?:         number;
-    image_bytes?:          number;
-    alt_text?:             string;
-    initial_user?:         string;
-}
-
-export interface Confirm {
-    title?:   Text;
-    text?:    Text;
-    confirm?: Text;
-    deny?:    Text;
-}
-
-export interface Text {
-    type?:     string;
-    text?:     string;
-    emoji?:    boolean;
-    verbatim?: boolean;
-}
-
-export interface InitialOption {
-    text?:  Text;
-    value?: string;
 }
 
 export interface Pagination {

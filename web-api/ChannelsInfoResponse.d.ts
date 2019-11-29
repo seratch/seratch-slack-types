@@ -108,9 +108,17 @@ export interface Action {
     style?:            string;
     type?:             string;
     value?:            string;
+    confirm?:          ActionConfirm;
     data_source?:      string;
     min_query_length?: number;
     url?:              string;
+}
+
+export interface ActionConfirm {
+    title?:        string;
+    text?:         string;
+    ok_text?:      string;
+    dismiss_text?: string;
 }
 
 export interface Field {
@@ -167,7 +175,7 @@ export interface Element {
     fallback?:             string;
     url?:                  string;
     style?:                string;
-    confirm?:              Confirm;
+    confirm?:              ElementConfirm;
     placeholder?:          Text;
     initial_channel?:      string;
     initial_conversation?: string;
@@ -182,7 +190,7 @@ export interface Element {
     initial_user?:         string;
 }
 
-export interface Confirm {
+export interface ElementConfirm {
     title?:   Text;
     text?:    Text;
     confirm?: Text;
@@ -258,6 +266,23 @@ export interface File {
     original_w?:           number;
     original_h?:           number;
     thumb_tiny?:           string;
+    thumb_480?:            string;
+    thumb_480_w?:          number;
+    thumb_480_h?:          number;
+    thumb_720?:            string;
+    thumb_720_w?:          number;
+    thumb_720_h?:          number;
+    thumb_800?:            string;
+    thumb_800_w?:          number;
+    thumb_800_h?:          number;
+    thumb_960?:            string;
+    thumb_960_w?:          number;
+    thumb_960_h?:          number;
+    thumb_1024?:           string;
+    thumb_1024_w?:         number;
+    thumb_1024_h?:         number;
+    external_id?:          string;
+    external_url?:         string;
 }
 
 export interface Reaction {

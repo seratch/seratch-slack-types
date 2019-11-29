@@ -121,9 +121,17 @@ export interface Action {
     style?:            string;
     type?:             string;
     value?:            string;
+    confirm?:          ActionConfirm;
     data_source?:      string;
     min_query_length?: number;
     url?:              string;
+}
+
+export interface ActionConfirm {
+    title?:        string;
+    text?:         string;
+    ok_text?:      string;
+    dismiss_text?: string;
 }
 
 export interface Field {
@@ -180,7 +188,7 @@ export interface Element {
     url?:                  string;
     value?:                string;
     style?:                string;
-    confirm?:              Confirm;
+    confirm?:              ElementConfirm;
     placeholder?:          Text;
     initial_channel?:      string;
     initial_conversation?: string;
@@ -195,7 +203,7 @@ export interface Element {
     initial_user?:         string;
 }
 
-export interface Confirm {
+export interface ElementConfirm {
     title?:   Text;
     text?:    Text;
     confirm?: Text;
@@ -362,12 +370,23 @@ export interface File {
     is_public?:             boolean;
     public_url_shared?:     boolean;
     display_as_bot?:        boolean;
+    initial_comment?:       InitialComment;
     num_stars?:             number;
     is_starred?:            boolean;
     comments_count?:        number;
     channel_actions_ts?:    string;
     channel_actions_count?: number;
     shares?:                Shares;
+}
+
+export interface InitialComment {
+    id?:        string;
+    created?:   number;
+    timestamp?: number;
+    user?:      string;
+    comment?:   string;
+    channel?:   string;
+    is_intro?:  boolean;
 }
 
 export interface Shares {

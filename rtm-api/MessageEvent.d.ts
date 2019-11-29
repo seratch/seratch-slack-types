@@ -80,9 +80,17 @@ export interface Action {
     style?:            string;
     type?:             string;
     value?:            string;
+    confirm?:          ActionConfirm;
     data_source?:      string;
     min_query_length?: number;
     url?:              string;
+}
+
+export interface ActionConfirm {
+    title?:        string;
+    text?:         string;
+    ok_text?:      string;
+    dismiss_text?: string;
 }
 
 export interface Field {
@@ -139,7 +147,7 @@ export interface Element {
     url?:                  string;
     value?:                string;
     style?:                string;
-    confirm?:              Confirm;
+    confirm?:              ElementConfirm;
     placeholder?:          Text;
     initial_channel?:      string;
     initial_conversation?: string;
@@ -154,7 +162,7 @@ export interface Element {
     initial_user?:         string;
 }
 
-export interface Confirm {
+export interface ElementConfirm {
     title?:   Text;
     text?:    Text;
     confirm?: Text;
