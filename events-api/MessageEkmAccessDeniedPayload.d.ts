@@ -1,4 +1,4 @@
-export interface MessagePayload {
+export interface MessageEkmAccessDeniedPayload {
     token?:         string;
     enterprise_id?: string;
     team_id?:       string;
@@ -12,19 +12,17 @@ export interface MessagePayload {
 }
 
 export interface Event {
-    client_msg_id?:  string;
-    type?:           string;
-    channel?:        string;
-    user?:           string;
-    text?:           string;
-    blocks?:         Block[];
-    attachments?:    Attachment[];
-    ts?:             string;
-    parent_user_id?: string;
-    thread_ts?:      string;
-    event_ts?:       string;
-    channel_type?:   string;
-    edited?:         Edited;
+    type?:         string;
+    subtype?:      string;
+    channel?:      string;
+    hidden?:       boolean;
+    user?:         string;
+    text?:         string;
+    blocks?:       Block[];
+    attachments?:  Attachment[];
+    event_ts?:     string;
+    ts?:           string;
+    channel_type?: string;
 }
 
 export interface Attachment {
@@ -189,9 +187,4 @@ export enum Type {
 export interface InitialOption {
     text?:  Text;
     value?: string;
-}
-
-export interface Edited {
-    user?: string;
-    ts?:   string;
 }

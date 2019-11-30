@@ -1,4 +1,4 @@
-export interface MessagePayload {
+export interface MessageDeletedPayload {
     token?:         string;
     enterprise_id?: string;
     team_id?:       string;
@@ -12,19 +12,29 @@ export interface MessagePayload {
 }
 
 export interface Event {
-    client_msg_id?:  string;
-    type?:           string;
-    channel?:        string;
-    user?:           string;
-    text?:           string;
-    blocks?:         Block[];
-    attachments?:    Attachment[];
-    ts?:             string;
-    parent_user_id?: string;
-    thread_ts?:      string;
-    event_ts?:       string;
-    channel_type?:   string;
-    edited?:         Edited;
+    type?:             string;
+    subtype?:          string;
+    channel?:          string;
+    hidden?:           boolean;
+    deleted_ts?:       string;
+    previous_message?: PreviousMessage;
+    event_ts?:         string;
+    ts?:               string;
+    channel_type?:     string;
+}
+
+export interface PreviousMessage {
+    client_msg_id?: string;
+    type?:          string;
+    subtype?:       string;
+    user?:          string;
+    team?:          string;
+    edited?:        Edited;
+    text?:          string;
+    blocks?:        Block[];
+    attachments?:   Attachment[];
+    is_starred?:    boolean;
+    ts?:            string;
 }
 
 export interface Attachment {

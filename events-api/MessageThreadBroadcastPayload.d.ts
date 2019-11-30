@@ -1,4 +1,4 @@
-export interface MessagePayload {
+export interface MessageThreadBroadcastPayload {
     token?:         string;
     enterprise_id?: string;
     team_id?:       string;
@@ -12,19 +12,19 @@ export interface MessagePayload {
 }
 
 export interface Event {
-    client_msg_id?:  string;
-    type?:           string;
-    channel?:        string;
-    user?:           string;
-    text?:           string;
-    blocks?:         Block[];
-    attachments?:    Attachment[];
-    ts?:             string;
-    parent_user_id?: string;
-    thread_ts?:      string;
-    event_ts?:       string;
-    channel_type?:   string;
-    edited?:         Edited;
+    client_msg_id?: string;
+    type?:          string;
+    subtype?:       string;
+    channel?:       string;
+    user?:          string;
+    root?:          Root;
+    text?:          string;
+    blocks?:        Block[];
+    attachments?:   Attachment[];
+    ts?:            string;
+    thread_ts?:     string;
+    event_ts?:      string;
+    channel_type?:  string;
 }
 
 export interface Attachment {
@@ -191,7 +191,19 @@ export interface InitialOption {
     value?: string;
 }
 
-export interface Edited {
-    user?: string;
-    ts?:   string;
+export interface Root {
+    text?:              string;
+    username?:          string;
+    bot_id?:            string;
+    mrkdwn?:            boolean;
+    type?:              string;
+    subtype?:           string;
+    thread_ts?:         string;
+    reply_count?:       number;
+    reply_users_count?: number;
+    latest_reply?:      string;
+    subscribed?:        boolean;
+    last_read?:         string;
+    unread_count?:      number;
+    ts?:                string;
 }

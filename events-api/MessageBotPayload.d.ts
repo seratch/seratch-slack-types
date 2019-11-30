@@ -1,4 +1,4 @@
-export interface MessagePayload {
+export interface MessageBotPayload {
     token?:         string;
     enterprise_id?: string;
     team_id?:       string;
@@ -12,19 +12,18 @@ export interface MessagePayload {
 }
 
 export interface Event {
-    client_msg_id?:  string;
-    type?:           string;
-    channel?:        string;
-    user?:           string;
-    text?:           string;
-    blocks?:         Block[];
-    attachments?:    Attachment[];
-    ts?:             string;
-    parent_user_id?: string;
-    thread_ts?:      string;
-    event_ts?:       string;
-    channel_type?:   string;
-    edited?:         Edited;
+    type?:         string;
+    subtype?:      string;
+    bot_id?:       string;
+    username?:     string;
+    icons?:        Icons;
+    channel?:      string;
+    text?:         string;
+    blocks?:       Block[];
+    attachments?:  Attachment[];
+    ts?:           string;
+    event_ts?:     string;
+    channel_type?: string;
 }
 
 export interface Attachment {
@@ -191,7 +190,10 @@ export interface InitialOption {
     value?: string;
 }
 
-export interface Edited {
-    user?: string;
-    ts?:   string;
+export interface Icons {
+    emoji?:    string;
+    image_36?: string;
+    image_48?: string;
+    image_64?: string;
+    image_72?: string;
 }

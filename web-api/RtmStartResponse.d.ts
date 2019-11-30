@@ -591,6 +591,7 @@ export interface TeamPrefs {
     who_can_create_ext_shared_channel_invites?:         WhoCan;
     gg_enabled?:                                        boolean;
     external_shared_channel_requests_approval_channel?: number;
+    workflows_webhook_trigger_enabled?:                 boolean;
 }
 
 export interface WhoCan {

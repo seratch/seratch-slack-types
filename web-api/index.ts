@@ -9,6 +9,9 @@ export { AdminInviteRequestsListResponse } from './AdminInviteRequestsListRespon
 export { AdminTeamsAdminsListResponse } from './AdminTeamsAdminsListResponse';
 export { AdminTeamsCreateResponse } from './AdminTeamsCreateResponse';
 export { AdminTeamsOwnersListResponse } from './AdminTeamsOwnersListResponse';
+export { AdminTeamsSettingsSetDescriptionResponse } from './AdminTeamsSettingsSetDescriptionResponse';
+export { AdminTeamsSettingsSetIconResponse } from './AdminTeamsSettingsSetIconResponse';
+export { AdminTeamsSettingsSetNameResponse } from './AdminTeamsSettingsSetNameResponse';
 export { AdminUsersAssignResponse } from './AdminUsersAssignResponse';
 export { AdminUsersInviteResponse } from './AdminUsersInviteResponse';
 export { AdminUsersRemoveResponse } from './AdminUsersRemoveResponse';
