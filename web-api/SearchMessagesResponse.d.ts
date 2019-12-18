@@ -26,8 +26,8 @@ export interface Match {
     permalink?:   string;
     attachments?: MatchAttachment[];
     previous?:    Previous;
-    previous_2?:  Previous;
-    blocks?:      Block[];
+    previous_2?:  Previous2;
+    blocks?:      MatchBlock[];
 }
 
 export interface MatchAttachment {
@@ -121,9 +121,9 @@ export interface Metadata {
     thumb_tiny?:  string;
 }
 
-export interface Block {
+export interface MatchBlock {
     type?:         string;
-    elements?:     Element[];
+    elements?:     PurpleElement[];
     block_id?:     string;
     fallback?:     string;
     image_url?:    string;
@@ -131,9 +131,9 @@ export interface Block {
     image_height?: number;
     image_bytes?:  number;
     alt_text?:     string;
-    title?:        Text;
-    text?:         Text;
-    fields?:       Text[];
+    title?:        TextElement;
+    text?:         TextElement;
+    fields?:       TextElement[];
     accessory?:    Accessory;
 }
 
@@ -147,16 +147,16 @@ export interface Accessory {
     alt_text?:     string;
 }
 
-export interface Element {
+export interface PurpleElement {
     type?:                 string;
     fallback?:             string;
-    text?:                 Text;
+    text?:                 TextElement;
     action_id?:            string;
     url?:                  string;
     value?:                string;
     style?:                string;
     confirm?:              ElementConfirm;
-    placeholder?:          Text;
+    placeholder?:          TextElement;
     initial_channel?:      string;
     initial_conversation?: string;
     initial_date?:         string;
@@ -171,13 +171,13 @@ export interface Element {
 }
 
 export interface ElementConfirm {
-    title?:   Text;
-    text?:    Text;
-    confirm?: Text;
-    deny?:    Text;
+    title?:   TextElement;
+    text?:    TextElement;
+    confirm?: TextElement;
+    deny?:    TextElement;
 }
 
-export interface Text {
+export interface TextElement {
     type?:     string;
     text?:     string;
     emoji?:    boolean;
@@ -185,7 +185,7 @@ export interface Text {
 }
 
 export interface InitialOption {
-    text?:  Text;
+    text?:  TextElement;
     value?: string;
 }
 
@@ -215,7 +215,7 @@ export interface Previous {
     text?:        string;
     iid?:         string;
     permalink?:   string;
-    blocks?:      Block[];
+    blocks?:      MatchBlock[];
 }
 
 export interface PreviousAttachment {
@@ -267,6 +267,58 @@ export interface PreviousAttachment {
     mimetype?:              string;
     url?:                   string;
     metadata?:              Metadata;
+}
+
+export interface Previous2 {
+    type?:        string;
+    user?:        string;
+    username?:    string;
+    ts?:          string;
+    text?:        string;
+    iid?:         string;
+    permalink?:   string;
+    attachments?: PreviousAttachment[];
+    blocks?:      Previous2_Block[];
+}
+
+export interface Previous2_Block {
+    type?:         string;
+    elements?:     FluffyElement[];
+    block_id?:     string;
+    fallback?:     string;
+    image_url?:    string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+    alt_text?:     string;
+    title?:        TextElement;
+    text?:         TextElement;
+    fields?:       TextElement[];
+    accessory?:    Accessory;
+}
+
+export interface FluffyElement {
+    type?:                 string;
+    fallback?:             string;
+    text?:                 TextElement | string;
+    action_id?:            string;
+    url?:                  string;
+    value?:                string;
+    style?:                string;
+    confirm?:              ElementConfirm;
+    placeholder?:          TextElement;
+    initial_channel?:      string;
+    initial_conversation?: string;
+    initial_date?:         string;
+    initial_option?:       InitialOption;
+    min_query_length?:     number;
+    image_url?:            string;
+    image_width?:          number;
+    image_height?:         number;
+    image_bytes?:          number;
+    alt_text?:             string;
+    initial_user?:         string;
+    verbatim?:             boolean;
 }
 
 export interface Pagination {

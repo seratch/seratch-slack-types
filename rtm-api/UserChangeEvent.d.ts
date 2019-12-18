@@ -43,6 +43,7 @@ export interface EnterpriseUser {
 export interface Profile {
     guest_channels?:          string;
     guest_invited_by?:        string;
+    guest_expiration_ts?:     number;
     avatar_hash?:             string;
     status_text?:             string;
     status_text_canonical?:   string;

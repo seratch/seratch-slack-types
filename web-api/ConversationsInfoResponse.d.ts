@@ -40,6 +40,11 @@ export interface Channel {
     internal_team_ids?:          string[];
     connected_team_ids?:         string[];
     num_members?:                number;
+    is_moved?:                   number;
+    enterprise_id?:              string;
+    is_global_shared?:           boolean;
+    is_org_default?:             boolean;
+    is_org_mandatory?:           boolean;
 }
 
 export interface Purpose {

@@ -76,6 +76,7 @@ export interface Profile {
     always_active?:           boolean;
     guest_channels?:          string;
     guest_invited_by?:        string;
+    guest_expiration_ts?:     number;
 }
 
 export interface ResponseMetadata {

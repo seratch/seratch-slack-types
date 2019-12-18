@@ -35,6 +35,8 @@ export interface Channel {
     previous_names?:             string[];
     priority?:                   number;
     is_open?:                    boolean;
+    is_moved?:                   number;
+    internal_team_ids?:          string[];
 }
 
 export interface Purpose {

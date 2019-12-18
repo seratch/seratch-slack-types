@@ -1,9 +1,10 @@
-export interface AdminTeamsSettingsSetIconResponse {
+export interface AdminConversationsSetTeamsResponse {
     ok?:                boolean;
     error?:             string;
-    response_metadata?: ResponseMetadata;
     needed?:            string;
     provided?:          string;
+    response_metadata?: ResponseMetadata;
+    channel?:           string;
 }
 
 export interface ResponseMetadata {

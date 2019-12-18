@@ -1,4 +1,4 @@
-export interface AdminTeamsSettingsSetIconResponse {
+export interface AdminTeamsSettingsSetDefaultChannelsResponse {
     ok?:                boolean;
     error?:             string;
     response_metadata?: ResponseMetadata;

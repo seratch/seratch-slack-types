@@ -592,6 +592,19 @@ export interface TeamPrefs {
     gg_enabled?:                                        boolean;
     external_shared_channel_requests_approval_channel?: number;
     workflows_webhook_trigger_enabled?:                 boolean;
+    calls_apps?:                                        CallsApps;
+    received_esc_route_to_channel_awareness_message?:   boolean;
+}
+
+export interface CallsApps {
+    audio?: string[];
+    video?: Video[];
+}
+
+export interface Video {
+    id?:    string;
+    name?:  string;
+    image?: string;
 }
 
 export interface WhoCan {

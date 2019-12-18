@@ -41,6 +41,7 @@ export interface Message {
     purpose?:           string;
     last_read?:         string;
     bot_profile?:       BotProfile;
+    client_msg_id?:     string;
 }
 
 export interface Attachment {
