@@ -20,12 +20,27 @@
     "user": "",
     "root": {
       "text": "",
+      "user": "",
       "username": "",
+      "team": "",
       "bot_id": "",
       "mrkdwn": false,
       "type": "",
       "subtype": "",
       "thread_ts": "",
+      "bot_profile": {
+        "id": "",
+        "deleted": false,
+        "name": "",
+        "updated": 123,
+        "app_id": "",
+        "icons": {
+          "image_36": "",
+          "image_48": "",
+          "image_72": ""
+        },
+        "team_id": ""
+      },
       "reply_count": 123,
       "reply_users_count": 123,
       "latest_reply": "",
@@ -41,7 +56,6 @@
         "elements": [
           {
             "type": "button",
-            "fallback": "",
             "text": {
               "type": "plain_text",
               "text": "",
@@ -76,7 +90,6 @@
           },
           {
             "type": "channels_select",
-            "fallback": "",
             "placeholder": {
               "type": "plain_text",
               "text": "",
@@ -109,7 +122,6 @@
           },
           {
             "type": "conversations_select",
-            "fallback": "",
             "placeholder": {
               "type": "plain_text",
               "text": "",
@@ -142,7 +154,6 @@
           },
           {
             "type": "datepicker",
-            "fallback": "",
             "action_id": "",
             "placeholder": {
               "type": "plain_text",
@@ -175,7 +186,6 @@
           },
           {
             "type": "external_select",
-            "fallback": "",
             "placeholder": {
               "type": "plain_text",
               "text": "",
@@ -188,7 +198,13 @@
                 "text": "",
                 "emoji": false
               },
-              "value": ""
+              "value": "",
+              "description": {
+                "type": "plain_text",
+                "text": "",
+                "emoji": false
+              },
+              "url": ""
             },
             "min_query_length": 123,
             "confirm": {
@@ -216,16 +232,15 @@
           },
           {
             "type": "image",
-            "fallback": "",
             "image_url": "",
+            "alt_text": "",
+            "fallback": "",
             "image_width": 123,
             "image_height": 123,
-            "image_bytes": 123,
-            "alt_text": ""
+            "image_bytes": 123
           },
           {
             "type": "overflow",
-            "fallback": "",
             "action_id": "",
             "confirm": {
               "title": {
@@ -252,7 +267,6 @@
           },
           {
             "type": "static_select",
-            "fallback": "",
             "placeholder": {
               "type": "plain_text",
               "text": "",
@@ -265,7 +279,13 @@
                 "text": "",
                 "emoji": false
               },
-              "value": ""
+              "value": "",
+              "description": {
+                "type": "plain_text",
+                "text": "",
+                "emoji": false
+              },
+              "url": ""
             },
             "confirm": {
               "title": {
@@ -292,7 +312,6 @@
           },
           {
             "type": "users_select",
-            "fallback": "",
             "placeholder": {
               "type": "plain_text",
               "text": "",
@@ -331,12 +350,12 @@
         "elements": [
           {
             "type": "image",
-            "fallback": "",
             "image_url": "",
+            "alt_text": "",
+            "fallback": "",
             "image_width": 123,
             "image_height": 123,
-            "image_bytes": 123,
-            "alt_text": ""
+            "image_bytes": 123
           }
         ],
         "block_id": ""
@@ -382,12 +401,12 @@
         ],
         "accessory": {
           "type": "image",
-          "fallback": "",
           "image_url": "",
+          "alt_text": "",
+          "fallback": "",
           "image_width": 123,
           "image_height": 123,
-          "image_bytes": 123,
-          "alt_text": ""
+          "image_bytes": 123
         }
       }
     ],
@@ -457,6 +476,8 @@
               "ok_text": "",
               "dismiss_text": ""
             },
+            "options": [],
+            "selected_options": [],
             "data_source": "",
             "min_query_length": 123,
             "url": ""

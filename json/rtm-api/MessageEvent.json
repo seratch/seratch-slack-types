@@ -1,8 +1,23 @@
 {
   "client_msg_id": "",
   "type": "message",
+  "team": "",
   "channel": "",
   "user": "",
+  "bot_id": "",
+  "bot_profile": {
+    "id": "",
+    "deleted": false,
+    "name": "",
+    "updated": 123,
+    "app_id": "",
+    "icons": {
+      "image_36": "",
+      "image_48": "",
+      "image_72": ""
+    },
+    "team_id": ""
+  },
   "text": "",
   "blocks": [
     {
@@ -10,7 +25,6 @@
       "elements": [
         {
           "type": "button",
-          "fallback": "",
           "text": {
             "type": "plain_text",
             "text": "",
@@ -45,7 +59,6 @@
         },
         {
           "type": "channels_select",
-          "fallback": "",
           "placeholder": {
             "type": "plain_text",
             "text": "",
@@ -74,11 +87,11 @@
               "text": "",
               "emoji": false
             }
-          }
+          },
+          "response_url_enabled": false
         },
         {
           "type": "conversations_select",
-          "fallback": "",
           "placeholder": {
             "type": "plain_text",
             "text": "",
@@ -107,11 +120,15 @@
               "text": "",
               "emoji": false
             }
+          },
+          "response_url_enabled": false,
+          "filter": {
+            "exclude_external_shared_channels": false,
+            "exclude_bot_users": false
           }
         },
         {
           "type": "datepicker",
-          "fallback": "",
           "action_id": "",
           "placeholder": {
             "type": "plain_text",
@@ -144,7 +161,6 @@
         },
         {
           "type": "external_select",
-          "fallback": "",
           "placeholder": {
             "type": "plain_text",
             "text": "",
@@ -157,7 +173,13 @@
               "text": "",
               "emoji": false
             },
-            "value": ""
+            "value": "",
+            "description": {
+              "type": "plain_text",
+              "text": "",
+              "emoji": false
+            },
+            "url": ""
           },
           "min_query_length": 123,
           "confirm": {
@@ -185,16 +207,15 @@
         },
         {
           "type": "image",
-          "fallback": "",
           "image_url": "",
+          "alt_text": "",
+          "fallback": "",
           "image_width": 123,
           "image_height": 123,
-          "image_bytes": 123,
-          "alt_text": ""
+          "image_bytes": 123
         },
         {
           "type": "overflow",
-          "fallback": "",
           "action_id": "",
           "confirm": {
             "title": {
@@ -221,7 +242,6 @@
         },
         {
           "type": "static_select",
-          "fallback": "",
           "placeholder": {
             "type": "plain_text",
             "text": "",
@@ -234,7 +254,13 @@
               "text": "",
               "emoji": false
             },
-            "value": ""
+            "value": "",
+            "description": {
+              "type": "plain_text",
+              "text": "",
+              "emoji": false
+            },
+            "url": ""
           },
           "confirm": {
             "title": {
@@ -261,7 +287,6 @@
         },
         {
           "type": "users_select",
-          "fallback": "",
           "placeholder": {
             "type": "plain_text",
             "text": "",
@@ -300,12 +325,12 @@
       "elements": [
         {
           "type": "image",
-          "fallback": "",
           "image_url": "",
+          "alt_text": "",
+          "fallback": "",
           "image_width": 123,
           "image_height": 123,
-          "image_bytes": 123,
-          "alt_text": ""
+          "image_bytes": 123
         }
       ],
       "block_id": ""
@@ -351,12 +376,12 @@
       ],
       "accessory": {
         "type": "image",
-        "fallback": "",
         "image_url": "",
+        "alt_text": "",
+        "fallback": "",
         "image_width": 123,
         "image_height": 123,
-        "image_bytes": 123,
-        "alt_text": ""
+        "image_bytes": 123
       }
     }
   ],
@@ -426,8 +451,25 @@
             "ok_text": "",
             "dismiss_text": ""
           },
+          "options": [
+            {
+              "text": "",
+              "value": ""
+            }
+          ],
+          "selected_options": [
+            {
+              "text": "",
+              "value": ""
+            }
+          ],
           "data_source": "",
           "min_query_length": 123,
+          "option_groups": [
+            {
+              "text": ""
+            }
+          ],
           "url": ""
         }
       ],

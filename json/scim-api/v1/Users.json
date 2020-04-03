@@ -1,14 +1,42 @@
 {
-  "Errors": {
-    "description": "",
-    "code": 12345
-  },
-  "totalResults": 12345,
-  "itemsPerPage": 12345,
-  "startIndex": 12345,
   "schemas": [
     ""
   ],
+  "id": "W00000000",
+  "externalId": "",
+  "meta": {
+    "created": "",
+    "location": "https://www.example.com/"
+  },
+  "userName": "",
+  "nickName": "",
+  "name": {
+    "givenName": "",
+    "familyName": ""
+  },
+  "displayName": "",
+  "profileUrl": "https://www.example.com/",
+  "title": "",
+  "timezone": "",
+  "active": false,
+  "emails": [
+    {
+      "value": "",
+      "primary": false
+    }
+  ],
+  "photos": [
+    {
+      "value": "https://www.example.com/",
+      "type": ""
+    }
+  ],
+  "groups": [
+    ""
+  ],
+  "totalResults": 12345,
+  "itemsPerPage": 12345,
+  "startIndex": 12345,
   "Resources": [
     {
       "schemas": [
@@ -45,7 +73,10 @@
         }
       ],
       "groups": [
-        ""
+        {
+          "value": "",
+          "display": ""
+        }
       ],
       "addresses": [
         {
@@ -75,37 +106,5 @@
         "manager": {}
       }
     }
-  ],
-  "id": "W00000000",
-  "externalId": "",
-  "meta": {
-    "created": "",
-    "location": "https://www.example.com/"
-  },
-  "userName": "",
-  "nickName": "",
-  "name": {
-    "givenName": "",
-    "familyName": ""
-  },
-  "displayName": "",
-  "profileUrl": "https://www.example.com/",
-  "title": "",
-  "timezone": "",
-  "active": false,
-  "emails": [
-    {
-      "value": "",
-      "primary": false
-    }
-  ],
-  "photos": [
-    {
-      "value": "https://www.example.com/",
-      "type": ""
-    }
-  ],
-  "groups": [
-    ""
   ]
 }

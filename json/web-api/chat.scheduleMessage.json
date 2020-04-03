@@ -9,6 +9,19 @@
     "text": "",
     "user": "U00000000",
     "team": "T00000000",
+    "bot_profile": {
+      "id": "B00000000",
+      "deleted": false,
+      "name": "",
+      "updated": 12345,
+      "app_id": "A00000000",
+      "icons": {
+        "image_36": "https://www.example.com/",
+        "image_48": "https://www.example.com/",
+        "image_72": "https://www.example.com/"
+      },
+      "team_id": "T00000000"
+    },
     "attachments": [
       {
         "msg_subtype": "",
@@ -75,8 +88,25 @@
               "ok_text": "",
               "dismiss_text": ""
             },
+            "options": [
+              {
+                "text": "",
+                "value": ""
+              }
+            ],
+            "selected_options": [
+              {
+                "text": "",
+                "value": ""
+              }
+            ],
             "data_source": "",
             "min_query_length": 12345,
+            "option_groups": [
+              {
+                "text": ""
+              }
+            ],
             "url": ""
           }
         ],
@@ -102,10 +132,15 @@
     "blocks": [
       {
         "type": "",
+        "block_id": "",
+        "text": {
+          "type": "",
+          "text": "",
+          "emoji": false
+        },
         "elements": [
           {
             "type": "",
-            "fallback": "",
             "text": {
               "type": "",
               "text": "",
@@ -143,7 +178,12 @@
               "emoji": false
             },
             "initial_channel": "",
+            "response_url_enabled": false,
             "initial_conversation": "",
+            "filter": {
+              "exclude_external_shared_channels": false,
+              "exclude_bot_users": false
+            },
             "initial_date": "",
             "initial_option": {
               "text": {
@@ -151,27 +191,33 @@
                 "text": "",
                 "emoji": false
               },
-              "value": ""
+              "value": "",
+              "description": {
+                "type": "",
+                "text": "",
+                "emoji": false
+              },
+              "url": ""
             },
             "min_query_length": 12345,
             "image_url": "",
+            "alt_text": "",
+            "fallback": "",
             "image_width": 12345,
             "image_height": 12345,
             "image_bytes": 12345,
-            "alt_text": "",
             "initial_user": ""
           },
           {
             "type": "",
-            "fallback": "",
             "image_url": "",
+            "alt_text": "",
+            "fallback": "",
             "image_width": 12345,
             "image_height": 12345,
-            "image_bytes": 12345,
-            "alt_text": ""
+            "image_bytes": 12345
           }
         ],
-        "block_id": "",
         "fallback": "",
         "image_url": "",
         "image_width": 12345,
@@ -179,11 +225,6 @@
         "image_bytes": 12345,
         "alt_text": "",
         "title": {
-          "type": "",
-          "text": "",
-          "emoji": false
-        },
-        "text": {
           "type": "",
           "text": "",
           "emoji": false
@@ -198,28 +239,15 @@
         ],
         "accessory": {
           "type": "",
-          "fallback": "",
           "image_url": "",
+          "alt_text": "",
+          "fallback": "",
           "image_width": 12345,
           "image_height": 12345,
-          "image_bytes": 12345,
-          "alt_text": ""
+          "image_bytes": 12345
         }
       }
-    ],
-    "bot_profile": {
-      "id": "B00000000",
-      "deleted": false,
-      "name": "",
-      "updated": 12345,
-      "app_id": "A00000000",
-      "icons": {
-        "image_36": "https://www.example.com/",
-        "image_48": "https://www.example.com/",
-        "image_72": "https://www.example.com/"
-      },
-      "team_id": "T00000000"
-    }
+    ]
   },
   "error": "",
   "needed": "",

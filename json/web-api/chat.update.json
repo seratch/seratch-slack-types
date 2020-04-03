@@ -4,13 +4,11 @@
   "ts": "0000000000.000000",
   "text": "",
   "message": {
-    "bot_id": "B00000000",
     "type": "",
-    "text": "",
-    "user": "U00000000",
-    "team": "T00000000",
     "subtype": "",
+    "text": "",
     "username": "",
+    "bot_id": "B00000000",
     "blocks": [
       {
         "type": "",
@@ -43,7 +41,6 @@
           },
           {
             "type": "",
-            "fallback": "",
             "text": {
               "type": "",
               "text": "",
@@ -81,7 +78,12 @@
               "emoji": false
             },
             "initial_channel": "",
+            "response_url_enabled": false,
             "initial_conversation": "",
+            "filter": {
+              "exclude_external_shared_channels": false,
+              "exclude_bot_users": false
+            },
             "initial_date": "",
             "initial_option": {
               "text": {
@@ -89,24 +91,31 @@
                 "text": "",
                 "emoji": false
               },
-              "value": ""
+              "value": "",
+              "description": {
+                "type": "",
+                "text": "",
+                "emoji": false
+              },
+              "url": ""
             },
             "min_query_length": 12345,
             "image_url": "",
+            "alt_text": "",
+            "fallback": "",
             "image_width": 12345,
             "image_height": 12345,
             "image_bytes": 12345,
-            "alt_text": "",
             "initial_user": ""
           },
           {
             "type": "",
-            "fallback": "",
             "image_url": "",
+            "alt_text": "",
+            "fallback": "",
             "image_width": 12345,
             "image_height": 12345,
-            "image_bytes": 12345,
-            "alt_text": ""
+            "image_bytes": 12345
           }
         ],
         "fallback": "",
@@ -130,6 +139,7 @@
         ]
       }
     ],
+    "user": "U00000000",
     "thread_ts": "0000000000.000000",
     "reply_count": 12345,
     "reply_users_count": 12345,
@@ -144,7 +154,7 @@
       }
     ],
     "subscribed": false,
-    "last_read": "0000000000.000000",
+    "team": "T00000000",
     "bot_profile": {
       "id": "B00000000",
       "deleted": false,
@@ -157,6 +167,11 @@
         "image_72": "https://www.example.com/"
       },
       "team_id": "T00000000"
+    },
+    "last_read": "0000000000.000000",
+    "edited": {
+      "user": "B00000000",
+      "ts": "0000000000.000000"
     }
   },
   "error": "",

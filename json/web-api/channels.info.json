@@ -50,46 +50,16 @@
           "lines_more": 12345,
           "preview_is_truncated": false,
           "is_starred": false,
-          "has_rich_preview": false,
-          "thumb_64": "https://www.example.com/",
-          "thumb_80": "https://www.example.com/",
-          "thumb_360": "https://www.example.com/",
-          "thumb_360_w": 12345,
-          "thumb_360_h": 12345,
-          "thumb_160": "https://www.example.com/",
-          "image_exif_rotation": 12345,
-          "original_w": 12345,
-          "original_h": 12345,
-          "thumb_tiny": "",
-          "thumb_480": "https://www.example.com/",
-          "thumb_480_w": 12345,
-          "thumb_480_h": 12345,
-          "thumb_720": "https://www.example.com/",
-          "thumb_720_w": 12345,
-          "thumb_720_h": 12345,
-          "thumb_800": "https://www.example.com/",
-          "thumb_800_w": 12345,
-          "thumb_800_h": 12345,
-          "thumb_960": "https://www.example.com/",
-          "thumb_960_w": 12345,
-          "thumb_960_h": 12345,
-          "thumb_1024": "https://www.example.com/",
-          "thumb_1024_w": 12345,
-          "thumb_1024_h": 12345,
-          "external_id": "",
-          "external_url": "https://www.example.com/"
+          "has_rich_preview": false
         }
       ],
       "upload": false,
       "user": "U00000000",
       "display_as_bot": false,
-      "x_files": [
-        "F00000000"
-      ],
       "ts": "0000000000.000000",
-      "bot_id": "B00000000",
       "subtype": "",
       "username": "",
+      "bot_id": "B00000000",
       "blocks": [
         {
           "type": "",
@@ -122,7 +92,6 @@
             },
             {
               "type": "",
-              "fallback": "",
               "text": {
                 "type": "",
                 "text": "",
@@ -168,24 +137,31 @@
                   "text": "",
                   "emoji": false
                 },
-                "value": ""
+                "value": "",
+                "description": {
+                  "type": "",
+                  "text": "",
+                  "emoji": false
+                },
+                "url": ""
               },
               "min_query_length": 12345,
               "image_url": "",
+              "alt_text": "",
+              "fallback": "",
               "image_width": 12345,
               "image_height": 12345,
               "image_bytes": 12345,
-              "alt_text": "",
               "initial_user": ""
             },
             {
               "type": "",
-              "fallback": "",
               "image_url": "",
+              "alt_text": "",
+              "fallback": "",
               "image_width": 12345,
               "image_height": 12345,
-              "image_bytes": 12345,
-              "alt_text": ""
+              "image_bytes": 12345
             }
           ],
           "fallback": "",
@@ -208,6 +184,9 @@
             }
           ]
         }
+      ],
+      "x_files": [
+        "F00000000"
       ],
       "attachments": [
         {
@@ -275,8 +254,25 @@
                 "ok_text": "",
                 "dismiss_text": ""
               },
+              "options": [
+                {
+                  "text": "",
+                  "value": ""
+                }
+              ],
+              "selected_options": [
+                {
+                  "text": "",
+                  "value": ""
+                }
+              ],
               "data_source": "",
               "min_query_length": 12345,
+              "option_groups": [
+                {
+                  "text": ""
+                }
+              ],
               "url": ""
             }
           ],
@@ -299,29 +295,10 @@
           }
         }
       ],
-      "team": "T00000000",
-      "bot_profile": {
-        "id": "B00000000",
-        "deleted": false,
-        "name": "",
-        "updated": 12345,
-        "app_id": "A00000000",
-        "icons": {
-          "image_36": "https://www.example.com/",
-          "image_48": "https://www.example.com/",
-          "image_72": "https://www.example.com/"
-        },
-        "team_id": "T00000000"
-      },
-      "reactions": [
-        {
-          "name": "",
-          "users": [
-            "U00000000"
-          ],
-          "count": 12345
-        }
-      ]
+      "edited": {
+        "user": "B00000000",
+        "ts": "0000000000.000000"
+      }
     },
     "unread_count": 12345,
     "unread_count_display": 12345,

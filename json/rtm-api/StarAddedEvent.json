@@ -5,11 +5,27 @@
     "type": "",
     "channel": "",
     "created_by": "",
-    "created": 123,
+    "date_create": 123,
     "message": {
       "client_msg_id": "",
       "type": "",
+      "team": "",
       "user": "",
+      "bot_id": "",
+      "bot_profile": {
+        "id": "",
+        "deleted": false,
+        "name": "",
+        "updated": 123,
+        "app_id": "",
+        "icons": {
+          "image_36": "",
+          "image_48": "",
+          "image_72": ""
+        },
+        "team_id": ""
+      },
+      "is_starred": false,
       "text": "",
       "blocks": [
         {
@@ -17,7 +33,6 @@
           "elements": [
             {
               "type": "button",
-              "fallback": "",
               "text": {
                 "type": "plain_text",
                 "text": "",
@@ -52,7 +67,6 @@
             },
             {
               "type": "channels_select",
-              "fallback": "",
               "placeholder": {
                 "type": "plain_text",
                 "text": "",
@@ -81,11 +95,11 @@
                   "text": "",
                   "emoji": false
                 }
-              }
+              },
+              "response_url_enabled": false
             },
             {
               "type": "conversations_select",
-              "fallback": "",
               "placeholder": {
                 "type": "plain_text",
                 "text": "",
@@ -114,11 +128,15 @@
                   "text": "",
                   "emoji": false
                 }
+              },
+              "response_url_enabled": false,
+              "filter": {
+                "exclude_external_shared_channels": false,
+                "exclude_bot_users": false
               }
             },
             {
               "type": "datepicker",
-              "fallback": "",
               "action_id": "",
               "placeholder": {
                 "type": "plain_text",
@@ -151,7 +169,6 @@
             },
             {
               "type": "external_select",
-              "fallback": "",
               "placeholder": {
                 "type": "plain_text",
                 "text": "",
@@ -164,7 +181,13 @@
                   "text": "",
                   "emoji": false
                 },
-                "value": ""
+                "value": "",
+                "description": {
+                  "type": "plain_text",
+                  "text": "",
+                  "emoji": false
+                },
+                "url": ""
               },
               "min_query_length": 123,
               "confirm": {
@@ -192,16 +215,15 @@
             },
             {
               "type": "image",
-              "fallback": "",
               "image_url": "",
+              "alt_text": "",
+              "fallback": "",
               "image_width": 123,
               "image_height": 123,
-              "image_bytes": 123,
-              "alt_text": ""
+              "image_bytes": 123
             },
             {
               "type": "overflow",
-              "fallback": "",
               "action_id": "",
               "confirm": {
                 "title": {
@@ -228,7 +250,6 @@
             },
             {
               "type": "static_select",
-              "fallback": "",
               "placeholder": {
                 "type": "plain_text",
                 "text": "",
@@ -241,7 +262,13 @@
                   "text": "",
                   "emoji": false
                 },
-                "value": ""
+                "value": "",
+                "description": {
+                  "type": "plain_text",
+                  "text": "",
+                  "emoji": false
+                },
+                "url": ""
               },
               "confirm": {
                 "title": {
@@ -268,7 +295,6 @@
             },
             {
               "type": "users_select",
-              "fallback": "",
               "placeholder": {
                 "type": "plain_text",
                 "text": "",
@@ -307,12 +333,12 @@
           "elements": [
             {
               "type": "image",
-              "fallback": "",
               "image_url": "",
+              "alt_text": "",
+              "fallback": "",
               "image_width": 123,
               "image_height": 123,
-              "image_bytes": 123,
-              "alt_text": ""
+              "image_bytes": 123
             }
           ],
           "block_id": ""
@@ -358,12 +384,12 @@
           ],
           "accessory": {
             "type": "image",
-            "fallback": "",
             "image_url": "",
+            "alt_text": "",
+            "fallback": "",
             "image_width": 123,
             "image_height": 123,
-            "image_bytes": 123,
-            "alt_text": ""
+            "image_bytes": 123
           }
         }
       ],
@@ -433,8 +459,25 @@
                 "ok_text": "",
                 "dismiss_text": ""
               },
+              "options": [
+                {
+                  "text": "",
+                  "value": ""
+                }
+              ],
+              "selected_options": [
+                {
+                  "text": "",
+                  "value": ""
+                }
+              ],
               "data_source": "",
               "min_query_length": 123,
+              "option_groups": [
+                {
+                  "text": ""
+                }
+              ],
               "url": ""
             }
           ],
@@ -461,7 +504,11 @@
       "pinned_to": [
         ""
       ],
-      "permalink": ""
+      "permalink": "",
+      "edited": {
+        "user": "",
+        "ts": ""
+      }
     },
     "file": {
       "id": "",
@@ -544,12 +591,15 @@
       "preview_plain_text": "",
       "has_more": false,
       "sent_to_self": false,
-      "bot_id": "",
       "lines": 123,
       "lines_more": 123,
       "is_public": false,
       "public_url_shared": false,
       "display_as_bot": false,
+      "shares": {},
+      "channel_actions_ts": "",
+      "channel_actions_count": 123,
+      "bot_id": "",
       "initial_comment": {
         "id": "",
         "created": 123,
@@ -561,10 +611,7 @@
       },
       "num_stars": 123,
       "is_starred": false,
-      "comments_count": 123,
-      "channel_actions_ts": "",
-      "channel_actions_count": 123,
-      "shares": {}
+      "comments_count": 123
     },
     "comment": {
       "id": "",
