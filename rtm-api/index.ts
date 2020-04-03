@@ -20,6 +20,8 @@ export { DndUpdatedUserEvent } from './DndUpdatedUserEvent';
 export { EmailDomainChangedEvent } from './EmailDomainChangedEvent';
 export { EmojiChangedEvent } from './EmojiChangedEvent';
 export { ErrorEvent } from './ErrorEvent';
+export { ExternalOrgMigrationFinishedEvent } from './ExternalOrgMigrationFinishedEvent';
+export { ExternalOrgMigrationStartedEvent } from './ExternalOrgMigrationStartedEvent';
 export { FileChangeEvent } from './FileChangeEvent';
 export { FileCommentAddedEvent } from './FileCommentAddedEvent';
 export { FileCommentDeletedEvent } from './FileCommentDeletedEvent';

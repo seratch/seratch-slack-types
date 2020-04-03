@@ -27,11 +27,6 @@ export interface File {
     display_as_bot?:      boolean;
     username?:            string;
     url_private?:         string;
-    permalink?:           string;
-    channels?:            string[];
-    groups?:              string[];
-    ims?:                 string[];
-    comments_count?:      number;
     thumb_64?:            string;
     thumb_80?:            string;
     thumb_360?:           string;
@@ -56,8 +51,12 @@ export interface File {
     image_exif_rotation?: number;
     original_w?:          number;
     original_h?:          number;
-    num_stars?:           number;
     thumb_tiny?:          string;
+    permalink?:           string;
+    channels?:            string[];
+    groups?:              string[];
+    ims?:                 string[];
+    comments_count?:      number;
 }
 
 export interface ResponseMetadata {

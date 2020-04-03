@@ -31,4 +31,82 @@ export interface Latest {
     username?:  string;
     bot_id?:    string;
     thread_ts?: string;
+    blocks?:    Block[];
+}
+
+export interface Block {
+    type?:         string;
+    elements?:     Element[];
+    block_id?:     string;
+    fallback?:     string;
+    image_url?:    string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+    alt_text?:     string;
+    title?:        Text;
+    text?:         Text;
+    fields?:       Text[];
+    accessory?:    Accessory;
+}
+
+export interface Accessory {
+    type?:         string;
+    image_url?:    string;
+    alt_text?:     string;
+    fallback?:     string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+}
+
+export interface Element {
+    type?:                 string;
+    text?:                 Text;
+    action_id?:            string;
+    url?:                  string;
+    value?:                string;
+    style?:                string;
+    confirm?:              Confirm;
+    placeholder?:          Text;
+    initial_channel?:      string;
+    response_url_enabled?: boolean;
+    initial_conversation?: string;
+    filter?:               Filter;
+    initial_date?:         string;
+    initial_option?:       InitialOption;
+    min_query_length?:     number;
+    image_url?:            string;
+    alt_text?:             string;
+    fallback?:             string;
+    image_width?:          number;
+    image_height?:         number;
+    image_bytes?:          number;
+    initial_user?:         string;
+}
+
+export interface Confirm {
+    title?:   Text;
+    text?:    Text;
+    confirm?: Text;
+    deny?:    Text;
+}
+
+export interface Text {
+    type?:     string;
+    text?:     string;
+    emoji?:    boolean;
+    verbatim?: boolean;
+}
+
+export interface Filter {
+    exclude_external_shared_channels?: boolean;
+    exclude_bot_users?:                boolean;
+}
+
+export interface InitialOption {
+    text?:        Text;
+    value?:       string;
+    description?: Text;
+    url?:         string;
 }

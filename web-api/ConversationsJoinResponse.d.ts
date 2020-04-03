@@ -1,9 +1,11 @@
 export interface ConversationsJoinResponse {
-    ok?:       boolean;
-    channel?:  Channel;
-    error?:    string;
-    needed?:   string;
-    provided?: string;
+    ok?:                boolean;
+    channel?:           Channel;
+    warning?:           string;
+    response_metadata?: ResponseMetadata;
+    error?:             string;
+    needed?:            string;
+    provided?:          string;
 }
 
 export interface Channel {
@@ -39,4 +41,8 @@ export interface Purpose {
     value?:    string;
     creator?:  string;
     last_set?: number;
+}
+
+export interface ResponseMetadata {
+    warnings?: string[];
 }

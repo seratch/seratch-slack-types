@@ -6,13 +6,13 @@ export interface StarAddedEvent {
 }
 
 export interface Item {
-    type?:       string;
-    channel?:    string;
-    created_by?: string;
-    created?:    number;
-    message?:    Message;
-    file?:       File;
-    comment?:    Comment;
+    type?:        string;
+    channel?:     string;
+    created_by?:  string;
+    date_create?: number;
+    message?:     Message;
+    file?:        File;
+    comment?:     Comment;
 }
 
 export interface Comment {
@@ -106,19 +106,19 @@ export interface File {
     preview_plain_text?:    string;
     has_more?:              boolean;
     sent_to_self?:          boolean;
-    bot_id?:                string;
     lines?:                 number;
     lines_more?:            number;
     is_public?:             boolean;
     public_url_shared?:     boolean;
     display_as_bot?:        boolean;
+    shares?:                Shares;
+    channel_actions_ts?:    string;
+    channel_actions_count?: number;
+    bot_id?:                string;
     initial_comment?:       Comment;
     num_stars?:             number;
     is_starred?:            boolean;
     comments_count?:        number;
-    channel_actions_ts?:    string;
-    channel_actions_count?: number;
-    shares?:                Shares;
 }
 
 export interface Shares {
@@ -127,13 +127,18 @@ export interface Shares {
 export interface Message {
     client_msg_id?: string;
     type?:          string;
+    team?:          string;
     user?:          string;
+    bot_id?:        string;
+    bot_profile?:   BotProfile;
+    is_starred?:    boolean;
     text?:          string;
     blocks?:        Block[];
     attachments?:   Attachment[];
     ts?:            string;
     pinned_to?:     string[];
     permalink?:     string;
+    edited?:        Edited;
 }
 
 export interface Attachment {
@@ -195,8 +200,11 @@ export interface Action {
     type?:             string;
     value?:            string;
     confirm?:          ActionConfirm;
+    options?:          Option[];
+    selected_options?: Option[];
     data_source?:      string;
     min_query_length?: number;
+    option_groups?:    OptionGroup[];
     url?:              string;
 }
 
@@ -205,6 +213,15 @@ export interface ActionConfirm {
     text?:         string;
     ok_text?:      string;
     dismiss_text?: string;
+}
+
+export interface OptionGroup {
+    text?: string;
+}
+
+export interface Option {
+    text?:  string;
+    value?: string;
 }
 
 export interface Field {
@@ -245,17 +262,16 @@ export interface Block {
 
 export interface Accessory {
     type?:         string;
-    fallback?:     string;
     image_url?:    string;
+    alt_text?:     string;
+    fallback?:     string;
     image_width?:  number;
     image_height?: number;
     image_bytes?:  number;
-    alt_text?:     string;
 }
 
 export interface Element {
     type?:                 string;
-    fallback?:             string;
     text?:                 Text;
     action_id?:            string;
     url?:                  string;
@@ -264,15 +280,18 @@ export interface Element {
     confirm?:              ElementConfirm;
     placeholder?:          Text;
     initial_channel?:      string;
+    response_url_enabled?: boolean;
     initial_conversation?: string;
+    filter?:               Filter;
     initial_date?:         string;
     initial_option?:       InitialOption;
     min_query_length?:     number;
     image_url?:            string;
+    alt_text?:             string;
+    fallback?:             string;
     image_width?:          number;
     image_height?:         number;
     image_bytes?:          number;
-    alt_text?:             string;
     initial_user?:         string;
 }
 
@@ -295,7 +314,35 @@ export enum Type {
     PlainText = "plain_text",
 }
 
+export interface Filter {
+    exclude_external_shared_channels?: boolean;
+    exclude_bot_users?:                boolean;
+}
+
 export interface InitialOption {
-    text?:  Text;
-    value?: string;
+    text?:        Text;
+    value?:       string;
+    description?: Text;
+    url?:         string;
+}
+
+export interface BotProfile {
+    id?:      string;
+    deleted?: boolean;
+    name?:    string;
+    updated?: number;
+    app_id?:  string;
+    icons?:   Icons;
+    team_id?: string;
+}
+
+export interface Icons {
+    image_36?: string;
+    image_48?: string;
+    image_72?: string;
+}
+
+export interface Edited {
+    user?: string;
+    ts?:   string;
 }

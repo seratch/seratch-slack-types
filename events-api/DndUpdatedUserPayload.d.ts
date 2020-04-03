@@ -1,20 +1,20 @@
 export interface DndUpdatedUserPayload {
     token?:         string;
-    enterprise_id?: string;
     team_id?:       string;
+    enterprise_id?: string;
     api_app_id?:    string;
+    event?:         Event;
     type?:          string;
-    authed_users?:  string[];
-    authed_teams?:  string[];
     event_id?:      string;
     event_time?:    number;
-    event?:         Event;
+    authed_users?:  string[];
 }
 
 export interface Event {
     type?:       string;
     user?:       string;
     dnd_status?: DndStatus;
+    event_ts?:   string;
 }
 
 export interface DndStatus {

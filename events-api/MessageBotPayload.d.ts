@@ -85,6 +85,8 @@ export interface Action {
     type?:             string;
     value?:            string;
     confirm?:          ActionConfirm;
+    options?:          any[];
+    selected_options?: any[];
     data_source?:      string;
     min_query_length?: number;
     url?:              string;
@@ -135,17 +137,16 @@ export interface Block {
 
 export interface Accessory {
     type?:         string;
-    fallback?:     string;
     image_url?:    string;
+    alt_text?:     string;
+    fallback?:     string;
     image_width?:  number;
     image_height?: number;
     image_bytes?:  number;
-    alt_text?:     string;
 }
 
 export interface Element {
     type?:                 string;
-    fallback?:             string;
     text?:                 Text;
     action_id?:            string;
     url?:                  string;
@@ -159,10 +160,11 @@ export interface Element {
     initial_option?:       InitialOption;
     min_query_length?:     number;
     image_url?:            string;
+    alt_text?:             string;
+    fallback?:             string;
     image_width?:          number;
     image_height?:         number;
     image_bytes?:          number;
-    alt_text?:             string;
     initial_user?:         string;
 }
 
@@ -186,8 +188,10 @@ export enum Type {
 }
 
 export interface InitialOption {
-    text?:  Text;
-    value?: string;
+    text?:        Text;
+    value?:       string;
+    description?: Text;
+    url?:         string;
 }
 
 export interface Icons {

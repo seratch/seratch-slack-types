@@ -2,6 +2,7 @@ export interface DndUpdatedUserEvent {
     type?:       string;
     user?:       string;
     dnd_status?: DndStatus;
+    event_ts?:   string;
 }
 
 export interface DndStatus {

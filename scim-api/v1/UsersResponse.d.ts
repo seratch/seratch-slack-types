@@ -1,10 +1,5 @@
 export interface UsersResponse {
-    Errors?:       Errors;
-    totalResults?: number;
-    itemsPerPage?: number;
-    startIndex?:   number;
     schemas?:      string[];
-    Resources?:    Resource[];
     id?:           string;
     externalId?:   string;
     meta?:         Meta;
@@ -19,11 +14,10 @@ export interface UsersResponse {
     emails?:       UsersResponseEmail[];
     photos?:       Photo[];
     groups?:       string[];
-}
-
-export interface Errors {
-    description?: string;
-    code?:        number;
+    totalResults?: number;
+    itemsPerPage?: number;
+    startIndex?:   number;
+    Resources?:    Resource[];
 }
 
 export interface Resource {
@@ -41,7 +35,7 @@ export interface Resource {
     active?:                                      boolean;
     emails?:                                      PhoneNumberElement[];
     photos?:                                      Photo[];
-    groups?:                                      string[];
+    groups?:                                      Group[];
     addresses?:                                   Address[];
     phoneNumbers?:                                PhoneNumberElement[];
     roles?:                                       PhoneNumberElement[];
@@ -61,6 +55,11 @@ export interface PhoneNumberElement {
     value?:   string;
     type?:    string;
     primary?: boolean;
+}
+
+export interface Group {
+    value?:   string;
+    display?: string;
 }
 
 export interface Meta {

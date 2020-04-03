@@ -1,38 +1,38 @@
 export interface SubteamCreatedPayload {
     token?:         string;
-    enterprise_id?: string;
     team_id?:       string;
+    enterprise_id?: string;
     api_app_id?:    string;
+    event?:         Event;
     type?:          string;
-    authed_users?:  string[];
-    authed_teams?:  string[];
     event_id?:      string;
     event_time?:    number;
-    event?:         Event;
+    authed_users?:  string[];
 }
 
 export interface Event {
-    type?:    string;
-    subteam?: Subteam;
+    type?:     string;
+    subteam?:  Subteam;
+    event_ts?: string;
 }
 
 export interface Subteam {
-    id?:           string;
-    team_id?:      string;
-    is_usergroup?: boolean;
-    name?:         string;
-    description?:  string;
-    handle?:       string;
-    is_external?:  boolean;
-    date_create?:  number;
-    date_update?:  number;
-    date_delete?:  number;
-    auto_type?:    string;
-    created_by?:   string;
-    updated_by?:   string;
-    deleted_by?:   string;
-    prefs?:        Prefs;
-    user_count?:   string;
+    id?:                    string;
+    team_id?:               string;
+    is_usergroup?:          boolean;
+    is_subteam?:            boolean;
+    name?:                  string;
+    description?:           string;
+    handle?:                string;
+    is_external?:           boolean;
+    date_create?:           number;
+    date_update?:           number;
+    date_delete?:           number;
+    auto_provision?:        boolean;
+    enterprise_subteam_id?: string;
+    created_by?:            string;
+    updated_by?:            string;
+    prefs?:                 Prefs;
 }
 
 export interface Prefs {

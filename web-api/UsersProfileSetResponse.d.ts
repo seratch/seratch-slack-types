@@ -15,7 +15,7 @@ export interface Profile {
     real_name_normalized?:    string;
     display_name?:            string;
     display_name_normalized?: string;
-    fields?:                  Fields;
+    fields?:                  { [key: string]: Field };
     status_text?:             string;
     status_emoji?:            string;
     status_expiration?:       number;
@@ -35,11 +35,7 @@ export interface Profile {
     status_text_canonical?:   string;
 }
 
-export interface Fields {
-    Xf0DAGNXHT?: Xf0DAGNXHT;
-}
-
-export interface Xf0DAGNXHT {
+export interface Field {
     value?: string;
     alt?:   string;
 }

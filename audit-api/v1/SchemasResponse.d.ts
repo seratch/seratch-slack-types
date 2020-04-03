@@ -15,6 +15,7 @@ export interface Schema {
     channel?:    Channel;
     app?:        App;
     message?:    Message;
+    workflow?:   Workflow;
 }
 
 export interface App {
@@ -22,8 +23,8 @@ export interface App {
     name?:                  string;
     is_distributed?:        string;
     is_directory_approved?: string;
-    scopes?:                string;
     is_workflow_app?:       string;
+    scopes?:                string;
 }
 
 export interface Channel {
@@ -59,4 +60,9 @@ export interface User {
     name?:  string;
     email?: string;
     team?:  string;
+}
+
+export interface Workflow {
+    id?:   string;
+    name?: string;
 }

@@ -15,9 +15,9 @@ export interface Message {
     text?:        string;
     user?:        string;
     team?:        string;
+    bot_profile?: BotProfile;
     attachments?: Attachment[];
     blocks?:      Block[];
-    bot_profile?: BotProfile;
 }
 
 export interface Attachment {
@@ -79,8 +79,11 @@ export interface Action {
     type?:             string;
     value?:            string;
     confirm?:          ActionConfirm;
+    options?:          Option[];
+    selected_options?: Option[];
     data_source?:      string;
     min_query_length?: number;
+    option_groups?:    OptionGroup[];
     url?:              string;
 }
 
@@ -89,6 +92,15 @@ export interface ActionConfirm {
     text?:         string;
     ok_text?:      string;
     dismiss_text?: string;
+}
+
+export interface OptionGroup {
+    text?: string;
+}
+
+export interface Option {
+    text?:  string;
+    value?: string;
 }
 
 export interface Field {
@@ -113,8 +125,9 @@ export interface Metadata {
 
 export interface Block {
     type?:         string;
-    elements?:     Element[];
     block_id?:     string;
+    text?:         Text;
+    elements?:     Element[];
     fallback?:     string;
     image_url?:    string;
     image_width?:  number;
@@ -122,24 +135,22 @@ export interface Block {
     image_bytes?:  number;
     alt_text?:     string;
     title?:        Text;
-    text?:         Text;
     fields?:       Text[];
     accessory?:    Accessory;
 }
 
 export interface Accessory {
     type?:         string;
-    fallback?:     string;
     image_url?:    string;
+    alt_text?:     string;
+    fallback?:     string;
     image_width?:  number;
     image_height?: number;
     image_bytes?:  number;
-    alt_text?:     string;
 }
 
 export interface Element {
     type?:                 string;
-    fallback?:             string;
     text?:                 Text;
     action_id?:            string;
     url?:                  string;
@@ -148,15 +159,18 @@ export interface Element {
     confirm?:              ElementConfirm;
     placeholder?:          Text;
     initial_channel?:      string;
+    response_url_enabled?: boolean;
     initial_conversation?: string;
+    filter?:               Filter;
     initial_date?:         string;
     initial_option?:       InitialOption;
     min_query_length?:     number;
     image_url?:            string;
+    alt_text?:             string;
+    fallback?:             string;
     image_width?:          number;
     image_height?:         number;
     image_bytes?:          number;
-    alt_text?:             string;
     initial_user?:         string;
 }
 
@@ -174,9 +188,16 @@ export interface Text {
     verbatim?: boolean;
 }
 
+export interface Filter {
+    exclude_external_shared_channels?: boolean;
+    exclude_bot_users?:                boolean;
+}
+
 export interface InitialOption {
-    text?:  Text;
-    value?: string;
+    text?:        Text;
+    value?:       string;
+    description?: Text;
+    url?:         string;
 }
 
 export interface BotProfile {

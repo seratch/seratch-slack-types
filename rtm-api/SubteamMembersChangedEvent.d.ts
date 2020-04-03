@@ -8,4 +8,5 @@ export interface SubteamMembersChangedEvent {
     added_users_count?:    number;
     removed_users?:        string[];
     removed_users_count?:  number;
+    event_ts?:             string;
 }

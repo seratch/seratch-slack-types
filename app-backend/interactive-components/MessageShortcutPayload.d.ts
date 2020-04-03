@@ -1,79 +1,20 @@
-export interface BlockActionPayload {
+export interface MessageShortcutPayload {
     type?:         string;
+    callback_id?:  string;
+    trigger_id?:   string;
+    message_ts?:   string;
+    response_url?: string;
+    message?:      Message;
     team?:         Team;
     user?:         User;
-    api_app_id?:   string;
-    token?:        string;
-    container?:    Container;
-    trigger_id?:   string;
     channel?:      Channel;
-    message?:      Message;
-    response_url?: string;
-    view?:         View;
-    actions?:      BlockActionPayloadAction[];
-}
-
-export interface BlockActionPayloadAction {
-    action_id?:             string;
-    block_id?:              string;
-    text?:                  Close;
-    value?:                 string;
-    type?:                  string;
-    action_ts?:             string;
-    url?:                   string;
-    confirm?:               ElementConfirm;
-    initial_option?:        Option;
-    placeholder?:           Close;
-    selected_option?:       Option;
-    selected_user?:         string;
-    initial_user?:          string;
-    selected_conversation?: string;
-    initial_conversation?:  string;
-    selected_channel?:      string;
-    initial_channel?:       string;
-    min_query_length?:      number;
-    selected_date?:         string;
-    initial_date?:          string;
-}
-
-export interface ElementConfirm {
-    title?:   Close;
-    text?:    Close;
-    confirm?: Close;
-    deny?:    Close;
-}
-
-export interface Close {
-    type?:     Type;
-    text?:     string;
-    emoji?:    boolean;
-    verbatim?: boolean;
-}
-
-export enum Type {
-    Empty = "",
-    Mrkdwn = "mrkdwn",
-    PlainText = "plain_text",
-}
-
-export interface Option {
-    text?:  Close;
-    value?: string;
+    token?:        string;
+    action_ts?:    string;
 }
 
 export interface Channel {
     id?:   string;
     name?: string;
-}
-
-export interface Container {
-    type?:          string;
-    message_ts?:    string;
-    attachment_id?: number;
-    channel_id?:    string;
-    text?:          string;
-    is_ephemeral?:  boolean;
-    is_app_unfurl?: boolean;
 }
 
 export interface Message {
@@ -165,7 +106,7 @@ export interface Attachment {
     footer_icon?:           string;
     ts?:                    string;
     mrkdwn_in?:             string[];
-    actions?:               AttachmentAction[];
+    actions?:               Action[];
     filename?:              string;
     size?:                  number;
     mimetype?:              string;
@@ -173,20 +114,22 @@ export interface Attachment {
     metadata?:              Metadata;
 }
 
-export interface AttachmentAction {
+export interface Action {
     id?:               string;
     name?:             string;
     text?:             string;
     style?:            string;
     type?:             string;
     value?:            string;
-    confirm?:          PurpleConfirm;
+    confirm?:          ActionConfirm;
+    options?:          any[];
+    selected_options?: any[];
     data_source?:      string;
     min_query_length?: number;
     url?:              string;
 }
 
-export interface PurpleConfirm {
+export interface ActionConfirm {
     title?:        string;
     text?:         string;
     ok_text?:      string;
@@ -223,43 +166,78 @@ export interface Block {
     image_height?: number;
     image_bytes?:  number;
     alt_text?:     string;
-    title?:        Close;
-    text?:         Close;
-    fields?:       Close[];
+    title?:        Text;
+    text?:         Text;
+    fields?:       Text[];
     accessory?:    Accessory;
 }
 
 export interface Accessory {
     type?:         string;
-    fallback?:     string;
     image_url?:    string;
+    alt_text?:     string;
+    fallback?:     string;
     image_width?:  number;
     image_height?: number;
     image_bytes?:  number;
-    alt_text?:     string;
 }
 
 export interface Element {
     type?:                 string;
-    fallback?:             string;
-    text?:                 Close;
+    text?:                 Text;
     action_id?:            string;
     url?:                  string;
     value?:                string;
     style?:                string;
     confirm?:              ElementConfirm;
-    placeholder?:          Close;
+    placeholder?:          Text;
     initial_channel?:      string;
+    response_url_enabled?: boolean;
+    max_selected_items?:   number;
     initial_conversation?: string;
+    filter?:               Filter;
     initial_date?:         string;
-    initial_option?:       Option;
+    initial_option?:       InitialOption;
     min_query_length?:     number;
     image_url?:            string;
+    alt_text?:             string;
+    fallback?:             string;
     image_width?:          number;
     image_height?:         number;
     image_bytes?:          number;
-    alt_text?:             string;
     initial_user?:         string;
+}
+
+export interface ElementConfirm {
+    title?:   Text;
+    text?:    Text;
+    confirm?: Text;
+    deny?:    Text;
+}
+
+export interface Text {
+    type?:     Type;
+    text?:     string;
+    emoji?:    boolean;
+    verbatim?: boolean;
+}
+
+export enum Type {
+    Mrkdwn = "mrkdwn",
+    PlainText = "plain_text",
+}
+
+export interface Filter {
+    include?:                          string[];
+    exclude_external_shared_channels?: boolean;
+    exclude_bot_users?:                boolean;
+}
+
+export interface InitialOption {
+    text?:        Text;
+    value?:       string;
+    description?: Text;
+    url?:         string;
 }
 
 export interface BotProfile {
@@ -399,19 +377,19 @@ export interface File {
     preview_plain_text?:    string;
     has_more?:              boolean;
     sent_to_self?:          boolean;
-    bot_id?:                string;
     lines?:                 number;
     lines_more?:            number;
     is_public?:             boolean;
     public_url_shared?:     boolean;
     display_as_bot?:        boolean;
+    shares?:                Shares;
+    channel_actions_ts?:    string;
+    channel_actions_count?: number;
+    bot_id?:                string;
     initial_comment?:       InitialComment;
     num_stars?:             number;
     is_starred?:            boolean;
     comments_count?:        number;
-    channel_actions_ts?:    string;
-    channel_actions_count?: number;
-    shares?:                Shares;
 }
 
 export interface InitialComment {
@@ -456,12 +434,15 @@ export interface Reaction {
 
 export interface Root {
     text?:              string;
+    user?:              string;
     username?:          string;
+    team?:              string;
     bot_id?:            string;
     mrkdwn?:            boolean;
     type?:              string;
     subtype?:           string;
     thread_ts?:         string;
+    bot_profile?:       BotProfile;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
@@ -479,31 +460,7 @@ export interface Team {
 }
 
 export interface User {
-    id?:       string;
-    username?: string;
-    name?:     string;
-    team_id?:  string;
-}
-
-export interface View {
-    id?:               string;
-    team_id?:          string;
-    type?:             string;
-    title?:            Close;
-    submit?:           Close;
-    close?:            Close;
-    private_metadata?: string;
-    callback_id?:      string;
-    external_id?:      string;
-    state?:            State;
-    hash?:             string;
-    clear_on_close?:   boolean;
-    notify_on_close?:  boolean;
-    root_view_id?:     string;
-    previous_view_id?: string;
-    app_id?:           string;
-    bot_id?:           string;
-}
-
-export interface State {
+    id?:      string;
+    name?:    string;
+    team_id?: string;
 }

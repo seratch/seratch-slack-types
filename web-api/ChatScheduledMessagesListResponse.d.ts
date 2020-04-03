@@ -16,4 +16,5 @@ export interface ScheduledMessage {
     channel_id?:   string;
     post_at?:      number;
     date_created?: number;
+    text?:         string;
 }

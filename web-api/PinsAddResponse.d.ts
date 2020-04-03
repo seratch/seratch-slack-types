@@ -1,11 +1,6 @@
 export interface PinsAddResponse {
-    ok?:                boolean;
-    error?:             string;
-    response_metadata?: ResponseMetadata;
-    needed?:            string;
-    provided?:          string;
-}
-
-export interface ResponseMetadata {
-    messages?: string[];
+    ok?:       boolean;
+    error?:    string;
+    needed?:   string;
+    provided?: string;
 }

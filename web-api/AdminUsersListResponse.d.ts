@@ -9,7 +9,6 @@ export interface AdminUsersListResponse {
 
 export interface ResponseMetadata {
     next_cursor?: string;
-    messages?:    string[];
 }
 
 export interface User {

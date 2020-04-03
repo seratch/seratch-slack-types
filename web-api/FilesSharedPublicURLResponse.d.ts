@@ -36,6 +36,7 @@ export interface File {
     image_exif_rotation?:  number;
     original_w?:           number;
     original_h?:           number;
+    thumb_tiny?:           string;
     permalink?:            string;
     permalink_public?:     string;
     comments_count?:       number;
@@ -51,7 +52,6 @@ export interface File {
     lines?:                number;
     lines_more?:           number;
     preview_is_truncated?: boolean;
-    thumb_tiny?:           string;
 }
 
 export interface Shares {

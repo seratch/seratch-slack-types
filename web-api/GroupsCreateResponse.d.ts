@@ -14,8 +14,6 @@ export interface Group {
     creator?:              string;
     is_archived?:          boolean;
     name_normalized?:      string;
-    is_read_only?:         boolean;
-    is_thread_only?:       boolean;
     is_mpim?:              boolean;
     is_open?:              boolean;
     last_read?:            string;

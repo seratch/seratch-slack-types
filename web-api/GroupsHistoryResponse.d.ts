@@ -9,9 +9,9 @@ export interface GroupsHistoryResponse {
 }
 
 export interface Message {
-    user?:    string;
     type?:    string;
     subtype?: string;
     ts?:      string;
+    user?:    string;
     text?:    string;
 }

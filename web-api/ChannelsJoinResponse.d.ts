@@ -33,10 +33,10 @@ export interface Channel {
 }
 
 export interface Latest {
-    user?:    string;
     type?:    string;
     subtype?: string;
     ts?:      string;
+    user?:    string;
     text?:    string;
 }
 

@@ -1,14 +1,14 @@
 export interface MemberLeftChannelPayload {
     token?:         string;
-    enterprise_id?: string;
     team_id?:       string;
+    enterprise_id?: string;
     api_app_id?:    string;
+    event?:         Event;
     type?:          string;
-    authed_users?:  string[];
-    authed_teams?:  string[];
     event_id?:      string;
     event_time?:    number;
-    event?:         Event;
+    authed_users?:  string[];
+    authed_teams?:  string[];
 }
 
 export interface Event {
@@ -17,4 +17,5 @@ export interface Event {
     channel?:      string;
     channel_type?: string;
     team?:         string;
+    event_ts?:     string;
 }

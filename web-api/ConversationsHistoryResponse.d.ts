@@ -3,8 +3,8 @@ export interface ConversationsHistoryResponse {
     messages?:              Message[];
     has_more?:              boolean;
     pin_count?:             number;
-    response_metadata?:     ResponseMetadata;
     channel_actions_count?: number;
+    response_metadata?:     ResponseMetadata;
     channel_actions_ts?:    number;
     error?:                 string;
     needed?:                string;
@@ -27,21 +27,21 @@ export interface Message {
     reply_users_count?: number;
     latest_reply?:      string;
     reply_users?:       string[];
-    replies?:           Array<Edited | string>;
+    replies?:           Edited[];
     subscribed?:        boolean;
     attachments?:       Attachment[];
-    blocks?:            Block[];
+    blocks?:            MessageBlock[];
     files?:             File[];
     upload?:            boolean;
     display_as_bot?:    boolean;
     x_files?:           string[];
     team?:              string;
-    reactions?:         Reaction[];
+    bot_profile?:       BotProfile;
     topic?:             string;
     purpose?:           string;
     last_read?:         string;
-    bot_profile?:       BotProfile;
-    client_msg_id?:     string;
+    reactions?:         Reaction[];
+    parent_user_id?:    string;
 }
 
 export interface Attachment {
@@ -93,6 +93,7 @@ export interface Attachment {
     mimetype?:              string;
     url?:                   string;
     metadata?:              Metadata;
+    blocks?:                AttachmentBlock[];
 }
 
 export interface Action {
@@ -103,8 +104,11 @@ export interface Action {
     type?:             string;
     value?:            string;
     confirm?:          ActionConfirm;
+    options?:          Option[];
+    selected_options?: Option[];
     data_source?:      string;
     min_query_length?: number;
+    option_groups?:    OptionGroup[];
     url?:              string;
 }
 
@@ -113,6 +117,92 @@ export interface ActionConfirm {
     text?:         string;
     ok_text?:      string;
     dismiss_text?: string;
+}
+
+export interface OptionGroup {
+    text?: string;
+}
+
+export interface Option {
+    text?:  string;
+    value?: string;
+}
+
+export interface AttachmentBlock {
+    type?:         string;
+    elements?:     PurpleElement[];
+    block_id?:     string;
+    fallback?:     string;
+    image_url?:    string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+    alt_text?:     string;
+    title?:        TextElement;
+    text?:         TextElement;
+    fields?:       TextElement[];
+    accessory?:    Accessory;
+}
+
+export interface Accessory {
+    type?:         string;
+    image_url?:    string;
+    alt_text?:     string;
+    fallback?:     string;
+    image_width?:  number;
+    image_height?: number;
+    image_bytes?:  number;
+}
+
+export interface PurpleElement {
+    type?:                 string;
+    text?:                 TextElement;
+    action_id?:            string;
+    url?:                  string;
+    value?:                string;
+    style?:                string;
+    confirm?:              ElementConfirm;
+    placeholder?:          TextElement;
+    initial_channel?:      string;
+    response_url_enabled?: boolean;
+    initial_conversation?: string;
+    filter?:               Filter;
+    initial_date?:         string;
+    initial_option?:       InitialOption;
+    min_query_length?:     number;
+    image_url?:            string;
+    alt_text?:             string;
+    fallback?:             string;
+    image_width?:          number;
+    image_height?:         number;
+    image_bytes?:          number;
+    initial_user?:         string;
+}
+
+export interface ElementConfirm {
+    title?:   TextElement;
+    text?:    TextElement;
+    confirm?: TextElement;
+    deny?:    TextElement;
+}
+
+export interface TextElement {
+    type?:     string;
+    text?:     string;
+    emoji?:    boolean;
+    verbatim?: boolean;
+}
+
+export interface Filter {
+    exclude_external_shared_channels?: boolean;
+    exclude_bot_users?:                boolean;
+}
+
+export interface InitialOption {
+    text?:        TextElement;
+    value?:       string;
+    description?: TextElement;
+    url?:         string;
 }
 
 export interface Field {
@@ -135,9 +225,9 @@ export interface Metadata {
     thumb_tiny?:  string;
 }
 
-export interface Block {
+export interface MessageBlock {
     type?:         string;
-    elements?:     Element[];
+    elements?:     FluffyElement[];
     block_id?:     string;
     fallback?:     string;
     image_url?:    string;
@@ -145,62 +235,36 @@ export interface Block {
     image_height?: number;
     image_bytes?:  number;
     alt_text?:     string;
-    title?:        Text;
-    text?:         Text;
-    fields?:       Text[];
+    title?:        TextElement;
+    text?:         TextElement;
+    fields?:       TextElement[];
     accessory?:    Accessory;
 }
 
-export interface Accessory {
-    type?:         string;
-    fallback?:     string;
-    image_url?:    string;
-    image_width?:  number;
-    image_height?: number;
-    image_bytes?:  number;
-    alt_text?:     string;
-}
-
-export interface Element {
+export interface FluffyElement {
     type?:                 string;
-    fallback?:             string;
-    text?:                 Text;
+    text?:                 TextElement | string;
     action_id?:            string;
     url?:                  string;
     value?:                string;
     style?:                string;
     confirm?:              ElementConfirm;
-    placeholder?:          Text;
+    placeholder?:          TextElement;
     initial_channel?:      string;
+    response_url_enabled?: boolean;
     initial_conversation?: string;
+    filter?:               Filter;
     initial_date?:         string;
     initial_option?:       InitialOption;
     min_query_length?:     number;
     image_url?:            string;
+    alt_text?:             string;
+    fallback?:             string;
     image_width?:          number;
     image_height?:         number;
     image_bytes?:          number;
-    alt_text?:             string;
     initial_user?:         string;
-}
-
-export interface ElementConfirm {
-    title?:   Text;
-    text?:    Text;
-    confirm?: Text;
-    deny?:    Text;
-}
-
-export interface Text {
-    type?:     string;
-    text?:     string;
-    emoji?:    boolean;
-    verbatim?: boolean;
-}
-
-export interface InitialOption {
-    text?:  Text;
-    value?: string;
+    verbatim?:             boolean;
 }
 
 export interface BotProfile {
@@ -279,9 +343,9 @@ export interface File {
     image_exif_rotation?:  number;
     original_w?:           number;
     original_h?:           number;
+    thumb_tiny?:           string;
     external_id?:          string;
     external_url?:         string;
-    thumb_tiny?:           string;
 }
 
 export interface MessageIcons {
@@ -310,6 +374,9 @@ export interface Root {
     replies?:           Edited[];
     subscribed?:        boolean;
     last_read?:         string;
+    user?:              string;
+    team?:              string;
+    bot_profile?:       BotProfile;
 }
 
 export interface ResponseMetadata {

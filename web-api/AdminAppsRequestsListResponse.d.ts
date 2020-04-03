@@ -1,10 +1,10 @@
 export interface AdminAppsRequestsListResponse {
     ok?:                boolean;
+    app_requests?:      AppRequest[];
+    response_metadata?: ResponseMetadata;
     error?:             string;
     needed?:            string;
     provided?:          string;
-    app_requests?:      AppRequest[];
-    response_metadata?: ResponseMetadata;
 }
 
 export interface AppRequest {
@@ -12,10 +12,9 @@ export interface AppRequest {
     app?:                 App;
     user?:                User;
     team?:                Team;
-    scopes?:              Scope[];
+    previous_resolution?: PreviousResolution;
     message?:             string;
     date_created?:        number;
-    previous_resolution?: PreviousResolution;
 }
 
 export interface App {
@@ -33,28 +32,21 @@ export interface App {
 }
 
 export interface Icons {
-    image_32?:   string;
-    image_36?:   string;
-    image_48?:   string;
-    image_64?:   string;
-    image_72?:   string;
-    image_96?:   string;
-    image_128?:  string;
-    image_192?:  string;
-    image_512?:  string;
-    image_1024?: string;
+    image_32?:       string;
+    image_36?:       string;
+    image_48?:       string;
+    image_64?:       string;
+    image_72?:       string;
+    image_96?:       string;
+    image_128?:      string;
+    image_192?:      string;
+    image_512?:      string;
+    image_1024?:     string;
+    image_original?: string;
 }
 
 export interface PreviousResolution {
     status?: string;
-    scopes?: Scope[];
-}
-
-export interface Scope {
-    name?:         string;
-    description?:  string;
-    is_sensitive?: boolean;
-    token_type?:   string;
 }
 
 export interface Team {

@@ -41,10 +41,9 @@ export interface Profile {
     status_emoji?:            string;
     status_expiration?:       number;
     avatar_hash?:             string;
-    bot_id?:                  string;
-    api_app_id?:              string;
-    always_active?:           boolean;
     image_original?:          string;
+    is_custom_image?:         boolean;
+    email?:                   string;
     first_name?:              string;
     last_name?:               string;
     image_24?:                string;
@@ -56,6 +55,7 @@ export interface Profile {
     image_1024?:              string;
     status_text_canonical?:   string;
     team?:                    string;
-    is_custom_image?:         boolean;
-    email?:                   string;
+    api_app_id?:              string;
+    always_active?:           boolean;
+    bot_id?:                  string;
 }

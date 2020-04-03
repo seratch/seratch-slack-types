@@ -41,16 +41,17 @@ export interface App {
 }
 
 export interface Icons {
-    image_32?:   string;
-    image_36?:   string;
-    image_48?:   string;
-    image_64?:   string;
-    image_72?:   string;
-    image_96?:   string;
-    image_128?:  string;
-    image_192?:  string;
-    image_512?:  string;
-    image_1024?: string;
+    image_32?:       string;
+    image_36?:       string;
+    image_48?:       string;
+    image_64?:       string;
+    image_72?:       string;
+    image_96?:       string;
+    image_128?:      string;
+    image_192?:      string;
+    image_512?:      string;
+    image_1024?:     string;
+    image_original?: string;
 }
 
 export interface PreviousResolution {

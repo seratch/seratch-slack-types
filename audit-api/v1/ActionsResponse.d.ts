@@ -13,4 +13,5 @@ export interface Actions {
     channel?:          string[];
     app?:              string[];
     message?:          string[];
+    workflow_builder?: string[];
 }

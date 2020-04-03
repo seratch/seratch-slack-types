@@ -10,23 +10,24 @@ export interface ChatUpdateResponse {
 }
 
 export interface Message {
-    bot_id?:            string;
     type?:              string;
-    text?:              string;
-    user?:              string;
-    team?:              string;
     subtype?:           string;
+    text?:              string;
     username?:          string;
+    bot_id?:            string;
     blocks?:            Block[];
+    user?:              string;
     thread_ts?:         string;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
     reply_users?:       string[];
-    replies?:           Reply[];
+    replies?:           Edited[];
     subscribed?:        boolean;
-    last_read?:         string;
+    team?:              string;
     bot_profile?:       BotProfile;
+    last_read?:         string;
+    edited?:            Edited;
 }
 
 export interface Block {
@@ -60,21 +61,23 @@ export interface Element {
     action_id?:            string;
     text?:                 Text;
     value?:                string;
-    fallback?:             string;
     url?:                  string;
     style?:                string;
     confirm?:              Confirm;
     placeholder?:          Text;
     initial_channel?:      string;
+    response_url_enabled?: boolean;
     initial_conversation?: string;
+    filter?:               Filter;
     initial_date?:         string;
     initial_option?:       InitialOption;
     min_query_length?:     number;
     image_url?:            string;
+    alt_text?:             string;
+    fallback?:             string;
     image_width?:          number;
     image_height?:         number;
     image_bytes?:          number;
-    alt_text?:             string;
     initial_user?:         string;
 }
 
@@ -92,9 +95,16 @@ export interface Text {
     verbatim?: boolean;
 }
 
+export interface Filter {
+    exclude_external_shared_channels?: boolean;
+    exclude_bot_users?:                boolean;
+}
+
 export interface InitialOption {
-    text?:  Text;
-    value?: string;
+    text?:        Text;
+    value?:       string;
+    description?: Text;
+    url?:         string;
 }
 
 export interface BotProfile {
@@ -113,7 +123,7 @@ export interface Icons {
     image_72?: string;
 }
 
-export interface Reply {
+export interface Edited {
     user?: string;
     ts?:   string;
 }

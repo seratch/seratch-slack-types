@@ -16,13 +16,13 @@ export interface Message {
     ts?:          string;
     username?:    string;
     bot_id?:      string;
-    thread_ts?:   string;
-    user?:        string;
-    team?:        string;
     blocks?:      Block[];
+    thread_ts?:   string;
     root?:        Root;
     icons?:       MessageIcons;
     attachments?: Attachment[];
+    user?:        string;
+    team?:        string;
     bot_profile?: BotProfile;
 }
 
@@ -145,11 +145,11 @@ export interface Accessory {
 
 export interface Element {
     type?:                 string;
-    text?:                 TextElement | string;
-    emoji?:                boolean;
     action_id?:            string;
+    text?:                 TextElement | string;
     value?:                string;
     verbatim?:             boolean;
+    emoji?:                boolean;
     fallback?:             string;
     url?:                  string;
     style?:                string;
@@ -222,7 +222,6 @@ export interface Root {
     reply_users?:       string[];
     replies?:           Reply[];
     subscribed?:        boolean;
-    last_read?:         string;
 }
 
 export interface Reply {

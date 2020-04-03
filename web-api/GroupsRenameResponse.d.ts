@@ -14,8 +14,6 @@ export interface Channel {
     creator?:         string;
     is_archived?:     boolean;
     name_normalized?: string;
-    is_read_only?:    boolean;
-    is_thread_only?:  boolean;
     is_mpim?:         boolean;
     members?:         string[];
     topic?:           Purpose;

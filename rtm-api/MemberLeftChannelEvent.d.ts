@@ -4,4 +4,5 @@ export interface MemberLeftChannelEvent {
     channel?:      string;
     channel_type?: string;
     team?:         string;
+    event_ts?:     string;
 }

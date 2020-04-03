@@ -38,16 +38,14 @@ export interface Latest {
     upload?:         boolean;
     user?:           string;
     display_as_bot?: boolean;
-    x_files?:        string[];
     ts?:             string;
-    bot_id?:         string;
     subtype?:        string;
     username?:       string;
+    bot_id?:         string;
     blocks?:         Block[];
+    x_files?:        string[];
     attachments?:    Attachment[];
-    team?:           string;
-    bot_profile?:    BotProfile;
-    reactions?:      Reaction[];
+    edited?:         Edited;
 }
 
 export interface Attachment {
@@ -109,8 +107,11 @@ export interface Action {
     type?:             string;
     value?:            string;
     confirm?:          ActionConfirm;
+    options?:          Option[];
+    selected_options?: Option[];
     data_source?:      string;
     min_query_length?: number;
+    option_groups?:    OptionGroup[];
     url?:              string;
 }
 
@@ -119,6 +120,15 @@ export interface ActionConfirm {
     text?:         string;
     ok_text?:      string;
     dismiss_text?: string;
+}
+
+export interface OptionGroup {
+    text?: string;
+}
+
+export interface Option {
+    text?:  string;
+    value?: string;
 }
 
 export interface Field {
@@ -172,7 +182,6 @@ export interface Element {
     action_id?:            string;
     text?:                 Text;
     value?:                string;
-    fallback?:             string;
     url?:                  string;
     style?:                string;
     confirm?:              ElementConfirm;
@@ -183,10 +192,11 @@ export interface Element {
     initial_option?:       InitialOption;
     min_query_length?:     number;
     image_url?:            string;
+    alt_text?:             string;
+    fallback?:             string;
     image_width?:          number;
     image_height?:         number;
     image_bytes?:          number;
-    alt_text?:             string;
     initial_user?:         string;
 }
 
@@ -205,24 +215,15 @@ export interface Text {
 }
 
 export interface InitialOption {
-    text?:  Text;
-    value?: string;
+    text?:        Text;
+    value?:       string;
+    description?: Text;
+    url?:         string;
 }
 
-export interface BotProfile {
-    id?:      string;
-    deleted?: boolean;
-    name?:    string;
-    updated?: number;
-    app_id?:  string;
-    icons?:   Icons;
-    team_id?: string;
-}
-
-export interface Icons {
-    image_36?: string;
-    image_48?: string;
-    image_72?: string;
+export interface Edited {
+    user?: string;
+    ts?:   string;
 }
 
 export interface File {
@@ -256,39 +257,6 @@ export interface File {
     preview_is_truncated?: boolean;
     is_starred?:           boolean;
     has_rich_preview?:     boolean;
-    thumb_64?:             string;
-    thumb_80?:             string;
-    thumb_360?:            string;
-    thumb_360_w?:          number;
-    thumb_360_h?:          number;
-    thumb_160?:            string;
-    image_exif_rotation?:  number;
-    original_w?:           number;
-    original_h?:           number;
-    thumb_tiny?:           string;
-    thumb_480?:            string;
-    thumb_480_w?:          number;
-    thumb_480_h?:          number;
-    thumb_720?:            string;
-    thumb_720_w?:          number;
-    thumb_720_h?:          number;
-    thumb_800?:            string;
-    thumb_800_w?:          number;
-    thumb_800_h?:          number;
-    thumb_960?:            string;
-    thumb_960_w?:          number;
-    thumb_960_h?:          number;
-    thumb_1024?:           string;
-    thumb_1024_w?:         number;
-    thumb_1024_h?:         number;
-    external_id?:          string;
-    external_url?:         string;
-}
-
-export interface Reaction {
-    name?:  string;
-    users?: string[];
-    count?: number;
 }
 
 export interface Purpose {

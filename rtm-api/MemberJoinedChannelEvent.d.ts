@@ -5,4 +5,5 @@ export interface MemberJoinedChannelEvent {
     channel_type?: string;
     team?:         string;
     inviter?:      string;
+    event_ts?:     string;
 }

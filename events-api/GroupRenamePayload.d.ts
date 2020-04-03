@@ -1,23 +1,25 @@
 export interface GroupRenamePayload {
     token?:         string;
-    enterprise_id?: string;
     team_id?:       string;
+    enterprise_id?: string;
     api_app_id?:    string;
+    event?:         Event;
     type?:          string;
-    authed_users?:  string[];
-    authed_teams?:  string[];
     event_id?:      string;
     event_time?:    number;
-    event?:         Event;
+    authed_users?:  string[];
 }
 
 export interface Event {
-    type?:    string;
-    channel?: Channel;
+    type?:     string;
+    channel?:  Channel;
+    event_ts?: string;
 }
 
 export interface Channel {
-    id?:      string;
-    name?:    string;
-    created?: number;
+    id?:              string;
+    name?:            string;
+    name_normalized?: string;
+    is_group?:        boolean;
+    created?:         number;
 }

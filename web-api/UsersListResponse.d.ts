@@ -29,11 +29,10 @@ export interface Member {
     is_app_user?:         boolean;
     updated?:             number;
     has_2fa?:             boolean;
-    presence?:            string;
+    is_workflow_bot?:     boolean;
+    locale?:              string;
     enterprise_user?:     EnterpriseUser;
     two_factor_type?:     string;
-    locale?:              string;
-    is_workflow_bot?:     boolean;
 }
 
 export interface EnterpriseUser {
@@ -58,6 +57,7 @@ export interface Profile {
     status_expiration?:       number;
     avatar_hash?:             string;
     image_original?:          string;
+    is_custom_image?:         boolean;
     email?:                   string;
     first_name?:              string;
     last_name?:               string;
@@ -70,11 +70,9 @@ export interface Profile {
     image_1024?:              string;
     status_text_canonical?:   string;
     team?:                    string;
-    is_custom_image?:         boolean;
-    bot_id?:                  string;
     api_app_id?:              string;
+    bot_id?:                  string;
     always_active?:           boolean;
-    guest_channels?:          string;
     guest_invited_by?:        string;
     guest_expiration_ts?:     number;
 }
