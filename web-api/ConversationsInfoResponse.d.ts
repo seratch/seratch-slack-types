@@ -41,7 +41,6 @@ export interface Channel {
     connected_team_ids?:         string[];
     conversation_host_id?:       string;
     is_moved?:                   number;
-    enterprise_id?:              string;
     is_global_shared?:           boolean;
     is_org_default?:             boolean;
     is_org_mandatory?:           boolean;

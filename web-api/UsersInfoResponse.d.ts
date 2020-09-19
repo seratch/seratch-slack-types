@@ -25,8 +25,8 @@ export interface User {
     is_bot?:              boolean;
     is_app_user?:         boolean;
     updated?:             number;
-    has_2fa?:             boolean;
     locale?:              string;
+    has_2fa?:             boolean;
 }
 
 export interface Profile {
@@ -41,21 +41,21 @@ export interface Profile {
     status_emoji?:            string;
     status_expiration?:       number;
     avatar_hash?:             string;
-    image_original?:          string;
-    is_custom_image?:         boolean;
-    email?:                   string;
-    first_name?:              string;
-    last_name?:               string;
+    api_app_id?:              string;
+    always_active?:           boolean;
+    bot_id?:                  string;
     image_24?:                string;
     image_32?:                string;
     image_48?:                string;
     image_72?:                string;
     image_192?:               string;
     image_512?:               string;
-    image_1024?:              string;
     status_text_canonical?:   string;
     team?:                    string;
-    api_app_id?:              string;
-    always_active?:           boolean;
-    bot_id?:                  string;
+    image_original?:          string;
+    is_custom_image?:         boolean;
+    email?:                   string;
+    first_name?:              string;
+    last_name?:               string;
+    image_1024?:              string;
 }

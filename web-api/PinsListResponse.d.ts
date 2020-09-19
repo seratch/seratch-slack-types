@@ -69,4 +69,5 @@ export interface Public {
     ts?:                string;
     channel_name?:      string;
     team_id?:           string;
+    share_user_id?:     string;
 }

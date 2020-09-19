@@ -38,22 +38,32 @@ export interface Message {
 }
 
 export interface Attachment {
+    service_name?:          string;
+    service_url?:           string;
+    title?:                 string;
+    title_link?:            string;
+    author_name?:           string;
+    author_link?:           string;
+    thumb_url?:             string;
+    thumb_width?:           number;
+    thumb_height?:          number;
+    fallback?:              string;
+    video_html?:            string;
+    video_html_width?:      number;
+    video_html_height?:     number;
+    from_url?:              string;
+    service_icon?:          string;
+    id?:                    number;
+    original_url?:          string;
     msg_subtype?:           string;
     callback_id?:           string;
     color?:                 string;
     pretext?:               string;
-    service_url?:           string;
-    service_name?:          string;
-    service_icon?:          string;
-    author_name?:           string;
-    author_link?:           string;
+    author_id?:             string;
     author_icon?:           string;
-    from_url?:              string;
-    original_url?:          string;
     author_subname?:        string;
     channel_id?:            string;
     channel_name?:          string;
-    id?:                    number;
     bot_id?:                string;
     indent?:                boolean;
     is_msg_unfurl?:         boolean;
@@ -61,16 +71,8 @@ export interface Attachment {
     is_thread_root_unfurl?: boolean;
     is_app_unfurl?:         boolean;
     app_unfurl_url?:        string;
-    title?:                 string;
-    title_link?:            string;
     text?:                  string;
     fields?:                Field[];
-    thumb_url?:             string;
-    thumb_width?:           number;
-    thumb_height?:          number;
-    video_html?:            string;
-    video_html_width?:      number;
-    video_html_height?:     number;
     footer?:                string;
     footer_icon?:           string;
     ts?:                    string;

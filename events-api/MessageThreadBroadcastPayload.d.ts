@@ -36,6 +36,7 @@ export interface Attachment {
     service_url?:           string;
     service_name?:          string;
     service_icon?:          string;
+    author_id?:             string;
     author_name?:           string;
     author_link?:           string;
     author_icon?:           string;
@@ -147,26 +148,30 @@ export interface Accessory {
 }
 
 export interface Element {
-    type?:                 string;
-    text?:                 Text;
-    action_id?:            string;
-    url?:                  string;
-    value?:                string;
-    style?:                string;
-    confirm?:              ElementConfirm;
-    placeholder?:          Text;
-    initial_channel?:      string;
-    initial_conversation?: string;
-    initial_date?:         string;
-    initial_option?:       InitialOption;
-    min_query_length?:     number;
-    image_url?:            string;
-    alt_text?:             string;
-    fallback?:             string;
-    image_width?:          number;
-    image_height?:         number;
-    image_bytes?:          number;
-    initial_user?:         string;
+    type?:                            string;
+    text?:                            Text;
+    action_id?:                       string;
+    url?:                             string;
+    value?:                           string;
+    style?:                           string;
+    confirm?:                         ElementConfirm;
+    placeholder?:                     Text;
+    initial_channel?:                 string;
+    response_url_enabled?:            boolean;
+    max_selected_items?:              number;
+    initial_conversation?:            string;
+    default_to_current_conversation?: boolean;
+    filter?:                          Filter;
+    initial_date?:                    string;
+    initial_option?:                  InitialOption;
+    min_query_length?:                number;
+    image_url?:                       string;
+    alt_text?:                        string;
+    fallback?:                        string;
+    image_width?:                     number;
+    image_height?:                    number;
+    image_bytes?:                     number;
+    initial_user?:                    string;
 }
 
 export interface ElementConfirm {
@@ -174,6 +179,7 @@ export interface ElementConfirm {
     text?:    Text;
     confirm?: Text;
     deny?:    Text;
+    style?:   string;
 }
 
 export interface Text {
@@ -188,6 +194,12 @@ export enum Type {
     PlainText = "plain_text",
 }
 
+export interface Filter {
+    include?:                          string[];
+    exclude_external_shared_channels?: boolean;
+    exclude_bot_users?:                boolean;
+}
+
 export interface InitialOption {
     text?:        Text;
     value?:       string;
@@ -198,6 +210,7 @@ export interface InitialOption {
 export interface Root {
     text?:              string;
     user?:              string;
+    parent_user_id?:    string;
     username?:          string;
     team?:              string;
     bot_id?:            string;
@@ -205,6 +218,7 @@ export interface Root {
     type?:              string;
     subtype?:           string;
     thread_ts?:         string;
+    icons?:             RootIcons;
     bot_profile?:       BotProfile;
     reply_count?:       number;
     reply_users_count?: number;
@@ -221,12 +235,20 @@ export interface BotProfile {
     name?:    string;
     updated?: number;
     app_id?:  string;
-    icons?:   Icons;
+    icons?:   BotProfileIcons;
     team_id?: string;
 }
 
-export interface Icons {
+export interface BotProfileIcons {
     image_36?: string;
     image_48?: string;
+    image_72?: string;
+}
+
+export interface RootIcons {
+    emoji?:    string;
+    image_36?: string;
+    image_48?: string;
+    image_64?: string;
     image_72?: string;
 }

@@ -14,8 +14,8 @@ export interface Schema {
     file?:       File;
     channel?:    Channel;
     app?:        App;
-    message?:    Message;
     workflow?:   Workflow;
+    message?:    Message;
 }
 
 export interface App {

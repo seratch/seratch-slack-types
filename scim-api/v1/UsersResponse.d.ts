@@ -1,23 +1,15 @@
 export interface UsersResponse {
-    schemas?:      string[];
-    id?:           string;
-    externalId?:   string;
-    meta?:         Meta;
-    userName?:     string;
-    nickName?:     string;
-    name?:         Name;
-    displayName?:  string;
-    profileUrl?:   string;
-    title?:        string;
-    timezone?:     string;
-    active?:       boolean;
-    emails?:       UsersResponseEmail[];
-    photos?:       Photo[];
-    groups?:       string[];
     totalResults?: number;
     itemsPerPage?: number;
     startIndex?:   number;
+    schemas?:      string[];
     Resources?:    Resource[];
+    Errors?:       Errors;
+}
+
+export interface Errors {
+    description?: string;
+    code?:        number;
 }
 
 export interface Resource {
@@ -33,12 +25,12 @@ export interface Resource {
     title?:                                       string;
     timezone?:                                    string;
     active?:                                      boolean;
-    emails?:                                      PhoneNumberElement[];
+    emails?:                                      Email[];
     photos?:                                      Photo[];
     groups?:                                      Group[];
     addresses?:                                   Address[];
-    phoneNumbers?:                                PhoneNumberElement[];
-    roles?:                                       PhoneNumberElement[];
+    phoneNumbers?:                                Email[];
+    roles?:                                       Email[];
     "urn:scim:schemas:extension:enterprise:1.0"?: UrnScimSchemasExtensionEnterprise10;
 }
 
@@ -51,7 +43,7 @@ export interface Address {
     primary?:       boolean;
 }
 
-export interface PhoneNumberElement {
+export interface Email {
     value?:   string;
     type?:    string;
     primary?: boolean;
@@ -82,9 +74,4 @@ export interface UrnScimSchemasExtensionEnterprise10 {
 }
 
 export interface Manager {
-}
-
-export interface UsersResponseEmail {
-    value?:   string;
-    primary?: boolean;
 }

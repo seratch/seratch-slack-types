@@ -9,8 +9,8 @@ export interface RemindersInfoResponse {
 export interface Reminder {
     id?:          string;
     creator?:     string;
-    user?:        string;
     text?:        string;
+    user?:        string;
     recurring?:   boolean;
     time?:        number;
     complete_ts?: number;

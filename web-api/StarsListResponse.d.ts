@@ -10,8 +10,8 @@ export interface StarsListResponse {
 export interface Item {
     type?:        string;
     channel?:     string;
-    message?:     Message;
     date_create?: number;
+    message?:     Message;
     file?:        File;
     comment?:     Comment;
 }
@@ -103,28 +103,28 @@ export interface Public {
     ts?:                string;
     channel_name?:      string;
     team_id?:           string;
+    share_user_id?:     string;
 }
 
 export interface Message {
-    type?:              string;
-    subtype?:           string;
-    text?:              string;
-    ts?:                string;
-    username?:          string;
     bot_id?:            string;
+    type?:              string;
+    text?:              string;
+    user?:              string;
+    ts?:                string;
+    team?:              string;
+    attachments?:       Attachment[];
     is_starred?:        boolean;
     permalink?:         string;
+    subtype?:           string;
+    username?:          string;
     blocks?:            Block[];
-    attachments?:       Attachment[];
     client_msg_id?:     string;
-    user?:              string;
-    team?:              string;
     thread_ts?:         string;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
     reply_users?:       string[];
-    replies?:           Reply[];
     subscribed?:        boolean;
     last_read?:         string;
     reactions?:         Reaction[];
@@ -139,6 +139,7 @@ export interface Attachment {
     service_url?:           string;
     service_name?:          string;
     service_icon?:          string;
+    author_id?:             string;
     author_name?:           string;
     author_link?:           string;
     author_icon?:           string;
@@ -260,28 +261,29 @@ export interface Accessory {
 }
 
 export interface Element {
-    type?:                 string;
-    text?:                 Text;
-    action_id?:            string;
-    url?:                  string;
-    value?:                string;
-    style?:                string;
-    confirm?:              ElementConfirm;
-    placeholder?:          Text;
-    initial_channel?:      string;
-    response_url_enabled?: boolean;
-    initial_conversation?: string;
-    filter?:               Filter;
-    initial_date?:         string;
-    initial_option?:       InitialOption;
-    min_query_length?:     number;
-    image_url?:            string;
-    alt_text?:             string;
-    fallback?:             string;
-    image_width?:          number;
-    image_height?:         number;
-    image_bytes?:          number;
-    initial_user?:         string;
+    type?:                            string;
+    text?:                            Text;
+    action_id?:                       string;
+    url?:                             string;
+    value?:                           string;
+    style?:                           string;
+    confirm?:                         ElementConfirm;
+    placeholder?:                     Text;
+    initial_channel?:                 string;
+    response_url_enabled?:            boolean;
+    initial_conversation?:            string;
+    default_to_current_conversation?: boolean;
+    filter?:                          Filter;
+    initial_date?:                    string;
+    initial_option?:                  InitialOption;
+    min_query_length?:                number;
+    image_url?:                       string;
+    alt_text?:                        string;
+    fallback?:                        string;
+    image_width?:                     number;
+    image_height?:                    number;
+    image_bytes?:                     number;
+    initial_user?:                    string;
 }
 
 export interface ElementConfirm {
@@ -289,6 +291,7 @@ export interface ElementConfirm {
     text?:    Text;
     confirm?: Text;
     deny?:    Text;
+    style?:   string;
 }
 
 export interface Text {
@@ -314,11 +317,6 @@ export interface Reaction {
     name?:  string;
     users?: string[];
     count?: number;
-}
-
-export interface Reply {
-    user?: string;
-    ts?:   string;
 }
 
 export interface Paging {

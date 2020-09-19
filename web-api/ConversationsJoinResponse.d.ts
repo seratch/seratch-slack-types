@@ -30,10 +30,10 @@ export interface Channel {
     is_member?:                  boolean;
     is_private?:                 boolean;
     is_mpim?:                    boolean;
-    last_read?:                  string;
     topic?:                      Purpose;
     purpose?:                    Purpose;
     previous_names?:             string[];
+    last_read?:                  string;
     priority?:                   number;
 }
 

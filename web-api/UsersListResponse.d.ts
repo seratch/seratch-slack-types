@@ -30,9 +30,9 @@ export interface Member {
     updated?:             number;
     has_2fa?:             boolean;
     is_workflow_bot?:     boolean;
-    locale?:              string;
     enterprise_user?:     EnterpriseUser;
-    two_factor_type?:     string;
+    is_invited_user?:     boolean;
+    locale?:              string;
 }
 
 export interface EnterpriseUser {

@@ -17,6 +17,7 @@ export interface User {
     is_admin?:            boolean;
     is_owner?:            boolean;
     is_primary_owner?:    boolean;
+    is_invited_user?:     boolean;
     is_restricted?:       boolean;
     is_ultra_restricted?: boolean;
     is_bot?:              boolean;

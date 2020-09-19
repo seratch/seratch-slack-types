@@ -1,9 +1,11 @@
 export interface GroupsListResponse {
-    ok?:       boolean;
-    groups?:   Group[];
-    error?:    string;
-    needed?:   string;
-    provided?: string;
+    ok?:                boolean;
+    groups?:            Group[];
+    warning?:           string;
+    response_metadata?: ResponseMetadata;
+    error?:             string;
+    needed?:            string;
+    provided?:          string;
 }
 
 export interface Group {
@@ -25,4 +27,9 @@ export interface Purpose {
     value?:    string;
     creator?:  string;
     last_set?: number;
+}
+
+export interface ResponseMetadata {
+    messages?: string[];
+    warnings?: string[];
 }

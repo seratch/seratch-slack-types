@@ -1,30 +1,28 @@
 export interface ChannelsRepliesResponse {
-    messages?: Message[];
-    has_more?: boolean;
-    ok?:       boolean;
-    error?:    string;
-    needed?:   string;
-    provided?: string;
+    messages?:          Message[];
+    has_more?:          boolean;
+    ok?:                boolean;
+    warning?:           string;
+    response_metadata?: ResponseMetadata;
+    error?:             string;
+    needed?:            string;
+    provided?:          string;
 }
 
 export interface Message {
-    type?:              string;
-    subtype?:           string;
-    ts?:                string;
-    user?:              string;
-    text?:              string;
-    topic?:             string;
-    username?:          string;
     bot_id?:            string;
+    type?:              string;
+    text?:              string;
+    user?:              string;
+    ts?:                string;
+    team?:              string;
+    bot_profile?:       BotProfile;
     thread_ts?:         string;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
     reply_users?:       string[];
-    replies?:           Reply[];
     subscribed?:        boolean;
-    team?:              string;
-    bot_profile?:       BotProfile;
     parent_user_id?:    string;
 }
 
@@ -44,7 +42,7 @@ export interface Icons {
     image_72?: string;
 }
 
-export interface Reply {
-    user?: string;
-    ts?:   string;
+export interface ResponseMetadata {
+    messages?: string[];
+    warnings?: string[];
 }

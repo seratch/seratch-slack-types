@@ -1,5 +1,6 @@
 export interface SlashCommandPayload {
     token?:           string;
+    api_app_id?:      string;
     team_id?:         string;
     team_domain?:     string;
     enterprise_id?:   string;

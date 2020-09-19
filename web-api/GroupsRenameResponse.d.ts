@@ -1,9 +1,11 @@
 export interface GroupsRenameResponse {
-    channel?:  Channel;
-    ok?:       boolean;
-    error?:    string;
-    needed?:   string;
-    provided?: string;
+    channel?:           Channel;
+    ok?:                boolean;
+    warning?:           string;
+    response_metadata?: ResponseMetadata;
+    error?:             string;
+    needed?:            string;
+    provided?:          string;
 }
 
 export interface Channel {
@@ -24,4 +26,9 @@ export interface Purpose {
     value?:    string;
     creator?:  string;
     last_set?: number;
+}
+
+export interface ResponseMetadata {
+    messages?: string[];
+    warnings?: string[];
 }

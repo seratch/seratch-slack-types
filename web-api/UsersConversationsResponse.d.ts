@@ -25,6 +25,7 @@ export interface Channel {
     unread_count_display?:  number;
     user?:                  string;
     priority?:              number;
+    date_connected?:        number;
     parent_conversation?:   string;
     conversation_host_id?:  string;
     is_channel?:            boolean;
@@ -56,6 +57,7 @@ export interface Latest {
     team?:           string;
     user?:           string;
     username?:       string;
+    parent_user_id?: string;
     text?:           string;
     topic?:          string;
     root?:           Root;
@@ -63,10 +65,27 @@ export interface Latest {
     display_as_bot?: boolean;
     bot_id?:         string;
     bot_link?:       string;
+    bot_profile?:    BotProfile;
     thread_ts?:      string;
     ts?:             string;
-    icons?:          Icons;
+    icons?:          LatestIcons;
     edited?:         Edited;
+}
+
+export interface BotProfile {
+    id?:      string;
+    deleted?: boolean;
+    name?:    string;
+    updated?: number;
+    app_id?:  string;
+    icons?:   BotProfileIcons;
+    team_id?: string;
+}
+
+export interface BotProfileIcons {
+    image_36?: string;
+    image_48?: string;
+    image_72?: string;
 }
 
 export interface Edited {
@@ -74,7 +93,7 @@ export interface Edited {
     ts?:   string;
 }
 
-export interface Icons {
+export interface LatestIcons {
     emoji?:    string;
     image_36?: string;
     image_48?: string;
@@ -84,12 +103,17 @@ export interface Icons {
 
 export interface Root {
     text?:              string;
+    user?:              string;
+    parent_user_id?:    string;
     username?:          string;
+    team?:              string;
     bot_id?:            string;
     mrkdwn?:            boolean;
     type?:              string;
     subtype?:           string;
     thread_ts?:         string;
+    icons?:             LatestIcons;
+    bot_profile?:       BotProfile;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;

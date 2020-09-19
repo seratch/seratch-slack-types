@@ -8,7 +8,6 @@ export interface MemberLeftChannelPayload {
     event_id?:      string;
     event_time?:    number;
     authed_users?:  string[];
-    authed_teams?:  string[];
 }
 
 export interface Event {

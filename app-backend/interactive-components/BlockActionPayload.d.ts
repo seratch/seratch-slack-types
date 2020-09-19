@@ -41,6 +41,7 @@ export interface ElementConfirm {
     text?:    Close;
     confirm?: Close;
     deny?:    Close;
+    style?:   string;
 }
 
 export interface Close {
@@ -123,6 +124,7 @@ export interface Message {
     reply_users_count?:   number;
     latest_reply?:        string;
     subscribed?:          boolean;
+    hidden?:              boolean;
     last_read?:           string;
     root?:                Root;
     item_type?:           string;
@@ -138,6 +140,7 @@ export interface Attachment {
     service_url?:           string;
     service_name?:          string;
     service_icon?:          string;
+    author_id?:             string;
     author_name?:           string;
     author_link?:           string;
     author_icon?:           string;
@@ -249,29 +252,30 @@ export interface Accessory {
 }
 
 export interface Element {
-    type?:                 string;
-    text?:                 Close;
-    action_id?:            string;
-    url?:                  string;
-    value?:                string;
-    style?:                string;
-    confirm?:              ElementConfirm;
-    placeholder?:          Close;
-    initial_channel?:      string;
-    response_url_enabled?: boolean;
-    max_selected_items?:   number;
-    initial_conversation?: string;
-    filter?:               Filter;
-    initial_date?:         string;
-    initial_option?:       InitialOption;
-    min_query_length?:     number;
-    image_url?:            string;
-    alt_text?:             string;
-    fallback?:             string;
-    image_width?:          number;
-    image_height?:         number;
-    image_bytes?:          number;
-    initial_user?:         string;
+    type?:                            string;
+    text?:                            Close;
+    action_id?:                       string;
+    url?:                             string;
+    value?:                           string;
+    style?:                           string;
+    confirm?:                         ElementConfirm;
+    placeholder?:                     Close;
+    initial_channel?:                 string;
+    response_url_enabled?:            boolean;
+    max_selected_items?:              number;
+    initial_conversation?:            string;
+    default_to_current_conversation?: boolean;
+    filter?:                          Filter;
+    initial_date?:                    string;
+    initial_option?:                  InitialOption;
+    min_query_length?:                number;
+    image_url?:                       string;
+    alt_text?:                        string;
+    fallback?:                        string;
+    image_width?:                     number;
+    image_height?:                    number;
+    image_bytes?:                     number;
+    initial_user?:                    string;
 }
 
 export interface Filter {
@@ -349,6 +353,10 @@ export interface File {
     user?:                  string;
     mode?:                  string;
     editable?:              boolean;
+    non_owner_editable?:    boolean;
+    editor?:                string;
+    last_editor?:           string;
+    updated?:               number;
     is_external?:           boolean;
     external_type?:         string;
     external_id?:           string;
@@ -448,6 +456,7 @@ export interface Shares {
 }
 
 export interface Private {
+    share_user_id?:     string;
     reply_users?:       string[];
     reply_users_count?: number;
     reply_count?:       number;
@@ -475,6 +484,7 @@ export interface Reaction {
 export interface Root {
     text?:              string;
     user?:              string;
+    parent_user_id?:    string;
     username?:          string;
     team?:              string;
     bot_id?:            string;
@@ -482,6 +492,7 @@ export interface Root {
     type?:              string;
     subtype?:           string;
     thread_ts?:         string;
+    icons?:             MessageIcons;
     bot_profile?:       BotProfile;
     reply_count?:       number;
     reply_users_count?: number;

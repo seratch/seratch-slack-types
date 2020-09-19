@@ -1,8 +1,8 @@
 export interface ConversationsCreateResponse {
     ok?:       boolean;
+    channel?:  Channel;
     error?:    string;
     detail?:   string;
-    channel?:  Channel;
     needed?:   string;
     provided?: string;
 }
@@ -30,13 +30,13 @@ export interface Channel {
     is_private?:                 boolean;
     is_mpim?:                    boolean;
     last_read?:                  string;
-    is_open?:                    boolean;
     topic?:                      Purpose;
     purpose?:                    Purpose;
-    priority?:                   number;
     previous_names?:             string[];
+    priority?:                   number;
     is_moved?:                   number;
     internal_team_ids?:          string[];
+    is_open?:                    boolean;
 }
 
 export interface Purpose {

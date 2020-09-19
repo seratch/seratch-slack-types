@@ -33,6 +33,7 @@ export interface Subteam {
     created_by?:            string;
     updated_by?:            string;
     prefs?:                 Prefs;
+    channel_count?:         number;
 }
 
 export interface Prefs {

@@ -9,5 +9,6 @@ export interface Channel {
     name?:            string;
     name_normalized?: string;
     is_channel?:      boolean;
+    is_mpim?:         boolean;
     created?:         number;
 }

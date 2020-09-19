@@ -42,13 +42,6 @@ export interface File {
     thumb_800?:            string;
     thumb_800_w?:          number;
     thumb_800_h?:          number;
-    thumb_960?:            string;
-    thumb_960_w?:          number;
-    thumb_960_h?:          number;
-    thumb_1024?:           string;
-    thumb_1024_w?:         number;
-    thumb_1024_h?:         number;
-    image_exif_rotation?:  number;
     original_w?:           number;
     original_h?:           number;
     thumb_tiny?:           string;
@@ -57,6 +50,7 @@ export interface File {
     groups?:               string[];
     ims?:                  string[];
     comments_count?:       number;
+    image_exif_rotation?:  number;
     url_private_download?: string;
     permalink_public?:     string;
     edit_link?:            string;
@@ -65,6 +59,12 @@ export interface File {
     lines?:                number;
     lines_more?:           number;
     preview_is_truncated?: boolean;
+    thumb_960?:            string;
+    thumb_960_w?:          number;
+    thumb_960_h?:          number;
+    thumb_1024?:           string;
+    thumb_1024_w?:         number;
+    thumb_1024_h?:         number;
 }
 
 export interface Paging {

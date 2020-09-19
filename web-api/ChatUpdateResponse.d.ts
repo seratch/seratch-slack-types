@@ -10,24 +10,14 @@ export interface ChatUpdateResponse {
 }
 
 export interface Message {
-    type?:              string;
-    subtype?:           string;
-    text?:              string;
-    username?:          string;
-    bot_id?:            string;
-    blocks?:            Block[];
-    user?:              string;
-    thread_ts?:         string;
-    reply_count?:       number;
-    reply_users_count?: number;
-    latest_reply?:      string;
-    reply_users?:       string[];
-    replies?:           Edited[];
-    subscribed?:        boolean;
-    team?:              string;
-    bot_profile?:       BotProfile;
-    last_read?:         string;
-    edited?:            Edited;
+    bot_id?:      string;
+    type?:        string;
+    text?:        string;
+    user?:        string;
+    team?:        string;
+    bot_profile?: BotProfile;
+    blocks?:      Block[];
+    edited?:      Edited;
 }
 
 export interface Block {
@@ -57,28 +47,29 @@ export interface Accessory {
 }
 
 export interface Element {
-    type?:                 string;
-    action_id?:            string;
-    text?:                 Text;
-    value?:                string;
-    url?:                  string;
-    style?:                string;
-    confirm?:              Confirm;
-    placeholder?:          Text;
-    initial_channel?:      string;
-    response_url_enabled?: boolean;
-    initial_conversation?: string;
-    filter?:               Filter;
-    initial_date?:         string;
-    initial_option?:       InitialOption;
-    min_query_length?:     number;
-    image_url?:            string;
-    alt_text?:             string;
-    fallback?:             string;
-    image_width?:          number;
-    image_height?:         number;
-    image_bytes?:          number;
-    initial_user?:         string;
+    type?:                            string;
+    action_id?:                       string;
+    text?:                            Text;
+    value?:                           string;
+    url?:                             string;
+    style?:                           string;
+    confirm?:                         Confirm;
+    placeholder?:                     Text;
+    initial_channel?:                 string;
+    response_url_enabled?:            boolean;
+    initial_conversation?:            string;
+    default_to_current_conversation?: boolean;
+    filter?:                          Filter;
+    initial_date?:                    string;
+    initial_option?:                  InitialOption;
+    min_query_length?:                number;
+    image_url?:                       string;
+    alt_text?:                        string;
+    fallback?:                        string;
+    image_width?:                     number;
+    image_height?:                    number;
+    image_bytes?:                     number;
+    initial_user?:                    string;
 }
 
 export interface Confirm {
@@ -86,6 +77,7 @@ export interface Confirm {
     text?:    Text;
     confirm?: Text;
     deny?:    Text;
+    style?:   string;
 }
 
 export interface Text {

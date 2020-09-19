@@ -9,22 +9,19 @@ export interface ConversationsRepliesResponse {
 }
 
 export interface Message {
-    type?:              string;
-    subtype?:           string;
-    text?:              string;
-    ts?:                string;
-    username?:          string;
     bot_id?:            string;
+    type?:              string;
+    text?:              string;
+    user?:              string;
+    ts?:                string;
+    team?:              string;
+    bot_profile?:       BotProfile;
     thread_ts?:         string;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
     reply_users?:       string[];
-    replies?:           Reply[];
     subscribed?:        boolean;
-    user?:              string;
-    team?:              string;
-    bot_profile?:       BotProfile;
     parent_user_id?:    string;
 }
 
@@ -42,11 +39,6 @@ export interface Icons {
     image_36?: string;
     image_48?: string;
     image_72?: string;
-}
-
-export interface Reply {
-    user?: string;
-    ts?:   string;
 }
 
 export interface ResponseMetadata {

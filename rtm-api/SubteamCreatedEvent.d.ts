@@ -23,7 +23,8 @@ export interface Subteam {
     updated_by?:            string;
     deleted_by?:            string;
     prefs?:                 Prefs;
-    user_count?:            string;
+    user_count?:            number;
+    channel_count?:         number;
 }
 
 export interface Prefs {

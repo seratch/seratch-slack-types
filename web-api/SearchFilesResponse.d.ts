@@ -55,7 +55,6 @@ export interface Match {
     thumb_1024?:           string;
     thumb_1024_w?:         number;
     thumb_1024_h?:         number;
-    image_exif_rotation?:  number;
     original_w?:           number;
     original_h?:           number;
     thumb_tiny?:           string;
@@ -68,16 +67,18 @@ export interface Match {
     external_id?:          string;
     external_url?:         string;
     has_rich_preview?:     boolean;
-    preview?:              string;
     url_private_download?: string;
     permalink_public?:     string;
     edit_link?:            string;
+    preview?:              string;
     preview_highlight?:    string;
     lines?:                number;
     lines_more?:           number;
     preview_is_truncated?: boolean;
-    user_team?:            string;
-    source_team?:          string;
+    image_exif_rotation?:  number;
+    last_editor?:          string;
+    non_owner_editable?:   boolean;
+    updated?:              number;
 }
 
 export interface Shares {
@@ -91,6 +92,7 @@ export interface Public {
     ts?:                string;
     channel_name?:      string;
     team_id?:           string;
+    share_user_id?:     string;
 }
 
 export interface Pagination {

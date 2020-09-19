@@ -5,6 +5,7 @@ export interface LinkSharedEvent {
     message_ts?: string;
     thread_ts?:  string;
     links?:      Link[];
+    event_ts?:   string;
 }
 
 export interface Link {

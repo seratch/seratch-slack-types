@@ -1,6 +1,7 @@
 export interface ImListResponse {
     ok?:                boolean;
     ims?:               Im[];
+    warning?:           string;
     response_metadata?: ResponseMetadata;
     error?:             string;
     needed?:            string;
@@ -20,4 +21,6 @@ export interface Im {
 
 export interface ResponseMetadata {
     next_cursor?: string;
+    messages?:    string[];
+    warnings?:    string[];
 }

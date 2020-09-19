@@ -1,29 +1,29 @@
 export interface RtmStartResponse {
-    ok?:                         boolean;
-    self?:                       Self;
-    team?:                       Team;
-    latest_event_ts?:            string;
-    channels?:                   Channel[];
-    groups?:                     Group[];
-    ims?:                        Im[];
-    cache_ts?:                   number;
-    read_only_channels?:         string[];
-    non_threadable_channels?:    string[];
-    thread_only_channels?:       string[];
-    can_manage_shared_channels?: boolean;
-    subteams?:                   Subteams;
-    dnd?:                        Dnd;
-    users?:                      User[];
-    cache_version?:              string;
-    cache_ts_version?:           string;
-    bots?:                       Bot[];
-    url?:                        string;
-    is_europe?:                  boolean;
-    accept_tos_url?:             string;
-    channels_with_use_case?:     ChannelsWithUseCase;
-    error?:                      string;
-    needed?:                     string;
-    provided?:                   string;
+    ok?:                          boolean;
+    self?:                        Self;
+    team?:                        Team;
+    accept_tos_url?:              string;
+    latest_event_ts?:             string;
+    channels?:                    Channel[];
+    groups?:                      Group[];
+    ims?:                         Im[];
+    cache_ts?:                    number;
+    mobile_app_requires_upgrade?: boolean;
+    read_only_channels?:          string[];
+    non_threadable_channels?:     string[];
+    thread_only_channels?:        string[];
+    can_manage_shared_channels?:  boolean;
+    subteams?:                    Subteams;
+    dnd?:                         Dnd;
+    users?:                       User[];
+    cache_version?:               string;
+    cache_ts_version?:            string;
+    bots?:                        Bot[];
+    url?:                         string;
+    is_europe?:                   boolean;
+    error?:                       string;
+    needed?:                      string;
+    provided?:                    string;
 }
 
 export interface Bot {
@@ -32,11 +32,12 @@ export interface Bot {
     name?:            string;
     updated?:         number;
     app_id?:          string;
-    icons?:           Icons;
+    icons?:           BotIcons;
     is_workflow_bot?: boolean;
+    team_id?:         string;
 }
 
-export interface Icons {
+export interface BotIcons {
     image_36?: string;
     image_48?: string;
     image_72?: string;
@@ -58,12 +59,12 @@ export interface Channel {
     is_member?:                  boolean;
     is_private?:                 boolean;
     is_mpim?:                    boolean;
+    previous_names?:             string[];
+    priority?:                   number;
     last_read?:                  string;
     members?:                    string[];
     topic?:                      Purpose;
     purpose?:                    Purpose;
-    previous_names?:             string[];
-    priority?:                   number;
     is_group?:                   boolean;
     is_im?:                      boolean;
     is_ext_shared?:              boolean;
@@ -82,9 +83,6 @@ export interface Purpose {
     last_set?: number;
 }
 
-export interface ChannelsWithUseCase {
-}
-
 export interface Dnd {
     dnd_enabled?:       boolean;
     next_dnd_start_ts?: number;
@@ -93,21 +91,82 @@ export interface Dnd {
 }
 
 export interface Group {
-    id?:              string;
-    name?:            string;
-    is_group?:        boolean;
-    created?:         number;
-    creator?:         string;
-    is_archived?:     boolean;
-    name_normalized?: string;
-    is_mpim?:         boolean;
-    has_pins?:        boolean;
-    is_open?:         boolean;
-    last_read?:       string;
-    members?:         string[];
-    topic?:           Purpose;
-    purpose?:         Purpose;
-    priority?:        number;
+    id?:                   string;
+    name?:                 string;
+    name_normalized?:      string;
+    is_group?:             boolean;
+    created?:              number;
+    creator?:              string;
+    is_archived?:          boolean;
+    is_mpim?:              boolean;
+    is_open?:              boolean;
+    is_read_only?:         boolean;
+    is_thread_only?:       boolean;
+    parent_group?:         string;
+    topic?:                Purpose;
+    purpose?:              Purpose;
+    last_read?:            string;
+    latest?:               Latest;
+    unread_count?:         number;
+    unread_count_display?: number;
+    priority?:             number;
+}
+
+export interface Latest {
+    client_msg_id?:  string;
+    type?:           string;
+    subtype?:        string;
+    team?:           string;
+    user?:           string;
+    username?:       string;
+    parent_user_id?: string;
+    text?:           string;
+    topic?:          string;
+    root?:           Root;
+    upload?:         boolean;
+    display_as_bot?: boolean;
+    bot_id?:         string;
+    bot_link?:       string;
+    bot_profile?:    Bot;
+    thread_ts?:      string;
+    ts?:             string;
+    icons?:          LatestIcons;
+    edited?:         Edited;
+}
+
+export interface Edited {
+    user?: string;
+    ts?:   string;
+}
+
+export interface LatestIcons {
+    emoji?:    string;
+    image_36?: string;
+    image_48?: string;
+    image_64?: string;
+    image_72?: string;
+}
+
+export interface Root {
+    text?:              string;
+    user?:              string;
+    parent_user_id?:    string;
+    username?:          string;
+    team?:              string;
+    bot_id?:            string;
+    mrkdwn?:            boolean;
+    type?:              string;
+    subtype?:           string;
+    thread_ts?:         string;
+    icons?:             LatestIcons;
+    bot_profile?:       Bot;
+    reply_count?:       number;
+    reply_users_count?: number;
+    latest_reply?:      string;
+    subscribed?:        boolean;
+    last_read?:         string;
+    unread_count?:      number;
+    ts?:                string;
 }
 
 export interface Im {
@@ -128,6 +187,7 @@ export interface Self {
     name?:            string;
     prefs?:           SelfPrefs;
     created?:         number;
+    first_login?:     number;
     manual_presence?: string;
 }
 
@@ -160,9 +220,11 @@ export interface SelfPrefs {
     search_hide_deactivated_users?:                        boolean;
     emoji_mode?:                                           string;
     emoji_use?:                                            string;
+    emoji_use_org?:                                        string;
     has_invited?:                                          boolean;
     has_uploaded?:                                         boolean;
     has_created_channel?:                                  boolean;
+    has_created_channel_section?:                          boolean;
     has_searched?:                                         boolean;
     search_exclude_channels?:                              string;
     messages_theme?:                                       string;
@@ -207,6 +269,9 @@ export interface SelfPrefs {
     seen_onboarding_banner?:                               boolean;
     onboarding_slackbot_conversation_step?:                number;
     set_tz_automatically?:                                 boolean;
+    suppress_link_warning?:                                boolean;
+    seen_emoji_pack_cta?:                                  number;
+    seen_emoji_pack_dialog?:                               boolean;
     dnd_enabled?:                                          boolean;
     dnd_start_hour?:                                       string;
     dnd_end_hour?:                                         string;
@@ -232,8 +297,10 @@ export interface SelfPrefs {
     dnd_after_sunday?:                                     string;
     dnd_enabled_sunday?:                                   string;
     dnd_days?:                                             string;
+    dnd_weekdays_off_allday?:                              boolean;
     dnd_custom_new_badge_seen?:                            boolean;
     dnd_notification_schedule_new_badge_seen?:             boolean;
+    calls_survey_last_seen?:                               string;
     sidebar_behavior?:                                     string;
     channel_sort?:                                         string;
     separate_private_channels?:                            boolean;
@@ -298,6 +365,7 @@ export interface SelfPrefs {
     seen_threads_notification_banner?:                     boolean;
     seen_name_tagging_coachmark?:                          boolean;
     all_unreads_sort_order?:                               string;
+    all_unreads_section_filter?:                           string;
     locale?:                                               string;
     seen_intl_channel_names_coachmark?:                    boolean;
     seen_p2_locale_change_message?:                        number;
@@ -314,8 +382,12 @@ export interface SelfPrefs {
     seen_wysiwyg_deluxe_toast?:                            boolean;
     seen_markdown_paste_toast?:                            number;
     seen_markdown_paste_shortcut?:                         number;
+    seen_ia_education?:                                    boolean;
+    show_ia_tour_relaunch?:                                number;
     plain_text_mode?:                                      boolean;
     show_shared_channels_education_banner?:                boolean;
+    ia_slackbot_survey_timestamp_48h?:                     number;
+    ia_slackbot_survey_timestamp_7d?:                      number;
     allow_calls_to_set_current_status?:                    boolean;
     in_interactive_mas_migration_flow?:                    boolean;
     sunset_interactive_message_views?:                     number;
@@ -327,6 +399,9 @@ export interface SelfPrefs {
     workflow_builder_intro_modal_clicked_through?:         boolean;
     workflow_builder_coachmarks?:                          string;
     seen_gdrive_coachmark?:                                boolean;
+    seen_first_install_coachmark?:                         boolean;
+    seen_existing_install_coachmark?:                      boolean;
+    seen_link_unfurl_coachmark?:                           boolean;
     overloaded_message_enabled?:                           boolean;
     seen_highlights_coachmark?:                            boolean;
     seen_highlights_arrows_coachmark?:                     boolean;
@@ -339,6 +414,22 @@ export interface SelfPrefs {
     last_dismissed_scroll_search_tooltip_timestamp?:       number;
     has_used_quickswitcher_shortcut?:                      boolean;
     seen_quickswitcher_shortcut_tip_count?:                number;
+    browsers_dismissed_channels_low_results_education?:    boolean;
+    browsers_seen_initial_channels_education?:             boolean;
+    browsers_dismissed_people_low_results_education?:      boolean;
+    browsers_seen_initial_people_education?:               boolean;
+    browsers_dismissed_user_groups_low_results_education?: boolean;
+    browsers_seen_initial_user_groups_education?:          boolean;
+    browsers_dismissed_files_low_results_education?:       boolean;
+    browsers_seen_initial_files_education?:                boolean;
+    browsers_dismissed_initial_drafts_education?:          boolean;
+    browsers_seen_initial_drafts_education?:               boolean;
+    browsers_dismissed_initial_activity_education?:        boolean;
+    browsers_seen_initial_activity_education?:             boolean;
+    browsers_dismissed_initial_saved_education?:           boolean;
+    browsers_seen_initial_saved_education?:                boolean;
+    seen_edit_mode?:                                       boolean;
+    seen_edit_mode_edu?:                                   boolean;
     a11y_animations?:                                      boolean;
     seen_keyboard_shortcuts_coachmark?:                    boolean;
     needs_initial_password_set?:                           boolean;
@@ -346,10 +437,12 @@ export interface SelfPrefs {
     tractor_enabled?:                                      boolean;
     tractor_experiment_group?:                             string;
     opened_slackbot_dm?:                                   boolean;
+    newxp_seen_help_message?:                              number;
     newxp_suggested_channels?:                             string;
     onboarding_complete?:                                  boolean;
     welcome_place_state?:                                  string;
     has_received_threaded_message?:                        boolean;
+    onboarding_state?:                                     number;
     whocanseethis_dm_mpdm_badge?:                          boolean;
     highlight_words?:                                      string;
     threads_everything?:                                   boolean;
@@ -396,51 +489,56 @@ export interface SelfPrefs {
     deprecation_toast_last_seen?:                          number;
     deprecation_modal_last_seen?:                          number;
     iap1_lab?:                                             number;
+    ia_top_nav_theme?:                                     string;
     ia_platform_actions_lab?:                              number;
+    activity_view?:                                        string;
+    saved_view?:                                           string;
+    seen_floating_sidebar_coachmark?:                      boolean;
     failover_proxy_check_completed?:                       number;
+    chime_access_check_completed?:                         number;
+    mx_calendar_type?:                                     string;
     edge_upload_proxy_check_completed?:                    number;
     app_subdomain_check_completed?:                        number;
+    add_prompt_interacted?:                                boolean;
     add_apps_prompt_dismissed?:                            boolean;
     add_channel_prompt_dismissed?:                         boolean;
     channel_sidebar_hide_invite?:                          boolean;
+    channel_sidebar_hide_browse_dms_link?:                 boolean;
     in_prod_surveys_enabled?:                              boolean;
     dismissed_installed_app_dm_suggestions?:               string;
     seen_contextual_message_shortcuts_modal?:              boolean;
     seen_message_navigation_educational_toast?:            boolean;
     contextual_message_shortcuts_modal_was_seen?:          boolean;
     message_navigation_toast_was_seen?:                    boolean;
-    show_drafts_page_sidebar?:                             boolean;
-    tz?:                                                   string;
-    locales_enabled?:                                      LocalesEnabled;
-    channel_sections?:                                     string;
-    ia_top_nav_theme?:                                     string;
-    browsers_dismissed_channels_low_results_education?:    boolean;
-    browsers_seen_initial_channels_education?:             boolean;
-    browsers_dismissed_people_low_results_education?:      boolean;
-    browsers_seen_initial_people_education?:               boolean;
-    activity_view?:                                        string;
     up_to_browse_kb_shortcut?:                             boolean;
-    suppress_link_warning?:                                boolean;
-    seen_ia_education?:                                    boolean;
-    browsers_dismissed_user_groups_low_results_education?: boolean;
-    browsers_seen_initial_user_groups_education?:          boolean;
-    browsers_dismissed_files_low_results_education?:       boolean;
-    browsers_seen_initial_files_education?:                boolean;
-    browsers_dismissed_initial_drafts_education?:          boolean;
-    browsers_seen_initial_drafts_education?:               boolean;
-    show_ia_tour_relaunch?:                                number;
-    browsers_dismissed_initial_activity_education?:        boolean;
-    browsers_seen_initial_activity_education?:             boolean;
-    browsers_dismissed_initial_saved_education?:           boolean;
-    browsers_seen_initial_saved_education?:                boolean;
-    saved_view?:                                           string;
-    ia_slackbot_survey_timestamp_48h?:                     number;
-    ia_slackbot_survey_timestamp_7d?:                      number;
-    dnd_weekdays_off_allday?:                              boolean;
-    onboarding_state?:                                     number;
+    channel_sections?:                                     string;
+    show_quick_reactions?:                                 boolean;
     has_received_mention_or_reaction?:                     boolean;
     has_starred_item?:                                     boolean;
     has_drafted_message?:                                  boolean;
+    enable_mentions_and_reactions_view?:                   boolean;
+    enable_saved_items_view?:                              boolean;
+    enable_all_dms_view?:                                  boolean;
+    enable_channel_browser_view?:                          boolean;
+    enable_file_browser_view?:                             boolean;
+    enable_people_browser_view?:                           boolean;
+    enable_app_browser_view?:                              boolean;
+    reached_all_dms_disclosure?:                           boolean;
+    has_acknowledged_shortcut_speedbump?:                  boolean;
+    tz?:                                                   string;
+    locales_enabled?:                                      LocalesEnabled;
+    joiner_notifications_muted?:                           boolean;
+    invite_accepted_notifications_muted?:                  boolean;
+    suppress_external_invites_from_compose_warning?:       boolean;
+    file_picker_variant?:                                  number;
+    help_modal_open_timestamp?:                            number;
+    help_modal_consult_banner_dismissed?:                  boolean;
+    seen_channel_email_tooltip?:                           boolean;
+    join_calls_device_settings?:                           string;
+    a11y_dyslexic?:                                        boolean;
+    connect_dm_early_access?:                              boolean;
+    seen_connect_dm_coachmark?:                            boolean;
+    xws_sidebar_variant?:                                  number;
 }
 
 export interface LocalesEnabled {
@@ -477,11 +575,12 @@ export interface All {
     updated_by?:            string;
     prefs?:                 AllPrefs;
     user_count?:            number;
+    channel_count?:         number;
 }
 
 export interface AllPrefs {
     channels?: string[];
-    groups?:   string[];
+    groups?:   Group[];
 }
 
 export interface Team {
@@ -513,129 +612,143 @@ export interface Icon {
 }
 
 export interface TeamPrefs {
-    default_channels?:                                string[];
-    allow_calls?:                                     boolean;
-    display_email_addresses?:                         boolean;
-    gdrive_enabled_team?:                             boolean;
-    all_users_can_purchase?:                          boolean;
-    enable_shared_channels?:                          number;
-    can_receive_shared_channels_invites?:             boolean;
-    dropbox_legacy_picker?:                           boolean;
-    app_whitelist_enabled?:                           boolean;
-    who_can_manage_integrations?:                     WhoCan;
-    locale?:                                          string;
-    slackbot_responses_disabled?:                     boolean;
-    hide_referers?:                                   boolean;
-    msg_edit_window_mins?:                            number;
-    allow_message_deletion?:                          boolean;
-    calling_app_name?:                                string;
-    calls_apps?:                                      CallsApps;
-    allow_calls_interactive_screen_sharing?:          boolean;
-    display_real_names?:                              boolean;
-    who_can_at_everyone?:                             string;
-    who_can_at_channel?:                              string;
-    who_can_create_channels?:                         string;
-    who_can_archive_channels?:                        string;
-    who_can_create_groups?:                           string;
-    who_can_manage_channel_posting_prefs?:            string;
-    who_can_post_general?:                            string;
-    who_can_kick_channels?:                           string;
-    who_can_kick_groups?:                             string;
-    workflow_builder_enabled?:                        boolean;
-    retention_type?:                                  number;
-    retention_duration?:                              number;
-    group_retention_type?:                            number;
-    group_retention_duration?:                        number;
-    dm_retention_type?:                               number;
-    dm_retention_duration?:                           number;
-    file_retention_type?:                             number;
-    file_retention_duration?:                         number;
-    allow_retention_override?:                        boolean;
-    default_rxns?:                                    string[];
-    compliance_export_start?:                         number;
-    warn_before_at_channel?:                          string;
-    disallow_public_file_urls?:                       boolean;
-    who_can_create_delete_user_groups?:               string;
-    who_can_edit_user_groups?:                        string;
-    who_can_change_team_profile?:                     string;
-    subteams_auto_create_owner?:                      boolean;
-    subteams_auto_create_admin?:                      boolean;
-    discoverable?:                                    string;
-    dnd_days?:                                        string;
-    invites_only_admins?:                             boolean;
-    invite_requests_enabled?:                         boolean;
-    disable_file_uploads?:                            string;
-    disable_file_editing?:                            boolean;
-    disable_file_deleting?:                           boolean;
-    file_limit_whitelisted?:                          boolean;
-    uses_customized_custom_status_presets?:           boolean;
-    disable_email_ingestion?:                         boolean;
-    who_can_manage_guests?:                           WhoCan;
-    who_can_create_shared_channels?:                  string;
-    who_can_manage_shared_channels?:                  WhoCan;
-    who_can_post_in_shared_channels?:                 WhoCan;
-    who_can_manage_ext_shared_channels?:              WhoCan;
-    box_app_installed?:                               boolean;
-    onedrive_app_installed?:                          boolean;
-    onedrive_enabled_team?:                           boolean;
-    received_esc_route_to_channel_awareness_message?: boolean;
-    who_can_approve_ext_shared_channel_invites?:      WhoCan;
-    who_can_create_ext_shared_channel_invites?:       WhoCan;
-    enterprise_default_channels?:                     string[];
-    enterprise_mandatory_channels?:                   string[];
-    enterprise_mdm_disable_file_download?:            boolean;
-    mobile_passcode_timeout_in_seconds?:              number;
-    has_hipaa_compliance?:                            boolean;
-    self_serve_select?:                               boolean;
-    loud_channel_mentions_limit?:                     number;
-    show_join_leave?:                                 boolean;
-    enterprise_mobile_device_check?:                  boolean;
-    gg_enabled?:                                      boolean;
-    disable_sidebar_connect_prompts?:                 string[];
-    disable_sidebar_install_prompts?:                 string[];
-    block_file_download?:                             boolean;
-    dnd_enabled?:                                     boolean;
-    dnd_start_hour?:                                  string;
-    dnd_end_hour?:                                    string;
-    dnd_before_monday?:                               string;
-    dnd_after_monday?:                                string;
-    dnd_before_tuesday?:                              string;
-    dnd_after_tuesday?:                               string;
-    dnd_before_wednesday?:                            string;
-    dnd_after_wednesday?:                             string;
-    dnd_before_thursday?:                             string;
-    dnd_after_thursday?:                              string;
-    dnd_before_friday?:                               string;
-    dnd_after_friday?:                                string;
-    dnd_before_saturday?:                             string;
-    dnd_after_saturday?:                              string;
-    dnd_before_sunday?:                               string;
-    dnd_after_sunday?:                                string;
-    dnd_enabled_monday?:                              string;
-    dnd_enabled_tuesday?:                             string;
-    dnd_enabled_wednesday?:                           string;
-    dnd_enabled_thursday?:                            string;
-    dnd_enabled_friday?:                              string;
-    dnd_enabled_saturday?:                            string;
-    dnd_enabled_sunday?:                              string;
-    custom_status_presets?:                           Array<string[]>;
-    custom_status_default_emoji?:                     string;
-    auth_mode?:                                       string;
-    who_can_create_workflows?:                        WhoCan;
-    workflows_webhook_trigger_enabled?:               boolean;
-    invites_limit?:                                   boolean;
-    has_seen_partner_promo?:                          boolean;
-    workflows_export_csv_enabled?:                    boolean;
-    who_can_manage_public_channels?:                  WhoCanManagePChannels;
-    channel_email_addresses_enabled?:                 boolean;
-    who_can_create_channel_email_addresses?:          WhoCan;
-    who_can_view_message_activity?:                   WhoCan;
-    who_can_manage_private_channels?:                 WhoCanManagePChannels;
-    single_user_exports?:                             boolean;
-    default_channel_creation_enabled?:                boolean;
-    welcome_place_enabled?:                           boolean;
-    dnd_weekdays_off_allday?:                         boolean;
-    has_installed_apps?:                              boolean;
+    default_channels?:                                   string[];
+    allow_calls?:                                        boolean;
+    display_email_addresses?:                            boolean;
+    gdrive_enabled_team?:                                boolean;
+    all_users_can_purchase?:                             boolean;
+    enable_shared_channels?:                             number;
+    can_receive_shared_channels_invites?:                boolean;
+    dropbox_legacy_picker?:                              boolean;
+    app_whitelist_enabled?:                              boolean;
+    who_can_manage_integrations?:                        WhoCan;
+    welcome_place_enabled?:                              boolean;
+    msg_edit_window_mins?:                               number;
+    allow_message_deletion?:                             boolean;
+    locale?:                                             string;
+    slackbot_responses_disabled?:                        boolean;
+    hide_referers?:                                      boolean;
+    calling_app_name?:                                   string;
+    calls_apps?:                                         CallsApps;
+    allow_calls_interactive_screen_sharing?:             boolean;
+    display_real_names?:                                 boolean;
+    who_can_at_everyone?:                                string;
+    who_can_at_channel?:                                 string;
+    who_can_create_channels?:                            string;
+    who_can_archive_channels?:                           string;
+    who_can_create_groups?:                              string;
+    who_can_manage_channel_posting_prefs?:               string;
+    who_can_post_general?:                               string;
+    who_can_kick_channels?:                              string;
+    who_can_kick_groups?:                                string;
+    workflow_builder_enabled?:                           boolean;
+    who_can_view_message_activity?:                      WhoCan;
+    workflow_extension_steps_beta_opt_in?:               boolean;
+    channel_email_addresses_enabled?:                    boolean;
+    retention_type?:                                     number;
+    retention_duration?:                                 number;
+    group_retention_type?:                               number;
+    group_retention_duration?:                           number;
+    dm_retention_type?:                                  number;
+    dm_retention_duration?:                              number;
+    file_retention_type?:                                number;
+    file_retention_duration?:                            number;
+    allow_retention_override?:                           boolean;
+    allow_admin_retention_override?:                     number;
+    default_rxns?:                                       string[];
+    compliance_export_start?:                            number;
+    warn_before_at_channel?:                             string;
+    disallow_public_file_urls?:                          boolean;
+    who_can_create_delete_user_groups?:                  string;
+    who_can_edit_user_groups?:                           string;
+    who_can_change_team_profile?:                        string;
+    subteams_auto_create_owner?:                         boolean;
+    subteams_auto_create_admin?:                         boolean;
+    discoverable?:                                       string;
+    dnd_days?:                                           string;
+    invites_only_admins?:                                boolean;
+    invite_requests_enabled?:                            boolean;
+    disable_file_uploads?:                               string;
+    disable_file_editing?:                               boolean;
+    disable_file_deleting?:                              boolean;
+    file_limit_whitelisted?:                             boolean;
+    uses_customized_custom_status_presets?:              boolean;
+    disable_email_ingestion?:                            boolean;
+    who_can_manage_guests?:                              WhoCan;
+    who_can_create_shared_channels?:                     string;
+    who_can_manage_shared_channels?:                     WhoCan;
+    who_can_post_in_shared_channels?:                    WhoCan;
+    who_can_manage_ext_shared_channels?:                 WhoCan;
+    who_can_dm_anyone?:                                  WhoCan;
+    box_app_installed?:                                  boolean;
+    onedrive_app_installed?:                             boolean;
+    onedrive_enabled_team?:                              boolean;
+    filepicker_app_first_install?:                       boolean;
+    use_browser_picker?:                                 boolean;
+    received_esc_route_to_channel_awareness_message?:    boolean;
+    who_can_approve_ext_shared_channel_invites?:         WhoCan;
+    who_can_create_ext_shared_channel_invites?:          WhoCan;
+    enterprise_default_channels?:                        string[];
+    enterprise_has_corporate_exports?:                   boolean;
+    enterprise_mandatory_channels?:                      string[];
+    enterprise_mdm_disable_file_download?:               boolean;
+    mobile_passcode_timeout_in_seconds?:                 number;
+    notification_redaction_type?:                        string;
+    has_compliance_export?:                              boolean;
+    has_hipaa_compliance?:                               boolean;
+    self_serve_select?:                                  boolean;
+    loud_channel_mentions_limit?:                        number;
+    show_join_leave?:                                    boolean;
+    who_can_manage_public_channels?:                     WhoCanManageP;
+    who_can_manage_private_channels?:                    WhoCanManageP;
+    who_can_manage_private_channels_at_workspace_level?: WhoCanManageP;
+    enterprise_mobile_device_check?:                     boolean;
+    default_channel_creation_enabled?:                   boolean;
+    gg_enabled?:                                         boolean;
+    created_with_google?:                                boolean;
+    has_seen_partner_promo?:                             boolean;
+    disable_sidebar_connect_prompts?:                    string[];
+    disable_sidebar_install_prompts?:                    string[];
+    block_file_download?:                                boolean;
+    single_user_exports?:                                boolean;
+    app_management_apps?:                                string[];
+    ntlm_credential_domains?:                            string;
+    dnd_enabled?:                                        boolean;
+    dnd_start_hour?:                                     string;
+    dnd_end_hour?:                                       string;
+    dnd_before_monday?:                                  string;
+    dnd_after_monday?:                                   string;
+    dnd_before_tuesday?:                                 string;
+    dnd_after_tuesday?:                                  string;
+    dnd_before_wednesday?:                               string;
+    dnd_after_wednesday?:                                string;
+    dnd_before_thursday?:                                string;
+    dnd_after_thursday?:                                 string;
+    dnd_before_friday?:                                  string;
+    dnd_after_friday?:                                   string;
+    dnd_before_saturday?:                                string;
+    dnd_after_saturday?:                                 string;
+    dnd_before_sunday?:                                  string;
+    dnd_after_sunday?:                                   string;
+    dnd_enabled_monday?:                                 string;
+    dnd_enabled_tuesday?:                                string;
+    dnd_enabled_wednesday?:                              string;
+    dnd_enabled_thursday?:                               string;
+    dnd_enabled_friday?:                                 string;
+    dnd_enabled_saturday?:                               string;
+    dnd_enabled_sunday?:                                 string;
+    dnd_weekdays_off_allday?:                            boolean;
+    custom_status_presets?:                              Array<string[]>;
+    custom_status_default_emoji?:                        string;
+    auth_mode?:                                          string;
+    who_can_create_workflows?:                           WhoCan;
+    workflows_webhook_trigger_enabled?:                  boolean;
+    workflows_export_csv_enabled?:                       boolean;
+    who_can_create_channel_email_addresses?:             WhoCan;
+    invites_limit?:                                      boolean;
+    member_analytics_disabled?:                          boolean;
+    calls_locations?:                                    string[];
+    workflow_extension_steps_enabled?:                   boolean;
 }
 
 export interface CallsApps {
@@ -654,10 +767,9 @@ export interface WhoCan {
     type?: string[];
 }
 
-export interface WhoCanManagePChannels {
-    user?:    string[];
-    subteam?: string[];
-    type?:    string[];
+export interface WhoCanManageP {
+    user?: string[];
+    type?: string[];
 }
 
 export interface User {

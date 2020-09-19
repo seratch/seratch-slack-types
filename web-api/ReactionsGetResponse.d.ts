@@ -9,17 +9,15 @@ export interface ReactionsGetResponse {
 }
 
 export interface Message {
-    type?:        string;
-    subtype?:     string;
-    text?:        string;
-    ts?:          string;
-    username?:    string;
     bot_id?:      string;
-    reactions?:   Reaction[];
-    permalink?:   string;
+    type?:        string;
+    text?:        string;
     user?:        string;
+    ts?:          string;
     team?:        string;
     bot_profile?: BotProfile;
+    reactions?:   Reaction[];
+    permalink?:   string;
 }
 
 export interface BotProfile {

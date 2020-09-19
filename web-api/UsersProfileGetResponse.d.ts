@@ -32,9 +32,6 @@ export interface Profile {
     image_512?:               string;
     image_1024?:              string;
     status_text_canonical?:   string;
-    api_app_id?:              string;
-    always_active?:           boolean;
-    bot_id?:                  string;
 }
 
 export interface Field {

@@ -32,10 +32,10 @@ export interface Message {
     ts?:          string;
     team?:        string;
     bot_profile?: BotProfile;
-    is_starred?:  boolean;
-    permalink?:   string;
     edited?:      Edited;
     attachments?: Attachment[];
+    is_starred?:  boolean;
+    permalink?:   string;
 }
 
 export interface Attachment {
@@ -46,6 +46,7 @@ export interface Attachment {
     service_url?:           string;
     service_name?:          string;
     service_icon?:          string;
+    author_id?:             string;
     author_name?:           string;
     author_link?:           string;
     author_icon?:           string;

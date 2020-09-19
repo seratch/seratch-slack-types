@@ -16,6 +16,7 @@ export interface Team {
     name?:            string;
     discoverability?: string;
     primary_owner?:   PrimaryOwner;
+    team_url?:        string;
 }
 
 export interface PrimaryOwner {

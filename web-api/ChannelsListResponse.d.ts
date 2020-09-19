@@ -1,6 +1,7 @@
 export interface ChannelsListResponse {
     ok?:                boolean;
     channels?:          Channel[];
+    warning?:           string;
     response_metadata?: ResponseMetadata;
     error?:             string;
     needed?:            string;
@@ -37,4 +38,6 @@ export interface Purpose {
 
 export interface ResponseMetadata {
     next_cursor?: string;
+    messages?:    string[];
+    warnings?:    string[];
 }

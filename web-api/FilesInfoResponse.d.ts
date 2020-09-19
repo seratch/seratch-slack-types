@@ -64,7 +64,6 @@ export interface File {
     thumb_360_w?:          number;
     thumb_360_h?:          number;
     thumb_160?:            string;
-    image_exif_rotation?:  number;
     original_w?:           number;
     original_h?:           number;
     thumb_tiny?:           string;
@@ -81,6 +80,7 @@ export interface Public {
     ts?:                string;
     channel_name?:      string;
     team_id?:           string;
+    share_user_id?:     string;
 }
 
 export interface Paging {
