@@ -20,6 +20,44 @@
           "name": "",
           "email": "",
           "team": "E00000000"
+        },
+        "workspace": {
+          "id": "T00000000",
+          "name": "",
+          "domain": ""
+        },
+        "enterprise": {
+          "id": "E00000000",
+          "name": "",
+          "domain": ""
+        },
+        "channel": {
+          "id": "C00000000",
+          "privacy": "",
+          "name": "",
+          "is_shared": false,
+          "is_org_shared": false,
+          "teams_shared_with": [
+            "T00000000",
+            ""
+          ],
+          "original_connected_channel_id": "G00000000"
+        },
+        "file": {
+          "id": "F00000000",
+          "name": "",
+          "filetype": "",
+          "title": ""
+        },
+        "app": {
+          "id": "A00000000",
+          "name": "",
+          "is_distributed": false,
+          "is_directory_approved": false,
+          "is_workflow_app": false,
+          "scopes": [
+            ""
+          ]
         }
       },
       "context": {
@@ -31,6 +69,59 @@
         },
         "ua": "",
         "ip_address": ""
+      },
+      "details": {
+        "name": "",
+        "new_value": {
+          "type": [
+            ""
+          ]
+        },
+        "previous_value": {
+          "type": [
+            ""
+          ]
+        },
+        "expires_on": 12345,
+        "mobile_only": false,
+        "web_only": false,
+        "type": "",
+        "is_workflow": false,
+        "inviter": {
+          "id": "W00000000",
+          "name": "",
+          "email": "",
+          "team": "E00000000"
+        },
+        "kicker": {
+          "id": "W00000000",
+          "name": "",
+          "email": "",
+          "team": "E00000000"
+        },
+        "shared_to": "T00000000",
+        "reason": "",
+        "origin_team": "T00000000",
+        "target_team": "T00000000",
+        "is_internal_integration": false,
+        "app_owner_id": "W00000000",
+        "bot_scopes": [
+          ""
+        ],
+        "new_scopes": [
+          ""
+        ],
+        "previous_scopes": [
+          ""
+        ],
+        "granular_bot_token": false,
+        "scopes": [
+          ""
+        ],
+        "resolution": "",
+        "app_previously_resolved": false,
+        "admin_app_id": "",
+        "bot_id": "B00000000"
       }
     }
   ],

@@ -36,8 +36,15 @@
       "num_members": 12345
     }
   ],
+  "warning": "",
   "response_metadata": {
-    "next_cursor": ""
+    "next_cursor": "",
+    "messages": [
+      ""
+    ],
+    "warnings": [
+      ""
+    ]
   },
   "error": "",
   "needed": "",

@@ -1,9 +1,7 @@
 {
   "ok": false,
-  "error": "",
-  "detail": "",
   "channel": {
-    "id": "G00000000",
+    "id": "C00000000",
     "name": "",
     "is_channel": false,
     "is_group": false,
@@ -31,7 +29,6 @@
     "is_private": false,
     "is_mpim": false,
     "last_read": "0000000000.000000",
-    "is_open": false,
     "topic": {
       "value": "",
       "creator": "",
@@ -42,15 +39,18 @@
       "creator": "",
       "last_set": 12345
     },
-    "priority": 12345,
     "previous_names": [
       ""
     ],
+    "priority": 12345,
     "is_moved": 12345,
     "internal_team_ids": [
       "T00000000"
-    ]
+    ],
+    "is_open": false
   },
+  "error": "",
+  "detail": "",
   "needed": "",
   "provided": ""
 }
