@@ -1128,6 +1128,10 @@
         },
         "team_id": ""
       },
+      "edited": {
+        "user": "",
+        "ts": ""
+      },
       "reply_count": 123,
       "reply_users_count": 123,
       "latest_reply": "",
@@ -1172,6 +1176,10 @@
       "comment": ""
     }
   },
+  "enterprise": {
+    "id": "",
+    "name": ""
+  },
   "team": {
     "id": "",
     "domain": "",
@@ -1188,5 +1196,6 @@
     "name": ""
   },
   "token": "",
-  "action_ts": ""
+  "action_ts": "",
+  "is_enterprise_install": false
 }

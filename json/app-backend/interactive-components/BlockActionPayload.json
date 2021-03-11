@@ -1,5 +1,9 @@
 {
   "type": "block_actions",
+  "enterprise": {
+    "id": "",
+    "name": ""
+  },
   "team": {
     "id": "",
     "domain": "",
@@ -1152,6 +1156,10 @@
         },
         "team_id": ""
       },
+      "edited": {
+        "user": "",
+        "ts": ""
+      },
       "reply_count": 123,
       "reply_users_count": 123,
       "latest_reply": "",
@@ -1223,11 +1231,14 @@
     "hash": "",
     "clear_on_close": false,
     "notify_on_close": false,
+    "submit_disabled": false,
     "root_view_id": "",
     "previous_view_id": "",
     "app_id": "",
+    "app_installed_team_id": "",
     "bot_id": ""
   },
+  "state": {},
   "actions": [
     {
       "action_id": "",
@@ -1299,7 +1310,10 @@
       "initial_channel": "",
       "min_query_length": 123,
       "selected_date": "",
-      "initial_date": ""
+      "initial_date": "",
+      "selected_time": "",
+      "initial_time": ""
     }
-  ]
+  ],
+  "is_enterprise_install": false
 }

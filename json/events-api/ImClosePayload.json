@@ -10,8 +10,10 @@
   "authed_teams": [
     ""
   ],
+  "is_ext_shared_channel": false,
   "event_id": "",
   "event_time": 123,
+  "event_context": "",
   "event": {
     "type": "im_close",
     "user": "",

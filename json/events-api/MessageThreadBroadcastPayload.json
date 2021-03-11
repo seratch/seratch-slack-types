@@ -10,8 +10,10 @@
   "authed_teams": [
     ""
   ],
+  "is_ext_shared_channel": false,
   "event_id": "",
   "event_time": 123,
+  "event_context": "",
   "event": {
     "client_msg_id": "",
     "type": "message",
@@ -48,6 +50,10 @@
           "image_72": ""
         },
         "team_id": ""
+      },
+      "edited": {
+        "user": "",
+        "ts": ""
       },
       "reply_count": 123,
       "reply_users_count": 123,
