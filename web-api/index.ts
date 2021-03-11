@@ -65,6 +65,7 @@ export { AdminUsersSetExpirationResponse } from './AdminUsersSetExpirationRespon
 export { AdminUsersSetOwnerResponse } from './AdminUsersSetOwnerResponse';
 export { AdminUsersSetRegularResponse } from './AdminUsersSetRegularResponse';
 export { ApiTestResponse } from './ApiTestResponse';
+export { AppsConnectionsOpenResponse } from './AppsConnectionsOpenResponse';
 export { AppsEventAuthorizationsListResponse } from './AppsEventAuthorizationsListResponse';
 export { AppsPermissionsInfoResponse } from './AppsPermissionsInfoResponse';
 export { AppsPermissionsRequestResponse } from './AppsPermissionsRequestResponse';
