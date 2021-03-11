@@ -21,6 +21,8 @@ export interface Group {
     topic?:           Purpose;
     purpose?:         Purpose;
     priority?:        number;
+    is_open?:         boolean;
+    last_read?:       string;
 }
 
 export interface Purpose {

@@ -15,6 +15,7 @@ export interface Team {
     enterprise_id?:    string;
     enterprise_name?:  string;
     default_channels?: string[];
+    is_verified?:      boolean;
 }
 
 export interface Icon {

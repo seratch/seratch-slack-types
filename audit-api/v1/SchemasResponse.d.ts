@@ -16,6 +16,7 @@ export interface Schema {
     app?:        App;
     workflow?:   Workflow;
     message?:    Message;
+    barrier?:    Barrier;
 }
 
 export interface App {
@@ -25,6 +26,12 @@ export interface App {
     is_directory_approved?: string;
     is_workflow_app?:       string;
     scopes?:                string;
+}
+
+export interface Barrier {
+    id?:                       string;
+    primary_usergroup?:        string;
+    barriered_from_usergroup?: string;
 }
 
 export interface Channel {

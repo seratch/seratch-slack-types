@@ -12,6 +12,7 @@ export interface Team {
     domain?:       string;
     email_domain?: string;
     icon?:         Icon;
+    is_verified?:  boolean;
 }
 
 export interface Icon {

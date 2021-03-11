@@ -27,6 +27,7 @@ export interface User {
     updated?:             number;
     locale?:              string;
     has_2fa?:             boolean;
+    is_email_confirmed?:  boolean;
 }
 
 export interface Profile {

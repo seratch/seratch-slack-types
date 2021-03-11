@@ -1,18 +1,19 @@
 export interface OauthV2AccessResponse {
-    ok?:               boolean;
-    warning?:          string;
-    error?:            string;
-    needed?:           string;
-    provided?:         string;
-    app_id?:           string;
-    authed_user?:      AuthedUser;
-    scope?:            string;
-    token_type?:       string;
-    access_token?:     string;
-    bot_user_id?:      string;
-    team?:             Enterprise;
-    enterprise?:       Enterprise;
-    incoming_webhook?: IncomingWebhook;
+    ok?:                    boolean;
+    warning?:               string;
+    error?:                 string;
+    needed?:                string;
+    provided?:              string;
+    app_id?:                string;
+    authed_user?:           AuthedUser;
+    scope?:                 string;
+    token_type?:            string;
+    access_token?:          string;
+    bot_user_id?:           string;
+    team?:                  Enterprise;
+    enterprise?:            Enterprise;
+    is_enterprise_install?: boolean;
+    incoming_webhook?:      IncomingWebhook;
 }
 
 export interface AuthedUser {

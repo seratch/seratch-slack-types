@@ -14,4 +14,5 @@ export interface Actions {
     app?:              string[];
     workflow_builder?: string[];
     message?:          string[];
+    barrier?:          string[];
 }

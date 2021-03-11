@@ -1,15 +1,17 @@
 export interface MessageShortcutPayload {
-    type?:         string;
-    callback_id?:  string;
-    trigger_id?:   string;
-    message_ts?:   string;
-    response_url?: string;
-    message?:      Message;
-    team?:         Team;
-    user?:         User;
-    channel?:      Channel;
-    token?:        string;
-    action_ts?:    string;
+    type?:                  string;
+    callback_id?:           string;
+    trigger_id?:            string;
+    message_ts?:            string;
+    response_url?:          string;
+    message?:               Message;
+    enterprise?:            Channel;
+    team?:                  Team;
+    user?:                  User;
+    channel?:               Channel;
+    token?:                 string;
+    action_ts?:             string;
+    is_enterprise_install?: boolean;
 }
 
 export interface Channel {
@@ -454,6 +456,7 @@ export interface Root {
     thread_ts?:         string;
     icons?:             MessageIcons;
     bot_profile?:       BotProfile;
+    edited?:            Edited;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;

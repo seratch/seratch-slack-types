@@ -1,18 +1,20 @@
 export interface AttachmentActionPayload {
-    type?:             string;
-    actions?:          Action[];
-    callback_id?:      string;
-    team?:             Team;
-    channel?:          Channel;
-    user?:             User;
-    action_ts?:        string;
-    message_ts?:       string;
-    attachment_id?:    string;
-    token?:            string;
-    is_app_unfurl?:    boolean;
-    original_message?: OriginalMessage;
-    response_url?:     string;
-    trigger_id?:       string;
+    type?:                  string;
+    actions?:               Action[];
+    callback_id?:           string;
+    enterprise?:            Channel;
+    team?:                  Team;
+    channel?:               Channel;
+    user?:                  User;
+    action_ts?:             string;
+    message_ts?:            string;
+    attachment_id?:         string;
+    token?:                 string;
+    is_app_unfurl?:         boolean;
+    original_message?:      OriginalMessage;
+    response_url?:          string;
+    trigger_id?:            string;
+    is_enterprise_install?: boolean;
 }
 
 export interface Action {

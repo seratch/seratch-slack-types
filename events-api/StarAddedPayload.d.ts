@@ -1,13 +1,23 @@
 export interface StarAddedPayload {
-    token?:         string;
-    team_id?:       string;
-    enterprise_id?: string;
-    api_app_id?:    string;
-    event?:         Event;
-    type?:          string;
-    event_id?:      string;
-    event_time?:    number;
-    authed_users?:  string[];
+    token?:                 string;
+    team_id?:               string;
+    enterprise_id?:         string;
+    api_app_id?:            string;
+    event?:                 Event;
+    type?:                  string;
+    event_id?:              string;
+    event_time?:            number;
+    authorizations?:        Authorization[];
+    is_ext_shared_channel?: boolean;
+    event_context?:         string;
+}
+
+export interface Authorization {
+    enterprise_id?:         string;
+    team_id?:               string;
+    user_id?:               string;
+    is_bot?:                boolean;
+    is_enterprise_install?: boolean;
 }
 
 export interface Event {
@@ -39,23 +49,32 @@ export interface Message {
 }
 
 export interface Attachment {
+    service_name?:          string;
+    service_url?:           string;
+    title?:                 string;
+    title_link?:            string;
+    author_name?:           string;
+    author_link?:           string;
+    thumb_url?:             string;
+    thumb_width?:           number;
+    thumb_height?:          number;
+    fallback?:              string;
+    video_html?:            string;
+    video_html_width?:      number;
+    video_html_height?:     number;
+    from_url?:              string;
+    service_icon?:          string;
+    id?:                    number;
+    original_url?:          string;
     msg_subtype?:           string;
     callback_id?:           string;
     color?:                 string;
     pretext?:               string;
-    service_url?:           string;
-    service_name?:          string;
-    service_icon?:          string;
     author_id?:             string;
-    author_name?:           string;
-    author_link?:           string;
     author_icon?:           string;
-    from_url?:              string;
-    original_url?:          string;
     author_subname?:        string;
     channel_id?:            string;
     channel_name?:          string;
-    id?:                    number;
     bot_id?:                string;
     indent?:                boolean;
     is_msg_unfurl?:         boolean;
@@ -63,16 +82,8 @@ export interface Attachment {
     is_thread_root_unfurl?: boolean;
     is_app_unfurl?:         boolean;
     app_unfurl_url?:        string;
-    title?:                 string;
-    title_link?:            string;
     text?:                  string;
     fields?:                Field[];
-    thumb_url?:             string;
-    thumb_width?:           number;
-    thumb_height?:          number;
-    video_html?:            string;
-    video_html_width?:      number;
-    video_html_height?:     number;
     footer?:                string;
     footer_icon?:           string;
     ts?:                    string;

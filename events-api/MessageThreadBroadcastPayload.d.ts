@@ -1,14 +1,16 @@
 export interface MessageThreadBroadcastPayload {
-    token?:         string;
-    enterprise_id?: string;
-    team_id?:       string;
-    api_app_id?:    string;
-    type?:          string;
-    authed_users?:  string[];
-    authed_teams?:  string[];
-    event_id?:      string;
-    event_time?:    number;
-    event?:         Event;
+    token?:                 string;
+    enterprise_id?:         string;
+    team_id?:               string;
+    api_app_id?:            string;
+    type?:                  string;
+    authed_users?:          string[];
+    authed_teams?:          string[];
+    is_ext_shared_channel?: boolean;
+    event_id?:              string;
+    event_time?:            number;
+    event_context?:         string;
+    event?:                 Event;
 }
 
 export interface Event {
@@ -220,6 +222,7 @@ export interface Root {
     thread_ts?:         string;
     icons?:             RootIcons;
     bot_profile?:       BotProfile;
+    edited?:            Edited;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
@@ -243,6 +246,11 @@ export interface BotProfileIcons {
     image_36?: string;
     image_48?: string;
     image_72?: string;
+}
+
+export interface Edited {
+    user?: string;
+    ts?:   string;
 }
 
 export interface RootIcons {

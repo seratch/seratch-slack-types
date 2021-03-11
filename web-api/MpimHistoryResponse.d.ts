@@ -26,6 +26,7 @@ export interface Message {
     reply_users?:       string[];
     subscribed?:        boolean;
     last_read?:         string;
+    is_starred?:        boolean;
 }
 
 export interface BotProfile {

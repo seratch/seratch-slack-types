@@ -34,6 +34,9 @@ export interface Message {
     latest_reply?:      string;
     reply_users?:       string[];
     subscribed?:        boolean;
+    subtype?:           string;
+    username?:          string;
+    parent_user_id?:    string;
 }
 
 export interface Block {

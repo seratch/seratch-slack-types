@@ -32,6 +32,9 @@ export interface Channel {
     topic?:                      Purpose;
     purpose?:                    Purpose;
     previous_names?:             string[];
+    is_moved?:                   number;
+    internal_team_ids?:          string[];
+    is_open?:                    boolean;
 }
 
 export interface Purpose {

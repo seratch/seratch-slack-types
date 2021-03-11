@@ -39,6 +39,8 @@ export interface Message {
     attachments?:       Attachment[];
     topic?:             string;
     purpose?:           string;
+    client_msg_id?:     string;
+    reactions?:         Reaction[];
 }
 
 export interface Attachment {
@@ -307,6 +309,12 @@ export interface File {
 export interface MessageIcons {
     emoji?:    string;
     image_64?: string;
+}
+
+export interface Reaction {
+    name?:  string;
+    users?: string[];
+    count?: number;
 }
 
 export interface Root {

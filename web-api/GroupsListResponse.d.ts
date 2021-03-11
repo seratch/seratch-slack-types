@@ -21,6 +21,9 @@ export interface Group {
     topic?:           Purpose;
     purpose?:         Purpose;
     priority?:        number;
+    is_open?:         boolean;
+    last_read?:       string;
+    parent_group?:    string;
 }
 
 export interface Purpose {

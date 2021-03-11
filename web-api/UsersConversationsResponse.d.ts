@@ -114,6 +114,7 @@ export interface Root {
     thread_ts?:         string;
     icons?:             LatestIcons;
     bot_profile?:       BotProfile;
+    edited?:            Edited;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;

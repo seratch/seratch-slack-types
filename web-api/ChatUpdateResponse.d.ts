@@ -10,14 +10,17 @@ export interface ChatUpdateResponse {
 }
 
 export interface Message {
-    bot_id?:      string;
-    type?:        string;
-    text?:        string;
-    user?:        string;
-    team?:        string;
-    bot_profile?: BotProfile;
-    blocks?:      Block[];
-    edited?:      Edited;
+    bot_id?:         string;
+    type?:           string;
+    text?:           string;
+    user?:           string;
+    team?:           string;
+    bot_profile?:    BotProfile;
+    blocks?:         Block[];
+    edited?:         Edited;
+    files?:          File[];
+    upload?:         boolean;
+    display_as_bot?: boolean;
 }
 
 export interface Block {
@@ -118,4 +121,37 @@ export interface Icons {
 export interface Edited {
     user?: string;
     ts?:   string;
+}
+
+export interface File {
+    id?:                   string;
+    created?:              number;
+    timestamp?:            number;
+    name?:                 string;
+    title?:                string;
+    mimetype?:             string;
+    filetype?:             string;
+    pretty_type?:          string;
+    user?:                 string;
+    editable?:             boolean;
+    size?:                 number;
+    mode?:                 string;
+    is_external?:          boolean;
+    external_type?:        string;
+    is_public?:            boolean;
+    public_url_shared?:    boolean;
+    display_as_bot?:       boolean;
+    username?:             string;
+    url_private?:          string;
+    url_private_download?: string;
+    permalink?:            string;
+    permalink_public?:     string;
+    edit_link?:            string;
+    preview?:              string;
+    preview_highlight?:    string;
+    lines?:                number;
+    lines_more?:           number;
+    preview_is_truncated?: boolean;
+    is_starred?:           boolean;
+    has_rich_preview?:     boolean;
 }

@@ -12,7 +12,7 @@ export interface Item {
     channel?:     string;
     date_create?: number;
     message?:     Message;
-    file?:        File;
+    file?:        ItemFile;
     comment?:     Comment;
 }
 
@@ -27,7 +27,7 @@ export interface Comment {
     is_starred?: boolean;
 }
 
-export interface File {
+export interface ItemFile {
     id?:                   string;
     created?:              number;
     timestamp?:            number;
@@ -128,6 +128,11 @@ export interface Message {
     subscribed?:        boolean;
     last_read?:         string;
     reactions?:         Reaction[];
+    bot_profile?:       BotProfile;
+    edited?:            Edited;
+    files?:             FileElement[];
+    upload?:            boolean;
+    display_as_bot?:    boolean;
 }
 
 export interface Attachment {
@@ -311,6 +316,60 @@ export interface InitialOption {
     value?:       string;
     description?: Text;
     url?:         string;
+}
+
+export interface BotProfile {
+    id?:      string;
+    deleted?: boolean;
+    name?:    string;
+    updated?: number;
+    app_id?:  string;
+    icons?:   Icons;
+    team_id?: string;
+}
+
+export interface Icons {
+    image_36?: string;
+    image_48?: string;
+    image_72?: string;
+}
+
+export interface Edited {
+    user?: string;
+    ts?:   string;
+}
+
+export interface FileElement {
+    id?:                   string;
+    created?:              number;
+    timestamp?:            number;
+    name?:                 string;
+    title?:                string;
+    mimetype?:             string;
+    filetype?:             string;
+    pretty_type?:          string;
+    user?:                 string;
+    editable?:             boolean;
+    size?:                 number;
+    mode?:                 string;
+    is_external?:          boolean;
+    external_type?:        string;
+    is_public?:            boolean;
+    public_url_shared?:    boolean;
+    display_as_bot?:       boolean;
+    username?:             string;
+    url_private?:          string;
+    url_private_download?: string;
+    permalink?:            string;
+    permalink_public?:     string;
+    edit_link?:            string;
+    preview?:              string;
+    preview_highlight?:    string;
+    lines?:                number;
+    lines_more?:           number;
+    preview_is_truncated?: boolean;
+    is_starred?:           boolean;
+    has_rich_preview?:     boolean;
 }
 
 export interface Reaction {

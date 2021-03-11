@@ -126,10 +126,10 @@ export interface AttachmentBlock {
     title?:        TextElement;
     text?:         TextElement;
     fields?:       TextElement[];
-    accessory?:    Accessory;
+    accessory?:    PurpleAccessory;
 }
 
-export interface Accessory {
+export interface PurpleAccessory {
     type?:         string;
     image_url?:    string;
     alt_text?:     string;
@@ -213,19 +213,82 @@ export interface Metadata {
 }
 
 export interface MessageBlock {
-    type?:         string;
-    block_id?:     string;
-    text?:         TextElement;
-    accessory?:    Accessory;
-    elements?:     FluffyElement[];
+    type?:                     string;
+    block_id?:                 string;
+    text?:                     TextElement;
+    accessory?:                FluffyAccessory;
+    elements?:                 FluffyElement[];
+    call_id?:                  string;
+    api_decoration_available?: boolean;
+    call?:                     Call;
+    fallback?:                 string;
+    image_url?:                string;
+    image_width?:              number;
+    image_height?:             number;
+    image_bytes?:              number;
+    alt_text?:                 string;
+    title?:                    TextElement;
+    fields?:                   TextElement[];
+}
+
+export interface FluffyAccessory {
     fallback?:     string;
     image_url?:    string;
     image_width?:  number;
     image_height?: number;
     image_bytes?:  number;
+    type?:         string;
     alt_text?:     string;
-    title?:        TextElement;
-    fields?:       TextElement[];
+    action_id?:    string;
+    initial_time?: string;
+    placeholder?:  TextElement;
+}
+
+export interface Call {
+    v1?:                 V1;
+    media_backend_type?: string;
+}
+
+export interface V1 {
+    id?:                   string;
+    app_id?:               string;
+    app_icon_urls?:        AppIconUrls;
+    date_start?:           number;
+    active_participants?:  Participant[];
+    all_participants?:     Participant[];
+    display_id?:           string;
+    join_url?:             string;
+    desktop_app_join_url?: string;
+    name?:                 string;
+    created_by?:           string;
+    date_end?:             number;
+    channels?:             string[];
+    is_dm_call?:           boolean;
+    was_rejected?:         boolean;
+    was_missed?:           boolean;
+    was_accepted?:         boolean;
+    has_ended?:            boolean;
+}
+
+export interface Participant {
+    slack_id?:     string;
+    external_id?:  string;
+    avatar_url?:   string;
+    display_name?: string;
+}
+
+export interface AppIconUrls {
+    image_32?:       string;
+    image_36?:       string;
+    image_48?:       string;
+    image_64?:       string;
+    image_72?:       string;
+    image_96?:       string;
+    image_128?:      string;
+    image_192?:      string;
+    image_512?:      string;
+    image_1024?:     string;
+    image_original?: string;
 }
 
 export interface FluffyElement {

@@ -1,13 +1,15 @@
 export interface DialogCancellationPayload {
-    type?:         string;
-    token?:        string;
-    action_ts?:    string;
-    team?:         Team;
-    user?:         User;
-    channel?:      Channel;
-    callback_id?:  string;
-    response_url?: string;
-    state?:        string;
+    type?:                  string;
+    token?:                 string;
+    action_ts?:             string;
+    enterprise?:            Channel;
+    team?:                  Team;
+    user?:                  User;
+    channel?:               Channel;
+    callback_id?:           string;
+    response_url?:          string;
+    state?:                 string;
+    is_enterprise_install?: boolean;
 }
 
 export interface Channel {

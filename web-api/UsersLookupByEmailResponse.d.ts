@@ -26,6 +26,7 @@ export interface User {
     is_app_user?:         boolean;
     updated?:             number;
     has_2fa?:             boolean;
+    is_email_confirmed?:  boolean;
 }
 
 export interface Profile {

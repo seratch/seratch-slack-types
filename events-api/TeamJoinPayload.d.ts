@@ -1,14 +1,16 @@
 export interface TeamJoinPayload {
-    token?:         string;
-    enterprise_id?: string;
-    team_id?:       string;
-    api_app_id?:    string;
-    type?:          string;
-    authed_users?:  string[];
-    authed_teams?:  string[];
-    event_id?:      string;
-    event_time?:    number;
-    event?:         Event;
+    token?:                 string;
+    enterprise_id?:         string;
+    team_id?:               string;
+    api_app_id?:            string;
+    type?:                  string;
+    authed_users?:          string[];
+    authed_teams?:          string[];
+    is_ext_shared_channel?: boolean;
+    event_id?:              string;
+    event_time?:            number;
+    event_context?:         string;
+    event?:                 Event;
 }
 
 export interface Event {
@@ -38,6 +40,7 @@ export interface User {
     is_app_user?:         boolean;
     updated?:             number;
     has_2fa?:             boolean;
+    is_email_confirmed?:  boolean;
     presence?:            string;
     enterprise_user?:     EnterpriseUser;
     two_factor_type?:     string;

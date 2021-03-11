@@ -160,6 +160,7 @@ export interface Root {
     thread_ts?:         string;
     icons?:             LatestIcons;
     bot_profile?:       Bot;
+    edited?:            Edited;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
@@ -539,6 +540,44 @@ export interface SelfPrefs {
     connect_dm_early_access?:                              boolean;
     seen_connect_dm_coachmark?:                            boolean;
     xws_sidebar_variant?:                                  number;
+    user_customized_quick_reactions_display_feature?:      number;
+    user_customized_quick_reactions_has_customized?:       boolean;
+    user_customized_quick_reactions_emoji_1?:              string;
+    user_customized_quick_reactions_emoji_2?:              string;
+    user_customized_quick_reactions_emoji_3?:              string;
+    joiner_message_suggestion_dismissed?:                  boolean;
+    huddles_variant?:                                      number;
+    stories_variant?:                                      string;
+    emoji_packs_most_recent_available_time?:               number;
+    emoji_packs_clicked_picker_cta?:                       boolean;
+    emoji_packs_clicked_collection_cta?:                   boolean;
+    seen_p3_locale_change_message_ko_kr?:                  number;
+    inbox_views_workspace_filter?:                         string;
+    dismissed_connect_auto_approval_modal?:                string;
+    help_menu_open_timestamp?:                             number;
+    xws_dismissed_education?:                              boolean;
+    xws_seen_education?:                                   number;
+    enable_slack_connect_view?:                            boolean;
+    tasks_view?:                                           string;
+    dismissed_app_launcher_atlassian_promo?:               boolean;
+    seen_toast_new_locale_launch?:                         string;
+    seen_toast_new_locale_launch_ts?:                      number;
+    emoji_packs_clicked_picker_post_install_cta?:          boolean;
+    huddles_mute_by_default?:                              boolean;
+    show_sidebar_avatars?:                                 boolean;
+    seen_connect_section_coachmark?:                       boolean;
+    has_dismissed_google_directory_coachmark?:             boolean;
+    huddles_global_mute?:                                  boolean;
+    huddle_survey_last_seen?:                              string;
+    huddles_mini_panel?:                                   boolean;
+    sidebar_pref_dismissed_tip?:                           boolean;
+    enable_media_captions?:                                boolean;
+    set_a11y_prefs_new_user?:                              boolean;
+    seen_sc_page_banner?:                                  boolean;
+    seen_sc_menu_coachmark?:                               boolean;
+    seen_sc_page?:                                         boolean;
+    notification_center_filters?:                          string;
+    media_playback_speed?:                                 number;
 }
 
 export interface LocalesEnabled {
@@ -550,6 +589,8 @@ export interface LocalesEnabled {
     "fr-FR"?: string;
     "pt-BR"?: string;
     "ja-JP"?: string;
+    "ko-KR"?: string;
+    "it-IT"?: string;
 }
 
 export interface Subteams {
@@ -598,6 +639,7 @@ export interface Team {
     date_create?:           number;
     limit_ts?:              number;
     avatar_base_url?:       string;
+    is_verified?:           boolean;
 }
 
 export interface Icon {
@@ -621,7 +663,7 @@ export interface TeamPrefs {
     can_receive_shared_channels_invites?:                boolean;
     dropbox_legacy_picker?:                              boolean;
     app_whitelist_enabled?:                              boolean;
-    who_can_manage_integrations?:                        WhoCan;
+    who_can_manage_integrations?:                        SlackConnectAllowedWorkspaces;
     welcome_place_enabled?:                              boolean;
     msg_edit_window_mins?:                               number;
     allow_message_deletion?:                             boolean;
@@ -642,7 +684,7 @@ export interface TeamPrefs {
     who_can_kick_channels?:                              string;
     who_can_kick_groups?:                                string;
     workflow_builder_enabled?:                           boolean;
-    who_can_view_message_activity?:                      WhoCan;
+    who_can_view_message_activity?:                      SlackConnectAllowedWorkspaces;
     workflow_extension_steps_beta_opt_in?:               boolean;
     channel_email_addresses_enabled?:                    boolean;
     retention_type?:                                     number;
@@ -674,20 +716,20 @@ export interface TeamPrefs {
     file_limit_whitelisted?:                             boolean;
     uses_customized_custom_status_presets?:              boolean;
     disable_email_ingestion?:                            boolean;
-    who_can_manage_guests?:                              WhoCan;
+    who_can_manage_guests?:                              SlackConnectAllowedWorkspaces;
     who_can_create_shared_channels?:                     string;
-    who_can_manage_shared_channels?:                     WhoCan;
-    who_can_post_in_shared_channels?:                    WhoCan;
-    who_can_manage_ext_shared_channels?:                 WhoCan;
-    who_can_dm_anyone?:                                  WhoCan;
+    who_can_manage_shared_channels?:                     SlackConnectAllowedWorkspaces;
+    who_can_post_in_shared_channels?:                    SlackConnectAllowedWorkspaces;
+    who_can_manage_ext_shared_channels?:                 SlackConnectAllowedWorkspaces;
+    who_can_dm_anyone?:                                  SlackConnectAllowedWorkspaces;
     box_app_installed?:                                  boolean;
     onedrive_app_installed?:                             boolean;
     onedrive_enabled_team?:                              boolean;
     filepicker_app_first_install?:                       boolean;
     use_browser_picker?:                                 boolean;
     received_esc_route_to_channel_awareness_message?:    boolean;
-    who_can_approve_ext_shared_channel_invites?:         WhoCan;
-    who_can_create_ext_shared_channel_invites?:          WhoCan;
+    who_can_approve_ext_shared_channel_invites?:         SlackConnectAllowedWorkspaces;
+    who_can_create_ext_shared_channel_invites?:          SlackConnectAllowedWorkspaces;
     enterprise_default_channels?:                        string[];
     enterprise_has_corporate_exports?:                   boolean;
     enterprise_mandatory_channels?:                      string[];
@@ -741,14 +783,26 @@ export interface TeamPrefs {
     custom_status_presets?:                              Array<string[]>;
     custom_status_default_emoji?:                        string;
     auth_mode?:                                          string;
-    who_can_create_workflows?:                           WhoCan;
+    who_can_create_workflows?:                           SlackConnectAllowedWorkspaces;
     workflows_webhook_trigger_enabled?:                  boolean;
     workflows_export_csv_enabled?:                       boolean;
-    who_can_create_channel_email_addresses?:             WhoCan;
+    who_can_create_channel_email_addresses?:             SlackConnectAllowedWorkspaces;
     invites_limit?:                                      boolean;
     member_analytics_disabled?:                          boolean;
     calls_locations?:                                    string[];
     workflow_extension_steps_enabled?:                   boolean;
+    who_can_request_ext_shared_channels?:                SlackConnectAllowedWorkspaces;
+    admin_customized_quick_reactions?:                   string[];
+    enable_connect_dm_early_access?:                     boolean;
+    display_external_email_addresses?:                   boolean;
+    enable_info_barriers?:                               boolean;
+    enable_mpdm_to_private_channel_conversion?:          boolean;
+    slack_connect_file_upload_sharing_enabled?:          boolean;
+    slack_connect_dm_only_verified_orgs?:                boolean;
+    joiner_notifications_enabled?:                       boolean;
+    slack_connect_allowed_workspaces?:                   SlackConnectAllowedWorkspaces;
+    show_legacy_paid_benefits_page?:                     boolean;
+    enable_domain_allowlist_for_cea?:                    boolean;
 }
 
 export interface CallsApps {
@@ -763,7 +817,7 @@ export interface Video {
     image?: string;
 }
 
-export interface WhoCan {
+export interface SlackConnectAllowedWorkspaces {
     type?: string[];
 }
 

@@ -4,5 +4,7 @@ export interface EmojiChangedEvent {
     names?:    string[];
     name?:     string;
     value?:    string;
+    old_name?: string;
+    new_name?: string;
     event_ts?: string;
 }

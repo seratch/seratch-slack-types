@@ -25,6 +25,7 @@ export interface Usergroup {
     deleted_by?:            string;
     prefs?:                 Prefs;
     channel_count?:         number;
+    users?:                 string[];
 }
 
 export interface Prefs {

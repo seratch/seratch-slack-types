@@ -1,16 +1,19 @@
 export interface BlockActionPayload {
-    type?:         string;
-    team?:         Team;
-    user?:         User;
-    api_app_id?:   string;
-    token?:        string;
-    container?:    Container;
-    trigger_id?:   string;
-    channel?:      Channel;
-    message?:      Message;
-    response_url?: string;
-    view?:         View;
-    actions?:      BlockActionPayloadAction[];
+    type?:                  string;
+    enterprise?:            Channel;
+    team?:                  Team;
+    user?:                  User;
+    api_app_id?:            string;
+    token?:                 string;
+    container?:             Container;
+    trigger_id?:            string;
+    channel?:               Channel;
+    message?:               Message;
+    response_url?:          string;
+    view?:                  View;
+    state?:                 State;
+    actions?:               BlockActionPayloadAction[];
+    is_enterprise_install?: boolean;
 }
 
 export interface BlockActionPayloadAction {
@@ -34,6 +37,8 @@ export interface BlockActionPayloadAction {
     min_query_length?:      number;
     selected_date?:         string;
     initial_date?:          string;
+    selected_time?:         string;
+    initial_time?:          string;
 }
 
 export interface ElementConfirm {
@@ -494,6 +499,7 @@ export interface Root {
     thread_ts?:         string;
     icons?:             MessageIcons;
     bot_profile?:       BotProfile;
+    edited?:            Edited;
     reply_count?:       number;
     reply_users_count?: number;
     latest_reply?:      string;
@@ -501,6 +507,9 @@ export interface Root {
     last_read?:         string;
     unread_count?:      number;
     ts?:                string;
+}
+
+export interface State {
 }
 
 export interface Team {
@@ -518,24 +527,23 @@ export interface User {
 }
 
 export interface View {
-    id?:               string;
-    team_id?:          string;
-    type?:             string;
-    title?:            Close;
-    submit?:           Close;
-    close?:            Close;
-    private_metadata?: string;
-    callback_id?:      string;
-    external_id?:      string;
-    state?:            State;
-    hash?:             string;
-    clear_on_close?:   boolean;
-    notify_on_close?:  boolean;
-    root_view_id?:     string;
-    previous_view_id?: string;
-    app_id?:           string;
-    bot_id?:           string;
-}
-
-export interface State {
+    id?:                    string;
+    team_id?:               string;
+    type?:                  string;
+    title?:                 Close;
+    submit?:                Close;
+    close?:                 Close;
+    private_metadata?:      string;
+    callback_id?:           string;
+    external_id?:           string;
+    state?:                 State;
+    hash?:                  string;
+    clear_on_close?:        boolean;
+    notify_on_close?:       boolean;
+    submit_disabled?:       boolean;
+    root_view_id?:          string;
+    previous_view_id?:      string;
+    app_id?:                string;
+    app_installed_team_id?: string;
+    bot_id?:                string;
 }

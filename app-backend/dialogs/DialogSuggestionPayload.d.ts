@@ -1,13 +1,15 @@
 export interface DialogSuggestionPayload {
-    type?:        string;
-    token?:       string;
-    action_ts?:   string;
-    team?:        Team;
-    user?:        User;
-    channel?:     Channel;
-    name?:        string;
-    value?:       string;
-    callback_id?: string;
+    type?:                  string;
+    token?:                 string;
+    action_ts?:             string;
+    enterprise?:            Channel;
+    team?:                  Team;
+    user?:                  User;
+    channel?:               Channel;
+    name?:                  string;
+    value?:                 string;
+    callback_id?:           string;
+    is_enterprise_install?: boolean;
 }
 
 export interface Channel {

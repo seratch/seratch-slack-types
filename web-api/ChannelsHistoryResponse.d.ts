@@ -40,6 +40,7 @@ export interface Message {
     subscribed?:        boolean;
     client_msg_id?:     string;
     inviter?:           string;
+    reactions?:         Reaction[];
 }
 
 export interface Attachment {
@@ -303,11 +304,18 @@ export interface File {
     lines?:                number;
     lines_more?:           number;
     preview_is_truncated?: boolean;
+    image_exif_rotation?:  number;
 }
 
 export interface MessageIcons {
     emoji?:    string;
     image_64?: string;
+}
+
+export interface Reaction {
+    name?:  string;
+    users?: string[];
+    count?: number;
 }
 
 export interface Root {
@@ -325,6 +333,10 @@ export interface Root {
     latest_reply?:      string;
     reply_users?:       string[];
     subscribed?:        boolean;
+    user?:              string;
+    team?:              string;
+    bot_profile?:       BotProfile;
+    edited?:            Edited;
 }
 
 export interface ResponseMetadata {
