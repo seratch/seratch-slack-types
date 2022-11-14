@@ -44,6 +44,8 @@ export interface Channel {
     is_global_shared?:           boolean;
     is_org_default?:             boolean;
     is_org_mandatory?:           boolean;
+    connected_limited_team_ids?: string[];
+    context_team_id?:            string;
 }
 
 export interface Purpose {

@@ -1,20 +1,23 @@
 export interface AdminAppsRequestsListResponse {
     ok?:                boolean;
-    app_requests?:      AppRequest[];
-    response_metadata?: ResponseMetadata;
+    warning?:           string;
     error?:             string;
     needed?:            string;
     provided?:          string;
+    app_requests?:      AppRequest[];
+    response_metadata?: ResponseMetadata;
 }
 
 export interface AppRequest {
-    id?:                  string;
-    app?:                 App;
-    user?:                User;
-    team?:                Team;
-    previous_resolution?: PreviousResolution;
-    message?:             string;
-    date_created?:        number;
+    id?:                       string;
+    app?:                      App;
+    user?:                     User;
+    team?:                     Team;
+    scopes?:                   any[];
+    previous_resolution?:      PreviousResolution;
+    is_user_app_collaborator?: boolean;
+    message?:                  string;
+    date_created?:             number;
 }
 
 export interface App {
@@ -47,6 +50,7 @@ export interface Icons {
 
 export interface PreviousResolution {
     status?: string;
+    scopes?: any[];
 }
 
 export interface Team {
@@ -63,4 +67,6 @@ export interface User {
 
 export interface ResponseMetadata {
     next_cursor?: string;
+    messages?:    string[];
+    warnings?:    string[];
 }

@@ -10,12 +10,23 @@
   "authed_teams": [
     ""
   ],
+  "authorizations": [
+    {
+      "enterprise_id": "",
+      "team_id": "",
+      "user_id": "",
+      "is_bot": false,
+      "is_enterprise_install": false
+    }
+  ],
   "is_ext_shared_channel": false,
   "event_id": "",
   "event_time": 123,
   "event_context": "",
   "event": {
     "type": "channel_deleted",
-    "channel": ""
+    "channel": "",
+    "actor_id": "",
+    "event_ts": ""
   }
 }

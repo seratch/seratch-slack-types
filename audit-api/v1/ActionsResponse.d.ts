@@ -15,4 +15,7 @@ export interface Actions {
     workflow_builder?: string[];
     message?:          string[];
     barrier?:          string[];
+    huddle?:           string[];
+    anomaly?:          string[];
+    slack_cli?:        string[];
 }

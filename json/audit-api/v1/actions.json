@@ -23,6 +23,15 @@
     ],
     "barrier": [
       ""
+    ],
+    "huddle": [
+      ""
+    ],
+    "anomaly": [
+      ""
+    ],
+    "slack_cli": [
+      ""
     ]
   },
   "ok": false,

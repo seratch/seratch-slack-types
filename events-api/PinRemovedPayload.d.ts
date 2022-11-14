@@ -46,6 +46,7 @@ export interface Message {
     text?:        string;
     user?:        string;
     ts?:          string;
+    app_id?:      string;
     team?:        string;
     bot_profile?: BotProfile;
     permalink?:   string;

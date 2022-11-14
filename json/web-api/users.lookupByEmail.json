@@ -35,7 +35,19 @@
       "image_512": "https://www.example.com/",
       "image_1024": "https://www.example.com/",
       "status_text_canonical": "",
-      "team": "T00000000"
+      "team": "T00000000",
+      "status_emoji_url": "",
+      "pronouns": "",
+      "status_emoji_display_info": [
+        {
+          "emoji_name": "",
+          "display_alias": "",
+          "display_url": ""
+        }
+      ],
+      "huddle_state": "",
+      "huddle_state_expiration_ts": 12345,
+      "guest_invited_by": "U00000000"
     },
     "is_admin": false,
     "is_owner": false,
@@ -46,9 +58,16 @@
     "is_app_user": false,
     "updated": 12345,
     "has_2fa": false,
-    "is_email_confirmed": false
+    "is_email_confirmed": false,
+    "who_can_share_contact_card": "",
+    "is_invited_user": false
   },
   "error": "",
   "needed": "",
-  "provided": ""
+  "provided": "",
+  "response_metadata": {
+    "messages": [
+      ""
+    ]
+  }
 }

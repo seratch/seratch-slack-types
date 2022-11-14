@@ -1,9 +1,10 @@
 export interface RemindersAddResponse {
-    ok?:       boolean;
-    reminder?: Reminder;
-    error?:    string;
-    needed?:   string;
-    provided?: string;
+    ok?:                boolean;
+    reminder?:          Reminder;
+    error?:             string;
+    response_metadata?: ResponseMetadata;
+    needed?:            string;
+    provided?:          string;
 }
 
 export interface Reminder {
@@ -14,4 +15,8 @@ export interface Reminder {
     recurring?:   boolean;
     time?:        number;
     complete_ts?: number;
+}
+
+export interface ResponseMetadata {
+    messages?: string[];
 }

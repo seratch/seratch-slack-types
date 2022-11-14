@@ -19,10 +19,10 @@
         "team": ""
       },
       "file": {
-        "id": "",
-        "name": "",
-        "filetype": "",
-        "title": ""
+        "id": "string",
+        "name": "string",
+        "filetype": "string",
+        "title": "string"
       },
       "channel": {
         "id": "",
@@ -44,15 +44,28 @@
         "id": "",
         "name": ""
       },
+      "barrier": {
+        "id": "",
+        "primary_usergroup": "",
+        "barriered_from_usergroup": ""
+      },
       "message": {
         "team": "",
         "channel": "",
         "timestamp": ""
       },
-      "barrier": {
+      "usergroup": {
         "id": "",
-        "primary_usergroup": "",
-        "barriered_from_usergroup": ""
+        "name": ""
+      },
+      "role": {
+        "id": "",
+        "name": "",
+        "type": ""
+      },
+      "account_type_role": {
+        "id": "",
+        "name": ""
       }
     }
   ],

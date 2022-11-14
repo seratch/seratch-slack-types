@@ -8,6 +8,7 @@ export interface ChatPostMessageResponse {
     response_metadata?:   ResponseMetadata;
     needed?:              string;
     provided?:            string;
+    errors?:              string[];
 }
 
 export interface Message {
@@ -24,18 +25,17 @@ export interface Message {
     username?:       string;
     icons?:          MessageIcons;
     root?:           Root;
-    blocks?:         MessageBlock[];
+    blocks?:         Block[];
     attachments?:    Attachment[];
+    app_id?:         string;
+    metadata?:       MessageMetadata;
 }
 
 export interface Attachment {
-    text?:                  string;
-    id?:                    number;
-    fallback?:              string;
-    blocks?:                AttachmentBlock[];
-    color?:                 string;
     msg_subtype?:           string;
+    fallback?:              string;
     callback_id?:           string;
+    color?:                 string;
     pretext?:               string;
     service_url?:           string;
     service_name?:          string;
@@ -49,6 +49,8 @@ export interface Attachment {
     author_subname?:        string;
     channel_id?:            string;
     channel_name?:          string;
+    id?:                    number;
+    app_id?:                string;
     bot_id?:                string;
     indent?:                boolean;
     is_msg_unfurl?:         boolean;
@@ -58,6 +60,7 @@ export interface Attachment {
     app_unfurl_url?:        string;
     title?:                 string;
     title_link?:            string;
+    text?:                  string;
     fields?:                Field[];
     image_url?:             string;
     image_width?:           number;
@@ -66,6 +69,7 @@ export interface Attachment {
     thumb_url?:             string;
     thumb_width?:           number;
     thumb_height?:          number;
+    video_url?:             string;
     video_html?:            string;
     video_html_width?:      number;
     video_html_height?:     number;
@@ -74,11 +78,14 @@ export interface Attachment {
     ts?:                    string;
     mrkdwn_in?:             string[];
     actions?:               Action[];
+    blocks?:                Block[];
+    preview?:               Preview;
+    files?:                 FileElement[];
     filename?:              string;
     size?:                  number;
     mimetype?:              string;
     url?:                   string;
-    metadata?:              Metadata;
+    metadata?:              AttachmentMetadata;
 }
 
 export interface Action {
@@ -89,11 +96,11 @@ export interface Action {
     type?:             string;
     value?:            string;
     confirm?:          ActionConfirm;
-    options?:          Option[];
-    selected_options?: Option[];
+    options?:          SelectedOptionElement[];
+    selected_options?: SelectedOptionElement[];
     data_source?:      string;
     min_query_length?: number;
-    option_groups?:    OptionGroup[];
+    option_groups?:    ActionOptionGroup[];
     url?:              string;
 }
 
@@ -104,57 +111,73 @@ export interface ActionConfirm {
     dismiss_text?: string;
 }
 
-export interface OptionGroup {
-    text?: string;
+export interface ActionOptionGroup {
+    text?:    string;
+    options?: SelectedOptionElement[];
 }
 
-export interface Option {
+export interface SelectedOptionElement {
     text?:  string;
     value?: string;
 }
 
-export interface AttachmentBlock {
-    type?:         string;
-    elements?:     PurpleElement[];
-    block_id?:     string;
-    fallback?:     string;
-    image_url?:    string;
-    image_width?:  number;
-    image_height?: number;
-    image_bytes?:  number;
-    alt_text?:     string;
-    title?:        TextElement;
-    text?:         TextElement;
-    fields?:       TextElement[];
-    accessory?:    PurpleAccessory;
+export interface Block {
+    type?:                     string;
+    elements?:                 Accessory[];
+    block_id?:                 string;
+    fallback?:                 string;
+    image_url?:                string;
+    image_width?:              number;
+    image_height?:             number;
+    image_bytes?:              number;
+    alt_text?:                 string;
+    title?:                    Description;
+    title_url?:                string;
+    description?:              Description;
+    video_url?:                string;
+    thumbnail_url?:            string;
+    author_name?:              string;
+    provider_name?:            string;
+    provider_icon_url?:        string;
+    function_trigger_id?:      string;
+    app_id?:                   string;
+    is_workflow_app?:          boolean;
+    app_collaborators?:        string[];
+    button_label?:             string;
+    bot_user_id?:              string;
+    url?:                      string;
+    text?:                     Description;
+    fields?:                   Description[];
+    accessory?:                Accessory;
+    call_id?:                  string;
+    api_decoration_available?: boolean;
+    call?:                     Call;
+    external_id?:              string;
+    source?:                   string;
+    file_id?:                  string;
+    file?:                     BlockFile;
+    label?:                    Description;
+    element?:                  Accessory;
+    dispatch_action?:          boolean;
+    hint?:                     Description;
+    optional?:                 boolean;
 }
 
-export interface PurpleAccessory {
-    type?:         string;
-    image_url?:    string;
-    alt_text?:     string;
-    fallback?:     string;
-    image_width?:  number;
-    image_height?: number;
-    image_bytes?:  number;
-}
-
-export interface PurpleElement {
+export interface Accessory {
     type?:                            string;
-    text?:                            TextElement;
     action_id?:                       string;
-    url?:                             string;
-    value?:                           string;
-    style?:                           string;
-    confirm?:                         ElementConfirm;
-    placeholder?:                     TextElement;
+    options?:                         InitialOptionElement[];
+    initial_options?:                 InitialOptionElement[];
+    confirm?:                         AccessoryConfirm;
+    focus_on_load?:                   boolean;
+    placeholder?:                     Description;
     initial_channel?:                 string;
     response_url_enabled?:            boolean;
     initial_conversation?:            string;
     default_to_current_conversation?: boolean;
     filter?:                          Filter;
     initial_date?:                    string;
-    initial_option?:                  InitialOption;
+    initial_option?:                  InitialOptionElement;
     min_query_length?:                number;
     image_url?:                       string;
     alt_text?:                        string;
@@ -162,86 +185,91 @@ export interface PurpleElement {
     image_width?:                     number;
     image_height?:                    number;
     image_bytes?:                     number;
+    option_groups?:                   AccessoryOptionGroup[];
     initial_user?:                    string;
+    text?:                            Description;
+    url?:                             string;
+    value?:                           string;
+    style?:                           string;
+    accessibility_label?:             string;
+    initial_channels?:                string[];
+    max_selected_items?:              number;
+    initial_conversations?:           string[];
+    initial_time?:                    string;
+    timezone?:                        string;
+    initial_users?:                   string[];
+    elements?:                        AccessoryElement[];
+    indent?:                          number;
+    offset?:                          number;
+    border?:                          number;
 }
 
-export interface ElementConfirm {
-    title?:   TextElement;
-    text?:    TextElement;
-    confirm?: TextElement;
-    deny?:    TextElement;
+export interface AccessoryConfirm {
+    title?:   Description;
+    text?:    Description;
+    confirm?: Description;
+    deny?:    Description;
     style?:   string;
 }
 
-export interface TextElement {
+export interface Description {
     type?:     string;
     text?:     string;
     emoji?:    boolean;
     verbatim?: boolean;
 }
 
+export interface AccessoryElement {
+    type?:     string;
+    elements?: PurpleElement[];
+    style?:    string;
+    indent?:   number;
+    offset?:   number;
+    border?:   number;
+    text?:     string;
+    url?:      string;
+}
+
+export interface PurpleElement {
+    type?:         string;
+    range?:        string;
+    text?:         string;
+    style?:        Style;
+    channel_id?:   string;
+    value?:        string;
+    timestamp?:    string;
+    url?:          string;
+    team_id?:      string;
+    user_id?:      string;
+    usergroup_id?: string;
+    name?:         string;
+    skin_tone?:    number;
+    unicode?:      string;
+}
+
+export interface Style {
+    bold?:   boolean;
+    italic?: boolean;
+    strike?: boolean;
+    code?:   boolean;
+}
+
 export interface Filter {
+    include?:                          string[];
     exclude_external_shared_channels?: boolean;
     exclude_bot_users?:                boolean;
 }
 
-export interface InitialOption {
-    text?:        TextElement;
+export interface InitialOptionElement {
+    text?:        Description;
     value?:       string;
-    description?: TextElement;
+    description?: Description;
     url?:         string;
 }
 
-export interface Field {
-    title?: string;
-    value?: string;
-    short?: boolean;
-}
-
-export interface Metadata {
-    thumb_64?:    boolean;
-    thumb_80?:    boolean;
-    thumb_160?:   boolean;
-    original_w?:  number;
-    original_h?:  number;
-    thumb_360_w?: number;
-    thumb_360_h?: number;
-    format?:      string;
-    extension?:   string;
-    rotation?:    number;
-    thumb_tiny?:  string;
-}
-
-export interface MessageBlock {
-    type?:                     string;
-    block_id?:                 string;
-    text?:                     TextElement;
-    accessory?:                FluffyAccessory;
-    elements?:                 FluffyElement[];
-    call_id?:                  string;
-    api_decoration_available?: boolean;
-    call?:                     Call;
-    fallback?:                 string;
-    image_url?:                string;
-    image_width?:              number;
-    image_height?:             number;
-    image_bytes?:              number;
-    alt_text?:                 string;
-    title?:                    TextElement;
-    fields?:                   TextElement[];
-}
-
-export interface FluffyAccessory {
-    fallback?:     string;
-    image_url?:    string;
-    image_width?:  number;
-    image_height?: number;
-    image_bytes?:  number;
-    type?:         string;
-    alt_text?:     string;
-    action_id?:    string;
-    initial_time?: string;
-    placeholder?:  TextElement;
+export interface AccessoryOptionGroup {
+    label?:   Description;
+    options?: InitialOptionElement[];
 }
 
 export interface Call {
@@ -273,8 +301,8 @@ export interface V1 {
 export interface Participant {
     slack_id?:     string;
     external_id?:  string;
-    avatar_url?:   string;
     display_name?: string;
+    avatar_url?:   string;
 }
 
 export interface AppIconUrls {
@@ -291,32 +319,336 @@ export interface AppIconUrls {
     image_original?: string;
 }
 
-export interface FluffyElement {
-    type?:                            string;
-    action_id?:                       string;
-    text?:                            TextElement | string;
-    value?:                           string;
-    verbatim?:                        boolean;
-    emoji?:                           boolean;
-    url?:                             string;
-    style?:                           string;
-    confirm?:                         ElementConfirm;
-    placeholder?:                     TextElement;
-    initial_channel?:                 string;
-    response_url_enabled?:            boolean;
-    initial_conversation?:            string;
-    default_to_current_conversation?: boolean;
-    filter?:                          Filter;
-    initial_date?:                    string;
-    initial_option?:                  InitialOption;
-    min_query_length?:                number;
-    image_url?:                       string;
-    alt_text?:                        string;
-    fallback?:                        string;
-    image_width?:                     number;
-    image_height?:                    number;
-    image_bytes?:                     number;
-    initial_user?:                    string;
+export interface BlockFile {
+    id?:                        string;
+    created?:                   number;
+    timestamp?:                 number;
+    name?:                      string;
+    title?:                     string;
+    subject?:                   string;
+    mimetype?:                  string;
+    filetype?:                  string;
+    pretty_type?:               string;
+    user?:                      string;
+    user_team?:                 string;
+    mode?:                      string;
+    editable?:                  boolean;
+    non_owner_editable?:        boolean;
+    editor?:                    string;
+    last_editor?:               string;
+    updated?:                   number;
+    file_access?:               string;
+    alt_txt?:                   string;
+    subtype?:                   string;
+    transcription?:             Transcription;
+    mp4?:                       string;
+    vtt?:                       string;
+    hls?:                       string;
+    hls_embed?:                 string;
+    duration_ms?:               number;
+    thumb_video_w?:             number;
+    thumb_video_h?:             number;
+    original_attachment_count?: number;
+    is_external?:               boolean;
+    external_type?:             string;
+    external_id?:               string;
+    external_url?:              string;
+    username?:                  string;
+    size?:                      number;
+    url_private?:               string;
+    url_private_download?:      string;
+    app_id?:                    string;
+    app_name?:                  string;
+    thumb_64?:                  string;
+    thumb_64_gif?:              string;
+    thumb_64_w?:                string;
+    thumb_64_h?:                string;
+    thumb_80?:                  string;
+    thumb_80_gif?:              string;
+    thumb_80_w?:                string;
+    thumb_80_h?:                string;
+    thumb_160?:                 string;
+    thumb_160_gif?:             string;
+    thumb_160_w?:               string;
+    thumb_160_h?:               string;
+    thumb_360?:                 string;
+    thumb_360_gif?:             string;
+    thumb_360_w?:               string;
+    thumb_360_h?:               string;
+    thumb_480?:                 string;
+    thumb_480_gif?:             string;
+    thumb_480_w?:               string;
+    thumb_480_h?:               string;
+    thumb_720?:                 string;
+    thumb_720_gif?:             string;
+    thumb_720_w?:               string;
+    thumb_720_h?:               string;
+    thumb_800?:                 string;
+    thumb_800_gif?:             string;
+    thumb_800_w?:               string;
+    thumb_800_h?:               string;
+    thumb_960?:                 string;
+    thumb_960_gif?:             string;
+    thumb_960_w?:               string;
+    thumb_960_h?:               string;
+    thumb_1024?:                string;
+    thumb_1024_gif?:            string;
+    thumb_1024_w?:              string;
+    thumb_1024_h?:              string;
+    thumb_video?:               string;
+    thumb_gif?:                 string;
+    thumb_pdf?:                 string;
+    thumb_pdf_w?:               string;
+    thumb_pdf_h?:               string;
+    thumb_tiny?:                string;
+    converted_pdf?:             string;
+    image_exif_rotation?:       number;
+    original_w?:                string;
+    original_h?:                string;
+    deanimate?:                 string;
+    deanimate_gif?:             string;
+    pjpeg?:                     string;
+    permalink?:                 string;
+    permalink_public?:          string;
+    edit_link?:                 string;
+    has_rich_preview?:          boolean;
+    media_display_type?:        string;
+    preview_is_truncated?:      boolean;
+    preview?:                   string;
+    preview_highlight?:         string;
+    plain_text?:                string;
+    preview_plain_text?:        string;
+    has_more?:                  boolean;
+    sent_to_self?:              boolean;
+    lines?:                     number;
+    lines_more?:                number;
+    is_public?:                 boolean;
+    public_url_shared?:         boolean;
+    display_as_bot?:            boolean;
+    channels?:                  string[];
+    groups?:                    string[];
+    ims?:                       string[];
+    shares?:                    Shares;
+    to?:                        Cc[];
+    from?:                      Cc[];
+    cc?:                        Cc[];
+    channel_actions_ts?:        string;
+    channel_actions_count?:     number;
+    headers?:                   Headers;
+    simplified_html?:           string;
+    bot_id?:                    string;
+    initial_comment?:           InitialComment;
+    num_stars?:                 number;
+    is_starred?:                boolean;
+    pinned_to?:                 string[];
+    reactions?:                 Reaction[];
+    comments_count?:            number;
+}
+
+export interface Cc {
+    address?:  string;
+    name?:     string;
+    original?: string;
+}
+
+export interface Headers {
+    date?:        string;
+    in_reply_to?: string;
+    reply_to?:    string;
+    message_id?:  string;
+}
+
+export interface InitialComment {
+    id?:        string;
+    created?:   number;
+    timestamp?: number;
+    user?:      string;
+    comment?:   string;
+    channel?:   string;
+    is_intro?:  boolean;
+}
+
+export interface Reaction {
+    name?:  string;
+    count?: number;
+    users?: string[];
+    url?:   string;
+}
+
+export interface Shares {
+    public?:  { [key: string]: Private[] };
+    private?: { [key: string]: Private[] };
+}
+
+export interface Private {
+    share_user_id?:     string;
+    reply_users?:       string[];
+    reply_users_count?: number;
+    reply_count?:       number;
+    ts?:                string;
+    thread_ts?:         string;
+    latest_reply?:      string;
+    channel_name?:      string;
+    team_id?:           string;
+}
+
+export interface Transcription {
+    status?: string;
+    locale?: string;
+}
+
+export interface Field {
+    title?: string;
+    value?: string;
+    short?: boolean;
+}
+
+export interface FileElement {
+    id?:                        string;
+    created?:                   number;
+    timestamp?:                 number;
+    name?:                      string;
+    title?:                     string;
+    subject?:                   string;
+    mimetype?:                  string;
+    filetype?:                  string;
+    pretty_type?:               string;
+    user?:                      string;
+    user_team?:                 string;
+    mode?:                      string;
+    editable?:                  boolean;
+    non_owner_editable?:        boolean;
+    editor?:                    string;
+    last_editor?:               string;
+    updated?:                   number;
+    file_access?:               string;
+    alt_txt?:                   string;
+    subtype?:                   string;
+    transcription?:             Transcription;
+    mp4?:                       string;
+    vtt?:                       string;
+    hls?:                       string;
+    hls_embed?:                 string;
+    duration_ms?:               number;
+    thumb_video_w?:             number;
+    thumb_video_h?:             number;
+    original_attachment_count?: number;
+    is_external?:               boolean;
+    external_type?:             string;
+    external_id?:               string;
+    external_url?:              string;
+    username?:                  string;
+    size?:                      number;
+    url_private?:               string;
+    url_private_download?:      string;
+    app_id?:                    string;
+    app_name?:                  string;
+    thumb_64?:                  string;
+    thumb_64_gif?:              string;
+    thumb_64_w?:                string;
+    thumb_64_h?:                string;
+    thumb_80?:                  string;
+    thumb_80_gif?:              string;
+    thumb_80_w?:                string;
+    thumb_80_h?:                string;
+    thumb_160?:                 string;
+    thumb_160_gif?:             string;
+    thumb_160_w?:               string;
+    thumb_160_h?:               string;
+    thumb_360?:                 string;
+    thumb_360_gif?:             string;
+    thumb_360_w?:               string;
+    thumb_360_h?:               string;
+    thumb_480?:                 string;
+    thumb_480_gif?:             string;
+    thumb_480_w?:               string;
+    thumb_480_h?:               string;
+    thumb_720?:                 string;
+    thumb_720_gif?:             string;
+    thumb_720_w?:               string;
+    thumb_720_h?:               string;
+    thumb_800?:                 string;
+    thumb_800_gif?:             string;
+    thumb_800_w?:               string;
+    thumb_800_h?:               string;
+    thumb_960?:                 string;
+    thumb_960_gif?:             string;
+    thumb_960_w?:               string;
+    thumb_960_h?:               string;
+    thumb_1024?:                string;
+    thumb_1024_gif?:            string;
+    thumb_1024_w?:              string;
+    thumb_1024_h?:              string;
+    thumb_video?:               string;
+    thumb_gif?:                 string;
+    thumb_pdf?:                 string;
+    thumb_pdf_w?:               string;
+    thumb_pdf_h?:               string;
+    thumb_tiny?:                string;
+    converted_pdf?:             string;
+    image_exif_rotation?:       number;
+    original_w?:                string;
+    original_h?:                string;
+    deanimate?:                 string;
+    deanimate_gif?:             string;
+    pjpeg?:                     string;
+    permalink?:                 string;
+    permalink_public?:          string;
+    edit_link?:                 string;
+    has_rich_preview?:          boolean;
+    media_display_type?:        string;
+    preview_is_truncated?:      boolean;
+    preview?:                   string;
+    preview_highlight?:         string;
+    plain_text?:                string;
+    preview_plain_text?:        string;
+    has_more?:                  boolean;
+    sent_to_self?:              boolean;
+    lines?:                     number;
+    lines_more?:                number;
+    is_public?:                 boolean;
+    public_url_shared?:         boolean;
+    display_as_bot?:            boolean;
+    channels?:                  string[];
+    groups?:                    string[];
+    ims?:                       string[];
+    shares?:                    Shares;
+    to?:                        Cc[];
+    from?:                      Cc[];
+    cc?:                        Cc[];
+    channel_actions_ts?:        string;
+    channel_actions_count?:     number;
+    headers?:                   Headers;
+    simplified_html?:           string;
+    bot_id?:                    string;
+    initial_comment?:           InitialComment;
+    num_stars?:                 number;
+    is_starred?:                boolean;
+    pinned_to?:                 string[];
+    reactions?:                 Reaction[];
+    comments_count?:            number;
+}
+
+export interface AttachmentMetadata {
+    thumb_64?:    boolean;
+    thumb_80?:    boolean;
+    thumb_160?:   boolean;
+    original_w?:  number;
+    original_h?:  number;
+    thumb_360_w?: number;
+    thumb_360_h?: number;
+    format?:      string;
+    extension?:   string;
+    rotation?:    number;
+    thumb_tiny?:  string;
+}
+
+export interface Preview {
+    type?:       string;
+    can_remove?: boolean;
+    title?:      Description;
+    subtitle?:   Description;
+    icon_url?:   string;
 }
 
 export interface BotProfile {
@@ -338,6 +670,14 @@ export interface BotProfileIcons {
 export interface MessageIcons {
     emoji?:    string;
     image_64?: string;
+}
+
+export interface MessageMetadata {
+    event_payload?: EventPayload;
+    event_type?:    string;
+}
+
+export interface EventPayload {
 }
 
 export interface Root {

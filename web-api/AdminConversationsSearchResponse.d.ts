@@ -30,4 +30,10 @@ export interface Conversation {
     is_pending_ext_shared?:         boolean;
     connected_team_ids?:            string[];
     conversation_host_id?:          string;
+    channel_email_addresses?:       string[];
+    connected_limited_team_ids?:    string[];
+    external_user_count?:           number;
+    internal_team_ids?:             string[];
+    channel_manager_count?:         number;
+    is_disconnect_in_progress?:     boolean;
 }

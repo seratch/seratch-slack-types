@@ -43,6 +43,8 @@ export interface Subteam {
     created_by?:            string;
     updated_by?:            string;
     prefs?:                 Prefs;
+    users?:                 string[];
+    user_count?:            number;
     channel_count?:         number;
 }
 

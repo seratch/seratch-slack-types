@@ -14,6 +14,7 @@ export interface View {
     title?:                 Close;
     submit?:                Close;
     close?:                 Close;
+    blocks?:                any[];
     private_metadata?:      string;
     callback_id?:           string;
     external_id?:           string;

@@ -1,0 +1,37 @@
+{
+  "token": "",
+  "enterprise_id": "",
+  "team_id": "",
+  "api_app_id": "",
+  "type": "",
+  "authed_users": [
+    ""
+  ],
+  "authed_teams": [
+    ""
+  ],
+  "authorizations": [
+    {
+      "enterprise_id": "",
+      "team_id": "",
+      "user_id": "",
+      "is_bot": false,
+      "is_enterprise_install": false
+    }
+  ],
+  "is_ext_shared_channel": false,
+  "event_id": "",
+  "event_time": 123,
+  "event_context": "",
+  "event": {
+    "type": "message",
+    "subtype": "channel_archive",
+    "team": "",
+    "user": "",
+    "channel": "",
+    "channel_type": "",
+    "text": "",
+    "ts": "",
+    "event_ts": ""
+  }
+}

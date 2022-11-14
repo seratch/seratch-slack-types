@@ -37,6 +37,8 @@ export interface Channel {
     priority?:                   number;
     is_moved?:                   number;
     internal_team_ids?:          string[];
+    is_starred?:                 boolean;
+    context_team_id?:            string;
 }
 
 export interface Purpose {

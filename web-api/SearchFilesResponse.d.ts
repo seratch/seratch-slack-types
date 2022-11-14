@@ -79,6 +79,15 @@ export interface Match {
     last_editor?:          string;
     non_owner_editable?:   boolean;
     updated?:              number;
+    thumb_video?:          string;
+    media_display_type?:   string;
+    comments_count?:       number;
+    converted_pdf?:        string;
+    thumb_pdf?:            string;
+    thumb_pdf_w?:          number;
+    thumb_pdf_h?:          number;
+    file_access?:          string;
+    user_team?:            string;
 }
 
 export interface Shares {

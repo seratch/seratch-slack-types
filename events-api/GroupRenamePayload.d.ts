@@ -28,9 +28,9 @@ export interface Event {
 
 export interface Channel {
     id?:              string;
+    is_channel?:      boolean;
+    is_mpim?:         boolean;
     name?:            string;
     name_normalized?: string;
-    is_group?:        boolean;
-    is_mpim?:         boolean;
     created?:         number;
 }

@@ -10,5 +10,8 @@
       "url": ""
     }
   ],
+  "is_bot_user_member": false,
+  "unfurl_id": "",
+  "source": "",
   "event_ts": ""
 }

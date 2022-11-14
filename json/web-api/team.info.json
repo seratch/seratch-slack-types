@@ -13,9 +13,16 @@
       "image_102": "https://www.example.com/",
       "image_132": "https://www.example.com/",
       "image_230": "https://www.example.com/",
-      "image_original": "https://www.example.com/"
+      "image_original": "https://www.example.com/",
+      "image_default": false
     },
-    "is_verified": false
+    "is_verified": false,
+    "url": "https://www.example.com/",
+    "enterprise_id": "E00000000",
+    "enterprise_name": "",
+    "enterprise_domain": "",
+    "discoverable": "",
+    "avatar_base_url": "https://www.example.com/"
   },
   "error": "",
   "needed": "",

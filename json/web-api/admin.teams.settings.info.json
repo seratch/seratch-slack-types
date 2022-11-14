@@ -13,14 +13,18 @@
       "image_102": "https://www.example.com/",
       "image_132": "https://www.example.com/",
       "image_230": "https://www.example.com/",
-      "image_original": "https://www.example.com/"
+      "image_original": "https://www.example.com/",
+      "image_default": false
     },
     "enterprise_id": "E00000000",
     "enterprise_name": "",
     "default_channels": [
       "C00000000"
     ],
-    "is_verified": false
+    "is_verified": false,
+    "enterprise_domain": "",
+    "url": "https://www.example.com/",
+    "avatar_base_url": "https://www.example.com/"
   },
   "error": "",
   "needed": "",

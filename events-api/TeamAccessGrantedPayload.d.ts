@@ -6,11 +6,20 @@ export interface TeamAccessGrantedPayload {
     type?:                  string;
     authed_users?:          string[];
     authed_teams?:          string[];
+    authorizations?:        Authorization[];
     event_id?:              string;
     event_time?:            number;
     event_context?:         string;
     is_ext_shared_channel?: boolean;
     event?:                 Event;
+}
+
+export interface Authorization {
+    enterprise_id?:         string;
+    team_id?:               string;
+    user_id?:               string;
+    is_bot?:                boolean;
+    is_enterprise_install?: boolean;
 }
 
 export interface Event {

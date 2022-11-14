@@ -36,6 +36,7 @@ export interface Channel {
     purpose?:                    Purpose;
     previous_names?:             string[];
     date_connected?:             number;
+    context_team_id?:            string;
 }
 
 export interface Purpose {

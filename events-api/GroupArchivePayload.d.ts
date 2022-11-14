@@ -23,7 +23,7 @@ export interface Authorization {
 export interface Event {
     type?:     string;
     channel?:  string;
+    user?:     string;
     is_moved?: number;
-    actor_id?: string;
     event_ts?: string;
 }

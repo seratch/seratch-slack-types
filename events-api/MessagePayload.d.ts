@@ -6,11 +6,20 @@ export interface MessagePayload {
     type?:                  string;
     authed_users?:          string[];
     authed_teams?:          string[];
+    authorizations?:        Authorization[];
     is_ext_shared_channel?: boolean;
     event_id?:              string;
     event_time?:            number;
     event_context?:         string;
     event?:                 Event;
+}
+
+export interface Authorization {
+    enterprise_id?:         string;
+    team_id?:               string;
+    user_id?:               string;
+    is_bot?:                boolean;
+    is_enterprise_install?: boolean;
 }
 
 export interface Event {
@@ -51,6 +60,7 @@ export interface Attachment {
     channel_id?:            string;
     channel_name?:          string;
     id?:                    number;
+    app_id?:                string;
     bot_id?:                string;
     indent?:                boolean;
     is_msg_unfurl?:         boolean;
@@ -69,6 +79,7 @@ export interface Attachment {
     thumb_url?:             string;
     thumb_width?:           number;
     thumb_height?:          number;
+    video_url?:             string;
     video_html?:            string;
     video_html_width?:      number;
     video_html_height?:     number;
@@ -77,6 +88,7 @@ export interface Attachment {
     ts?:                    string;
     mrkdwn_in?:             string[];
     actions?:               Action[];
+    preview?:               Preview;
     filename?:              string;
     size?:                  number;
     mimetype?:              string;
@@ -126,6 +138,26 @@ export interface Metadata {
     thumb_tiny?:  string;
 }
 
+export interface Preview {
+    type?:       string;
+    can_remove?: boolean;
+    title?:      Text;
+    subtitle?:   Text;
+    icon_url?:   string;
+}
+
+export interface Text {
+    type?:     Type;
+    text?:     string;
+    emoji?:    boolean;
+    verbatim?: boolean;
+}
+
+export enum Type {
+    Mrkdwn = "mrkdwn",
+    PlainText = "plain_text",
+}
+
 export interface Block {
     type?:         string;
     elements?:     Element[];
@@ -160,9 +192,11 @@ export interface Element {
     value?:                           string;
     style?:                           string;
     confirm?:                         ElementConfirm;
+    accessibility_label?:             string;
     placeholder?:                     Text;
     initial_channel?:                 string;
     response_url_enabled?:            boolean;
+    focus_on_load?:                   boolean;
     max_selected_items?:              number;
     initial_conversation?:            string;
     default_to_current_conversation?: boolean;
@@ -185,18 +219,6 @@ export interface ElementConfirm {
     confirm?: Text;
     deny?:    Text;
     style?:   string;
-}
-
-export interface Text {
-    type?:     Type;
-    text?:     string;
-    emoji?:    boolean;
-    verbatim?: boolean;
-}
-
-export enum Type {
-    Mrkdwn = "mrkdwn",
-    PlainText = "plain_text",
 }
 
 export interface Filter {

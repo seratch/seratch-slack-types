@@ -33,7 +33,18 @@
     "image_192": "https://www.example.com/",
     "image_512": "https://www.example.com/",
     "image_1024": "https://www.example.com/",
-    "status_text_canonical": ""
+    "status_text_canonical": "",
+    "status_emoji_url": "",
+    "pronouns": "",
+    "status_emoji_display_info": [
+      {
+        "emoji_name": "",
+        "display_alias": "",
+        "display_url": ""
+      }
+    ],
+    "huddle_state": "",
+    "huddle_state_expiration_ts": 12345
   },
   "ok": false,
   "username": "",

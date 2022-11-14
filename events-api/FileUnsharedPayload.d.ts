@@ -21,11 +21,11 @@ export interface Authorization {
 }
 
 export interface Event {
-    type?:       string;
-    channel_id?: string;
     file_id?:    string;
     user_id?:    string;
     file?:       File;
+    channel_id?: string;
+    type?:       string;
     event_ts?:   string;
 }
 

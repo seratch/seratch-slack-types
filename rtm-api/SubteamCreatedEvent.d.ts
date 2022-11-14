@@ -25,6 +25,7 @@ export interface Subteam {
     prefs?:                 Prefs;
     user_count?:            number;
     channel_count?:         number;
+    users?:                 any[];
 }
 
 export interface Prefs {

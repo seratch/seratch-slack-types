@@ -7,15 +7,18 @@ export interface AdminTeamsSettingsInfoResponse {
 }
 
 export interface Team {
-    id?:               string;
-    name?:             string;
-    domain?:           string;
-    email_domain?:     string;
-    icon?:             Icon;
-    enterprise_id?:    string;
-    enterprise_name?:  string;
-    default_channels?: string[];
-    is_verified?:      boolean;
+    id?:                string;
+    name?:              string;
+    domain?:            string;
+    email_domain?:      string;
+    icon?:              Icon;
+    enterprise_id?:     string;
+    enterprise_name?:   string;
+    default_channels?:  string[];
+    is_verified?:       boolean;
+    enterprise_domain?: string;
+    url?:               string;
+    avatar_base_url?:   string;
 }
 
 export interface Icon {
@@ -27,4 +30,5 @@ export interface Icon {
     image_132?:      string;
     image_230?:      string;
     image_original?: string;
+    image_default?:  boolean;
 }

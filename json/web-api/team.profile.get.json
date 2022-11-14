@@ -9,6 +9,24 @@
         "label": "",
         "hint": "",
         "type": "",
+        "is_hidden": false,
+        "possible_values": [
+          ""
+        ],
+        "options": {
+          "is_scim": false,
+          "is_protected": false
+        },
+        "section_id": ""
+      }
+    ],
+    "sections": [
+      {
+        "id": "",
+        "team_id": "",
+        "section_type": "",
+        "label": "",
+        "order": 12345,
         "is_hidden": false
       }
     ]

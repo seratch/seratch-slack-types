@@ -23,6 +23,7 @@ export interface Subteam {
     updated_by?:            string;
     deleted_by?:            string;
     prefs?:                 Prefs;
+    users?:                 any[];
     user_count?:            number;
     channel_count?:         number;
 }

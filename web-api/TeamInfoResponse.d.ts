@@ -7,12 +7,18 @@ export interface TeamInfoResponse {
 }
 
 export interface Team {
-    id?:           string;
-    name?:         string;
-    domain?:       string;
-    email_domain?: string;
-    icon?:         Icon;
-    is_verified?:  boolean;
+    id?:                string;
+    name?:              string;
+    domain?:            string;
+    email_domain?:      string;
+    icon?:              Icon;
+    is_verified?:       boolean;
+    url?:               string;
+    enterprise_id?:     string;
+    enterprise_name?:   string;
+    enterprise_domain?: string;
+    discoverable?:      string;
+    avatar_base_url?:   string;
 }
 
 export interface Icon {
@@ -24,4 +30,5 @@ export interface Icon {
     image_132?:      string;
     image_230?:      string;
     image_original?: string;
+    image_default?:  boolean;
 }

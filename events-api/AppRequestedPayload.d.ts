@@ -6,11 +6,20 @@ export interface AppRequestedPayload {
     type?:                  string;
     authed_users?:          string[];
     authed_teams?:          string[];
+    authorizations?:        Authorization[];
     is_ext_shared_channel?: boolean;
     event_id?:              string;
     event_time?:            number;
     event_context?:         string;
     event?:                 Event;
+}
+
+export interface Authorization {
+    enterprise_id?:         string;
+    team_id?:               string;
+    user_id?:               string;
+    is_bot?:                boolean;
+    is_enterprise_install?: boolean;
 }
 
 export interface Event {
@@ -19,13 +28,14 @@ export interface Event {
 }
 
 export interface AppRequest {
-    id?:                  string;
-    app?:                 App;
-    user?:                User;
-    team?:                Team;
-    previous_resolution?: PreviousResolution;
-    message?:             string;
-    date_created?:        number;
+    id?:                       string;
+    app?:                      App;
+    user?:                     User;
+    team?:                     Team;
+    previous_resolution?:      PreviousResolution;
+    is_user_app_collaborator?: boolean;
+    message?:                  string;
+    date_created?:             number;
 }
 
 export interface App {

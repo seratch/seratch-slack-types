@@ -7,16 +7,24 @@ export interface SchemasResponse {
 }
 
 export interface Schema {
-    type?:       string;
-    workspace?:  Enterprise;
-    enterprise?: Enterprise;
-    user?:       User;
-    file?:       File;
-    channel?:    Channel;
-    app?:        App;
-    workflow?:   Workflow;
-    message?:    Message;
-    barrier?:    Barrier;
+    type?:              string;
+    workspace?:         Enterprise;
+    enterprise?:        Enterprise;
+    user?:              User;
+    file?:              File;
+    channel?:           Channel;
+    app?:               App;
+    workflow?:          AccountTypeRole;
+    barrier?:           Barrier;
+    message?:           Message;
+    usergroup?:         AccountTypeRole;
+    role?:              Role;
+    account_type_role?: AccountTypeRole;
+}
+
+export interface AccountTypeRole {
+    id?:   string;
+    name?: string;
 }
 
 export interface App {
@@ -62,14 +70,15 @@ export interface Message {
     timestamp?: string;
 }
 
+export interface Role {
+    id?:   string;
+    name?: string;
+    type?: string;
+}
+
 export interface User {
     id?:    string;
     name?:  string;
     email?: string;
     team?:  string;
-}
-
-export interface Workflow {
-    id?:   string;
-    name?: string;
 }

@@ -7,10 +7,10 @@
     "type": "group_rename",
     "channel": {
       "id": "",
+      "is_channel": false,
+      "is_mpim": false,
       "name": "",
       "name_normalized": "",
-      "is_group": false,
-      "is_mpim": false,
       "created": 12345
     },
     "event_ts": "0000000000.000000"

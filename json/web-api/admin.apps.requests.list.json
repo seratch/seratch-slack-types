@@ -1,5 +1,9 @@
 {
   "ok": false,
+  "warning": "",
+  "error": "",
+  "needed": "",
+  "provided": "",
   "app_requests": [
     {
       "id": "",
@@ -38,17 +42,23 @@
         "name": "",
         "domain": ""
       },
+      "scopes": [],
       "previous_resolution": {
-        "status": ""
+        "status": "",
+        "scopes": []
       },
+      "is_user_app_collaborator": false,
       "message": "",
       "date_created": 123
     }
   ],
   "response_metadata": {
-    "next_cursor": ""
-  },
-  "error": "",
-  "needed": "",
-  "provided": ""
+    "next_cursor": "",
+    "messages": [
+      ""
+    ],
+    "warnings": [
+      ""
+    ]
+  }
 }
