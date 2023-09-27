@@ -11,7 +11,7 @@ export interface Schema {
     workspace?:         Enterprise;
     enterprise?:        Enterprise;
     user?:              User;
-    file?:              File;
+    file?:              Canvas;
     channel?:           Channel;
     app?:               App;
     workflow?:          AccountTypeRole;
@@ -20,6 +20,8 @@ export interface Schema {
     usergroup?:         AccountTypeRole;
     role?:              Role;
     account_type_role?: AccountTypeRole;
+    canvas?:            Canvas;
+    workflow_v2?:       WorkflowV2;
 }
 
 export interface AccountTypeRole {
@@ -42,6 +44,13 @@ export interface Barrier {
     barriered_from_usergroup?: string;
 }
 
+export interface Canvas {
+    id?:       string;
+    filetype?: string;
+    title?:    string;
+    name?:     string;
+}
+
 export interface Channel {
     id?:                string;
     name?:              string;
@@ -55,13 +64,6 @@ export interface Enterprise {
     id?:     string;
     name?:   string;
     domain?: string;
-}
-
-export interface File {
-    id?:       string;
-    name?:     string;
-    filetype?: string;
-    title?:    string;
 }
 
 export interface Message {
@@ -81,4 +83,14 @@ export interface User {
     name?:  string;
     email?: string;
     team?:  string;
+}
+
+export interface WorkflowV2 {
+    id?:                 string;
+    app_id?:             string;
+    date_updated?:       string;
+    callback_id?:        string;
+    name?:               string;
+    updated_by?:         string;
+    step_configuration?: string;
 }

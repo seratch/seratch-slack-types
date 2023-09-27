@@ -56,6 +56,7 @@ export interface Attachment {
     author_subname?:        string;
     channel_id?:            string;
     channel_name?:          string;
+    channel_team?:          string;
     id?:                    number;
     app_id?:                string;
     bot_id?:                string;
@@ -252,6 +253,8 @@ export interface Root {
     last_read?:         string;
     unread_count?:      number;
     ts?:                string;
+    room?:              Room;
+    no_notifications?:  boolean;
 }
 
 export interface BotProfile {
@@ -281,4 +284,29 @@ export interface RootIcons {
     image_48?: string;
     image_64?: string;
     image_72?: string;
+}
+
+export interface Room {
+    id?:                 string;
+    name?:               string;
+    media_server?:       string;
+    created_by?:         string;
+    date_start?:         number;
+    date_end?:           number;
+    canvas_thread_ts?:   string;
+    thread_root_ts?:     string;
+    is_dm_call?:         boolean;
+    was_rejected?:       boolean;
+    was_missed?:         boolean;
+    was_accepted?:       boolean;
+    has_ended?:          boolean;
+    background_id?:      string;
+    canvas_background?:  string;
+    is_prewarmed?:       boolean;
+    is_scheduled?:       boolean;
+    media_backend_type?: string;
+    display_id?:         string;
+    external_unique_id?: string;
+    app_id?:             string;
+    call_family?:        string;
 }

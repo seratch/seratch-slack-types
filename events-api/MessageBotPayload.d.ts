@@ -56,6 +56,7 @@ export interface Attachment {
     author_subname?:        string;
     channel_id?:            string;
     channel_name?:          string;
+    channel_team?:          string;
     id?:                    number;
     app_id?:                string;
     bot_id?:                string;

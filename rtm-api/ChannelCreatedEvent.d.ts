@@ -13,4 +13,5 @@ export interface Channel {
     is_org_shared?:   boolean;
     created?:         number;
     creator?:         string;
+    context_team_id?: string;
 }

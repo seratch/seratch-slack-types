@@ -45,6 +45,24 @@ export interface Channel {
     is_user_deleted?:            boolean;
     parent_conversation?:        string;
     context_team_id?:            string;
+    updated?:                    number;
+    properties?:                 Properties;
+}
+
+export interface Properties {
+    posting_restricted_to?: PostingRestrictedTo;
+    huddles_restricted?:    boolean;
+    canvas?:                Canvas;
+}
+
+export interface Canvas {
+    file_id?:        string;
+    is_empty?:       boolean;
+    quip_thread_id?: string;
+}
+
+export interface PostingRestrictedTo {
+    type?: string[];
 }
 
 export interface Purpose {

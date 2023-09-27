@@ -595,6 +595,7 @@
         "author_subname": "",
         "channel_id": "",
         "channel_name": "",
+        "channel_team": "",
         "id": 123,
         "app_id": "",
         "bot_id": "",
@@ -737,6 +738,7 @@
       "pretty_type": "",
       "user": "",
       "user_team": "",
+      "source_team": "",
       "mode": "",
       "editable": false,
       "non_owner_editable": false,
@@ -751,6 +753,7 @@
         "locale": ""
       },
       "mp4": "",
+      "mp4_low": "",
       "vtt": "",
       "hls": "",
       "hls_embed": "",
@@ -766,6 +769,7 @@
       "size": 123,
       "url_private": "",
       "url_private_download": "",
+      "url_static_preview": "",
       "app_id": "",
       "app_name": "",
       "thumb_64": "",
@@ -900,6 +904,7 @@
           ]
         }
       },
+      "has_more_shares": false,
       "channel_actions_ts": "",
       "channel_actions_count": 123,
       "headers": {
@@ -909,6 +914,24 @@
         "message_id": ""
       },
       "simplified_html": "",
+      "media_progress": {
+        "offset_ms": 123,
+        "max_offset_ms": 123,
+        "duration_ms": 123
+      },
+      "saved": {
+        "is_archived": false,
+        "date_completed": 123,
+        "date_due": 123,
+        "state": ""
+      },
+      "quip_thread_id": "",
+      "is_channel_space": false,
+      "linked_channel_id": "",
+      "access": "",
+      "last_read": 123,
+      "private_channels_with_file_access_count": 123,
+      "org_or_workspace_access": "",
       "bot_id": "",
       "initial_comment": {
         "id": "",
@@ -936,6 +959,7 @@
         "pretty_type": "",
         "user": "",
         "user_team": "",
+        "source_team": "",
         "mode": "",
         "editable": false,
         "non_owner_editable": false,
@@ -950,6 +974,7 @@
           "locale": ""
         },
         "mp4": "",
+        "mp4_low": "",
         "vtt": "",
         "hls": "",
         "hls_embed": "",
@@ -965,6 +990,7 @@
         "size": 123,
         "url_private": "",
         "url_private_download": "",
+        "url_static_preview": "",
         "app_id": "",
         "app_name": "",
         "thumb_64": "",
@@ -1099,6 +1125,7 @@
             ]
           }
         },
+        "has_more_shares": false,
         "channel_actions_ts": "",
         "channel_actions_count": 123,
         "headers": {
@@ -1108,6 +1135,24 @@
           "message_id": ""
         },
         "simplified_html": "",
+        "media_progress": {
+          "offset_ms": 123,
+          "max_offset_ms": 123,
+          "duration_ms": 123
+        },
+        "saved": {
+          "is_archived": false,
+          "date_completed": 123,
+          "date_due": 123,
+          "state": ""
+        },
+        "quip_thread_id": "",
+        "is_channel_space": false,
+        "linked_channel_id": "",
+        "access": "",
+        "last_read": 123,
+        "private_channels_with_file_access_count": 123,
+        "org_or_workspace_access": "",
         "bot_id": "",
         "initial_comment": {
           "id": "",
@@ -1222,7 +1267,32 @@
       "subscribed": false,
       "last_read": "",
       "unread_count": 123,
-      "ts": ""
+      "ts": "",
+      "room": {
+        "id": "",
+        "name": "",
+        "media_server": "",
+        "created_by": "",
+        "date_start": 123,
+        "date_end": 123,
+        "canvas_thread_ts": "",
+        "thread_root_ts": "",
+        "is_dm_call": false,
+        "was_rejected": false,
+        "was_missed": false,
+        "was_accepted": false,
+        "has_ended": false,
+        "background_id": "",
+        "canvas_background": "",
+        "is_prewarmed": false,
+        "is_scheduled": false,
+        "media_backend_type": "",
+        "display_id": "",
+        "external_unique_id": "",
+        "app_id": "",
+        "call_family": ""
+      },
+      "no_notifications": false
     },
     "item_type": "",
     "item": {
@@ -1263,7 +1333,32 @@
     "metadata": {
       "event_type": "",
       "event_payload": {}
-    }
+    },
+    "room": {
+      "id": "",
+      "name": "",
+      "media_server": "",
+      "created_by": "",
+      "date_start": 123,
+      "date_end": 123,
+      "canvas_thread_ts": "",
+      "thread_root_ts": "",
+      "is_dm_call": false,
+      "was_rejected": false,
+      "was_missed": false,
+      "was_accepted": false,
+      "has_ended": false,
+      "background_id": "",
+      "canvas_background": "",
+      "is_prewarmed": false,
+      "is_scheduled": false,
+      "media_backend_type": "",
+      "display_id": "",
+      "external_unique_id": "",
+      "app_id": "",
+      "call_family": ""
+    },
+    "no_notifications": false
   },
   "enterprise": {
     "id": "",

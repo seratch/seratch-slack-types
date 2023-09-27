@@ -122,6 +122,41 @@ export interface Details {
     enable_at_here?:                CanHuddle;
     enable_at_channel?:             CanHuddle;
     can_huddle?:                    CanHuddle;
+    url_private?:                   string;
+    shared_with?:                   SharedWith;
+    initiated_by?:                  string;
+    source_team?:                   string;
+    destination_team?:              string;
+    succeeded_users?:               any[];
+    failed_users?:                  any[];
+    enterprise?:                    string;
+    team?:                          string;
+    subteam?:                       string;
+    action?:                        string;
+    idp_group_member_count?:        number;
+    workspace_member_count?:        number;
+    added_user_count?:              number;
+    added_user_error_count?:        number;
+    reactivated_user_count?:        number;
+    removed_user_count?:            number;
+    removed_user_error_count?:      number;
+    total_removal_count?:           number;
+    is_flagged?:                    string;
+    target_user?:                   string;
+    target_entity?:                 string;
+    idp_config_id?:                 string;
+    config_type?:                   string;
+    idp_entity_id?:                 string;
+    idp_entity_id_hash?:            string;
+    label?:                         string;
+    previous_profile?:              Profile;
+    new_profile?:                   Profile;
+    target_user_id?:                string;
+    space_file_id?:                 SpaceFileid;
+    target_entity_id?:              string;
+    changed_permissions?:           any[];
+    datastore_name?:                string;
+    attributes?:                    any[];
 }
 
 export interface CanHuddle {
@@ -140,6 +175,21 @@ export interface Inviter {
     name?:  string;
     email?: string;
     team?:  string;
+}
+
+export interface Profile {
+    real_name?:      string;
+    first_name?:     string;
+    last_name?:      string;
+    display_name?:   string;
+    image_original?: string;
+    image_24?:       string;
+    image_32?:       string;
+    image_48?:       string;
+    image_72?:       string;
+    image_192?:      string;
+    image_512?:      string;
+    image_1024?:     string;
 }
 
 export interface RetentionPolicy {
@@ -167,17 +217,33 @@ export interface Wildcard {
     type?: string;
 }
 
+export interface SharedWith {
+    channel_id?: string;
+}
+
+export interface SpaceFileid {
+    payload?: string;
+}
+
 export interface Entity {
-    type?:       string;
-    app?:        App;
-    user?:       User;
-    usergroup?:  Usergroup;
-    workspace?:  Location;
-    enterprise?: Location;
-    file?:       File;
-    channel?:    Channel;
-    workflow?:   Usergroup;
-    barrier?:    Barrier;
+    type?:              string;
+    app?:               App;
+    user?:              User;
+    usergroup?:         AccountTypeRole;
+    workspace?:         Location;
+    enterprise?:        Location;
+    file?:              File;
+    channel?:           Channel;
+    huddle?:            Huddle;
+    role?:              Location;
+    account_type_role?: AccountTypeRole;
+    workflow?:          AccountTypeRole;
+    barrier?:           Barrier;
+}
+
+export interface AccountTypeRole {
+    id?:   string;
+    name?: string;
 }
 
 export interface Barrier {
@@ -204,9 +270,11 @@ export interface File {
     title?:    string;
 }
 
-export interface Usergroup {
-    id?:   string;
-    name?: string;
+export interface Huddle {
+    id?:           string;
+    date_start?:   number;
+    date_end?:     number;
+    participants?: any[];
 }
 
 export interface ResponseMetadata {

@@ -33,6 +33,7 @@ export interface Channel {
     purpose?:                    Purpose;
     previous_names?:             string[];
     context_team_id?:            string;
+    updated?:                    number;
 }
 
 export interface Purpose {

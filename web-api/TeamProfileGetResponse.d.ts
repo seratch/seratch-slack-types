@@ -22,11 +22,18 @@ export interface Field {
     possible_values?: string[];
     options?:         Options;
     section_id?:      string;
+    permissions?:     Permissions;
 }
 
 export interface Options {
     is_scim?:      boolean;
     is_protected?: boolean;
+}
+
+export interface Permissions {
+    api?:  string[];
+    ui?:   boolean;
+    scim?: boolean;
 }
 
 export interface Section {

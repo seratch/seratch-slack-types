@@ -7,6 +7,7 @@ export interface UsersListResponse {
     error?:             string;
     needed?:            string;
     provided?:          string;
+    arg?:               string;
 }
 
 export interface Member {
@@ -92,6 +93,7 @@ export interface StatusEmojiDisplayInfo {
     emoji_name?:    string;
     display_alias?: string;
     display_url?:   string;
+    unicode?:       string;
 }
 
 export interface ResponseMetadata {

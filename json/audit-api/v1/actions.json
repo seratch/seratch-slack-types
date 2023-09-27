@@ -32,6 +32,21 @@
     ],
     "slack_cli": [
       ""
+    ],
+    "subteam": [
+      ""
+    ],
+    "role": [
+      ""
+    ],
+    "account_type_role": [
+      ""
+    ],
+    "app_approval_automation_rule": [
+      ""
+    ],
+    "workflow_v2": [
+      ""
     ]
   },
   "ok": false,

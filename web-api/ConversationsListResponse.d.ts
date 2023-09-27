@@ -43,6 +43,25 @@ export interface Channel {
     conversation_host_id?:       string;
     internal_team_ids?:          string[];
     context_team_id?:            string;
+    updated?:                    number;
+    properties?:                 Properties;
+}
+
+export interface Properties {
+    posting_restricted_to?: RestrictedTo;
+    threads_restricted_to?: RestrictedTo;
+    canvas?:                Canvas;
+}
+
+export interface Canvas {
+    file_id?:        string;
+    is_empty?:       boolean;
+    quip_thread_id?: string;
+}
+
+export interface RestrictedTo {
+    type?: string[];
+    user?: string[];
 }
 
 export interface Purpose {

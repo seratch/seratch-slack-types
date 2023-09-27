@@ -24,17 +24,18 @@ export interface Acceptance {
     date_invalid?:      number;
     date_last_updated?: number;
     accepting_team?:    IngTeam;
-    accepting_user?:    AcceptingUser;
+    accepting_user?:    TingUser;
     reviews?:           Review[];
 }
 
 export interface IngTeam {
-    id?:           string;
-    name?:         string;
-    icon?:         Icon;
-    is_verified?:  boolean;
-    domain?:       string;
-    date_created?: number;
+    id?:              string;
+    name?:            string;
+    icon?:            Icon;
+    is_verified?:     boolean;
+    domain?:          string;
+    date_created?:    number;
+    avatar_base_url?: string;
 }
 
 export interface Icon {
@@ -45,16 +46,17 @@ export interface Icon {
     image_44?:       string;
     image_68?:       string;
     image_88?:       string;
-    image_original?: string;
     image_default?:  boolean;
+    image_original?: string;
 }
 
-export interface AcceptingUser {
-    id?:      string;
-    team_id?: string;
-    name?:    string;
-    updated?: number;
-    profile?: Profile;
+export interface TingUser {
+    id?:                         string;
+    team_id?:                    string;
+    name?:                       string;
+    updated?:                    number;
+    profile?:                    Profile;
+    who_can_share_contact_card?: string;
 }
 
 export interface Profile {
@@ -93,30 +95,11 @@ export interface InviteInvite {
     id?:                string;
     date_created?:      number;
     date_invalid?:      number;
-    inviting_team?:     InvitingTeam;
-    inviting_user?:     InvitingUser;
+    inviting_team?:     IngTeam;
+    inviting_user?:     TingUser;
     link?:              string;
     recipient_user_id?: string;
     recipient_email?:   string;
-}
-
-export interface InvitingTeam {
-    id?:              string;
-    name?:            string;
-    icon?:            Icon;
-    is_verified?:     boolean;
-    domain?:          string;
-    date_created?:    number;
-    avatar_base_url?: string;
-}
-
-export interface InvitingUser {
-    id?:                         string;
-    team_id?:                    string;
-    name?:                       string;
-    updated?:                    number;
-    profile?:                    Profile;
-    who_can_share_contact_card?: string;
 }
 
 export interface ResponseMetadata {

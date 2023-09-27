@@ -100,6 +100,7 @@ export interface Container {
     is_ephemeral?:   boolean;
     is_app_unfurl?:  boolean;
     app_unfurl_url?: string;
+    thread_ts?:      string;
 }
 
 export interface Message {
@@ -150,6 +151,8 @@ export interface Message {
     item_type?:           string;
     item?:                Comment;
     metadata?:            MessageMetadata;
+    room?:                Room;
+    no_notifications?:    boolean;
 }
 
 export interface Attachment {
@@ -170,6 +173,7 @@ export interface Attachment {
     author_subname?:        string;
     channel_id?:            string;
     channel_name?:          string;
+    channel_team?:          string;
     id?:                    number;
     app_id?:                string;
     bot_id?:                string;
@@ -376,121 +380,134 @@ export interface Edited {
 }
 
 export interface File {
-    id?:                        string;
-    created?:                   number;
-    timestamp?:                 number;
-    name?:                      string;
-    title?:                     string;
-    subject?:                   string;
-    mimetype?:                  string;
-    filetype?:                  string;
-    pretty_type?:               string;
-    user?:                      string;
-    user_team?:                 string;
-    mode?:                      string;
-    editable?:                  boolean;
-    non_owner_editable?:        boolean;
-    editor?:                    string;
-    last_editor?:               string;
-    updated?:                   number;
-    file_access?:               string;
-    alt_txt?:                   string;
-    subtype?:                   string;
-    transcription?:             Transcription;
-    mp4?:                       string;
-    vtt?:                       string;
-    hls?:                       string;
-    hls_embed?:                 string;
-    duration_ms?:               number;
-    thumb_video_w?:             number;
-    thumb_video_h?:             number;
-    original_attachment_count?: number;
-    is_external?:               boolean;
-    external_type?:             string;
-    external_id?:               string;
-    external_url?:              string;
-    username?:                  string;
-    size?:                      number;
-    url_private?:               string;
-    url_private_download?:      string;
-    app_id?:                    string;
-    app_name?:                  string;
-    thumb_64?:                  string;
-    thumb_64_gif?:              string;
-    thumb_64_w?:                string;
-    thumb_64_h?:                string;
-    thumb_80?:                  string;
-    thumb_80_gif?:              string;
-    thumb_80_w?:                string;
-    thumb_80_h?:                string;
-    thumb_160?:                 string;
-    thumb_160_gif?:             string;
-    thumb_160_w?:               string;
-    thumb_160_h?:               string;
-    thumb_360?:                 string;
-    thumb_360_gif?:             string;
-    thumb_360_w?:               string;
-    thumb_360_h?:               string;
-    thumb_480?:                 string;
-    thumb_480_gif?:             string;
-    thumb_480_w?:               string;
-    thumb_480_h?:               string;
-    thumb_720?:                 string;
-    thumb_720_gif?:             string;
-    thumb_720_w?:               string;
-    thumb_720_h?:               string;
-    thumb_800?:                 string;
-    thumb_800_gif?:             string;
-    thumb_800_w?:               string;
-    thumb_800_h?:               string;
-    thumb_960?:                 string;
-    thumb_960_gif?:             string;
-    thumb_960_w?:               string;
-    thumb_960_h?:               string;
-    thumb_1024?:                string;
-    thumb_1024_gif?:            string;
-    thumb_1024_w?:              string;
-    thumb_1024_h?:              string;
-    thumb_video?:               string;
-    thumb_gif?:                 string;
-    thumb_pdf?:                 string;
-    thumb_pdf_w?:               string;
-    thumb_pdf_h?:               string;
-    thumb_tiny?:                string;
-    converted_pdf?:             string;
-    image_exif_rotation?:       number;
-    original_w?:                string;
-    original_h?:                string;
-    deanimate?:                 string;
-    deanimate_gif?:             string;
-    pjpeg?:                     string;
-    permalink?:                 string;
-    permalink_public?:          string;
-    edit_link?:                 string;
-    has_rich_preview?:          boolean;
-    media_display_type?:        string;
-    preview_is_truncated?:      boolean;
-    preview?:                   string;
-    preview_highlight?:         string;
-    plain_text?:                string;
-    preview_plain_text?:        string;
-    has_more?:                  boolean;
-    sent_to_self?:              boolean;
-    lines?:                     number;
-    lines_more?:                number;
-    is_public?:                 boolean;
-    public_url_shared?:         boolean;
-    display_as_bot?:            boolean;
-    shares?:                    Shares;
-    channel_actions_ts?:        string;
-    channel_actions_count?:     number;
-    headers?:                   Headers;
-    simplified_html?:           string;
-    bot_id?:                    string;
-    initial_comment?:           InitialComment;
-    num_stars?:                 number;
-    is_starred?:                boolean;
-    comments_count?:            number;
+    id?:                                      string;
+    created?:                                 number;
+    timestamp?:                               number;
+    name?:                                    string;
+    title?:                                   string;
+    subject?:                                 string;
+    mimetype?:                                string;
+    filetype?:                                string;
+    pretty_type?:                             string;
+    user?:                                    string;
+    user_team?:                               string;
+    source_team?:                             string;
+    mode?:                                    string;
+    editable?:                                boolean;
+    non_owner_editable?:                      boolean;
+    editor?:                                  string;
+    last_editor?:                             string;
+    updated?:                                 number;
+    file_access?:                             string;
+    alt_txt?:                                 string;
+    subtype?:                                 string;
+    transcription?:                           Transcription;
+    mp4?:                                     string;
+    mp4_low?:                                 string;
+    vtt?:                                     string;
+    hls?:                                     string;
+    hls_embed?:                               string;
+    duration_ms?:                             number;
+    thumb_video_w?:                           number;
+    thumb_video_h?:                           number;
+    original_attachment_count?:               number;
+    is_external?:                             boolean;
+    external_type?:                           string;
+    external_id?:                             string;
+    external_url?:                            string;
+    username?:                                string;
+    size?:                                    number;
+    url_private?:                             string;
+    url_private_download?:                    string;
+    url_static_preview?:                      string;
+    app_id?:                                  string;
+    app_name?:                                string;
+    thumb_64?:                                string;
+    thumb_64_gif?:                            string;
+    thumb_64_w?:                              string;
+    thumb_64_h?:                              string;
+    thumb_80?:                                string;
+    thumb_80_gif?:                            string;
+    thumb_80_w?:                              string;
+    thumb_80_h?:                              string;
+    thumb_160?:                               string;
+    thumb_160_gif?:                           string;
+    thumb_160_w?:                             string;
+    thumb_160_h?:                             string;
+    thumb_360?:                               string;
+    thumb_360_gif?:                           string;
+    thumb_360_w?:                             string;
+    thumb_360_h?:                             string;
+    thumb_480?:                               string;
+    thumb_480_gif?:                           string;
+    thumb_480_w?:                             string;
+    thumb_480_h?:                             string;
+    thumb_720?:                               string;
+    thumb_720_gif?:                           string;
+    thumb_720_w?:                             string;
+    thumb_720_h?:                             string;
+    thumb_800?:                               string;
+    thumb_800_gif?:                           string;
+    thumb_800_w?:                             string;
+    thumb_800_h?:                             string;
+    thumb_960?:                               string;
+    thumb_960_gif?:                           string;
+    thumb_960_w?:                             string;
+    thumb_960_h?:                             string;
+    thumb_1024?:                              string;
+    thumb_1024_gif?:                          string;
+    thumb_1024_w?:                            string;
+    thumb_1024_h?:                            string;
+    thumb_video?:                             string;
+    thumb_gif?:                               string;
+    thumb_pdf?:                               string;
+    thumb_pdf_w?:                             string;
+    thumb_pdf_h?:                             string;
+    thumb_tiny?:                              string;
+    converted_pdf?:                           string;
+    image_exif_rotation?:                     number;
+    original_w?:                              string;
+    original_h?:                              string;
+    deanimate?:                               string;
+    deanimate_gif?:                           string;
+    pjpeg?:                                   string;
+    permalink?:                               string;
+    permalink_public?:                        string;
+    edit_link?:                               string;
+    has_rich_preview?:                        boolean;
+    media_display_type?:                      string;
+    preview_is_truncated?:                    boolean;
+    preview?:                                 string;
+    preview_highlight?:                       string;
+    plain_text?:                              string;
+    preview_plain_text?:                      string;
+    has_more?:                                boolean;
+    sent_to_self?:                            boolean;
+    lines?:                                   number;
+    lines_more?:                              number;
+    is_public?:                               boolean;
+    public_url_shared?:                       boolean;
+    display_as_bot?:                          boolean;
+    shares?:                                  Shares;
+    has_more_shares?:                         boolean;
+    channel_actions_ts?:                      string;
+    channel_actions_count?:                   number;
+    headers?:                                 Headers;
+    simplified_html?:                         string;
+    media_progress?:                          MediaProgress;
+    saved?:                                   Saved;
+    quip_thread_id?:                          string;
+    is_channel_space?:                        boolean;
+    linked_channel_id?:                       string;
+    access?:                                  string;
+    last_read?:                               number;
+    private_channels_with_file_access_count?: number;
+    org_or_workspace_access?:                 string;
+    bot_id?:                                  string;
+    initial_comment?:                         InitialComment;
+    num_stars?:                               number;
+    is_starred?:                              boolean;
+    comments_count?:                          number;
 }
 
 export interface Headers {
@@ -508,6 +525,19 @@ export interface InitialComment {
     comment?:   string;
     channel?:   string;
     is_intro?:  boolean;
+}
+
+export interface MediaProgress {
+    offset_ms?:     number;
+    max_offset_ms?: number;
+    duration_ms?:   number;
+}
+
+export interface Saved {
+    is_archived?:    boolean;
+    date_completed?: number;
+    date_due?:       number;
+    state?:          string;
 }
 
 export interface Shares {
@@ -554,6 +584,31 @@ export interface Reaction {
     url?:   string;
 }
 
+export interface Room {
+    id?:                 string;
+    name?:               string;
+    media_server?:       string;
+    created_by?:         string;
+    date_start?:         number;
+    date_end?:           number;
+    canvas_thread_ts?:   string;
+    thread_root_ts?:     string;
+    is_dm_call?:         boolean;
+    was_rejected?:       boolean;
+    was_missed?:         boolean;
+    was_accepted?:       boolean;
+    has_ended?:          boolean;
+    background_id?:      string;
+    canvas_background?:  string;
+    is_prewarmed?:       boolean;
+    is_scheduled?:       boolean;
+    media_backend_type?: string;
+    display_id?:         string;
+    external_unique_id?: string;
+    app_id?:             string;
+    call_family?:        string;
+}
+
 export interface Root {
     text?:              string;
     user?:              string;
@@ -575,6 +630,8 @@ export interface Root {
     last_read?:         string;
     unread_count?:      number;
     ts?:                string;
+    room?:              Room;
+    no_notifications?:  boolean;
 }
 
 export interface Team {

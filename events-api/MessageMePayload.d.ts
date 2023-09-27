@@ -27,6 +27,7 @@ export interface Event {
     subtype?:      string;
     channel?:      string;
     username?:     string;
+    user?:         string;
     bot_id?:       string;
     text?:         string;
     event_ts?:     string;

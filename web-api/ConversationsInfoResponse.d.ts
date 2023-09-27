@@ -46,6 +46,7 @@ export interface Channel {
     is_org_mandatory?:           boolean;
     connected_limited_team_ids?: string[];
     context_team_id?:            string;
+    updated?:                    number;
 }
 
 export interface Purpose {

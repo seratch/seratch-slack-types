@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "bulk_action_id": "",
+  "not_added": [
+    {
+      "channel_id": "",
+      "errors": [
+        ""
+      ]
+    }
+  ],
+  "error": "",
+  "needed": "",
+  "provided": "",
+  "response_metadata": {
+    "messages": [
+      ""
+    ]
+  }
+}

@@ -40,6 +40,7 @@ export interface ItemFile {
     pretty_type?:               string;
     user?:                      string;
     user_team?:                 string;
+    source_team?:               string;
     mode?:                      string;
     editable?:                  boolean;
     non_owner_editable?:        boolean;
@@ -51,6 +52,7 @@ export interface ItemFile {
     subtype?:                   string;
     transcription?:             Transcription;
     mp4?:                       string;
+    mp4_low?:                   string;
     vtt?:                       string;
     hls?:                       string;
     hls_embed?:                 string;
@@ -138,6 +140,7 @@ export interface ItemFile {
     groups?:                    string[];
     ims?:                       string[];
     shares?:                    Shares;
+    has_more_shares?:           boolean;
     to?:                        Cc[];
     from?:                      Cc[];
     cc?:                        Cc[];
@@ -145,6 +148,8 @@ export interface ItemFile {
     channel_actions_count?:     number;
     headers?:                   Headers;
     simplified_html?:           string;
+    media_progress?:            MediaProgress;
+    saved?:                     Saved;
     bot_id?:                    string;
     initial_comment?:           Comment;
     num_stars?:                 number;
@@ -167,11 +172,24 @@ export interface Headers {
     message_id?:  string;
 }
 
+export interface MediaProgress {
+    offset_ms?:     number;
+    max_offset_ms?: number;
+    duration_ms?:   number;
+}
+
 export interface Reaction {
     name?:  string;
     count?: number;
     users?: string[];
     url?:   string;
+}
+
+export interface Saved {
+    is_archived?:    boolean;
+    date_completed?: number;
+    date_due?:       number;
+    state?:          string;
 }
 
 export interface Shares {
@@ -245,6 +263,7 @@ export interface Attachment {
     author_subname?:        string;
     channel_id?:            string;
     channel_name?:          string;
+    channel_team?:          string;
     id?:                    number;
     app_id?:                string;
     bot_id?:                string;
@@ -275,6 +294,7 @@ export interface Attachment {
     mrkdwn_in?:             string[];
     actions?:               Action[];
     blocks?:                Block[];
+    message_blocks?:        MessageBlock[];
     preview?:               Preview;
     files?:                 FileElement[];
     filename?:              string;
@@ -384,6 +404,7 @@ export interface Accessory {
     initial_date?:                    string;
     initial_time?:                    string;
     timezone?:                        string;
+    initial_date_time?:               number;
     min_query_length?:                number;
     image_url?:                       string;
     alt_text?:                        string;
@@ -531,6 +552,7 @@ export interface FileElement {
     pretty_type?:               string;
     user?:                      string;
     user_team?:                 string;
+    source_team?:               string;
     mode?:                      string;
     editable?:                  boolean;
     non_owner_editable?:        boolean;
@@ -542,6 +564,7 @@ export interface FileElement {
     subtype?:                   string;
     transcription?:             Transcription;
     mp4?:                       string;
+    mp4_low?:                   string;
     vtt?:                       string;
     hls?:                       string;
     hls_embed?:                 string;
@@ -629,6 +652,7 @@ export interface FileElement {
     groups?:                    string[];
     ims?:                       string[];
     shares?:                    Shares;
+    has_more_shares?:           boolean;
     to?:                        Cc[];
     from?:                      Cc[];
     cc?:                        Cc[];
@@ -636,6 +660,8 @@ export interface FileElement {
     channel_actions_count?:     number;
     headers?:                   Headers;
     simplified_html?:           string;
+    media_progress?:            MediaProgress;
+    saved?:                     Saved;
     bot_id?:                    string;
     initial_comment?:           Comment;
     num_stars?:                 number;
@@ -643,6 +669,36 @@ export interface FileElement {
     pinned_to?:                 string[];
     reactions?:                 Reaction[];
     comments_count?:            number;
+}
+
+export interface MessageBlock {
+    type?:                string;
+    elements?:            Accessory[];
+    block_id?:            string;
+    fallback?:            string;
+    image_url?:           string;
+    image_width?:         number;
+    image_height?:        number;
+    image_bytes?:         number;
+    alt_text?:            string;
+    title?:               Description;
+    text?:                Description;
+    fields?:              Description[];
+    accessory?:           Accessory;
+    title_url?:           string;
+    description?:         Description;
+    video_url?:           string;
+    thumbnail_url?:       string;
+    author_name?:         string;
+    provider_name?:       string;
+    provider_icon_url?:   string;
+    function_trigger_id?: string;
+    app_id?:              string;
+    is_workflow_app?:     boolean;
+    app_collaborators?:   string[];
+    button_label?:        string;
+    bot_user_id?:         string;
+    url?:                 string;
 }
 
 export interface Metadata {

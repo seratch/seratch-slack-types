@@ -610,6 +610,7 @@
         "author_subname": "",
         "channel_id": "",
         "channel_name": "",
+        "channel_team": "",
         "id": 123,
         "app_id": "",
         "bot_id": "",
@@ -714,6 +715,7 @@
         "pretty_type": "",
         "user": "",
         "user_team": "",
+        "source_team": "",
         "mode": "",
         "editable": false,
         "non_owner_editable": false,
@@ -728,6 +730,7 @@
           "locale": ""
         },
         "mp4": "",
+        "mp4_low": "",
         "vtt": "",
         "hls": "",
         "hls_embed": "",
@@ -743,6 +746,7 @@
         "size": 123,
         "url_private": "",
         "url_private_download": "",
+        "url_static_preview": "",
         "app_id": "",
         "app_name": "",
         "thumb_64": "",
@@ -812,6 +816,7 @@
         "public_url_shared": false,
         "display_as_bot": false,
         "shares": {},
+        "has_more_shares": false,
         "channel_actions_ts": "",
         "channel_actions_count": 123,
         "headers": {
@@ -821,6 +826,24 @@
           "message_id": ""
         },
         "simplified_html": "",
+        "media_progress": {
+          "offset_ms": 123,
+          "max_offset_ms": 123,
+          "duration_ms": 123
+        },
+        "saved": {
+          "is_archived": false,
+          "date_completed": 123,
+          "date_due": 123,
+          "state": ""
+        },
+        "quip_thread_id": "",
+        "is_channel_space": false,
+        "linked_channel_id": "",
+        "access": "",
+        "last_read": 123,
+        "private_channels_with_file_access_count": 123,
+        "org_or_workspace_access": "",
         "bot_id": "",
         "initial_comment": {
           "id": "",

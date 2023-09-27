@@ -39,6 +39,18 @@ export interface Channel {
     internal_team_ids?:          string[];
     is_starred?:                 boolean;
     context_team_id?:            string;
+    updated?:                    number;
+    properties?:                 Properties;
+}
+
+export interface Properties {
+    canvas?: Canvas;
+}
+
+export interface Canvas {
+    file_id?:        string;
+    is_empty?:       boolean;
+    quip_thread_id?: string;
 }
 
 export interface Purpose {

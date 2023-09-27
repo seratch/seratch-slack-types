@@ -37,6 +37,16 @@ export interface Channel {
     previous_names?:             string[];
     date_connected?:             number;
     context_team_id?:            string;
+    updated?:                    number;
+    properties?:                 Properties;
+}
+
+export interface Properties {
+    posting_restricted_to?: PostingRestrictedTo;
+}
+
+export interface PostingRestrictedTo {
+    type?: string[];
 }
 
 export interface Purpose {

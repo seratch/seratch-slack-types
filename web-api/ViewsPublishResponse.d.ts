@@ -112,6 +112,7 @@ export interface PurpleElement {
     initial_date?:                    string;
     initial_time?:                    string;
     timezone?:                        string;
+    initial_date_time?:               number;
     min_query_length?:                number;
     image_url?:                       string;
     alt_text?:                        string;
@@ -162,6 +163,7 @@ export interface ElementElement {
     style?:                           string;
     confirm?:                         Confirm;
     accessibility_label?:             string;
+    workflow?:                        Workflow;
     options?:                         Option[];
     initial_options?:                 Option[];
     focus_on_load?:                   boolean;
@@ -178,6 +180,7 @@ export interface ElementElement {
     initial_date?:                    string;
     initial_time?:                    string;
     timezone?:                        string;
+    initial_date_time?:               number;
     min_query_length?:                number;
     image_url?:                       string;
     alt_text?:                        string;
@@ -188,6 +191,20 @@ export interface ElementElement {
     option_groups?:                   OptionGroup[];
     initial_user?:                    string;
     initial_users?:                   string[];
+}
+
+export interface Workflow {
+    trigger?: Trigger;
+}
+
+export interface Trigger {
+    url?:                           string;
+    customizable_input_parameters?: CustomizableInputParameter[];
+}
+
+export interface CustomizableInputParameter {
+    name?:  string;
+    value?: string;
 }
 
 export interface State {

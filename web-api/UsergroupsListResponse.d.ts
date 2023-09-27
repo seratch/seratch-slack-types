@@ -24,6 +24,8 @@ export interface Usergroup {
     updated_by?:            string;
     prefs?:                 Prefs;
     channel_count?:         number;
+    users?:                 string[];
+    user_count?:            number;
 }
 
 export interface Prefs {

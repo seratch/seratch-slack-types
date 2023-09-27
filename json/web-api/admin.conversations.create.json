@@ -3,5 +3,10 @@
   "channel_id": "C00000000",
   "error": "",
   "needed": "",
-  "provided": ""
+  "provided": "",
+  "response_metadata": {
+    "messages": [
+      ""
+    ]
+  }
 }

@@ -5,6 +5,7 @@ export interface AdminConversationsSearchResponse {
     error?:         string;
     needed?:        string;
     provided?:      string;
+    total_count?:   number;
 }
 
 export interface Conversation {
@@ -36,4 +37,15 @@ export interface Conversation {
     internal_team_ids?:             string[];
     channel_manager_count?:         number;
     is_disconnect_in_progress?:     boolean;
+    canvas?:                        Canvas;
+}
+
+export interface Canvas {
+    total_count?:       number;
+    ownership_details?: OwnershipDetail[];
+}
+
+export interface OwnershipDetail {
+    count?:   number;
+    team_id?: string;
 }

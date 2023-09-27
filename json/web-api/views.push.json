@@ -417,6 +417,51 @@
           "emoji": false
         },
         "element": {
+          "type": "datetimepicker",
+          "action_id": "",
+          "initial_date_time": 123,
+          "confirm": {
+            "title": {
+              "type": "plain_text",
+              "text": "",
+              "emoji": false
+            },
+            "text": {
+              "type": "plain_text",
+              "text": "",
+              "emoji": false
+            },
+            "confirm": {
+              "type": "plain_text",
+              "text": "",
+              "emoji": false
+            },
+            "deny": {
+              "type": "plain_text",
+              "text": "",
+              "emoji": false
+            },
+            "style": ""
+          },
+          "focus_on_load": false
+        },
+        "dispatch_action": false,
+        "hint": {
+          "type": "plain_text",
+          "text": "",
+          "emoji": false
+        },
+        "optional": false
+      },
+      {
+        "type": "input",
+        "block_id": "",
+        "label": {
+          "type": "plain_text",
+          "text": "",
+          "emoji": false
+        },
+        "element": {
           "type": "external_select",
           "placeholder": {
             "type": "plain_text",
@@ -750,6 +795,28 @@
             "accessibility_label": ""
           },
           {
+            "type": "workflow_button",
+            "action_id": "",
+            "text": {
+              "type": "plain_text",
+              "text": "",
+              "emoji": false
+            },
+            "workflow": {
+              "trigger": {
+                "url": "",
+                "customizable_input_parameters": [
+                  {
+                    "name": "",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "style": "",
+            "accessibility_label": ""
+          },
+          {
             "type": "checkboxes",
             "action_id": "",
             "options": [
@@ -1067,6 +1134,35 @@
             },
             "initial_time": "",
             "timezone": "",
+            "confirm": {
+              "title": {
+                "type": "plain_text",
+                "text": "",
+                "emoji": false
+              },
+              "text": {
+                "type": "plain_text",
+                "text": "",
+                "emoji": false
+              },
+              "confirm": {
+                "type": "plain_text",
+                "text": "",
+                "emoji": false
+              },
+              "deny": {
+                "type": "plain_text",
+                "text": "",
+                "emoji": false
+              },
+              "style": ""
+            },
+            "focus_on_load": false
+          },
+          {
+            "type": "datetimepicker",
+            "action_id": "",
+            "initial_date_time": 123,
             "confirm": {
               "title": {
                 "type": "plain_text",
